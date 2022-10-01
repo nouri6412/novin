@@ -34,8 +34,7 @@
       });
     }
 
-    function send_message()
-    {
+    function send_message() {
       conn.send($('#mes-box').val());
     }
 
@@ -46,6 +45,42 @@
         console.log(data);
       });
     });
+
+    function call() {
+      navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: true
+        },
+        (stream) => {
+          const call = peer.call($('#did').val(), stream);
+          call.on("stream", (remoteStream) => {
+            // Show stream in some <video> element.
+          });
+        },
+        (err) => {
+          console.error("Failed to get local stream", err);
+        },
+      );
+    }
+
+    function cal_res() {
+      peer.on("call", (call) => {
+        navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: true
+          },
+          (stream) => {
+            call.answer(stream); // Answer the call with an A/V stream.
+            call.on("stream", (remoteStream) => {
+              // Show stream in some <video> element.
+            });
+          },
+          (err) => {
+            console.error("Failed to get local stream", err);
+          },
+        );
+      });
+    }
   </script>
 </body>
 
