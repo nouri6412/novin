@@ -17,9 +17,14 @@
     <button onclick="send_message()">send message</button>
     <br>
     <div id="res-box"></div>
+    <video id="vid-box"></video>
   </div>
   <script>
-    var peer = new Peer();
+    function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+    var peer = new Peer(getRndInteger(1,1000));
     peer.on('open', function(id) {
       console.log('My peer ID is: ' + id);
       $('#cid').val(id);
