@@ -1,7 +1,9 @@
 <html>
 
 <head>
-  <script src="https://unpkg.com/peerjs@1.3.2/dist/peerjs.min.js"></script>
+  <script src="peerjs.min.js"></script>
+  <!-- <script src="https://unpkg.com/peerjs@1.3.2/dist/peerjs.min.js"></script> -->
+
   <script src="jquery.min.js"></script>
 </head>
 
@@ -17,14 +19,17 @@
     <button onclick="send_message()">send message</button>
     <br>
     <div id="res-box"></div>
-    <video id="vid-box"></video>
+    <button onclick="call()">Call</button>
+    <video width="300" height="225" id="my-vid-box" autoplay></video>
+    <div></div>
+    <video width="300" height="225" id="vid-box" autoplay></video>
   </div>
   <script>
     function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-    var peer = new Peer(getRndInteger(1,1000));
+    var peer = new Peer(getRndInteger(1, 1000));
     peer.on('open', function(id) {
       console.log('My peer ID is: ' + id);
       $('#cid').val(id);
@@ -48,44 +53,67 @@
       conn1.on("data", (data) => {
         // Will print 'hi!'
         console.log(data);
+       $('#res-box').append(data);
       });
     });
 
+
+    const video = document.getElementById('my-vid-box');
+    video.autoplay = true;
+
+
+    const remote_video = document.getElementById('vid-box');
+    remote_video.autoplay = true;
+
+    const stream_1=null;
+
     function call() {
-      navigator.mediaDevices.getUserMedia({
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
           video: true,
           audio: true
-        },
-        (stream) => {
+        }).then(function(stream) {
+         // stream_1=stream;
+          video.srcObject = stream;
+          //video.play();
           const call = peer.call($('#did').val(), stream);
-          call.on("stream", (remoteStream) => {
+
+
+          call.on("stream", (stream) => {
+            video.srcObject = stream;
+            //video.play();
             // Show stream in some <video> element.
           });
-        },
-        (err) => {
-          console.error("Failed to get local stream", err);
-        },
-      );
+        });
+      }
     }
 
-    function cal_res() {
-      peer.on("call", (call) => {
-        navigator.mediaDevices.getUserMedia({
-            video: true,
-            audio: true
-          },
-          (stream) => {
-            call.answer(stream); // Answer the call with an A/V stream.
-            call.on("stream", (remoteStream) => {
-              // Show stream in some <video> element.
-            });
-          },
-          (err) => {
-            console.error("Failed to get local stream", err);
-          },
-        );
+    peer.on("call", (call) => {
+      console.log('calling');
+      // call.answer(video.srcObject); 
+      // call.on("stream", (remoteStream) => {
+      //   console.log('calling');
+      //  // video.play();
+      //   remote_video.srcObject = remoteStream;
+        
+      //  // remote_video.play();
+   
+      //   // Show stream in some <video> element.
+      // });
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true
+      }).then(function(stream) {
+        call.answer(stream); // Answer the call with an A/V stream.
+        call.on("stream", (remoteStream) => {
+          remote_video.srcObject = remoteStream;
+          remote_video.play();
+          // Show stream in some <video> element.
+        });
       });
-    }
+      }
+    });
   </script>
 </body>
 
