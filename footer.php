@@ -70,7 +70,7 @@
                                             <span>دانلود در </span>
                                             <span>برنامه استور</span>
                                         </div>
-                                        <img src="images/apple.svg" />
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/apple.svg" />
                                     </a>
                                     <a href="#"
                                         class="app_googlePlay d-flex align-items-center justify-content-center  mt-0 mt-sm-2  mt-md-0 mt-lg-3 mt-xl-0  me-3 me-sm-0 me-md-3 me-lg-0 me-xl-3 ">
@@ -78,7 +78,7 @@
                                             <span>دانلود در </span>
                                             <span>گوگل پلی </span>
                                         </div>
-                                        <img src="images/googlePlay.svg" />
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/googlePlay.svg" />
                                     </a>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
                 <div class="row pt-4 pb-4 pb-lg-5 align-items-center">
                     <div class=" col-12 col-lg-8 col-xl-9">
                         <div class="area_menu_footer d-flex  align-items-md-center flex-column flex-md-row ">
-                            <img src="images/logo.png" class="img-logoFooter ms-2 mb-2 d-none d-md-block" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" class="img-logoFooter ms-2 mb-2 d-none d-md-block" />
                             <div class="menu_footer mt-2 mt-md-0">
                                 <ul>
                                     <li><a href="#">قوانین سایت</a></li>
@@ -173,7 +173,7 @@
                     </div>
                     <div class="col-12 col-lg-4 order-1 order-lg-2">
                         <div class="area_cartimg_footer float-end float-lg-start">
-                            <img src="images/images13.png" style="width: 12rem;" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/images13.png" style="width: 12rem;" />
                         </div>
                     </div>
                 </div>

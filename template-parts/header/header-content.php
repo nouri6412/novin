@@ -24,14 +24,14 @@
                                 <button class="btn btn-secondary dropdown-toggle d-flex align-items-center"
                                     type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img class="ms-2" width="20" src="images/flog4.png" />فارسی
+                                    <img class="ms-2" width="20" src="<?php echo get_template_directory_uri(); ?>/assets/images/flog4.png" />فارسی
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu_topbar dropdown-menu_topbar1"
                                     aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="#"><img class="ms-2" width="20"
-                                                src="images/flog1.png" />انگلیسی</a></li>
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/flog1.png" />انگلیسی</a></li>
                                     <li><a class="dropdown-item" href="#"><img class="ms-2" width="20"
-                                                src="images/flog2.png" />عربی</a></li>
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/flog2.png" />عربی</a></li>
                                 </ul>
                             </div>
                             <div class="peygiry_sefareshat"> <a href="#">پیگیری سفارشات<i
@@ -98,7 +98,7 @@
                     <div id="menu_mobile" class="menu_mobile ">
                         <div class="header_menu_mobile d-flex align-items-center">
                             <button type="button" class="btn-close close_menu_mobile" aria-label="Close"></button>
-                            <img src="images/logosmal.png" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logosmal.png" />
                         </div>
                         <div class="area_menu_mobile menu-top-menu-container" id="accordian">
                             <ul class="menu-multi-level">
@@ -248,8 +248,8 @@
                     </div>
                     <div class="col-4  col-md-3  col-lg-9 col_menu_top">
                         <div class="arealogo float-end ps-3">
-                            <a href="index.html" class="d-block d-lg-none"> <img src="images/logosmal.png" /></a>
-                            <a href="index.html" class="d-none d-lg-block"> <img src="images/logo.png" /></a>
+                            <a href="index.html" class="d-block d-lg-none"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logosmal.png" /></a>
+                            <a href="index.html" class="d-none d-lg-block"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" /></a>
                         </div>
                         <div class="d-none d-lg-block  top_menu h-100 ">
                             <ul class="d-flex h-100 align-items-center">
@@ -364,7 +364,7 @@
                                             <div class="mega-menu-col col-4">
                                                 <div class="baner-megamenu">
                                                     <a href="shop-left-sidebar.html"> <img class="img-fluid"
-                                                            src="images/img203.jpg" alt="تصویر مگامنو">
+                                                            src="<?php echo get_template_directory_uri(); ?>/assets/images/img203.jpg" alt="تصویر مگامنو">
                                                     </a>
 
                                                 </div>
@@ -372,7 +372,7 @@
                                             <div class="mega-menu-col col-4">
                                                 <div class="baner-megamenu">
                                                     <a href="shop-left-sidebar.html"> <img class="img-fluid"
-                                                            src="images/img202.jpg" alt="تصویر مگامنو">
+                                                            src="<?php echo get_template_directory_uri(); ?>/assets/images/img202.jpg" alt="تصویر مگامنو">
                                                     </a>
 
                                                 </div>
@@ -381,7 +381,7 @@
                                             <div class="mega-menu-col col-4">
                                                 <div class="baner-megamenu">
                                                     <a href="shop-left-sidebar.html"> <img class="img-fluid"
-                                                            src="images/img204.jpg" alt="تصویر مگامنو">
+                                                            src="<?php echo get_template_directory_uri(); ?>/assets/images/img204.jpg" alt="تصویر مگامنو">
                                                     </a>
 
                                                 </div>
@@ -418,7 +418,7 @@
                                             </div>
                                             <div class="mega-menu-col col-4">
                                                 <div class="baner-megamenu">
-                                                    <img class="img-fluid" src="images/img201.jpg" alt="تصویر مگامنو">
+                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/img201.jpg" alt="تصویر مگامنو">
 
                                                     <div class="baner-megamenu-info">
                                                         <h3 class="baner-megamenu-title">مجموعه جدید</h3>
@@ -604,7 +604,7 @@
                                     <div class="row mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100 d-flex align-items-center">
-                                                <a href="#"><img class="img-fluid mt-3" src="images/saat.jpg" /></a>
+                                                <a href="#"><img class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/saat.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
@@ -630,7 +630,7 @@
                                     <div class="row  mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100"><a href="#"><img
-                                                        class="img-fluid mt-3" src="images/shoes21.jpg" /></a>
+                                                        class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/shoes21.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
@@ -657,7 +657,7 @@
                                     <div class="row  mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100"><a href="#"><img
-                                                        class="img-fluid mt-3" src="images/hedfon32.jpg" /></a>
+                                                        class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/hedfon32.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
@@ -684,7 +684,7 @@
                                     <div class="row mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100 d-flex align-items-center">
-                                                <a href="#"><img class="img-fluid mt-3" src="images/saat.jpg" /></a>
+                                                <a href="#"><img class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/saat.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
@@ -711,7 +711,7 @@
                                     <div class="row  mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100"><a href="#"><img
-                                                        class="img-fluid mt-3" src="images/shoes21.jpg" /></a>
+                                                        class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/shoes21.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
@@ -798,7 +798,7 @@
                     <div id="menu_mobile" class="menu_mobile ">
                         <div class="header_menu_mobile d-flex align-items-center">
                             <button type="button" class="btn-close close_menu_mobile" aria-label="Close"></button>
-                            <img src="images/logosmal.png" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logosmal.png" />
                         </div>
                         <div class="area_menu_mobile menu-top-menu-container" id="accordian">
                             <ul class="menu-multi-level">
@@ -947,8 +947,8 @@
                     </div>
                     <div class="col-4  col-md-3  col-lg-9 col_menu_top">
                         <div class="arealogo float-end ps-3">
-                            <a href="index.html" class="d-block d-lg-none"> <img src="images/logosmal.png" /></a>
-                            <a href="index.html" class="d-none d-lg-block"> <img src="images/logo.png" /></a>
+                            <a href="index.html" class="d-block d-lg-none"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logosmal.png" /></a>
+                            <a href="index.html" class="d-none d-lg-block"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" /></a>
                         </div>
                         <div class="d-none d-lg-block  top_menu h-100 ">
                             <ul class="d-flex h-100 align-items-center">
@@ -1063,7 +1063,7 @@
                                             <div class="mega-menu-col col-4">
                                                 <div class="baner-megamenu">
                                                     <a href="shop-left-sidebar.html"> <img class="img-fluid"
-                                                            src="images/img203.jpg" alt="تصویر مگامنو">
+                                                            src="<?php echo get_template_directory_uri(); ?>/assets/images/img203.jpg" alt="تصویر مگامنو">
                                                     </a>
 
                                                 </div>
@@ -1071,7 +1071,7 @@
                                             <div class="mega-menu-col col-4">
                                                 <div class="baner-megamenu">
                                                     <a href="shop-left-sidebar.html"> <img class="img-fluid"
-                                                            src="images/img202.jpg" alt="تصویر مگامنو">
+                                                            src="<?php echo get_template_directory_uri(); ?>/assets/images/img202.jpg" alt="تصویر مگامنو">
                                                     </a>
 
                                                 </div>
@@ -1080,7 +1080,7 @@
                                             <div class="mega-menu-col col-4">
                                                 <div class="baner-megamenu">
                                                     <a href="shop-left-sidebar.html"> <img class="img-fluid"
-                                                            src="images/img204.jpg" alt="تصویر مگامنو">
+                                                            src="<?php echo get_template_directory_uri(); ?>/assets/images/img204.jpg" alt="تصویر مگامنو">
                                                     </a>
 
                                                 </div>
@@ -1117,7 +1117,7 @@
                                             </div>
                                             <div class="mega-menu-col col-4">
                                                 <div class="baner-megamenu">
-                                                    <img class="img-fluid" src="images/img201.jpg" alt="تصویر مگامنو">
+                                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/img201.jpg" alt="تصویر مگامنو">
 
                                                     <div class="baner-megamenu-info">
                                                         <h3 class="baner-megamenu-title">مجموعه جدید</h3>
@@ -1300,7 +1300,7 @@
                                     <div class="row mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100 d-flex align-items-center">
-                                                <a href="#"><img class="img-fluid mt-3" src="images/saat.jpg" /></a>
+                                                <a href="#"><img class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/saat.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
@@ -1326,7 +1326,7 @@
                                     <div class="row  mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100"><a href="#"><img
-                                                        class="img-fluid mt-3" src="images/shoes21.jpg" /></a>
+                                                        class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/shoes21.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
@@ -1353,7 +1353,7 @@
                                     <div class="row  mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100"><a href="#"><img
-                                                        class="img-fluid mt-3" src="images/hedfon32.jpg" /></a>
+                                                        class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/hedfon32.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
@@ -1380,7 +1380,7 @@
                                     <div class="row mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100 d-flex align-items-center">
-                                                <a href="#"><img class="img-fluid mt-3" src="images/saat.jpg" /></a>
+                                                <a href="#"><img class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/saat.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
@@ -1407,7 +1407,7 @@
                                     <div class="row  mb-4">
                                         <div class="col-3 order-1">
                                             <div class="img_product_addtocart h-100"><a href="#"><img
-                                                        class="img-fluid mt-3" src="images/shoes21.jpg" /></a>
+                                                        class="img-fluid mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/images/shoes21.jpg" /></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
