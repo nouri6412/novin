@@ -189,3 +189,6 @@
         crossorigin="anonymous"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/carousel/owl.carousel.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
+    </body>
+
+</html>
