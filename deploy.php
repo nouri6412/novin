@@ -56,7 +56,7 @@ define('BRANCH', 'master');
  *
  * @var string Full path including the trailing slash
  */
-define('TARGET_DIR', 'wp-content/themes/novin/');
+define('TARGET_DIR', __DIR__.'/wp-content/themes/novin/');
 
 /**
  * Whether to delete the files that are not in the repository but are on the
@@ -193,7 +193,6 @@ if (!defined('BRANCH')) define('BRANCH', 'master');
  *
  * @var string Full path including the trailing slash
  */
-if (!defined('TARGET_DIR')) define('TARGET_DIR', 'wp-content/themes/novin/');
 
 /**
  * Whether to delete the files that are not in the repository but are on the
