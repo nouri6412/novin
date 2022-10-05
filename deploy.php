@@ -1,6 +1,4 @@
 <?php
- echo trim(shell_exec('cd /home/negareno/public_html/wp-content/themes/novin && /usr/local/cpanel/3rdparty/lib/path-bin/git reset --hard HEAD && /usr/local/cpanel/3rdparty/lib/path-bin/git pull -q origin master')); 
-return;
 /**
  * Simple PHP Git deploy script
  *
@@ -58,7 +56,7 @@ define('BRANCH', 'master');
  *
  * @var string Full path including the trailing slash
  */
-define('TARGET_DIR', '/home/negareno/public_html/wp-content/themes/novin/');
+define('TARGET_DIR', 'wp-content/themes/novin/');
 
 /**
  * Whether to delete the files that are not in the repository but are on the
@@ -195,7 +193,7 @@ if (!defined('BRANCH')) define('BRANCH', 'master');
  *
  * @var string Full path including the trailing slash
  */
-if (!defined('TARGET_DIR')) define('TARGET_DIR', '/home/negareno/public_html/wp-content/themes/novin/');
+if (!defined('TARGET_DIR')) define('TARGET_DIR', 'wp-content/themes/novin/');
 
 /**
  * Whether to delete the files that are not in the repository but are on the
