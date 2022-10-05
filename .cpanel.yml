@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/negareno/public_html/wp-content/themes/novin/
-    - /bin/cp -r * $DEPLOYPATH #copy all from root
+    - /bin/cp -r ttttt.eet $DEPLOYPATH 
