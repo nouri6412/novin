@@ -1,4 +1,6 @@
 <?php
+ echo trim(shell_exec('cd /home/negareno/public_html/wp-content/themes/novin && /usr/local/cpanel/3rdparty/lib/path-bin/git reset --hard HEAD && /usr/local/cpanel/3rdparty/lib/path-bin/git pull -q origin master')); 
+return;
 /**
  * Simple PHP Git deploy script
  *
