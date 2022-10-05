@@ -365,10 +365,6 @@ foreach ($requiredBinaries as $command) {
 }
 ?>
 
-Environment OK.
-
-Using configuration defined in <?php echo CONFIG_FILE."\n"; ?>
-
 Deploying <?php echo REMOTE_REPOSITORY; ?> <?php echo BRANCH."\n"; ?>
 to        <?php echo TARGET_DIR; ?> ...
 
