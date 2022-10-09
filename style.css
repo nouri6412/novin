@@ -191,9 +191,15 @@ body {
     max-width: 1260px;
 }
 
+header img.logo{
+    width: 100px;
+    height: 50px;
+    object-fit: contain;
+}
+
 .topbar-site {
-    background-color: #37384e;
-    padding: 1.3rem 0;
+    background-color: #ffdd00;
+    padding: 0.2rem 0;
 }
 
 .topbar-site_right {
@@ -215,23 +221,23 @@ body {
 .peygiry_sefareshat a {
     transition: color 0.3s ease-in-out;
     -webkit-transition: color 0.3s ease-in-out;
-    color: #ccc;
+  
     margin-right: 0.5rem;
     font-size: 0.95rem;
 }
 
 .tel_topbar-site a {
-    color: #ccc;
+   
     transition: color 0.3s ease-in-out;
     -webkit-transition: color 0.3s ease-in-out;
 }
 
 .tel_topbar-site span, .tel_topbar-site i {
-    color: #8a8a8a;
+ 
 }
 
 .tel_topbar-site a:hover, .peygiry_sefareshat a:hover {
-    color: #fff;
+    color: #ff0c87;
 }
 
 .drupdown_topbar-site>button {
