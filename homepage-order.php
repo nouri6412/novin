@@ -32,7 +32,7 @@ get_header('order');
                 <a href="#" class="card card-style card-portfolio card-order card-yellow">
                     <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg" alt="Card image cap">
                    <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
-                    <div class="card-body p-4">
+                    <div class="card-body p-2 mb-5">
                         <h3 class="text-center text-logo">تابلو فرش</h3>
                     </div>
                 </a>
@@ -43,7 +43,7 @@ get_header('order');
                     <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/img/2.jpg" alt="Card image cap">
                     <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
 
-                    <div class="card-body p-4">
+                    <div class="card-body p-2 mb-5">
                         <h3 class="text-center text-logo"> دار قالی</h3>
                     </div>
                 </a>
@@ -53,7 +53,7 @@ get_header('order');
                     <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/img/3.jpg" alt="Card image cap">
                     <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
 
-                    <div class="card-body p-4">
+                    <div class="card-body p-2 mb-5">
                         <h3 class="text-center text-logo"> سوپرایز باکس</h3>
                     </div>
                 </a>
