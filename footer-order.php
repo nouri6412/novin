@@ -57,27 +57,6 @@
                             </form>
                         </div>
                     </div>
-                    <div class="widget_footer widget_footer_downloadApp  mt-4  mt-md-4  px-sm-3 px-md-3 px-lg-0 w-100">
-                        <div class="title_widget_footer">دانلود برنامه</div>
-                        <div class="contenet_widget_footer">
-                            <div class="download_app_footer d-flex   flex-row  align-items-xl-center flex-sm-column flex-md-row flex-lg-column   flex-xl-row">
-                                <a href="#" class="app_store  d-flex align-items-center justify-content-center ">
-                                    <div class="text_download_app">
-                                        <span>دانلود در </span>
-                                        <span>برنامه استور</span>
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/apple.svg" />
-                                </a>
-                                <a href="#" class="app_googlePlay d-flex align-items-center justify-content-center  mt-0 mt-sm-2  mt-md-0 mt-lg-3 mt-xl-0  me-3 me-sm-0 me-md-3 me-lg-0 me-xl-3 ">
-                                    <div class="text_download_app">
-                                        <span>دانلود در </span>
-                                        <span>گوگل پلی </span>
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/googlePlay.svg" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -160,11 +139,6 @@
                 <div class="col-12 col-lg-4 mt-4 mt-lg-0  order-2 order-lg-1">
                     <div class="copyright">
                         تمامی حقوق سایت محفوظ است
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 order-1 order-lg-2">
-                    <div class="area_cartimg_footer float-end float-lg-start">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/images13.png" style="width: 12rem;" />
                     </div>
                 </div>
             </div>
