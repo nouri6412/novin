@@ -30,7 +30,7 @@ get_header('order');
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
                 <a href="#" class="card card-style card-portfolio card-order card-yellow">
-                    <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/images/img1031.jpg" alt="Card image cap">
+                    <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg" alt="Card image cap">
                    <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
                     <div class="card-body p-4">
                         <h3 class="text-center text-logo">تابلو فرش</h3>
@@ -40,21 +40,21 @@ get_header('order');
 
             <div class="col-12 col-sm-6 col-md-4">
                 <a href="#" class="card card-style card-portfolio  card-order card-yellow">
-                    <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/images/img100.jpg" alt="Card image cap">
+                    <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/img/2.jpg" alt="Card image cap">
                     <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
 
                     <div class="card-body p-4">
-                        <h3 class="text-center text-logo">تابلو فرش</h3>
+                        <h3 class="text-center text-logo"> دار قالی</h3>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <a href="#" class="card card-style card-portfolio  card-order card-yellow">
-                    <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/images/img100.jpg" alt="Card image cap">
+                    <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/img/3.jpg" alt="Card image cap">
                     <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
 
                     <div class="card-body p-4">
-                        <h3 class="text-center text-logo">تابلو فرش</h3>
+                        <h3 class="text-center text-logo"> سوپرایز باکس</h3>
                     </div>
                 </a>
             </div>
