@@ -16,7 +16,7 @@ get_header('order');
 ?>
 
 <main class="content">
-    <div class="container mb-5">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="title_site mb-2">
