@@ -34,6 +34,29 @@ main{
     min-height: 620px;
 }
 
+.card-yellow{
+
+}
+
+.card-yellow .bg-yellow{
+    width: 100%;
+    height: 100%;
+}
+.card-yellow .bg-yellow img{
+    width: 100%;
+    position: absolute;
+    top: 0;  
+}
+
+.card-yellow .bg-yellow:hover > img{
+   opacity: 0;
+}
+
+.text-logo{
+    color: #eb2728;
+    font-weight: bold !important;
+}
+
 blockquote, q {
     quotes: none;
 }

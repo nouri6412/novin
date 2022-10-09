@@ -22,34 +22,39 @@ get_header('order');
                 <div class="title_site mb-2">
                     <h2>سلام خوش اومدی !</h2>
                 </div>
-                <p class="text-center mb-5">چی می خوای سفارش بدی ؟</p>
+                <p class="text-center mb-5 text-logo">چی می خوای سفارش بدی ؟</p>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
-                <a href="#" class="card card-style card-portfolio card-order">
+                <a href="#" class="card card-style card-portfolio card-order card-yellow">
                     <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/images/img1031.jpg" alt="Card image cap">
+                   <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
                     <div class="card-body p-4">
-                        <h3 class="text-center">تابلو فرش</h3>
+                        <h3 class="text-center text-logo">تابلو فرش</h3>
                     </div>
                 </a>
             </div>
 
             <div class="col-12 col-sm-6 col-md-4">
-                <a href="#" class="card card-style card-portfolio  card-order">
+                <a href="#" class="card card-style card-portfolio  card-order card-yellow">
                     <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/images/img100.jpg" alt="Card image cap">
+                    <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
+
                     <div class="card-body p-4">
-                        <h3 class="text-center">تابلو فرش</h3>
+                        <h3 class="text-center text-logo">تابلو فرش</h3>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
-                <a href="#" class="card card-style card-portfolio  card-order">
+                <a href="#" class="card card-style card-portfolio  card-order card-yellow">
                     <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/images/img100.jpg" alt="Card image cap">
+                    <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
+
                     <div class="card-body p-4">
-                        <h3 class="text-center">تابلو فرش</h3>
+                        <h3 class="text-center text-logo">تابلو فرش</h3>
                     </div>
                 </a>
             </div>
