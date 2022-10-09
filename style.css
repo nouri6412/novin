@@ -2081,6 +2081,10 @@ a.instegram:before {
     content: '\f16d';
 }
 
+a.telegram:before {
+    content: '\f2c6';
+}
+
 a.linkedin:before {
     content: '\f0e1';
 }

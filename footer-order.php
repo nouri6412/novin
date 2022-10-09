@@ -9,12 +9,12 @@
                         </div>
                         <div class="contenet_widget_footer">
                             <ul>
-                                <li><a href="#">بهداشتی آرایشی</a></li>
-                                <li><a href="#">کفش</a></li>
-                                <li><a href="#">لباس</a></li>
-                                <li><a href="#">دیجیتال</a></li>
-                                <li><a href="#">بهداشتی آرایشی</a></li>
-                                <li><a href="#">کفش</a></li>
+                                <li><a href="#">تابلو فرش </a></li>
+                                <li><a href="#">سوپرایز باکس</a></li>
+                                <li><a href="#">دار قالی</a></li>
+                                <li><a href="#">تابلو فرش</a></li>
+                                <li><a href="#"> سوپرایز باکس</a></li>
+                                <li><a href="#">دار قالی</a></li>
                             </ul>
                         </div>
                     </div>
@@ -28,13 +28,13 @@
                                     <span> آدرس: آدرس: ۴۴۵ کوه عدن جاده، کوه بهشت، اوکلند.</span>
                                 </li>
                                 <li>
-                                    <span> شماره تماس: 2135642512</span>
+                                    <span> شماره تماس: 2121212121</span>
                                 </li>
                                 <li>
-                                    <span> ایمیل: digistore@exmple.com</span>
+                                    <span> ایمیل: info@exmple.com</span>
                                 </li>
                                 <li>
-                                    <span> فکس: 2564521544</span>
+                                    <span> فکس: 212121212121</span>
                                 </li>
                                 <li>
                                     <span> زمان کاری: شنبه تا پنچ شنبه ساعت ۸ صبح تا ۱۲ ظهر</span>
@@ -127,10 +127,10 @@
                 </div>
                 <div class="col-12 col-lg-4 col-xl-3 mt-4 mt-lg-0">
                     <div class="area-socialIcon d-flex justify-content-start justify-content-lg-end">
-                        <a href="http://www.facebook.com" class="icon facebook"><span class="tooltip-site">Facebook</span></a>
-                        <a href="http://www.github.com" class="icon instegram"><span class="tooltip-site">instegram</span></a>
-                        <a href="http://www.dribble.com" class="icon linkedin"><span class="tooltip-site">linkedin</span></a>
-                        <a href="http://www.twitter.com" class="icon twitter"><span class="tooltip-site">Twitter</span></a>
+                        <a href="#" class="icon telegram"><span class="tooltip-site">Telegram</span></a>
+                        <a href="#" class="icon instegram"><span class="tooltip-site">instegram</span></a>
+                        <a href="#" class="icon linkedin"><span class="tooltip-site">linkedin</span></a>
+                        <a href="#" class="icon twitter"><span class="tooltip-site">Twitter</span></a>
 
                     </div>
                 </div>
