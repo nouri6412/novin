@@ -11,7 +11,7 @@
  * Template Name: صفحه فرود
  */
 
-get_header();
+get_header('order');
 
 ?>
 
@@ -41,4 +41,4 @@ get_header();
     </div>
 </main>
 
-<?php get_footer() ?>
+<?php get_footer('order') ?>
