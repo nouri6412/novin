@@ -134,7 +134,7 @@
             <div class="row pt-4 pb-4 pb-lg-5 align-items-center">
                 <div class=" col-12 col-lg-8 col-xl-9">
                     <div class="area_menu_footer d-flex  align-items-md-center flex-column flex-md-row ">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" class="img-logoFooter ms-2 mb-2 d-none d-md-block" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-main.png" class="img-logoFooter ms-2 mb-2 d-none d-md-block" />
                         <div class="menu_footer mt-2 mt-md-0">
                             <ul>
                                 <li><a href="#">قوانین سایت</a></li>
