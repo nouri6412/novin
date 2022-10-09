@@ -8,32 +8,6 @@
                 <div class="row  d-flex justify-content-between align-items-center">
                     <div class="col-12 col-md-6">
                         <div class="topbar-site_right d-flex  align-items-center">
-                            <div class="dropdown drupdown_topbar-site ">
-                                <button class="btn btn-secondary dropdown-toggle d-flex align-items-center"
-                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    تومان
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu_topbar dropdown-menu_topbar1"
-                                    aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="#">یورو</a></li>
-                                    <li><a class="dropdown-item" href="#">دلار</a></li>
-                                </ul>
-                            </div>
-                            <div class="dropdown drupdown_topbar-site ">
-                                <button class="btn btn-secondary dropdown-toggle d-flex align-items-center"
-                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <img class="ms-2" width="20" src="<?php echo get_template_directory_uri(); ?>/assets/images/flog4.png" />فارسی
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu_topbar dropdown-menu_topbar1"
-                                    aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="#"><img class="ms-2" width="20"
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/flog1.png" />انگلیسی</a></li>
-                                    <li><a class="dropdown-item" href="#"><img class="ms-2" width="20"
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/flog2.png" />عربی</a></li>
-                                </ul>
-                            </div>
                             <div class="peygiry_sefareshat"> <a href="#">پیگیری سفارشات<i
                                         class="far fa-map-marker-alt me-2"></i> </a></div>
                         </div>
