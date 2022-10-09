@@ -27,7 +27,11 @@ ol, ul {
 }
 
 img{
-    object-fit: contain;
+    object-fit: cover;
+}
+
+main{
+    min-height: 620px;
 }
 
 blockquote, q {
@@ -189,7 +193,7 @@ body {
 
 .topbar-site {
     background-color: #37384e;
-    padding: 0.8rem 0;
+    padding: 1.3rem 0;
 }
 
 .topbar-site_right {
@@ -5778,6 +5782,11 @@ ul.menu-multi-level .mega-menu-col ul {
 .card.Pricing.card-active .btn-cart-pricing a:hover {
     background-color: #5a50ea;
 }
+
+.card-portfolio.card-order img {
+    height: 280px;
+}
+
 
 .card-portfolio .card-body h3 {
     font-weight: 500;

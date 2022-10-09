@@ -16,7 +16,7 @@ get_header('order');
 ?>
 
 <main class="content">
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-12">
                 <div class="title_site mb-2">
@@ -29,8 +29,25 @@ get_header('order');
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
-                <a href="#" class="card card-style card-portfolio">
+                <a href="#" class="card card-style card-portfolio card-order">
                     <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/images/img1031.jpg" alt="Card image cap">
+                    <div class="card-body p-4">
+                        <h3 class="text-center">تابلو فرش</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4">
+                <a href="#" class="card card-style card-portfolio  card-order">
+                    <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/images/img100.jpg" alt="Card image cap">
+                    <div class="card-body p-4">
+                        <h3 class="text-center">تابلو فرش</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <a href="#" class="card card-style card-portfolio  card-order">
+                    <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri(); ?>/assets/images/img100.jpg" alt="Card image cap">
                     <div class="card-body p-4">
                         <h3 class="text-center">تابلو فرش</h3>
                     </div>
