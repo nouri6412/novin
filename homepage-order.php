@@ -34,10 +34,10 @@ get_header('order');
             foreach ($boxs as $box) {
                 $item = $box['box'];
             ?>
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-4 ">
                     <a href="<?php echo $item["link"]; ?>" class="card card-style card-portfolio card-order card-yellow">
                         <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
-                        <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-yellow-2.png" /></div>
+                        <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-red.png" /></div>
                         <div class="card-body p-2 mb-5">
                             <h3 class="text-center text-logo"><?php echo $item["title"]; ?></h3>
                         </div>
