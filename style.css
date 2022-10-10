@@ -5828,12 +5828,13 @@ ul.menu-multi-level .mega-menu-col ul {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+.card-yellow .card-body h3{
+    color: #fff;
+    font-size: 25px;
+}
 
 .card-portfolio .card-body h3 {
     font-weight: bold;
-    color: #fff;
-    font-size: 18px;
 }
 
 .item_slider_about-us img {
