@@ -13,6 +13,12 @@
 
 get_header('order');
 
+$cat_selected="";
+if(isset($_GET["cat_selected"]))
+{
+    $cat_selected=$_GET["cat_selected"];
+}
+
 ?>
 
 <main class="content">
@@ -35,7 +41,7 @@ get_header('order');
                 $item = $box['box'];
             ?>
                 <div class="col-12 col-sm-6 col-md-4 mb-4">
-                    <a href="<?php echo $item["link"]; ?>" class="card card-style card-portfolio card-order card-yellow">
+                    <a href="<?php echo site_url("?cat_selected=".$item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
                         <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
                         <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                         <div class="card-body">
