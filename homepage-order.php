@@ -54,11 +54,11 @@ if (isset($_GET["cat_selected"])) {
         <form id="myform" class="form" method="post" action="" enctype="multipart/form-data">
             <input type="file" name="myfilefield" class="form-control" value="">
             <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
     </div>
 </main>
 
