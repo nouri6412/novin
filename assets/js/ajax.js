@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
             contentType: false,
             enctype: 'multipart/form-data',
             success: function (data, textStatus, jqXHR) {
-                //Success codes goes here
+                console.log(data);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //if fails     
