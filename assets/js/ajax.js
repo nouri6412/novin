@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
             type: "POST",
             data: myformData,
             dataType: "json",
-            url: ajaxurl,
+            url: custom_theme_mbm_object.ajaxurl,
             cache: false,
             processData: false,
             contentType: false,
