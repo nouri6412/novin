@@ -84,6 +84,10 @@ a:hover {
     text-decoration: none;
 }
 
+.modal-header .btn-close{
+    margin: 0 !important;
+}
+
 /*create font for write*/
 
 @font-face {
