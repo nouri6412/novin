@@ -24,10 +24,12 @@ jQuery(document).ready(function ($) {
             contentType: false,
             enctype: 'multipart/form-data',
             success: function (data, textStatus, jqXHR) {
+                console.log('success upload');
                 console.log(data);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //if fails     
+                console.log('fail upload');
                 console.log(jqXHR);
             }
         });
