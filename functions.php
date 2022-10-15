@@ -45,3 +45,28 @@ function fun_novin_product_order( $atts ) {
 
     <?php
 }
+
+add_action('acf/input/admin_print_footer_scripts', 'acfe_form_fix_uploaded_to');
+function acfe_form_fix_uploaded_to(){
+    ?>
+    <script>
+    (function($){
+
+        if(typeof acf === 'undefined' || typeof acfe === 'undefined'){
+            return;
+        }
+        
+        acf.addAction('prepare', function(){
+    
+            // reset id back to ACF default to allow "uploaded to" setting to work correctly
+            if(!acfe.get('is_admin') && acf.isset(window, 'wp', 'media', 'view', 'settings', 'post')){
+                wp.media.view.settings.post = {};
+                wp.media.view.settings.post.id = 0;
+            }
+    
+        }, 15);
+        
+    })(jQuery);
+    </script>
+    <?php
+}
