@@ -56,6 +56,9 @@ if (isset($_GET["cat_selected"])) {
             <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
     </div>
 </main>
 
