@@ -52,7 +52,7 @@ if(isset($_GET["cat_selected"]))
             <?php } ?>
 
         </div>
-        <?php echo do_shortcode( '[novin_product_order]'); ?>
+      
     </div>
 </main>
 
