@@ -20,33 +20,35 @@ function novin_theme_scripts()
 
 add_action('wp_enqueue_scripts', 'novin_theme_scripts');
 
-function pn_upload_files() {
-     
+function pn_upload_files()
+{
+    $result = ["upload_file" => 'true'];
     //Do the nonce security check
-    if ( !isset($_POST['mynonce']) || !wp_verify_nonce( $_POST['mynonce'], 'myuploadnonce' ) ) {
+    if (!isset($_POST['mynonce']) || !wp_verify_nonce($_POST['mynonce'], 'myuploadnonce')) {
         //Send the security check failed message
-        _e( 'Security Check Failed', 'pixelnet' ); 
+        $result["error"] = 'Security Check Failed';
     } else {
         //Security check cleared, let's proceed
         //If your form has other fields, process them here.
-         
-        if ( isset($_FILES) && !empty($_FILES) ) {
-             
+
+        if (isset($_FILES) && !empty($_FILES)) {
+
             //Include the required files from backend
-            require_once( ABSPATH . 'wp-admin/includes/image.php' );
-            require_once( ABSPATH . 'wp-admin/includes/file.php' );
-            require_once( ABSPATH . 'wp-admin/includes/media.php' );
-             
+            require_once(ABSPATH . 'wp-admin/includes/image.php');
+            require_once(ABSPATH . 'wp-admin/includes/file.php');
+            require_once(ABSPATH . 'wp-admin/includes/media.php');
+
             //Check if uploaded file doesn't contain any error
-            if ( isset($_FILES['myfilefield']['error']) && $_FILES['myfilefield']['error'] == 0 ) {
+            if (isset($_FILES['myfilefield']['error']) && $_FILES['myfilefield']['error'] == 0) {
                 /*
                  * 'myfilefield' is the name of the file upload field.
                  * Replace the second parameter (0) with the post id
                  * you want your file to be attached to
                  */
-                $file_id = media_handle_upload( 'myfilefield', 0 );
-                 
-                if ( !is_wp_error( $file_id ) ) {
+                $file_id = media_handle_upload('myfilefield', 0);
+
+                if (!is_wp_error($file_id)) {
+                    $result["file_id"] = $file_id;
                     /*
                      * File uploaded successfully and you have the attachment id
                      * Do your stuff with the attachment id here
@@ -54,13 +56,14 @@ function pn_upload_files() {
                 }
             }
         }
-         
-        //Send the sucess message
-        _e( 'Success', 'pixelnet');
+
+        // //Send the sucess message
+        // _e( 'Success', 'pixelnet');
     }
-    wp_die();
+    echo json_encode($result);
+    die();
 }
- 
+
 //Hook our function to the action we set at jQuery code
-add_action( 'wp_ajax_pn_wp_frontend_ajax_upload', 'pn_upload_files');
-add_action( 'wp_ajax_nopriv_pn_wp_frontend_ajax_upload', 'pn_upload_files');
+add_action('wp_ajax_pn_wp_frontend_ajax_upload', 'pn_upload_files');
+add_action('wp_ajax_nopriv_pn_wp_frontend_ajax_upload', 'pn_upload_files');
