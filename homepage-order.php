@@ -106,106 +106,72 @@ if (isset($_GET["size_selected"])) {
                 <?php } ?>
             </div>
         </div>
-        <div class="container" style="display: none">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                modal
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-
-                                <?php
-                                $boxs = get_field("boxs");
-                                foreach ($boxs as $box) {
-                                    $item = $box['box'];
-                                ?>
-                                    <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                        <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
-                                            <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
-                                            <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
-                                            <div class="card-body">
-                                                <h3 class="text-center"><?php echo $item["title"]; ?></h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                <?php } ?>
-
-                            </div>
-                            <div class="row">
-
-                                <?php
-                                $boxs = get_field("boxs");
-                                foreach ($boxs as $box) {
-                                    $item = $box['box'];
-                                ?>
-                                    <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                        <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
-                                            <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
-                                            <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
-                                            <div class="card-body">
-                                                <h3 class="text-center"><?php echo $item["title"]; ?></h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                <?php } ?>
-
-                            </div>
-                            <div class="row">
-
-                                <?php
-                                $boxs = get_field("boxs");
-                                foreach ($boxs as $box) {
-                                    $item = $box['box'];
-                                ?>
-                                    <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                        <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
-                                            <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
-                                            <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
-                                            <div class="card-body">
-                                                <h3 class="text-center"><?php echo $item["title"]; ?></h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                <?php } ?>
-
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     <?php  } else if ($step == 3) {
     ?>
         <form id="myform" class="form" method="post" action="" enctype="multipart/form-data">
             <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-sm-6 col-md-4 mb-4">
-                        <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
-                        <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب فایل</a>
-                        <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
+                    <div class="col-12 col-sm-8 col-md-8 mb-4">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-6 mb-4">
+                                <h3>انتخاب طرح خودم </h3>
+                                <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
+                                <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب فایل</a>
+                                <button type="submit" class="btn btn-success">بارگذاری تصویر</button>
+                                <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 mb-4">
+                                <h3>انتخاب از طرح های آماده</h3>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    انتخاب
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-fullscreen">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">طرح های آماده</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+
+                                                    <?php
+                                                    $boxs = get_field("boxs");
+                                                    foreach ($boxs as $box) {
+                                                        $item = $box['box'];
+                                                    ?>
+                                                        <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                                            <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
+                                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
+                                                                <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
+                                                                <div class="card-body">
+                                                                    <h3 class="text-center"><?php echo $item["title"]; ?></h3>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    <?php } ?>
+
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">بستن</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="col-12 col-sm-4 col-md-4 mb-4">
                         <img style="width: 150px;" id="plan-uploaded-img" class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-4 mb-4">
-                        <button type="submit" class="btn btn-success">بارگذاری تصویر</button>
                     </div>
                 </div>
             </div>
