@@ -198,12 +198,12 @@ if (isset($_GET["size_selected"])) {
                         <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
-                        <img id="plan-uploaded-img" class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                        <img style="width: 150px;" id="plan-uploaded-img" class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 mb-4">
                         <button type="submit" class="btn btn-primary">بارگذاری تصویر</button>
                     </div>
                 </div>
