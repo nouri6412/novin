@@ -82,10 +82,16 @@ if (isset($_GET["cat_selected"])) {
                 $sizes = $cat["sizes"];
                 foreach ($sizes as $size) {
                     $item = $size;
+                    $image = "";
+                    if (has_post_thumbnail($item->ID)) {
+                        $image = get_the_post_thumbnail_url($item->ID);
+                    } else {
+                        $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+                    }
                 ?>
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
                         <a href="<?php echo get_permalink($item->ID) ?>" class="card card-style card-portfolio card-order card-yellow">
-                            <!-- <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo the_post_thumbnail_url($item->ID); ?>" alt="<?php echo get_the_title($item->ID); ?>"> -->
+                            <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item->ID); ?>">
                             <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                             <div class="card-body">
                                 <h3 class="text-center"><?php echo get_the_title($item->ID); ?></h3>
