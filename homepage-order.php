@@ -184,8 +184,9 @@ if (isset($_GET["size_selected"])) {
 
                     </div>
                     <div class="col-12 col-sm-4 col-md-4 mb-4">
+                    <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button>
+
                         <img data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
-                        <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-primary mb-2 w-100">برو به مرحله بعدی </button>
 
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
