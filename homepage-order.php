@@ -14,49 +14,87 @@
 get_header('order');
 
 $cat_selected = "";
-$selected = false;
+$step = 1;
 if (isset($_GET["cat_selected"])) {
     $cat_selected = $_GET["cat_selected"];
-    $selected = true;
+    $step = 2;
 }
 
 ?>
 
 <main class="content">
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-12">
-                <div class="title_site mb-2">
-                    <h2><?php echo get_field("title"); ?></h2>
+    <?php if ($step == 1) { ?>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title_site mb-2">
+                        <h2><?php echo get_field("title"); ?></h2>
+                    </div>
+                    <p class="text-center mb-5 text-logo"><?php echo get_field("desc"); ?></p>
                 </div>
-                <p class="text-center mb-5 text-logo"><?php echo get_field("desc"); ?></p>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
+        <div class="container">
+            <div class="row">
 
-            <?php
-            $boxs = get_field("boxs");
-            foreach ($boxs as $box) {
-                $item = $box['box'];
-            ?>
-                <div class="col-12 col-sm-6 col-md-4 mb-4">
-                    <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
-                        <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
-                        <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
-                        <div class="card-body">
-                            <h3 class="text-center"><?php echo $item["title"]; ?></h3>
-                        </div>
-                    </a>
-                </div>
-            <?php } ?>
-
+                <?php
+                $boxs = get_field("boxs");
+                foreach ($boxs as $box) {
+                    $item = $box['box'];
+                ?>
+                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                        <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
+                            <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
+                            <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
+                            <div class="card-body">
+                                <h3 class="text-center"><?php echo $item["title"]; ?></h3>
+                            </div>
+                        </a>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
+    <?php } else if ($step == 2) {
+        $cat = [];
+        foreach ($boxs as $box) {
+            $item = $box['box'];
+            if ($item["link"] == $cat_selected) {
+                $cat = $box['box'];
+            }
+        }
+    ?>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
 
-    </div>
-    <div class="container">
-    <?php if ($selected) { ?>
+                    <div class="title_site mb-2">
+                        <h2><?php echo 'انتخاب شما' . ' ' . $cat["title"] . ' ' . 'است'; ?></h2>
+                    </div>
+                    <p class="text-center mb-5 text-logo"><?php echo 'خب سایز' . ' ' . $cat["title"] . ' ' . 'رو انتخاب کن!'; ?></p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <?php
+                $sizes = $cat["sizes"];
+                foreach ($sizes as $size) {
+                    $item = $size;
+                ?>
+                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                        <a href="<?php echo get_permalink($item->ID) ?>" class="card card-style card-portfolio card-order card-yellow">
+                            <!-- <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>"> -->
+                            <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
+                            <div class="card-body">
+                                <h3 class="text-center"><?php echo get_the_title($item->ID); ?></h3>
+                            </div>
+                        </a>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+        <div class="container" style="display: none">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 modal
             </button>
@@ -143,8 +181,8 @@ if (isset($_GET["cat_selected"])) {
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-        <?php } ?>
-    </div>
+        </div>
+    <?php  } ?>
 </main>
 
 <?php get_footer('order') ?>
