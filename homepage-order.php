@@ -148,16 +148,16 @@ if (isset($_GET["size_selected"])) {
                                                 <div class="row">
 
                                                     <?php
-                                                    $boxs = get_field("boxs");
-                                                    foreach ($boxs as $box) {
-                                                        $item = $box['box'];
+                                                    $plans = $cat["plans"];
+                                                    foreach ($plans as $plan) {
+                                                        $item = $box['plan'];
                                                     ?>
                                                         <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                                            <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
-                                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
+                                                            <a href="#" class="card card-style card-portfolio card-order card-yellow">
+                                                                <img onclick="select_plan_from_gallery($(this))" class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item; ?>">
                                                                 <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                                                                 <div class="card-body">
-                                                                    <h3 class="text-center"><?php echo $item["title"]; ?></h3>
+                                                                    <h3 class="text-center"><?php echo ''; ?></h3>
                                                                 </div>
                                                             </a>
                                                         </div>
