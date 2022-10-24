@@ -49,7 +49,7 @@ function pn_upload_files()
 
                 if (!is_wp_error($file_id)) {
                     $result["file_id"] = $file_id;
-                    $result["url"]= wp_get_attachment_image_url($file_id,'');
+                    $result["url"]= wp_get_attachment_url($file_id);
                     /*
                      * File uploaded successfully and you have the attachment id
                      * Do your stuff with the attachment id here
