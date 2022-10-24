@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
     $(myForm).submit(function (e) {
         //Prevent normal form submission
         e.preventDefault();
-        $('.spinner-border').css('display','block');
+        $('.spinner-border').css('display', 'block');
         //Get the form data and store in a variable
         var myformData = new FormData(myForm[0]);
 
@@ -27,12 +27,13 @@ jQuery(document).ready(function ($) {
                 console.log('success upload');
                 console.log(data);
                 $('#plan-uploaded').val(data.file_id);
-                $('#plan-uploaded-img').attr('src',data.url);
-                $('.spinner-border').css('display','none');
+                $('#plan-uploaded-img').attr('src', data.url);
+                $('#plan-uploaded-img').attr('data-state', 1);
+                $('.spinner-border').css('display', 'none');
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //if fails     
-                $('.spinner-border').css('display','none');
+                $('.spinner-border').css('display', 'none');
                 alert('خطا دوباره امتحان فرمائید');
                 console.log('fail upload');
                 console.log(jqXHR);
@@ -41,7 +42,16 @@ jQuery(document).ready(function ($) {
     });
 });
 
-function select_plan_from_gallery(obj)
-{
-    $('#plan-uploaded-img').attr('src',obj.children('img').eq(0).attr('src'));
+function select_plan_from_gallery(obj) {
+    $('#plan-uploaded-img').attr('data-state', 1);
+    $('#plan-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
+}
+
+function selected_plan_to_next(obj) {
+    if ($('#plan-uploaded-img').attr('data-state') == 1) {
+        window.location.href = obj.attr('data-href');
+    }
+    else {
+        alert('طرح خود را باید انتخاب نمائید');
+    }
 }
