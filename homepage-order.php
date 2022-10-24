@@ -198,7 +198,7 @@ if (isset($_GET["size_selected"])) {
                         <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
-                        <img id="plan-uploaded-img" class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.png"; ?>">
+                        <img id="plan-uploaded-img" class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
                         <div class="spinner-border" style="display:none ;" role="status">
