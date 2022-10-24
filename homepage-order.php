@@ -150,7 +150,7 @@ if (isset($_GET["size_selected"])) {
                                                     <?php
                                                     $plans = $cat["plans"];
                                                     foreach ($plans as $plan) {
-                                                        $item = $box['plan'];
+                                                        $item = $plan['plan'];
                                                     ?>
                                                         <div class="col-12 col-sm-6 col-md-4 mb-4">
                                                             <a href="#" class="card card-style card-portfolio card-order card-yellow">
