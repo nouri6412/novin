@@ -115,16 +115,14 @@ if (isset($_GET["size_selected"])) {
                     <div class="col-12 col-sm-8 col-md-8 mb-4">
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-6 mb-4">
-                                <h3>انتخاب طرح خودم </h3>
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
-                                <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب فایل</a>
-                                <button type="submit" class="btn btn-success">بارگذاری تصویر</button>
+                                <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب طرح خودم</a>
+                                <button type="submit" class="btn btn-success">بارگذاری طرح</button>
                                 <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                             </div>
                             <div class="col-12 col-sm-6 col-md-6 mb-4">
-                                <h3>انتخاب از طرح های آماده</h3>
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    انتخاب
+                                    انتخاب از طرح های آماده
                                 </button>
 
                                 <!-- Modal -->
