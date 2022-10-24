@@ -185,6 +185,8 @@ if (isset($_GET["size_selected"])) {
                     </div>
                     <div class="col-12 col-sm-4 col-md-4 mb-4">
                         <img id="plan-uploaded-img" class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                        <button type="button" class="btn btn-primary mb-2 w-100">برو به مرحله بعدی </button>
+
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
