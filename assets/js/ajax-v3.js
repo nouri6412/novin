@@ -43,5 +43,5 @@ jQuery(document).ready(function ($) {
 
 function select_plan_from_gallery(obj)
 {
-    $('#plan-uploaded-img').attr('src',obj.attr('src'));
+    $('#plan-uploaded-img').attr('src',obj.children('img').eq(0).attr('src'));
 }
