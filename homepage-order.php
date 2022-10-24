@@ -83,7 +83,7 @@ if (isset($_GET["cat_selected"])) {
                 foreach ($sizes as $size) {
                     $item = $size["product"];
                     $image = "";
-                 
+                 var_dump($size);
                     if (has_post_thumbnail($item->ID)) {
                         $image = get_the_post_thumbnail_url($item->ID);
                     } else {
