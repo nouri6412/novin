@@ -184,7 +184,7 @@ if (isset($_GET["size_selected"])) {
 
                     </div>
                     <div class="col-12 col-sm-4 col-md-4 mb-4">
-                        <img id="plan-uploaded-img" class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                        <img id="plan-uploaded-img" class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
