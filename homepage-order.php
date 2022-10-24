@@ -81,8 +81,9 @@ if (isset($_GET["cat_selected"])) {
                 <?php
                 $sizes = $cat["sizes"];
                 foreach ($sizes as $size) {
-                    $item = $size;
+                    $item = $size["product"];
                     $image = "";
+                 
                     if (has_post_thumbnail($item->ID)) {
                         $image = get_the_post_thumbnail_url($item->ID);
                     } else {
