@@ -56,6 +56,7 @@ if (isset($_GET["cat_selected"])) {
         </div>
     <?php } else if ($step == 2) {
         $cat = [];
+        $boxs = get_field("boxs");
         foreach ($boxs as $box) {
             $item = $box['box'];
             if ($item["link"] == $cat_selected) {
