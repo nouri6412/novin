@@ -27,9 +27,18 @@ jQuery(document).ready(function ($) {
                 console.log('success upload');
                 console.log(data);
                 $('#plan-uploaded').val(data.file_id);
-                $('#plan-uploaded-img').attr('src', data.url);
-                $('#plan-uploaded-img').attr('data-state', 1);
                 $('.spinner-border').css('display', 'none');
+                if(myForm.attr('data-type'=="img"))
+                {
+                    $('#plan-uploaded-img').attr('src', data.url);
+                    $('#plan-uploaded-img').attr('data-state', 1);
+                }
+                else
+                {
+                    $('#file-voice').attr('href', data.url);
+                    $('#file-voice').html("دانلود فایل آپلود شده");
+                }
+
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //if fails     
@@ -49,7 +58,7 @@ function select_plan_from_gallery(obj) {
 
 function selected_plan_to_next(obj) {
     if ($('#plan-uploaded-img').attr('data-state') == 1) {
-        window.location.href = obj.attr('data-href');
+        window.location.href = obj.attr('data-href')+'&plan_selected='+$('#plan-uploaded-img').attr('src');
     }
     else {
         alert('طرح خود را باید انتخاب نمائید');
