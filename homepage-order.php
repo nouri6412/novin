@@ -194,7 +194,8 @@ if (isset($_GET["size_selected"])) {
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
-                        <input type="file" name="myfilefield" class="form-control" value="">
+                        <input type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
+                        <button onclick="$('#myfilefield').change()" class="btn btn-primary">انتخاب فایل</button>
                         <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
@@ -204,7 +205,7 @@ if (isset($_GET["size_selected"])) {
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
-                        <button type="submit" class="btn btn-primary">بارگذاری تصویر</button>
+                        <button type="submit" class="btn btn-success">بارگذاری تصویر</button>
                     </div>
                 </div>
             </div>
