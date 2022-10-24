@@ -268,7 +268,7 @@ if (isset($_GET["plan_selected"])) {
                                             $product = wc_get_product($item);
                                         ?>
                                             <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                                <a href="#" class="card card-style card-portfolio card-order card-yellow">
+                                                <a data-bs-dismiss="modal" onclick="select_ghab_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
                                                     <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>">
                                                     <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                                                     <div class="card-body">

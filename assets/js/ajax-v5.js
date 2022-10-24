@@ -56,6 +56,11 @@ function select_plan_from_gallery(obj) {
     $('#plan-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
 }
 
+function select_ghab_from_gallery(obj) {
+    $('#ghab-uploaded-img').attr('data-state', 1);
+    $('#ghab-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
+}
+
 function selected_plan_to_next(obj) {
     if ($('#plan-uploaded-img').attr('data-state') == 1) {
         window.location.href = obj.attr('data-href')+'&plan_selected='+$('#plan-uploaded-img').attr('src');
