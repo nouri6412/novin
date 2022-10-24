@@ -95,7 +95,7 @@ if (isset($_GET["size_selected"])) {
                     }
                 ?>
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
-                        <a href="<?php echo site_url("?size_selected=" . $item) ?>" class="card card-style card-portfolio card-order card-yellow">
+                        <a href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-style card-portfolio card-order card-yellow">
                             <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>">
                             <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                             <div class="card-body">
@@ -107,15 +107,23 @@ if (isset($_GET["size_selected"])) {
             </div>
         </div>
     <?php  } else if ($step == 3) {
+        $cat = [];
+        $boxs = get_field("boxs");
+        foreach ($boxs as $box) {
+            $item = $box['box'];
+            if ($item["link"] == $cat_selected) {
+                $cat = $box['box'];
+            }
+        }
     ?>
-            <div class="container mt-4">
+        <div class="container mt-4">
             <div class="row">
                 <div class="col-12">
 
                     <div class="title_site mb-2">
                         <h2><?php echo 'انتخاب طرح'; ?></h2>
                     </div>
-                    <p class="text-center mb-5 text-logo"><?php echo ' طرح خود را بارگذاری و یا از طرح های آماده انتخاب کنید' ; ?></p>
+                    <p class="text-center mb-5 text-logo"><?php echo ' طرح خود را بارگذاری و یا از طرح های آماده انتخاب کنید'; ?></p>
                 </div>
             </div>
         </div>
