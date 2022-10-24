@@ -14,12 +14,16 @@
 get_header('order');
 
 $cat_selected = "";
+$size_selected = 0;
 $step = 1;
 if (isset($_GET["cat_selected"])) {
     $cat_selected = $_GET["cat_selected"];
     $step = 2;
 }
-
+if (isset($_GET["size_selected"])) {
+    $size_selected = $_GET["size_selected"];
+    $step = 3;
+}
 ?>
 
 <main class="content">
@@ -83,7 +87,7 @@ if (isset($_GET["cat_selected"])) {
                 foreach ($sizes as $size) {
                     $item = $size["product"];
                     $image = "";
-              
+
                     if (has_post_thumbnail($item)) {
                         $image = get_the_post_thumbnail_url($item);
                     } else {
@@ -91,7 +95,7 @@ if (isset($_GET["cat_selected"])) {
                     }
                 ?>
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
-                        <a href="<?php echo get_permalink($item) ?>" class="card card-style card-portfolio card-order card-yellow">
+                        <a href="<?php echo site_url("?size_selected=" . $item) ?>" class="card card-style card-portfolio card-order card-yellow">
                             <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>">
                             <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                             <div class="card-body">
@@ -181,16 +185,32 @@ if (isset($_GET["cat_selected"])) {
                     </div>
                 </div>
             </div>
-            <form id="myform" class="form" method="post" action="" enctype="multipart/form-data">
-                <input type="file" name="myfilefield" class="form-control" value="">
-                <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+
         </div>
-    <?php  } ?>
+    <?php  } else if ($step == 3) {
+    ?>
+        <form id="myform" class="form" method="post" action="" enctype="multipart/form-data">
+            <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                        <input type="file" name="myfilefield" class="form-control" value="">
+                        <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                        <img id="plan-uploaded-img" class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.png"; ?>">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                        <div class="spinner-border" style="display:none ;" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">بارگذاری تصویر</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    <?php
+    } ?>
 </main>
 
 <?php get_footer('order') ?>

@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
     $(myForm).submit(function (e) {
         //Prevent normal form submission
         e.preventDefault();
-
+        $('.spinner-border').css('display','block');
         //Get the form data and store in a variable
         var myformData = new FormData(myForm[0]);
 
@@ -26,9 +26,14 @@ jQuery(document).ready(function ($) {
             success: function (data, textStatus, jqXHR) {
                 console.log('success upload');
                 console.log(data);
+                $('#plan-uploaded').val(data.file_id);
+                $('#plan-uploaded-img').attr('src',data.url);
+                $('.spinner-border').css('display','none');
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //if fails     
+                $('.spinner-border').css('display','none');
+                alert('خطا دوباره امتحان فرمائید');
                 console.log('fail upload');
                 console.log(jqXHR);
             }
