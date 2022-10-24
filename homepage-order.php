@@ -108,6 +108,17 @@ if (isset($_GET["size_selected"])) {
         </div>
     <?php  } else if ($step == 3) {
     ?>
+            <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="title_site mb-2">
+                        <h2><?php echo 'انتخاب طرح'; ?></h2>
+                    </div>
+                    <p class="text-center mb-5 text-logo"><?php echo ' طرح خود را بارگذاری و یا از طرح های آماده انتخاب کنید' ; ?></p>
+                </div>
+            </div>
+        </div>
         <form id="myform" class="form" method="post" action="" enctype="multipart/form-data">
             <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
             <div class="container">
