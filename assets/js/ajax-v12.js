@@ -82,10 +82,10 @@ function  negarenovi_order_finish()
     var voice_id=$('#file-voice-value').val();
     var site_url=$('#f-site-url').val();
   var options=  $('.negarenovin-option');
-
+     console.log(options);
   var i=0;
   for(i=0;i<options.length;i++)
   {
-console.log(options[i].attr('data-id')+' '+options[i].attr('type'));
+console.log($(options[i]).attr('data-id')+' '+options[i].attr('type'));
   }
 }
