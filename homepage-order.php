@@ -238,7 +238,7 @@ if (isset($_GET["plan_selected"])) {
                             $product = wc_get_product($item["product"]);
                         ?>
                             <?php if ($item["is_checkbox"] == 1) { ?>
-                                <div class="col-12 col-sm-6 col-md-4 mb-4"><input name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" />
+                                <div class="col-12 col-sm-6 col-md-4 mb-4"><input name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" />
                                     <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
                                 </div>
                             <?php  } else { ?>
@@ -246,7 +246,7 @@ if (isset($_GET["plan_selected"])) {
                                     <div class="row">
 
                                         <label class="col-12"><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
-                                        <textarea class="col-12" name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>"></textarea>
+                                        <textarea class="col-12" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>"></textarea>
                                     </div>
                                 </div>
                             <?php  } ?>
@@ -267,6 +267,8 @@ if (isset($_GET["plan_selected"])) {
                             <span class="visually-hidden">Loading...</span>
                         </div>
                         <a data-media-id="0" style="color: red;" id="file-voice" class="file" href="#" target="_blank"></a>
+                        <input  id="file-voice-value" type="hidden" value="0" />
+
                     </form>
                 </div>
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
@@ -326,6 +328,9 @@ if (isset($_GET["plan_selected"])) {
                 <?php  } ?>
                 <div class="col-12">
                     <div class="col-12 col-sm-6 col-md-6 mb-5 mt-5">
+                        <input id="f-plan-id" type="hidden" value="<?php  echo $plan_selected ?>"/>
+                        <input id="f-size-id" type="hidden" value="<?php  echo $size_selected ?>"/>
+                        <input id="f-site-url" type="hidden" value="<?php  echo site_url() ?>"/>
                         <button onclick="negarenovi_order_finish()" type="button" class="btn btn-success mb-1 w-100">تکمیل سفارش</button>
                     </div>
                 </div>

@@ -38,7 +38,7 @@ jQuery(document).ready(function ($) {
                 {
                     $('#file-voice').attr('href', data.url);
                     $('#file-voice').html("دانلود فایل آپلود شده");
-                    $('#file-voice').attr('data-media-id',data.file_id);
+                    $('#file-voice-value').val(data.file_id);
                 }
 
             },
@@ -77,9 +77,10 @@ function selected_plan_to_next(obj) {
 function  negarenovi_order_finish()
 {
     var plan_id=$('#f-pnal-id').val();
-    var ghab_id=$('#f-ghab-id').val();
+    var ghab_id=$('#ghab-uploaded-img-value').val();
     var size_id=$('#f-size-id').val();
-    var voice_id=$('#f-voice-id').val();
-    var plan_id=$('#f-pnal-id').val();
-
+    var voice_id=$('#file-voice-value').val();
+    var site_url=$('#f-site-url').val();
+    const el3 = document.querySelector('[name*="f-option-"]');
+    console.log(el3);
 }
