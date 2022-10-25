@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container mb-5 mt-5">
     <?php the_content(); ?>
     </div>
 </main>
