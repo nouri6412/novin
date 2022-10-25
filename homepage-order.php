@@ -228,25 +228,29 @@ if (isset($_GET["plan_selected"])) {
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 mb-4">
-                    <?php
-                    $options = $cat["options"];
-                    foreach ($options as $option) {
-                        $item = $option['option'];
-                        $product = wc_get_product($item["product"]);
-                    ?>
-                        <?php if ($item["is_checkbox"] == 1) { ?>
-                            <div><input name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" />
-                            <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
-                        </div>
-                        <?php  } else { ?>
-                            <div class="row">
-                                
-                                <label class="col-12"><?php echo $item["title"]. ' - ' . $product->get_price_html() ?></label>
-                                <textarea class="col-12" name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>"></textarea>
-                            </div>
-                        <?php  } ?>
-                    <?php } ?>
+                <div class="col-12">
+                    <div class="row">
+                        <?php
+                        $options = $cat["options"];
+                        foreach ($options as $option) {
+                            $item = $option['option'];
+                            $product = wc_get_product($item["product"]);
+                        ?>
+                            <?php if ($item["is_checkbox"] == 1) { ?>
+                                <div class="col-12 col-sm-6 col-md-4 mb-4"><input name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" />
+                                    <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
+                                </div>
+                            <?php  } else { ?>
+                                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                    <div class="row">
+
+                                        <label class="col-12"><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
+                                        <textarea class="col-12" name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>"></textarea>
+                                    </div>
+                                </div>
+                            <?php  } ?>
+                        <?php } ?>
+                    </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-6 mb-6">
