@@ -238,59 +238,61 @@ if (isset($_GET["plan_selected"])) {
                         <a id="file-voice" class="file" href="#" target="_blank"></a>
                     </form>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 mb-4">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        انتخاب قاب از گالری
-                    </button>
-                    <input id="ghab-uploaded-img-value" value="0" type="hidden" />
-                    <img data-state="0" id="ghab-uploaded-img" class="card-img-top img-fluid mt-2" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-fullscreen">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">انتخاب قاب</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-
-                                        <?php
-                                        $ghabs = $cat["ghabs"];
-                                        foreach ($ghabs as $ghab) {
-                                            $item = $ghab['ghab'];
-                                            $image = "";
-
-                                            if (has_post_thumbnail($item)) {
-                                                $image = get_the_post_thumbnail_url($item);
-                                            } else {
-                                                $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
-                                            }
-                                            $product = wc_get_product($item);
-                                        ?>
-                                            <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                                <a data-bs-dismiss="modal" data-product-id="<?php echo $item ?>" onclick="select_ghab_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
-                                                    <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>">
-
-                                                    <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
-                                                    <div class="card-body">
-                                                        <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
-                                                        <h3 class="text-center"><?php echo $product->get_price(); ?></h3>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        <?php } ?>
-
+                <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
+                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            انتخاب قاب از گالری
+                        </button>
+                        <input id="ghab-uploaded-img-value" value="0" type="hidden" />
+                        <img data-state="0" id="ghab-uploaded-img" class="card-img-top img-fluid mt-2" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">انتخاب قاب</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">بستن</button>
+                                    <div class="modal-body">
+                                        <div class="row">
+
+                                            <?php
+                                            $ghabs = $cat["ghabs"];
+                                            foreach ($ghabs as $ghab) {
+                                                $item = $ghab['ghab'];
+                                                $image = "";
+
+                                                if (has_post_thumbnail($item)) {
+                                                    $image = get_the_post_thumbnail_url($item);
+                                                } else {
+                                                    $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+                                                }
+                                                $product = wc_get_product($item);
+                                            ?>
+                                                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                                    <a data-bs-dismiss="modal" data-product-id="<?php echo $item ?>" onclick="select_ghab_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
+                                                        <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>">
+
+                                                        <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
+                                                        <div class="card-body">
+                                                            <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
+                                                            <h3 class="text-center"><?php echo $product->get_price(); ?></h3>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            <?php } ?>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">بستن</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php  } ?>
                 <div class="col-12 col-sm-6 col-md-4 mb-4">
                     <?php
                     $options = $cat["options"];
