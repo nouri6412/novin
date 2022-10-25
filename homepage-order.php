@@ -261,7 +261,7 @@ if (isset($_GET["plan_selected"])) {
                         <button type="submit" class="btn btn-success">بارگذاری فایل صدا</button>
                         <?php    $product = wc_get_product($cat["ferecans_seda"]); ?>
                         <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
-                        <label class="col-12"><?php echo $product->get_price_html() ?></label>
+                        <label class=""><?php echo $product->get_price_html() ?></label>
                         <a id="file-voice" class="file" href="#" target="_blank"></a>
                     </form>
                 </div>
