@@ -253,7 +253,7 @@ if (isset($_GET["plan_selected"])) {
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-6 mb-6">
+                <div class="col-12">
                     <form data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
                         <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
                         <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
@@ -264,7 +264,7 @@ if (isset($_GET["plan_selected"])) {
                     </form>
                 </div>
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
-                    <div class="col-12 col-sm-6 col-md-6 mb-6">
+                    <div class="col-12">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             انتخاب قاب از گالری
                         </button>
