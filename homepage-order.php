@@ -264,7 +264,7 @@ if (isset($_GET["plan_selected"])) {
                     </form>
                 </div>
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
-                    <div class="col-12">
+                    <div class="col-12 col-sm-6 col-md-4 mb-4">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             انتخاب قاب از گالری
                         </button>
