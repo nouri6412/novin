@@ -108,7 +108,7 @@ if (isset($_GET["plan_selected"])) {
                             <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                             <div class="card-body">
                                 <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
-                                <h3 class="text-center"><?php echo  $product->get_price(); ?></h3>
+                                <h3 class="text-center"><?php echo  $product->get_price_html(); ?></h3>
 
                             </div>
                         </a>
@@ -276,7 +276,7 @@ if (isset($_GET["plan_selected"])) {
                                                         <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                                                         <div class="card-body">
                                                             <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
-                                                            <h3 class="text-center"><?php echo $product->get_price(); ?></h3>
+                                                            <h3 class="text-center"><?php echo $product->get_price_html(); ?></h3>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -301,7 +301,7 @@ if (isset($_GET["plan_selected"])) {
                         $product = wc_get_product($item["product"]);
                     ?>
                         <?php if ($item["is_checkbox"] == 1) { ?>
-                            <div><input name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" /><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price() ?></label></div>
+                            <div><input name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" /><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price_html() ?></label></div>
                         <?php  } else { ?>
                             <div><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price_html() ?></label><textarea name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>"></textarea></div>
                         <?php  } ?>
