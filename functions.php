@@ -71,25 +71,18 @@ function negarenovin_add_to_cart()
     foreach ($_POST as $key => $post) {
         if ($key == "size_id") {
             WC()->cart->add_to_cart($post, 1, 0, array(), array('plan_id' => $_POST["plan_id"]));
-        }
-        else if ($key == "ghab_id" && $post>0) {
+        } else if ($key == "ghab_id" && $post > 0) {
             WC()->cart->add_to_cart($post, 1);
-        }
-        else if ($key == "voice_id" && $post>0) {
+        } else if ($key == "voice_id" && $post > 0) {
             WC()->cart->add_to_cart($post, 1);
-        }
-        else if ($key == "plan_id") {
-         
-        } 
-        else if(!str_contains($key, 'option-value-'))
-        {
-            if(isset($_POST["option-value-".$post]))
-            {
-                WC()->cart->add_to_cart($post, 1, 0, array(), array('value' => $_POST["option-value-".$post]));
-            }
-            else
-            {
-                WC()->cart->add_to_cart($post, 1); 
+        } else if ($key == "plan_id") {
+        } else if (!str_contains($key, 'option-value-')) {
+            if (isset($_POST["option-value-" . $post])) {
+                if (trim(strlen($_POST["option-value-" . $post]) > 0)) {
+                    WC()->cart->add_to_cart($post, 1, 0, array(), array('value' => $_POST["option-value-" . $post]));
+                }
+            } else {
+                WC()->cart->add_to_cart($post, 1);
             }
         }
     }
