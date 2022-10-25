@@ -265,7 +265,7 @@ if (isset($_GET["plan_selected"])) {
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
-                        <a id="file-voice" class="file" href="#" target="_blank"></a>
+                        <a style="color: red;" id="file-voice" class="file" href="#" target="_blank"></a>
                     </form>
                 </div>
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
