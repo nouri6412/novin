@@ -68,3 +68,6 @@ function pn_upload_files()
 //Hook our function to the action we set at jQuery code
 add_action('wp_ajax_pn_wp_frontend_ajax_upload', 'pn_upload_files');
 add_action('wp_ajax_nopriv_pn_wp_frontend_ajax_upload', 'pn_upload_files');
+
+
+

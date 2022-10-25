@@ -303,7 +303,7 @@ if (isset($_GET["plan_selected"])) {
                         <?php if ($item["is_checkbox"] == 1) { ?>
                             <div><input name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" /><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price() ?></label></div>
                         <?php  } else { ?>
-                            <div><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price() ?></label><textarea name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>"></textarea></div>
+                            <div><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price_html() ?></label><textarea name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>"></textarea></div>
                         <?php  } ?>
                     <?php } ?>
                 </div>
