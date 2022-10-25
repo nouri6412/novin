@@ -83,9 +83,8 @@ function  negarenovi_order_finish()
     var site_url=$('#f-site-url').val();
   var options=  $('.negarenovin-option');
      console.log(options);
-  var i=0;
-  for(i=0;i<options.length;i++)
-  {
-console.log($(options[i]).attr('data-id')+' '+options[i].attr('type'));
-  }
+
+     $('.negarenovin-option').each(function(i, obj) {
+        console.log($(obj).attr('data-id')+' '+$(obj).attr('type'));
+    });
 }
