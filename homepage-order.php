@@ -96,7 +96,7 @@ if (isset($_GET["plan_selected"])) {
                     $image = "";
 
                     if (has_post_thumbnail($item)) {
-                        $image = get_the_post_thumbnail_url($item);
+                        $image = get_the_post_thumbnail_url($item,'');
                     } else {
                         $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
                     }
@@ -263,7 +263,7 @@ if (isset($_GET["plan_selected"])) {
                                                 $image = "";
 
                                                 if (has_post_thumbnail($item)) {
-                                                    $image = get_the_post_thumbnail_url($item);
+                                                    $image = get_the_post_thumbnail_url($item,'');
                                                 } else {
                                                     $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
                                                 }
