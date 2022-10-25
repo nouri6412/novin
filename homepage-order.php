@@ -244,7 +244,7 @@ if (isset($_GET["plan_selected"])) {
                             انتخاب قاب از گالری
                         </button>
                         <input id="ghab-uploaded-img-value" value="0" type="hidden" />
-                        <img data-state="0" id="ghab-uploaded-img" class="card-img-top img-fluid mt-2" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                        <img style="max-height: 285px;" data-state="0" id="ghab-uploaded-img" class="card-img-top img-fluid mt-2" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-fullscreen">
