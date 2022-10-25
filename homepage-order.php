@@ -169,9 +169,10 @@ if (isset($_GET["plan_selected"])) {
                                                     $plans = $cat["plans"];
                                                     foreach ($plans as $plan) {
                                                         $item = $plan['plan'];
+                                                        var_dump($item);
                                                     ?>
                                                         <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                                            <a data-bs-dismiss="modal" onclick="select_plan_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
+                                                            <a data-media-id="<?php echo $item; ?>" data-bs-dismiss="modal" onclick="select_plan_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
                                                                 <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item; ?>">
                                                                 <div class="card-body">
                                                                     <h3 class="text-center"><?php echo ''; ?></h3>
@@ -196,7 +197,7 @@ if (isset($_GET["plan_selected"])) {
                     <div class="col-12 col-sm-4 col-md-4 mb-4">
                         <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button>
 
-                        <img style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                        <img data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
 
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
