@@ -85,6 +85,19 @@ function  negarenovi_order_finish()
      console.log(options);
 
      $('.negarenovin-option').each(function(i, obj) {
-        console.log($(obj).attr('data-id')+' '+$(obj).attr('type'));
+        if($(obj).attr('type')=='checkbox')
+        {
+            if($(obj).is(':checked')){
+                console.log($(obj).attr('data-id')+' '+'true');
+            }
+            else
+            {
+                console.log($(obj).attr('data-id')+' '+'false');
+            }
+        }
+        else{
+            console.log($(obj).attr('data-id')+' '+$(obj).val());
+        }
+
     });
 }
