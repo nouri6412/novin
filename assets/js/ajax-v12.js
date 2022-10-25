@@ -81,6 +81,11 @@ function  negarenovi_order_finish()
     var size_id=$('#f-size-id').val();
     var voice_id=$('#file-voice-value').val();
     var site_url=$('#f-site-url').val();
-    const el3 = document.querySelector('[name*="f-option-"]');
-    console.log(el3);
+  var options=  $('.negarenovin-option');
+
+  var i=0;
+  for(i=0;i<options.length;i++)
+  {
+console.log(options[i].attr('data-id')+' '+options[i].attr('type'));
+  }
 }

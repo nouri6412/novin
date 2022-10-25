@@ -238,7 +238,7 @@ if (isset($_GET["plan_selected"])) {
                             $product = wc_get_product($item["product"]);
                         ?>
                             <?php if ($item["is_checkbox"] == 1) { ?>
-                                <div class="col-12 col-sm-6 col-md-4 mb-4"><input name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" />
+                                <div class="col-12 col-sm-6 col-md-4 mb-4"><input class="negarenovin-option" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>" data-id="<?php echo $item["product"]; ?>" type="checkbox" />
                                     <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
                                 </div>
                             <?php  } else { ?>
@@ -246,7 +246,7 @@ if (isset($_GET["plan_selected"])) {
                                     <div class="row">
 
                                         <label class="col-12"><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
-                                        <textarea class="col-12" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>"></textarea>
+                                        <textarea class="negarenovin-option" class="col-12" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>"></textarea>
                                     </div>
                                 </div>
                             <?php  } ?>
