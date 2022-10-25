@@ -81,23 +81,52 @@ function  negarenovi_order_finish()
     var size_id=$('#f-size-id').val();
     var voice_id=$('#file-voice-value').val();
     var site_url=$('#f-site-url').val();
-  var options=  $('.negarenovin-option');
-     console.log(options);
+
+    var myformData = new FormData();
+
+    myformData.append('action', "pn_wp_frontend_ajax_order");
+
+    myformData.append('size_id', size_id);
+
+    myformData.append('ghab_id', ghab_id);
+
+    myformData.append('plan_id', plan_id);
+
+    myformData.append('voice_id', voice_id);
+
+   // myformData.append('site_url', site_url);
 
      $('.negarenovin-option').each(function(i, obj) {
         if($(obj).attr('type')=='checkbox')
         {
             if($(obj).is(':checked')){
-                console.log($(obj).attr('data-id')+' '+'true');
-            }
-            else
-            {
-                console.log($(obj).attr('data-id')+' '+'false');
+                myformData.append('option-'+$(obj).attr('data-id'), $(obj).attr('data-id'));
             }
         }
         else{
-            console.log($(obj).attr('data-id')+' '+$(obj).val());
+            myformData.append('option-'+$(obj).attr('data-id'), $(obj).attr('data-id'));
+            myformData.append('option-value-'+$(obj).attr('data-id'), $(obj).val());
         }
 
+    });
+
+    $.ajax({
+        type: "POST",
+        data: myformData,
+        dataType: "json",
+        url: custom_theme_mbm_object.ajaxurl,
+        cache: false,
+        processData: false,
+        contentType: false,
+        enctype: 'multipart/form-data',
+        success: function (data, textStatus, jqXHR) {
+            window.location.href=site_url;
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $('.spinner-border').css('display', 'none');
+            alert('خطا دوباره امتحان فرمائید');
+            console.log('fail upload');
+            console.log(jqXHR);
+        }
     });
 }

@@ -49,7 +49,7 @@ function pn_upload_files()
 
                 if (!is_wp_error($file_id)) {
                     $result["file_id"] = $file_id;
-                    $result["url"]= wp_get_attachment_url($file_id);
+                    $result["url"] = wp_get_attachment_url($file_id);
                     /*
                      * File uploaded successfully and you have the attachment id
                      * Do your stuff with the attachment id here
@@ -65,9 +65,39 @@ function pn_upload_files()
     die();
 }
 
+function negarenovin_add_to_cart()
+{
+
+    foreach ($_POST as $key => $post) {
+        if ($key == "size_id") {
+            WC()->cart->add_to_cart($post, 1, 0, array(), array('plan_id' => $_POST["plan_id"]));
+        }
+        else if ($key == "ghab_id" && $post>0) {
+            WC()->cart->add_to_cart($post, 1);
+        }
+        else if ($key == "voice_id" && $post>0) {
+            WC()->cart->add_to_cart($post, 1);
+        }
+        else if ($key == "plan_id") {
+         
+        } 
+        else if(!str_contains($key, 'option-value-'))
+        {
+            if(isset($_POST["option-value-".$post]))
+            {
+                WC()->cart->add_to_cart($post, 1, 0, array(), array('value' => $_POST["option-value-".$post]));
+            }
+            else
+            {
+                WC()->cart->add_to_cart($post, 1); 
+            }
+        }
+    }
+}
+
 //Hook our function to the action we set at jQuery code
 add_action('wp_ajax_pn_wp_frontend_ajax_upload', 'pn_upload_files');
 add_action('wp_ajax_nopriv_pn_wp_frontend_ajax_upload', 'pn_upload_files');
 
-
-
+add_action('wp_ajax_pn_wp_frontend_ajax_order', 'negarenovin_add_to_cart');
+add_action('wp_ajax_nopriv_pn_wp_frontend_ajax_order', 'negarenovin_add_to_cart');

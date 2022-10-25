@@ -329,7 +329,7 @@ if (isset($_GET["plan_selected"])) {
                     <div class="col-12 col-sm-6 col-md-6 mb-5 mt-5">
                         <input id="f-plan-id" type="hidden" value="<?php  echo $plan_selected ?>"/>
                         <input id="f-size-id" type="hidden" value="<?php  echo $size_selected ?>"/>
-                        <input id="f-site-url" type="hidden" value="<?php  echo site_url() ?>"/>
+                        <input id="f-site-url" type="hidden" value="<?php  echo wc_get_cart_url() ?>"/>
                         <button onclick="negarenovi_order_finish()" type="button" class="btn btn-success mb-1 w-100">تکمیل سفارش</button>
                     </div>
                 </div>
