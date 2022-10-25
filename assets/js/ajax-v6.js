@@ -53,6 +53,7 @@ jQuery(document).ready(function ($) {
 
 function select_plan_from_gallery(obj) {
     $('#plan-uploaded-img').attr('data-state', 1);
+    $('#plan-uploaded-img').val(obj.attr('data-product-id'));
     $('#plan-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
 }
 

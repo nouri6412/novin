@@ -242,6 +242,7 @@ if (isset($_GET["plan_selected"])) {
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         انتخاب قاب از گالری
                     </button>
+                    <input id="ghab-uploaded-img-value" value="0" type="hidden" />
                     <img data-state="0" id="ghab-uploaded-img" class="card-img-top img-fluid mt-2" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -268,8 +269,9 @@ if (isset($_GET["plan_selected"])) {
                                             $product = wc_get_product($item);
                                         ?>
                                             <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                                <a data-bs-dismiss="modal" onclick="select_ghab_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
+                                                <a data-bs-dismiss="modal" data-product-id="<?php echo $item ?>" onclick="select_ghab_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
                                                     <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>">
+
                                                     <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                                                     <div class="card-body">
                                                         <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
@@ -294,9 +296,13 @@ if (isset($_GET["plan_selected"])) {
                     $options = $cat["options"];
                     foreach ($options as $option) {
                         $item = $option['option'];
-                        $product = wc_get_product($item);
+                        $product = wc_get_product($item["product"]);
                     ?>
-                        <div><input name="option-<?php echo $item; ?>" id="option-<?php echo $item; ?>" value="<?php echo $item; ?>" type="checkbox" /><label><?php echo get_the_title($item) . ' - ' . $product->get_price() ?></label></div>
+                        <?php if ($item["is_checkbox"] == 1) { ?>
+                            <div><input name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" /><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price() ?></label></div>
+                        <?php  } else { ?>
+                            <div><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price() ?></label><textarea name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>"></textarea></div>
+                        <?php  } ?>
                     <?php } ?>
                 </div>
             </div>
