@@ -96,7 +96,7 @@ if (isset($_GET["plan_selected"])) {
                     $image = "";
 
                     if (has_post_thumbnail($item)) {
-                        $image = get_the_post_thumbnail_url($item,'');
+                        $image = get_the_post_thumbnail_url($item, '');
                     } else {
                         $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
                     }
@@ -229,6 +229,27 @@ if (isset($_GET["plan_selected"])) {
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <?php
+                    $options = $cat["options"];
+                    foreach ($options as $option) {
+                        $item = $option['option'];
+                        $product = wc_get_product($item["product"]);
+                    ?>
+                        <?php if ($item["is_checkbox"] == 1) { ?>
+                            <div><input name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" />
+                            <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
+                        </div>
+                        <?php  } else { ?>
+                            <div class="row">
+                                
+                                <label class="col-12"><?php echo $item["title"]. ' - ' . $product->get_price_html() ?></label>
+                                <textarea class="col-12" name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>"></textarea>
+                            </div>
+                        <?php  } ?>
+                    <?php } ?>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 mb-6">
                     <form data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
                         <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
                         <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
@@ -239,7 +260,7 @@ if (isset($_GET["plan_selected"])) {
                     </form>
                 </div>
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
-                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="col-12 col-sm-6 col-md-6 mb-6">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             انتخاب قاب از گالری
                         </button>
@@ -263,7 +284,7 @@ if (isset($_GET["plan_selected"])) {
                                                 $image = "";
 
                                                 if (has_post_thumbnail($item)) {
-                                                    $image = get_the_post_thumbnail_url($item,'');
+                                                    $image = get_the_post_thumbnail_url($item, '');
                                                 } else {
                                                     $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
                                                 }
@@ -293,20 +314,7 @@ if (isset($_GET["plan_selected"])) {
                         </div>
                     </div>
                 <?php  } ?>
-                <div class="col-12 col-sm-6 col-md-4 mb-4">
-                    <?php
-                    $options = $cat["options"];
-                    foreach ($options as $option) {
-                        $item = $option['option'];
-                        $product = wc_get_product($item["product"]);
-                    ?>
-                        <?php if ($item["is_checkbox"] == 1) { ?>
-                            <div><input name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>" value="<?php echo $item["product"]; ?>" type="checkbox" /><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price_html() ?></label></div>
-                        <?php  } else { ?>
-                            <div><label><?php echo get_the_title($item["title"]) . ' - ' . $product->get_price_html() ?></label><textarea name="option-<?php echo $item["product"]; ?>" id="option-<?php echo $item["product"]; ?>"></textarea></div>
-                        <?php  } ?>
-                    <?php } ?>
-                </div>
+
             </div>
         </div>
     <?php } ?>
