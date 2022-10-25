@@ -9,6 +9,6 @@
         </div>
     </div>
     <div class="container">
-    <?php echo get_the_content(); ?>
+    <?php the_content(); ?>
     </div>
 </main>
