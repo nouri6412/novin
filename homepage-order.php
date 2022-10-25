@@ -262,6 +262,9 @@ if (isset($_GET["plan_selected"])) {
                         <?php    $product = wc_get_product($cat["ferecans_seda"]); ?>
                         <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                         <label class=""><?php echo $product->get_price_html() ?></label>
+                        <div class="spinner-border" style="display:none ;" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                         <a id="file-voice" class="file" href="#" target="_blank"></a>
                     </form>
                 </div>
