@@ -32,7 +32,7 @@ if (isset($_GET["plan_selected"])) {
 }
 
 ?>
-
+<div class="container.top"></div>
 <main class="content">
     <?php if ($step == 1) { ?>
         <div class="container mt-4">
