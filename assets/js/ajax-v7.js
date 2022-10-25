@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
                 console.log(data);
                 $('#plan-uploaded').val(data.file_id);
                 $('.spinner-border').css('display', 'none');
-                if(myForm.attr('data-type'=="img"))
+                if($('#myform').attr('data-type')=="img")
                 {
                     $('#plan-uploaded-img').attr('src', data.url);
                     $('#plan-uploaded-img').attr('data-state', 1);
