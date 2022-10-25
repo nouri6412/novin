@@ -169,11 +169,11 @@ if (isset($_GET["plan_selected"])) {
                                                     $plans = $cat["plans"];
                                                     foreach ($plans as $plan) {
                                                         $item = $plan['plan'];
-                                                        var_dump($item);
+                                                       
                                                     ?>
                                                         <div class="col-12 col-sm-6 col-md-4 mb-4">
                                                             <a data-media-id="<?php echo $item; ?>" data-bs-dismiss="modal" onclick="select_plan_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
-                                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item; ?>">
+                                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo get_the_post_thumbnail_url($item, ''); ?>">
                                                                 <div class="card-body">
                                                                     <h3 class="text-center"><?php echo ''; ?></h3>
                                                                 </div>
@@ -266,7 +266,7 @@ if (isset($_GET["plan_selected"])) {
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
-                        <a style="color: red;" id="file-voice" class="file" href="#" target="_blank"></a>
+                        <a data-media-id="0" style="color: red;" id="file-voice" class="file" href="#" target="_blank"></a>
                     </form>
                 </div>
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>

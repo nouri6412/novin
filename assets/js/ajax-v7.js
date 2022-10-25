@@ -32,11 +32,13 @@ jQuery(document).ready(function ($) {
                 {
                     $('#plan-uploaded-img').attr('src', data.url);
                     $('#plan-uploaded-img').attr('data-state', 1);
+                    $('#plan-uploaded-img').attr('data-media-id',data.file_id);
                 }
                 else
                 {
                     $('#file-voice').attr('href', data.url);
                     $('#file-voice').html("دانلود فایل آپلود شده");
+                    $('#file-voice').attr('data-media-id',data.file_id);
                 }
 
             },
