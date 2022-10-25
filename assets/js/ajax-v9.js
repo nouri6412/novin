@@ -67,7 +67,7 @@ function select_ghab_from_gallery(obj) {
 
 function selected_plan_to_next(obj) {
     if ($('#plan-uploaded-img').attr('data-state') == 1) {
-        window.location.href = obj.attr('data-href')+'&plan_selected='+$('#plan-uploaded-img').attr('src');
+        window.location.href = obj.attr('data-href')+'&plan_selected='+$('#plan-uploaded-img').attr('data-media-id');
     }
     else {
         alert('طرح خود را باید انتخاب نمائید');
