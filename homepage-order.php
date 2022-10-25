@@ -259,7 +259,9 @@ if (isset($_GET["plan_selected"])) {
                         <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
                         <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب فرکانس صدا</a>
                         <button type="submit" class="btn btn-success">بارگذاری فایل صدا</button>
+                        <?php    $product = wc_get_product($cat["ferecans_seda"]); ?>
                         <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
+                        <label class="col-12"><?php  $product->get_price_html() ?></label>
                         <a id="file-voice" class="file" href="#" target="_blank"></a>
                     </form>
                 </div>
