@@ -67,7 +67,7 @@ function pn_upload_files()
 
 function negarenovin_add_to_cart()
 {
-
+    WC()->cart->empty_cart();
     foreach ($_POST as $key => $post) {
         if ($key == "size_id") {
             WC()->cart->add_to_cart($post, 1, 0, array(), array('plan_id' => $_POST["plan_id"]));
