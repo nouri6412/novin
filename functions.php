@@ -6,7 +6,7 @@ function novin_theme_scripts()
 
     wp_enqueue_script(
         'novin_ajax_script',
-        get_template_directory_uri() . '/assets/js/ajax-v15.js',
+        get_template_directory_uri() . '/assets/js/ajax-v16.js',
         array('jquery'),
         1,
         false
@@ -105,7 +105,7 @@ class cartPlugins
     public function display_cart_item_custom_meta_data($item_data, $cart_item)
     {
         // Display custom cart item meta data (in cart and checkout)
-        $meta_key = '_order_meta_plan_id';
+        $meta_key = 'طرح';
         if (isset($cart_item['meta_plan_id'])) {
             $item_data[] = array(
                 'key'       => $meta_key,

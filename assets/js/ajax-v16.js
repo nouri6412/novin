@@ -76,14 +76,14 @@ function selected_plan_to_next(obj) {
 
 function  negarenovi_order_finish()
 {
-    var plan_id=$('#f-pnal-id').val();
+    var plan_id=$('#f-plan-id').val();
     var ghab_id=$('#ghab-uploaded-img-value').val();
     var size_id=$('#f-size-id').val();
     var voice_id=$('#id-voice-value').val();
     var voice_file_id=$('#file-voice-value').val();
     var site_url=$('#f-site-url').val();
 
-
+    //console.log(plan_id);
 
     var myformData = new FormData();
 
