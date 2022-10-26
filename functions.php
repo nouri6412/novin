@@ -116,9 +116,9 @@ class cartPlugins
     }
     public function save_cart_item_custom_meta_as_order_item_meta($item, $cart_item_key, $values, $order)
     {
-        $meta_key = '_order_meta_plan_id';
+        $meta_key = 'طرح';
         if (isset($values['meta_plan_id'])) {
-            $item->update_meta_data($meta_key, $values['meta_plan_id']);
+            $item->update_meta_data($meta_key,'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($values['meta_plan_id']).'">مشاهده</a>' );
         }
     }
     public function atapour_cart_on_checkout_page_only()
@@ -134,8 +134,4 @@ add_filter('woocommerce_get_item_data', array($cartPlugins, 'display_cart_item_c
 add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 'save_cart_item_custom_meta_as_order_item_meta'), 10, 4);
 //add_action('woocommerce_before_checkout_form', array($cartPlugins, 'atapour_cart_on_checkout_page_only'), 5);
 
-add_filter( 'woocommerce_order_item_name', 'change_orders_items_names', 10, 1 );
-function change_orders_items_names( $item_name ) {
-    $item_name = 'mydesiredproductname';
-    return $item_name;
-}
+
