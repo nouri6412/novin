@@ -159,9 +159,6 @@ add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 's
 
 add_filter( 'show_admin_bar', '__return_false' );
 
-function custom_http_request_timeout( ) {
-    return 90;
-}
-add_filter( 'http_request_timeout', 'custom_http_request_timeout' );
+
 
 
