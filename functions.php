@@ -94,3 +94,8 @@ add_action('wp_ajax_nopriv_pn_wp_frontend_ajax_upload', 'pn_upload_files');
 
 add_action('wp_ajax_pn_wp_frontend_ajax_order', 'negarenovin_add_to_cart');
 add_action('wp_ajax_nopriv_pn_wp_frontend_ajax_order', 'negarenovin_add_to_cart');
+
+
+if ( function_exists( 'add_image_size' ) ) {
+    add_image_size( 'cart-thumb', 100, 100 ); // 100 wide and 100 high
+   }
