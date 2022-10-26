@@ -82,8 +82,7 @@ function  negarenovi_order_finish()
     var voice_id=$('#file-voice-value').val();
     var site_url=$('#f-site-url').val();
 
-    console.log(voice_id);
-    return;
+
 
     var myformData = new FormData();
 

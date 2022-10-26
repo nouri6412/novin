@@ -6,7 +6,7 @@ function novin_theme_scripts()
 
     wp_enqueue_script(
         'novin_ajax_script',
-        get_template_directory_uri() . '/assets/js/ajax-v13.js',
+        get_template_directory_uri() . '/assets/js/ajax-v14.js',
         array('jquery'),
         1,
         false
