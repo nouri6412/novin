@@ -257,9 +257,10 @@ if (isset($_GET["plan_selected"])) {
                     <form data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
                         <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
                         <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
+                        <?php $product = wc_get_product($cat["ferecans_seda"]); ?>
                         <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary mt-2"><?php echo 'انتخاب فرکانس صدا' . ' ' . $product->get_price_html() ?></a>
                         <button type="submit" class="btn btn-success mt-2">بارگذاری فایل صدا</button>
-                        <?php $product = wc_get_product($cat["ferecans_seda"]); ?>
+
                         <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
 
                         <div class="spinner-border" style="display:none ;" role="status">
@@ -267,7 +268,7 @@ if (isset($_GET["plan_selected"])) {
                         </div>
                         <a data-media-id="0" style="color: red;" id="file-voice" class="file" href="#" target="_blank"></a>
                         <input  id="file-voice-value" type="hidden" value="0" />
-
+                        <input  id="id-voice-value" type="hidden" value="<?php  echo $cat["ferecans_seda"]; ?>" />
                     </form>
                 </div>
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>

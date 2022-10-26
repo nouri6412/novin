@@ -79,7 +79,8 @@ function  negarenovi_order_finish()
     var plan_id=$('#f-pnal-id').val();
     var ghab_id=$('#ghab-uploaded-img-value').val();
     var size_id=$('#f-size-id').val();
-    var voice_id=$('#file-voice-value').val();
+    var voice_id=$('#id-voice-value').val();
+    var voice_file_id=$('#file-voice-value').val();
     var site_url=$('#f-site-url').val();
 
 
@@ -95,6 +96,8 @@ function  negarenovi_order_finish()
     myformData.append('plan_id', plan_id);
 
     myformData.append('voice_id', voice_id);
+    
+    myformData.append('file_voice_id', voice_file_id);
 
    // myformData.append('site_url', site_url);
 

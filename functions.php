@@ -6,7 +6,7 @@ function novin_theme_scripts()
 
     wp_enqueue_script(
         'novin_ajax_script',
-        get_template_directory_uri() . '/assets/js/ajax-v14.js',
+        get_template_directory_uri() . '/assets/js/ajax-v15.js',
         array('jquery'),
         1,
         false
@@ -74,9 +74,9 @@ function negarenovin_add_to_cart()
         } else if ($key == "ghab_id" && $post > 0) {
             WC()->cart->add_to_cart($post, 1);
         } else if ($key == "voice_id" && $post > 0) {
-            WC()->cart->add_to_cart($post, 1);
+            WC()->cart->add_to_cart($post, 1, 0, array(), array('file' => $_POST["file_voice_id"]));
         } else if ($key == "plan_id") {
-        } else if (!str_contains($key, 'option-value-')) {
+        } else if (!str_contains($key, 'option-value-') && str_contains($key, 'option-')) {
             if (isset($_POST["option-value-" . $post])) {
                 if (trim(strlen($_POST["option-value-" . $post]) > 0)) {
                     WC()->cart->add_to_cart($post, 1, 0, array(), array('value' => $_POST["option-value-" . $post]));
