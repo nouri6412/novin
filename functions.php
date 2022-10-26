@@ -109,7 +109,7 @@ class cartPlugins
         if (isset($cart_item['meta_plan_id'])) {
             $item_data[] = array(
                 'key'       => $meta_key,
-                'value'     =>'<a target="_blank" href="'.wp_get_attachment_url($cart_item['meta_plan_id']).'">مشاهده</a>' ,
+                'value'     =>'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($cart_item['meta_plan_id']).'">مشاهده</a>' ,
             );
         }
         return $item_data;
