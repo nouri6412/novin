@@ -29,6 +29,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'woocommerce' ); ?></span></th>
 				<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
 				<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
+				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
 				<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
 			</tr>
 		</thead>
@@ -135,7 +136,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
 			<tr>
-				<td colspan="5" class="actions">
+				<td colspan="6" class="actions">
 
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
