@@ -70,16 +70,16 @@ function negarenovin_add_to_cart()
     WC()->cart->empty_cart();
     foreach ($_POST as $key => $post) {
         if ($key == "size_id") {
-            WC()->cart->add_to_cart($post, 1, 0, array(), array('plan_id' => $_POST["plan_id"]));
+            WC()->cart->add_to_cart($post, 1, 0, array(), array('meta_plan_id' => $_POST["plan_id"]));
         } else if ($key == "ghab_id" && $post > 0) {
             WC()->cart->add_to_cart($post, 1);
         } else if ($key == "voice_id" && $post > 0) {
-            WC()->cart->add_to_cart($post, 1, 0, array(), array('file' => $_POST["file_voice_id"]));
+            WC()->cart->add_to_cart($post, 1, 0, array(), array('meta_voice_file' => $_POST["file_voice_id"]));
         } else if ($key == "plan_id") {
         } else if (!str_contains($key, 'option-value-') && str_contains($key, 'option-')) {
             if (isset($_POST["option-value-" . $post])) {
                 if (trim(strlen($_POST["option-value-" . $post]) > 0)) {
-                    WC()->cart->add_to_cart($post, 1, 0, array(), array('value' => $_POST["option-value-" . $post]));
+                    WC()->cart->add_to_cart($post, 1, 0, array(), array('meta_option_value' => $_POST["option-value-" . $post]));
                 }
             } else {
                 WC()->cart->add_to_cart($post, 1);
@@ -96,6 +96,40 @@ add_action('wp_ajax_pn_wp_frontend_ajax_order', 'negarenovin_add_to_cart');
 add_action('wp_ajax_nopriv_pn_wp_frontend_ajax_order', 'negarenovin_add_to_cart');
 
 
-if ( function_exists( 'add_image_size' ) ) {
-    add_image_size( 'cart-thumb', 100, 100 ); // 100 wide and 100 high
-   }
+if (function_exists('add_image_size')) {
+    add_image_size('cart-thumb', 100, 100); // 100 wide and 100 high
+}
+
+class cartPlugins
+{
+    public function display_cart_item_custom_meta_data($item_data, $cart_item)
+    {
+        // Display custom cart item meta data (in cart and checkout)
+        $meta_key = '_order_meta_plan_id';
+        if (isset($cart_item['meta_plan_id'])) {
+            $item_data[] = array(
+                'key'       => $meta_key,
+                'value'     => $cart_item['meta_plan_id'],
+            );
+        }
+        return $item_data;
+    }
+    public function save_cart_item_custom_meta_as_order_item_meta($item, $cart_item_key, $values, $order)
+    {
+        $meta_key = '_order_meta_plan_id';
+        if (isset($values['meta_plan_id'])) {
+            $item->update_meta_data($meta_key, $values['meta_plan_id']);
+        }
+    }
+    public function atapour_cart_on_checkout_page_only()
+    {
+        if (is_wc_endpoint_url('order-received')) return;
+        echo do_shortcode('[woocommerce_cart]');
+    }
+}
+
+
+$cartPlugins = new cartPlugins;
+add_filter('woocommerce_get_item_data', array($cartPlugins, 'display_cart_item_custom_meta_data'), 10, 2);
+add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 'save_cart_item_custom_meta_as_order_item_meta'), 10, 4);
+//add_action('woocommerce_before_checkout_form', array($cartPlugins, 'atapour_cart_on_checkout_page_only'), 5);
