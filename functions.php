@@ -159,14 +159,6 @@ add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 's
 
 add_filter( 'show_admin_bar', '__return_false' );
 
-add_filter( 'woocommerce_admin_features', 'pk_woocommerce_admin_features' ) ;
-function pk_woocommerce_admin_features( $features ) { 
 
-	unset( $features['remote-inbox-notifications'] ) ; 
-	
-	//filters should return a result. 
-	return $features ; 
-	
-}
 
 
