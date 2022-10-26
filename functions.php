@@ -157,4 +157,6 @@ add_filter('woocommerce_get_item_data', array($cartPlugins, 'display_cart_item_c
 add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 'save_cart_item_custom_meta_as_order_item_meta'), 10, 4);
 //add_action('woocommerce_before_checkout_form', array($cartPlugins, 'atapour_cart_on_checkout_page_only'), 5);
 
+add_filter( 'show_admin_bar', '__return_false' );
+
 
