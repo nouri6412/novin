@@ -133,3 +133,9 @@ $cartPlugins = new cartPlugins;
 add_filter('woocommerce_get_item_data', array($cartPlugins, 'display_cart_item_custom_meta_data'), 10, 2);
 add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 'save_cart_item_custom_meta_as_order_item_meta'), 10, 4);
 //add_action('woocommerce_before_checkout_form', array($cartPlugins, 'atapour_cart_on_checkout_page_only'), 5);
+
+add_filter( 'woocommerce_order_item_name', 'change_orders_items_names', 10, 1 );
+function change_orders_items_names( $item_name ) {
+    $item_name = 'mydesiredproductname';
+    return $item_name;
+}
