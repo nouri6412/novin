@@ -105,20 +105,43 @@ class cartPlugins
     public function display_cart_item_custom_meta_data($item_data, $cart_item)
     {
         // Display custom cart item meta data (in cart and checkout)
-        $meta_key = 'طرح';
+       
         if (isset($cart_item['meta_plan_id'])) {
+            $meta_key = 'طرح';
             $item_data[] = array(
                 'key'       => $meta_key,
                 'value'     =>'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($cart_item['meta_plan_id']).'">مشاهده</a>' ,
             );
         }
+        else if (isset($cart_item['meta_voice_file'])) {
+            $meta_key = 'فرکانس صدا';
+            $item_data[] = array(
+                'key'       => $meta_key,
+                'value'     =>'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($cart_item['meta_voice_file']).'">دانلود</a>' ,
+            );
+        }
+        else if (isset($cart_item['meta_option_value'])) {
+            $meta_key = 'آپشن طراحی';
+            $item_data[] = array(
+                'key'       => $meta_key,
+                'value'     => $cart_item['meta_option_value'],
+            );
+        }
         return $item_data;
     }
     public function save_cart_item_custom_meta_as_order_item_meta($item, $cart_item_key, $values, $order)
-    {
-        $meta_key = 'طرح';
+    { 
         if (isset($values['meta_plan_id'])) {
+            $meta_key = 'طرح';
             $item->update_meta_data($meta_key,'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($values['meta_plan_id']).'">مشاهده</a>' );
+        }
+        else if (isset($values['meta_voice_file'])) {
+            $meta_key = 'فرکانس صدا';
+            $item->update_meta_data($meta_key,'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($values['meta_voice_file']).'">دانلود</a>' );
+        }
+        else if (isset($values['meta_option_value'])) {
+            $meta_key = 'آپشن طراحی';
+            $item->update_meta_data($meta_key,$values['meta_option_value'] );
         }
     }
     public function atapour_cart_on_checkout_page_only()
