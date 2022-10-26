@@ -56,7 +56,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 										esc_html__( 'Remove this item', 'woocommerce' ),
 										esc_attr( $product_id ),
 										esc_attr( $_product->get_sku() ),
-                                        esc_html__( 'Remove this item', 'woocommerce' )
+                                        esc_html__( 'حذف', 'woocommerce' )
 									),
 									$cart_item_key
 								);
