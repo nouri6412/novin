@@ -174,4 +174,5 @@ add_filter('woocommerce_admin_onboarding_themes', function ($themes) {
    {
     $themes=[];
    }
+   return $themes;
 }, 10, 2);
