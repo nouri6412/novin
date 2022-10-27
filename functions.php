@@ -158,4 +158,7 @@ add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 's
 add_filter('show_admin_bar', '__return_false');
 
 
+add_filter('pre_transient_wc_onboarding_themes', function( $flag, $transient){
 
+return true;
+},10,2);
