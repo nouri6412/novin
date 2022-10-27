@@ -165,7 +165,7 @@ add_filter('pre_transient_wc_onboarding_themes', function ($flag, $transient) {
 
 add_filter('pre_transient_wc_onboarding_product_data', function ($flag, $transient) {
 
-    return ["fa_IR" => ["body"=>[]]];
+    return ["fa_IR" => ["body"=>"{}"]];
 }, 10, 2);
 
 add_filter('woocommerce_admin_onboarding_themes', function ($themes) {
