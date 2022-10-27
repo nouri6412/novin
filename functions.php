@@ -74,7 +74,9 @@ function negarenovin_add_to_cart()
         } else if ($key == "ghab_id" && $post > 0) {
             WC()->cart->add_to_cart($post, 1);
         } else if ($key == "voice_id" && $post > 0) {
-            WC()->cart->add_to_cart($post, 1, 0, array(), array('meta_voice_file' => $_POST["file_voice_id"]));
+            if ($_POST["file_voice_id"] > 0) {
+                WC()->cart->add_to_cart($post, 1, 0, array(), array('meta_voice_file' => $_POST["file_voice_id"]));
+            }
         } else if ($key == "plan_id") {
         } else if (!str_contains($key, 'option-value-') && str_contains($key, 'option-')) {
             if (isset($_POST["option-value-" . $post])) {
@@ -105,22 +107,20 @@ class cartPlugins
     public function display_cart_item_custom_meta_data($item_data, $cart_item)
     {
         // Display custom cart item meta data (in cart and checkout)
-       
+
         if (isset($cart_item['meta_plan_id'])) {
             $meta_key = 'طرح';
             $item_data[] = array(
                 'key'       => $meta_key,
-                'value'     =>'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($cart_item['meta_plan_id']).'">مشاهده</a>' ,
+                'value'     => '<a style="color:red" target="_blank" href="' . wp_get_attachment_url($cart_item['meta_plan_id']) . '">مشاهده</a>',
             );
-        }
-        else if (isset($cart_item['meta_voice_file'])) {
+        } else if (isset($cart_item['meta_voice_file'])) {
             $meta_key = 'فرکانس صدا';
             $item_data[] = array(
                 'key'       => $meta_key,
-                'value'     =>'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($cart_item['meta_voice_file']).'">دانلود</a>' ,
+                'value'     => '<a style="color:red" target="_blank" href="' . wp_get_attachment_url($cart_item['meta_voice_file']) . '">دانلود</a>',
             );
-        }
-        else if (isset($cart_item['meta_option_value'])) {
+        } else if (isset($cart_item['meta_option_value'])) {
             $meta_key = 'آپشن طراحی';
             $item_data[] = array(
                 'key'       => $meta_key,
@@ -130,18 +130,16 @@ class cartPlugins
         return $item_data;
     }
     public function save_cart_item_custom_meta_as_order_item_meta($item, $cart_item_key, $values, $order)
-    { 
+    {
         if (isset($values['meta_plan_id'])) {
             $meta_key = 'طرح';
-            $item->update_meta_data($meta_key,'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($values['meta_plan_id']).'">مشاهده</a>' );
-        }
-        else if (isset($values['meta_voice_file'])) {
+            $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . wp_get_attachment_url($values['meta_plan_id']) . '">مشاهده</a>');
+        } else if (isset($values['meta_voice_file'])) {
             $meta_key = 'فرکانس صدا';
-            $item->update_meta_data($meta_key,'<a style="color:red" target="_blank" href="'.wp_get_attachment_url($values['meta_voice_file']).'">دانلود</a>' );
-        }
-        else if (isset($values['meta_option_value'])) {
+            $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . wp_get_attachment_url($values['meta_voice_file']) . '">دانلود</a>');
+        } else if (isset($values['meta_option_value'])) {
             $meta_key = 'آپشن طراحی';
-            $item->update_meta_data($meta_key,$values['meta_option_value'] );
+            $item->update_meta_data($meta_key, $values['meta_option_value']);
         }
     }
     public function atapour_cart_on_checkout_page_only()
@@ -157,8 +155,4 @@ add_filter('woocommerce_get_item_data', array($cartPlugins, 'display_cart_item_c
 add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 'save_cart_item_custom_meta_as_order_item_meta'), 10, 4);
 //add_action('woocommerce_before_checkout_form', array($cartPlugins, 'atapour_cart_on_checkout_page_only'), 5);
 
-add_filter( 'show_admin_bar', '__return_false' );
-
-
-
-
+add_filter('show_admin_bar', '__return_false');
