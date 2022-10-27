@@ -156,3 +156,9 @@ add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 's
 //add_action('woocommerce_before_checkout_form', array($cartPlugins, 'atapour_cart_on_checkout_page_only'), 5);
 
 add_filter('show_admin_bar', '__return_false');
+
+
+add_filter('pre_transient_wc_onboarding_themes', function( $flag, $transient){
+
+return false;
+},10,2);
