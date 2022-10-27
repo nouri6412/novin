@@ -167,3 +167,11 @@ add_filter('pre_transient_wc_onboarding_product_data', function ($flag, $transie
 
     return ["fa_IR" => true];
 }, 10, 2);
+
+add_filter('woocommerce_admin_onboarding_themes', function ($themes) {
+
+   if(!is_array($themes))
+   {
+    $themes=[];
+   }
+}, 10, 2);
