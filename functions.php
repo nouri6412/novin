@@ -160,5 +160,5 @@ add_filter('show_admin_bar', '__return_false');
 
 add_filter('pre_transient_wc_onboarding_themes', function( $flag, $transient){
 
-return false;
+return true;
 },10,2);
