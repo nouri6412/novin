@@ -158,12 +158,12 @@ add_action('woocommerce_checkout_create_order_line_item', array($cartPlugins, 's
 add_filter('show_admin_bar', '__return_false');
 
 
-add_filter('pre_transient_wc_onboarding_themes', function( $flag, $transient){
+add_filter('pre_transient_wc_onboarding_themes', function ($flag, $transient) {
 
-return true;
-},10,2);
+    return true;
+}, 10, 2);
 
-add_filter('pre_transient_wc_onboarding_product_data', function( $flag, $transient){
+add_filter('pre_transient_wc_onboarding_product_data', function ($flag, $transient) {
 
-    return ["fa_IR"=>true];
-    },10,2);
+    return ["fa_IR" => true];
+}, 10, 2);
