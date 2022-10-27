@@ -162,3 +162,8 @@ add_filter('pre_transient_wc_onboarding_themes', function( $flag, $transient){
 
 return true;
 },10,2);
+
+add_filter('pre_transient_wc_onboarding_product_data', function( $flag, $transient){
+
+    return ["fa_IR"=>true];
+    },10,2);
