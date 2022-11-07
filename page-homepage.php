@@ -53,13 +53,15 @@ if (isset($_GET["plan_selected"])) {
                     $item = $box['box'];
                 ?>
                     <div class="col-12 col-sm-6 col-md-4 mb-4">
-                        <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
-                            <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
-                            <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
-                            <div class="card-body">
-                                <h3 class="text-center"><?php echo $item["title"]; ?></h3>
-                            </div>
-                        </a>
+                        <div class="box-padd">
+                            <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
+                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
+                                <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
+                                <div class="card-body">
+                                    <h3 class="text-center"><?php echo $item["title"]; ?></h3>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 <?php } ?>
             </div>
@@ -267,8 +269,8 @@ if (isset($_GET["plan_selected"])) {
                             <span class="visually-hidden">Loading...</span>
                         </div>
                         <a data-media-id="0" style="color: red;" id="file-voice" class="file" href="#" target="_blank"></a>
-                        <input  id="file-voice-value" type="hidden" value="0" />
-                        <input  id="id-voice-value" type="hidden" value="<?php  echo $cat["ferecans_seda"]; ?>" />
+                        <input id="file-voice-value" type="hidden" value="0" />
+                        <input id="id-voice-value" type="hidden" value="<?php echo $cat["ferecans_seda"]; ?>" />
                     </form>
                 </div>
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
@@ -328,9 +330,9 @@ if (isset($_GET["plan_selected"])) {
                 <?php  } ?>
                 <div class="col-12">
                     <div class="col-12 col-sm-6 col-md-6 mb-5 mt-5">
-                        <input id="f-plan-id" type="hidden" value="<?php  echo $plan_selected ?>"/>
-                        <input id="f-size-id" type="hidden" value="<?php  echo $size_selected ?>"/>
-                        <input id="f-site-url" type="hidden" value="<?php  echo wc_get_cart_url() ?>"/>
+                        <input id="f-plan-id" type="hidden" value="<?php echo $plan_selected ?>" />
+                        <input id="f-size-id" type="hidden" value="<?php echo $size_selected ?>" />
+                        <input id="f-site-url" type="hidden" value="<?php echo wc_get_cart_url() ?>" />
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
