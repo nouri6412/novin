@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-2 col-sm-2 col-md-2 btn-menu"></div>
             <div class="col-2 col-sm-2 col-md-2 btn-menu"></div>
-            <div class="col-2 col-sm-2 col-md-1 btn-menu"></div>
+            <div class="col-2 col-sm-2 col-md-2 btn-menu"></div>
         </div>
         <!-- <div class="container">
             <div class="row  d-flex justify-content-between align-items-center">
