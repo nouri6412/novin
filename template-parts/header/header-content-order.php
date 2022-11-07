@@ -4,6 +4,11 @@
 <header>
     <div class="container topbar-site">
         <img class="topbar-site-banner" src="<?php echo get_template_directory_uri(); ?>/assets/img/banner2.jpg"/>
+        <div class="row">
+            <div class="col-1 col-sm-2 col-md-1 btn-menu"></div>
+            <div class="col-1 col-sm-2 col-md-1 btn-menu"></div>
+            <div class="col-1 col-sm-2 col-md-1 btn-menu"></div>
+        </div>
         <!-- <div class="container">
             <div class="row  d-flex justify-content-between align-items-center">
                 <div class="col-6">

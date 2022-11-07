@@ -281,6 +281,10 @@ header img.logo{
     max-height: 200px;
 }
 
+.topbar-site .btn-menu{
+    background-image: url(assets/img/btn-menu.png);
+}
+
 .dropdown-toggle::after {
     margin-right: .255em;
 }
