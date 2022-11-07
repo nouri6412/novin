@@ -52,7 +52,7 @@ if (isset($_GET["plan_selected"])) {
                 foreach ($boxs as $box) {
                     $item = $box['box'];
                 ?>
-                    <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="col-12 col-sm-6 col-md-4 mb-4">
                         <a href="<?php echo site_url("?cat_selected=" . $item["link"]) ?>" class="card card-style card-portfolio card-order card-yellow">
                             <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>">
                             <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
