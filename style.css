@@ -5888,7 +5888,7 @@ ul.menu-multi-level .mega-menu-col ul {
 }
 
 .bg-ex{
-   background-image: url(assets/img/bg-ex.png);
+   background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(assets/img/bg-ex.png);
    background-repeat: no-repeat;
    background-size: contain;
 }
