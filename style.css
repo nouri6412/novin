@@ -6122,7 +6122,9 @@ ul.menu-multi-level .mega-menu-col ul {
 div#demonote {
     display: none;
 }
-
+.topbar-site-banner-phone {
+    display: none;
+  }
 @media only screen and (max-width: 600px) {
     .topbar-site-banner {
       display: none;
