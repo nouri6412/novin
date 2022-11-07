@@ -5887,6 +5887,12 @@ ul.menu-multi-level .mega-menu-col ul {
     transition: all 0.4s linear;
 }
 
+.bg-ex{
+    position:absolute;
+    opacity: 0.4;
+    bottom: 0;
+}
+
 .slider_about-us .owl-item.active .card1-blockquote {
     transform: translateY(-50%) scale(1);
 }
