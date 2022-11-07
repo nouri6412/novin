@@ -3,7 +3,7 @@
 </div>
 <header>
     <div class="topbar-site">
-        <img class="topbar-site-banner" src="<?php echo get_template_directory_uri(); ?>/assets/img/banner1.jpg"/>
+        <img class="topbar-site-banner" src="<?php echo get_template_directory_uri(); ?>/assets/img/banner2.jpg"/>
         <!-- <div class="container">
             <div class="row  d-flex justify-content-between align-items-center">
                 <div class="col-6">
