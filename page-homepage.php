@@ -32,8 +32,7 @@ if (isset($_GET["plan_selected"])) {
 }
 
 ?>
-<main class="content">
-<img class="bg-ex" src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-ex.png">
+<main class="content bg-ex">
     <?php if ($step == 1) { ?>
         <div class="container mt-4">
             <div class="row">

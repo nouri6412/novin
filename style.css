@@ -5888,9 +5888,9 @@ ul.menu-multi-level .mega-menu-col ul {
 }
 
 .bg-ex{
-    position:absolute;
-    opacity: 0.4;
-    bottom: 0;
+   background-image: url(assets/img/bg-ex.png);
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 .slider_about-us .owl-item.active .card1-blockquote {
