@@ -5,13 +5,13 @@
     <div class="container topbar-site">
         <img class="topbar-site-banner" src="<?php echo get_template_directory_uri(); ?>/assets/img/banner2.jpg" />
         <div class="row">
-            <div class="col-4 col-sm-2 col-md-2  mt-2">
+            <div class="col-4 col-sm-2 col-md-2  btn-menu-div">
                 <div class="btn-menu"></div>
             </div>
-            <div class="col-4 col-sm-2 col-md-2  mt-2">
+            <div class="col-4 col-sm-2 col-md-2 btn-menu-div">
                 <div class="btn-menu"></div>
             </div>
-            <div class="col-4 col-sm-2 col-md-2  mt-2">
+            <div class="col-4 col-sm-2 col-md-2 btn-menu-div ">
                 <div class="btn-menu"></div>
             </div>
         </div>
