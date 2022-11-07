@@ -6,7 +6,7 @@
         <img class="topbar-site-banner" src="<?php echo get_template_directory_uri(); ?>/assets/img/banner2.jpg" />
         <div class="row">
             <div class="col-4 col-sm-2 col-md-2  btn-menu-div">
-                <div class="btn-menu"><a href="<?php echo site_url() ?>">کادوئی</a></div>
+            <a href="<?php echo site_url() ?>"> <div class="btn-menu">کادوئی</div></a>
             </div>
             <div class="col-4 col-sm-2 col-md-2 btn-menu-div">
                 <div class="btn-menu">پوشاک</div>
