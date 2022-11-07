@@ -5890,7 +5890,7 @@ ul.menu-multi-level .mega-menu-col ul {
 .bg-ex{
    background-image: url(assets/img/bg-ex.png);
    background-repeat: no-repeat;
-   background-size: cover;
+   background-size: contain;
 }
 
 .slider_about-us .owl-item.active .card1-blockquote {
