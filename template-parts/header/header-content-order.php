@@ -2,8 +2,9 @@
 <div class="bg-close">
 </div>
 <header>
-    <div class="topbar-site ">
-        <div class="container">
+    <div class="topbar-site">
+        <img class="topbar-site-banner" src="<?php echo get_template_directory_uri(); ?>/assets/img/banner1.jpg"/>
+        <!-- <div class="container">
             <div class="row  d-flex justify-content-between align-items-center">
                 <div class="col-6">
                     <div class="tel_topbar-site  float-right ms-2">
@@ -17,7 +18,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </header>
 <div class="container">

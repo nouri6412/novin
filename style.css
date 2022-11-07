@@ -275,6 +275,11 @@ header img.logo{
     font-size: 0.95rem;
 }
 
+.topbar-site .topbar-site-banner{
+    width: 100%;
+    object-fit: contain;
+}
+
 .dropdown-toggle::after {
     margin-right: .255em;
 }
