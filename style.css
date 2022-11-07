@@ -5857,6 +5857,10 @@ ul.menu-multi-level .mega-menu-col ul {
     border-radius: 20px;
 }
 
+.box-padd .card-portfolio.card-order img {
+    height: 225px;
+}
+
 .card-yellow .card-body{
     margin: 0;
     position: absolute;
