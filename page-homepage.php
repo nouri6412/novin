@@ -40,7 +40,7 @@ if (isset($_GET["plan_selected"])) {
                     <div class="title_site mb-2">
                         <h2><?php echo get_field("title"); ?></h2>
                     </div>
-                    <p class="text-center mb-5 text-logo"><?php echo get_field("desc"); ?></p>
+                    <p class="text-center mb-2 text-logo"><?php echo get_field("desc"); ?></p>
                 </div>
             </div>
         </div>
