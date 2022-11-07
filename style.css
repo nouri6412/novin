@@ -293,6 +293,10 @@ header img.logo{
     font-size: 1.2rem;
 }
 
+.topbar-site .btn-menu a{
+    color: #fff;
+}
+
 .topbar-site .btn-menu-div{
 margin-top: 5px;
 padding: 0 5px 0 5px;
