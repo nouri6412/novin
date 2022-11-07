@@ -6130,7 +6130,7 @@ div#demonote {
       display: none;
     }
     .topbar-site-banner-phone {
-        display: block;
+        display: initial;
       }
   }
 
