@@ -6123,3 +6123,12 @@ div#demonote {
     display: none;
 }
 
+@media only screen and (max-width: 600px) {
+    .topbar-site-banner {
+      display: none;
+    }
+    .topbar-site-banner-phone {
+        display: block;
+      }
+  }
+
