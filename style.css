@@ -278,6 +278,7 @@ header img.logo{
 .topbar-site .topbar-site-banner{
     width: 100%;
     object-fit: contain;
+    max-height: 200px;
 }
 
 .dropdown-toggle::after {
