@@ -5872,7 +5872,7 @@ ul.menu-multi-level .mega-menu-col ul {
 }
 
 .card-portfolio img{
-    object-fit: contain;
+    /* object-fit: contain; */
 }
 
 .box-padd .card-portfolio.card-order img {
