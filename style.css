@@ -6171,10 +6171,11 @@ div#demonote {
     }
 
     .bg-tag{
-
+        text-align: center;
     }
     .bg-tag img{
-
+        position: relative;
+        top: 17px;
     }
 
 @media only screen and (max-width: 600px) {
@@ -6196,6 +6197,12 @@ div#demonote {
     .card-yellow .card-body h3.box-h{
         font-size: 16px;
         display: block;
+        }
+
+        .bg-tag img{
+            width: 65%;
+            position: relative;
+            top: 17px;
         }
   }
 
