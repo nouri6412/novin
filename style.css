@@ -6209,11 +6209,11 @@ div#demonote {
     }
 
     #bg-white .box-plan img{
-        width: 400px;
-        height: 490px;
+        width: 257px;
+        height: 375px;
         object-fit: contain;
-        margin: auto;
-        margin-top: 100px;
+        margin-top: 45px;
+        margin-right: 64px;
     }
 
 @media only screen and (max-width: 600px) {
@@ -6252,8 +6252,13 @@ div#demonote {
             height: 380px;
         }
         #bg-white .box-plan img{
-            width: 320px;
-            height: 380px;
+            width: 199px;
+            height: 297px;
+            object-fit: contain;
+            /* margin: auto; */
+            margin-top: 39px;
+            /* margin-left: 29px; */
+            margin-right: 58px;
         }
   }
 
