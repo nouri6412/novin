@@ -6174,7 +6174,7 @@ div#demonote {
 
     }
     .bg-tag img{
-        
+
     }
 
 @media only screen and (max-width: 600px) {
@@ -6195,7 +6195,7 @@ div#demonote {
     }
     .card-yellow .card-body h3.box-h{
         font-size: 16px;
-        display: grid;
+        display: block;
         }
   }
 
