@@ -83,7 +83,7 @@ if (isset($_GET["plan_selected"])) {
                     <div class="title_site mb-2">
                         <h2><?php echo 'انتخاب شما' . ' ' . $cat["title"] . ' ' . 'است'; ?></h2>
                     </div>
-                    <p class="text-center mb-5 text-logo"><?php echo 'خب سایز' . ' ' . $cat["title"] . ' ' . 'رو انتخاب کن!'; ?></p>
+                    <p class="text-center mb-1 text-logo"><?php echo 'خب سایز' . ' ' . $cat["title"] . ' ' . 'رو انتخاب کن!'; ?></p>
                 </div>
             </div>
         </div>

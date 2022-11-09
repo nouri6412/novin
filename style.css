@@ -6183,6 +6183,11 @@ div#demonote {
         top: 17px;
     }
 
+    .row > img{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
 @media only screen and (max-width: 600px) {
     .topbar-site-banner {
       display: none;
