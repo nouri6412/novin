@@ -108,7 +108,7 @@ if (isset($_GET["plan_selected"])) {
                 ?>
                     <div class="col-6 col-sm-6 col-md-3 col-box">
                         <a href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-portfolio  card-yellow">
-                            <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box.png" /></div>
+                            <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box-1.png" /></div>
                             <!-- <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>"> -->
                             <div class="card-body card-body-fix">
                                 <h3 class="text-center text-black box-h-4"><?php echo get_the_title($item); ?></h3>
