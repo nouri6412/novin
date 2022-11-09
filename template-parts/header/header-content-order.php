@@ -9,11 +9,11 @@
         </div>
 
         <div class="row">
-            <div class="col-4 col-sm-2 col-md-2  btn-menu-div">
+            <!-- <div class="col-4 col-sm-2 col-md-2  btn-menu-div">
                 <a href="<?php echo site_url() ?>">
                     <div class="btn-menu">صفحه اصلی</div>
                 </a>
-            </div>
+            </div> -->
             <div class="col-4 col-sm-2 col-md-2  btn-menu-div">
                 <a href="<?php echo site_url() ?>">
                     <div class="btn-menu">کادوئی</div>
