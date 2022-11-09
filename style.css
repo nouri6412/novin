@@ -6200,6 +6200,12 @@ div#demonote {
 
     #bg-white .box-plan{
         background-image: url(assets/img/plan.png);
+        width: 400px;
+        height: 490px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: auto;
+        margin-top: 100px;
     }
 
 @media only screen and (max-width: 600px) {
@@ -6231,6 +6237,11 @@ div#demonote {
             width: 65%;
             position: relative;
             top: 17px;
+        }
+
+        #bg-white .box-plan{
+            width: 320px;
+            height: 380px;
         }
   }
 
