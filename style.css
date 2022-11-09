@@ -39,17 +39,20 @@ main{
 }
 
 .card-yellow .bg-yellow-fix{
-height: 225px;
+
 }
 
 .card-yellow .bg-yellow{
     width: 100%;
     height: 100%;
 }
-.card-yellow .bg-yellow img,.card-yellow .bg-yellow-fix img{
+.card-yellow .bg-yellow img{
     width: 100%;
     position: absolute;
     top: 0;  
+}
+.card-yellow .bg-yellow-fix img{
+    width: 100%;
 }
 
 .card-yellow .card-body h3.box-h{
