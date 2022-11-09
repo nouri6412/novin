@@ -292,7 +292,7 @@ header img.logo{
 .topbar-site .topbar-site-banner{
     width: 100%;
     object-fit: cover;
-    max-height: 200px;
+    /* max-height: 200px; */
 }
 
 .topbar-site .btn-menu{

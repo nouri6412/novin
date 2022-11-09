@@ -4,7 +4,7 @@
 <header>
     <div class="container topbar-site">
         <div class="row">
-            <img class="col-12 topbar-site-banner" src="<?php echo get_template_directory_uri(); ?>/assets/img/banner2.jpg" />
+            <img class="col-12 topbar-site-banner" src="<?php echo get_template_directory_uri(); ?>/assets/img/banner5.jpg" />
             <img class="col-12 topbar-site-banner-phone" src="<?php echo get_template_directory_uri(); ?>/assets/img/banner5.jpg" />
         </div>
 
