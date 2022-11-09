@@ -5859,6 +5859,9 @@ ul.menu-multi-level .mega-menu-col ul {
 .card-portfolio.card-order img {
     height: 280px;
     border-radius: 20px;
+}
+
+.card-portfolio img{
     object-fit: contain;
 }
 
