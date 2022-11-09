@@ -109,11 +109,6 @@ if (isset($_GET["plan_selected"])) {
                             <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                             <div class="card-body">
                                 <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
-                                <?php if ($product->is_on_sale()) {
-                                ?>
-                                    <h3 class="text-center sale-price"><?php echo  $product->get_sale_price(); ?></h3>
-                                <?php
-                                } ?>
                                 <h3 class="text-center"><?php echo  $product->get_price_html(); ?></h3>
 
                             </div>
