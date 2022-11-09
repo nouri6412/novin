@@ -6158,10 +6158,15 @@ div#demonote {
     width: 100%;
 }
 
-.card-yellow .card-body h3.box-h{
+.card-yellow .card-body h3.box-h-3{
     font-size: 22px;
     display: grid;
     }
+
+    .card-yellow .card-body h3.box-h-4{
+        font-size: 20px;
+        display: grid;
+        }
 
     .row.box-black{
         background-color: #000;
