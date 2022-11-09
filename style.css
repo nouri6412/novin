@@ -1977,7 +1977,7 @@ footer .contenet_widget_footer ul li a:hover {
 
 .menu_footer ul li a {
     color: #cdb30b;
-    font-size: 0.9rem;
+    font-size: 19PX;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
 }
