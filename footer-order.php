@@ -146,7 +146,9 @@
     </div>
 </footer>
 <div id="bg-white">
-    <div class="box-plan"></div>
+    <div class="box-plan">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg"/>
+    </div>
 </div>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.5.0.min.js"></script>

@@ -6208,6 +6208,14 @@ div#demonote {
         margin-top: 100px;
     }
 
+    #bg-white .box-plan img{
+        width: 400px;
+        height: 490px;
+        object-fit: contain;
+        margin: auto;
+        margin-top: 100px;
+    }
+
 @media only screen and (max-width: 600px) {
     .topbar-site-banner {
       display: none;
@@ -6240,6 +6248,10 @@ div#demonote {
         }
 
         #bg-white .box-plan{
+            width: 320px;
+            height: 380px;
+        }
+        #bg-white .box-plan img{
             width: 320px;
             height: 380px;
         }
