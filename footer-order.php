@@ -148,7 +148,7 @@
 <div id="bg-white">
     <div class="box-plan">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg"/>
-        <button class="btn"><i class="fa fa-window-close"></i></button>
+        <button onclick="close_box_plan()" class="btn"><i class="fa fa-window-close"></i></button>
     </div>
 </div>
 
@@ -156,7 +156,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/carousel/owl.carousel.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=1"></script>
 </body>
 
 </html>

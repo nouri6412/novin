@@ -846,6 +846,11 @@ function aniTrigger() {
   };
 }
 
+function close_box_plan()
+{
+    $('#bg-white').css('display','none');
+}
+
 
 /************************************ ************************************/
 
