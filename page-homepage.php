@@ -88,6 +88,9 @@ if (isset($_GET["plan_selected"])) {
             </div>
         </div>
         <div class="container mb-5">
+            <div class="bg-tag">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tag.png" />
+            </div>
             <div class="row box-black">
 
                 <?php

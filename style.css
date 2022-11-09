@@ -6170,6 +6170,12 @@ div#demonote {
     border-radius: 20px;
     }
 
+    .bg-tag{
+
+    }
+    .bg-tag img{
+        
+    }
 
 @media only screen and (max-width: 600px) {
     .topbar-site-banner {
@@ -6184,7 +6190,7 @@ div#demonote {
         top: 0;
         left: 0;
         transform: none;
-        padding: 13px 8px 2px 15px;
+        padding: 10px 8px 2px 15px;
         width: 100%;
     }
     .card-yellow .card-body h3.box-h{
