@@ -6163,6 +6163,10 @@ div#demonote {
     display: grid;
     }
 
+    .row.box-black{
+        background-color: #000;
+    }
+
 
 @media only screen and (max-width: 600px) {
     .topbar-site-banner {

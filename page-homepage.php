@@ -88,7 +88,7 @@ if (isset($_GET["plan_selected"])) {
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row box-black">
 
                 <?php
                 $sizes = $cat["sizes"];
