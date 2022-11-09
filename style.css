@@ -57,6 +57,12 @@ main{
 
 .card-yellow .card-body h3.box-h{
 font-size: 18px;
+display: grid;
+}
+
+.row .col-box{
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .card-yellow .bg-yellow:hover > img{
@@ -5889,7 +5895,7 @@ ul.menu-multi-level .mega-menu-col ul {
     top: 0;
     left: 0;
     transform: translate(0%, 0%);
-    padding: 2px;
+    padding: 7px 0px 2px 0px;
 }
 
 .card-yellow .card-body h3{
