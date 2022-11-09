@@ -6206,6 +6206,7 @@ div#demonote {
         background-size: contain;
         margin: auto;
         margin-top: 100px;
+        position: relative;
     }
 
     #bg-white .box-plan img{
@@ -6215,6 +6216,15 @@ div#demonote {
         margin-top: 45px;
         margin-right: 64px;
     }
+
+    #bg-white .box-plan button{
+        left: 15px;
+        position: absolute;
+        top: 3px;
+        color: #fff;
+        font-size: 20px;
+    }
+
 
 @media only screen and (max-width: 600px) {
     .topbar-site-banner {
@@ -6260,5 +6270,9 @@ div#demonote {
             /* margin-left: 29px; */
             margin-right: 58px;
         }
+        
+    #bg-white .box-plan button{
+        left: 22px;
+    }
   }
 
