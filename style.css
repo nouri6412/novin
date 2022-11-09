@@ -6201,11 +6201,11 @@ div#demonote {
     }
     .card-yellow .card-body h3.box-h-3{
         font-size: 18px;
-        display: block;
+        display: grid;
         }
         .card-yellow .card-body h3.box-h-4{
             font-size: 14px;
-            display: block;
+            display: grid;
             }
 
         .bg-tag img{
