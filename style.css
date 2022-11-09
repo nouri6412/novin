@@ -6176,14 +6176,12 @@ div#demonote {
 
         top: 0;
         left: 0;
-        /* margin: auto; */
-        /* display: block; */
         transform: none;
-        padding: 13px 5px 2px 15px;
+        padding: 13px 8px 2px 15px;
         width: 100%;
     }
     .card-yellow .card-body h3.box-h{
-        font-size: 18px;
+        font-size: 16px;
         display: grid;
         }
   }
