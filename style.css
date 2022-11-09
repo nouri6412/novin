@@ -52,6 +52,10 @@ height: 225px;
     top: 0;  
 }
 
+.bg-yellow-fix h3{
+    
+}
+
 .card-yellow .bg-yellow:hover > img{
    opacity: 0;
 }
