@@ -148,6 +148,7 @@
 <div id="bg-white">
     <div class="box-plan">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg"/>
+        <button class="btn"><i class="fa fa-window-close"></i></button>
     </div>
 </div>
 
