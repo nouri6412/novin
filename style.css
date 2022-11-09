@@ -5880,6 +5880,14 @@ ul.menu-multi-level .mega-menu-col ul {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.card-yellow .card-body.card-body-fix{
+
+    top: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+}
+
 .card-yellow .card-body h3{
     color: #fff;
     font-size: 25px;
