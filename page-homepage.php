@@ -87,7 +87,7 @@ if (isset($_GET["plan_selected"])) {
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container mb-5">
             <div class="row box-black">
 
                 <?php
