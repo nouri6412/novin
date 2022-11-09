@@ -6187,6 +6187,9 @@ div#demonote {
         padding-left: 0;
         padding-right: 0;
     }
+    #bg-white{
+        
+    }
 
 @media only screen and (max-width: 600px) {
     .topbar-site-banner {

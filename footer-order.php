@@ -145,6 +145,7 @@
         </div>
     </div>
 </footer>
+<div id="bg-white"></div>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.5.0.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
