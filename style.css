@@ -5889,6 +5889,7 @@ ul.menu-multi-level .mega-menu-col ul {
     top: 0;
     left: 0;
     transform: translate(0%, 0%);
+    padding: 2px;
 }
 
 .card-yellow .card-body h3{
