@@ -35,7 +35,7 @@ main{
 }
 
 .card-yellow{
-
+border: 0;
 }
 
 .card-yellow .bg-yellow-fix{
@@ -6165,6 +6165,9 @@ div#demonote {
 
     .row.box-black{
         background-color: #000;
+    padding: 8px;
+    margin: 2px;
+    border-radius: 20px;
     }
 
 
