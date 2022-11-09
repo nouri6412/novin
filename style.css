@@ -6194,10 +6194,14 @@ div#demonote {
         padding: 10px 8px 2px 15px;
         width: 100%;
     }
-    .card-yellow .card-body h3.box-h{
-        font-size: 16px;
+    .card-yellow .card-body h3.box-h-3{
+        font-size: 18px;
         display: block;
         }
+        .card-yellow .card-body h3.box-h-4{
+            font-size: 14px;
+            display: block;
+            }
 
         .bg-tag img{
             width: 65%;
