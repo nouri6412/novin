@@ -103,10 +103,9 @@ if (isset($_GET["plan_selected"])) {
                     }
                     $product = wc_get_product($item);
                 ?>
-                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="col-6 col-sm-6 col-md-3 mb-4">
                         <a href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-style card-portfolio card-order card-yellow">
-                            <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>">
-                            <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
+                            <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box.png" /></div>
                             <div class="card-body">
                                 <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
                                 <h3 class="text-center"><?php echo  $product->get_price_html(); ?></h3>
