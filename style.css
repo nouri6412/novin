@@ -38,7 +38,11 @@ main{
 
 }
 
-.card-yellow .bg-yellow,.card-yellow .bg-yellow-fix{
+.card-yellow .bg-yellow-fix{
+height: 225px;
+}
+
+.card-yellow .bg-yellow{
     width: 100%;
     height: 100%;
 }
