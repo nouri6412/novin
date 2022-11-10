@@ -853,7 +853,7 @@ function close_box_plan()
 
 function change_img_box_plan(obj)
 {
-    $('#btn-next-step').attr('hret',obj.attr('data-href'));
+    $('#btn-next-step').attr('href',obj.attr('data-href'));
     $('#bg-white img').attr('src',obj.attr('data-img'));
     $('#bg-white').css('display','block');
     $('.selected h3').removeClass('text-danger');
