@@ -36,6 +36,7 @@ main{
 
 .card-yellow{
 border: 0;
+ cursor: pointer;
 }
 
 .card-yellow .bg-yellow-fix{
