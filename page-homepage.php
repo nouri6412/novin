@@ -357,7 +357,7 @@ if (isset($_GET["plan_selected"])) {
 
 
         ?>
-            <div class="float-start"><a id="btn-next-step" href="#" class="btn btn-primary">مرحله بعدی</a></div>
+            <div  class="float-start"><a onclick="check_plan_selected(this)" id="btn-next-step" href="#" class="btn btn-primary">مرحله بعدی</a></div>
             <div class="float-end"></div> <a id="btn-prev-step" href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
         <?php } ?>
     </div>

@@ -864,6 +864,14 @@ function change_img_box_plan(obj)
     $('.selected h3').removeClass('text-black');
 }
 
+function check_plan_selected(obj)
+{
+if(obj.attr('href')=='#')
+{
+alert("سایز انتخاب نشده !!");
+}
+}
+
 
 /************************************ ************************************/
 
