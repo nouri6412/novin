@@ -107,7 +107,7 @@ if (isset($_GET["plan_selected"])) {
                     $product = wc_get_product($item);
                 ?>
                     <div class="col-6 col-sm-6 col-md-3 col-box">
-                        <div onclick="change_img_box_plan($(this))"  data-img="<?php echo $image; ?>"  data-href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-portfolio  card-yellow">
+                        <div onclick="change_img_box_plan($(this))" data-img="<?php echo $image; ?>" data-href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-portfolio  card-yellow">
                             <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box-1.png" /></div>
                             <!-- <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>"> -->
                             <div class="card-body card-body-fix">
@@ -115,7 +115,7 @@ if (isset($_GET["plan_selected"])) {
                                 <h3 class="text-center text-black box-h-3"><?php echo  $product->get_price_html(); ?></h3>
 
                             </div>
-                </div>
+                        </div>
                     </div>
                 <?php } ?>
             </div>
@@ -346,6 +346,12 @@ if (isset($_GET["plan_selected"])) {
             </div>
         </div>
     <?php } ?>
+    <div class="mb-5 mt-5">
+        <a id="btn-next-step" href="#" class="btn btn-primary float-left">مرحله بعدی</a>
+        <?php if ($step > 0) { ?>
+            <a id="btn-prev-step" href="#" class="btn btn-primary float-left">مرحله قبلی</a>
+        <?php } ?>
+    </div>
 </main>
 
 <?php get_footer('order') ?>
