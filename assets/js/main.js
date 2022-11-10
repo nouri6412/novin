@@ -24,62 +24,62 @@ function showPassword2() {
 /*************************************** slider js***************************************/
 
 if ($("#slider-category-product").length) {
-$(".slider_category_product").owlCarousel({
-    //center: true,
-    // margin: 20,
-    rtl: true,
-    loop: true,
-    // autoplay: true,
-    autoplaytimeout: 4000,
-    smartSpeed: 500,
-    // nav: true,
-    // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
-    dots: true,
-    lazyLoadEager: 3,
-    responsive: {
-        // breakpoint from 0 up
-        0: {
-            items: 1,
-            margin: 30,
-        },
-        // breakpoint from 576 up
-        576: {
-            items: 2,
-            margin: 5,
-            center: false,
-        },
-        // breakpoint from 768 up
-        768: {
-            items: 3,
-            margin: 20,
-        },
-        992: {
-            items: 3,
-            margin: 10,
-        },
-        1200: {
-            items: 3,
-            margin: 20,
+    $(".slider_category_product").owlCarousel({
+        //center: true,
+        // margin: 20,
+        rtl: true,
+        loop: true,
+        // autoplay: true,
+        autoplaytimeout: 4000,
+        smartSpeed: 500,
+        // nav: true,
+        // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
+        dots: true,
+        lazyLoadEager: 3,
+        responsive: {
+            // breakpoint from 0 up
+            0: {
+                items: 1,
+                margin: 30,
+            },
+            // breakpoint from 576 up
+            576: {
+                items: 2,
+                margin: 5,
+                center: false,
+            },
+            // breakpoint from 768 up
+            768: {
+                items: 3,
+                margin: 20,
+            },
+            992: {
+                items: 3,
+                margin: 10,
+            },
+            1200: {
+                items: 3,
+                margin: 20,
+            }
         }
-    }
-})
+    })
 }
 
 if ($("#slider-about-us").length) {
-$(".slider_about-us").owlCarousel({
-    items: 1,
-    rtl: true,
-    loop: true,
-    autoplaytimeout: 4000,
-    nav: true,
-    navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
-    // lazyLoadEager: 3,
-    dots: false,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
-    // autoplay:true,
+    $(".slider_about-us").owlCarousel({
+        items: 1,
+        rtl: true,
+        loop: true,
+        autoplaytimeout: 4000,
+        nav: true,
+        navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
+        // lazyLoadEager: 3,
+        dots: false,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        // autoplay:true,
 
-})
+    })
 
 }
 
@@ -105,90 +105,90 @@ if ($("#countdown-product").length) {
 /*************************************** slider js***************************************/
 
 if ($("#slider-customers-comments").length) {
-$(".slider_customers_comments").owlCarousel({
-    //center: true,
-    // margin: 20,
-    rtl: true,
-    loop: true,
-    // autoplay: true,
-    autoplaytimeout: 4000,
-    smartSpeed: 500,
-    // nav: true,
-    // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
-    dots: true,
-    lazyLoadEager: 3,
-    responsive: {
-        // breakpoint from 0 up
-        0: {
-            items: 1,
-            margin: 50,
-        },
-        // breakpoint from 576 up
-        550: {
-            items: 2,
-            margin: 25,
-        },
-        // breakpoint from 768 up
-        768: {
-            items: 3,
-            margin: 20,
-            center: true,
-        },
-        992: {
-            items: 3,
-            margin: 20,
-            center: true,
-        },
-        1200: {
-            items: 4,
-            margin: 20,
+    $(".slider_customers_comments").owlCarousel({
+        //center: true,
+        // margin: 20,
+        rtl: true,
+        loop: true,
+        // autoplay: true,
+        autoplaytimeout: 4000,
+        smartSpeed: 500,
+        // nav: true,
+        // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
+        dots: true,
+        lazyLoadEager: 3,
+        responsive: {
+            // breakpoint from 0 up
+            0: {
+                items: 1,
+                margin: 50,
+            },
+            // breakpoint from 576 up
+            550: {
+                items: 2,
+                margin: 25,
+            },
+            // breakpoint from 768 up
+            768: {
+                items: 3,
+                margin: 20,
+                center: true,
+            },
+            992: {
+                items: 3,
+                margin: 20,
+                center: true,
+            },
+            1200: {
+                items: 4,
+                margin: 20,
+            }
         }
-    }
-})
+    })
 }
 
 
 if ($("#slider-single-product").length) {
-$(".slider_single-product").owlCarousel({
-    //center: true,
-    // margin: 20,
-    rtl: true,
-    loop: true,
-    // autoplay: true,
-    autoplaytimeout: 4000,
-    smartSpeed: 500,
-    // nav: true,
-    // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
-    dots: true,
-    lazyLoadEager: 3,
-    responsive: {
-        // breakpoint from 0 up
-        0: {
-            items: 1,
-            margin: 50,
-        },
-        // breakpoint from 576 up
-        550: {
-            items: 2,
-            margin: 25,
-        },
-        // breakpoint from 768 up
-        768: {
-            items: 3,
-            margin: 20,
-            center: true,
-        },
-        992: {
-            items: 3,
-            margin: 20,
-            center: true,
-        },
-        1200: {
-            items: 4,
-            margin: 20,
+    $(".slider_single-product").owlCarousel({
+        //center: true,
+        // margin: 20,
+        rtl: true,
+        loop: true,
+        // autoplay: true,
+        autoplaytimeout: 4000,
+        smartSpeed: 500,
+        // nav: true,
+        // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
+        dots: true,
+        lazyLoadEager: 3,
+        responsive: {
+            // breakpoint from 0 up
+            0: {
+                items: 1,
+                margin: 50,
+            },
+            // breakpoint from 576 up
+            550: {
+                items: 2,
+                margin: 25,
+            },
+            // breakpoint from 768 up
+            768: {
+                items: 3,
+                margin: 20,
+                center: true,
+            },
+            992: {
+                items: 3,
+                margin: 20,
+                center: true,
+            },
+            1200: {
+                items: 4,
+                margin: 20,
+            }
         }
-    }
-})
+    })
 }
 
 /***************************** box side add to cart js*****************************/
@@ -535,142 +535,142 @@ $(".gallery a").each(function () {
 /********************************** slider js**********************************/
 
 if ($(".slider_singlePost").length) {
-$(".slider_singlePost").owlCarousel({
-    items: 3,
-    //center: true,
-    // margin: 20,
-    rtl: true,
-    loop: true,
-    // autoplay: true,
-    autoplaytimeout: 4000,
-    smartSpeed: 500,
-    // nav: true,
-    // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
-    dots: true,
-    lazyLoadEager: 3,
-    responsive: {
-        // breakpoint from 0 up
-        0: {
-            items: 1,
-            margin: 30,
-        },
-        // breakpoint from 576 up
-        576: {
-            items: 2,
-            margin: 20,
-            center: false,
-        },
-        // breakpoint from 768 up
-        768: {
-            items: 2,
-            margin: 30,
-        },
+    $(".slider_singlePost").owlCarousel({
+        items: 3,
+        //center: true,
+        // margin: 20,
+        rtl: true,
+        loop: true,
+        // autoplay: true,
+        autoplaytimeout: 4000,
+        smartSpeed: 500,
+        // nav: true,
+        // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
+        dots: true,
+        lazyLoadEager: 3,
+        responsive: {
+            // breakpoint from 0 up
+            0: {
+                items: 1,
+                margin: 30,
+            },
+            // breakpoint from 576 up
+            576: {
+                items: 2,
+                margin: 20,
+                center: false,
+            },
+            // breakpoint from 768 up
+            768: {
+                items: 2,
+                margin: 30,
+            },
 
-        992: {
-            items: 2,
-            margin: 30,
-        },
+            992: {
+                items: 2,
+                margin: 30,
+            },
 
-        1200: {
-            items: 2,
-            margin: 30,
+            1200: {
+                items: 2,
+                margin: 30,
+            }
         }
-    }
-})
+    })
 }
 
 if ($(".slider-Related-posts").length) {
-$(".slider-Related-posts").owlCarousel({
-    items: 3,
-    //center: true,
-    // margin: 20,
-    rtl: true,
-    loop: true,
-    // autoplay: true,
-    autoplaytimeout: 4000,
-    smartSpeed: 500,
-    // nav: true,
-    // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
+    $(".slider-Related-posts").owlCarousel({
+        items: 3,
+        //center: true,
+        // margin: 20,
+        rtl: true,
+        loop: true,
+        // autoplay: true,
+        autoplaytimeout: 4000,
+        smartSpeed: 500,
+        // nav: true,
+        // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
 
-    dots: true,
+        dots: true,
 
-    lazyLoadEager: 3,
-    responsive: {
-        // breakpoint from 0 up
-        0: {
-            items: 1,
-            margin: 30,
-
-
-        },
-        // breakpoint from 576 up
-        576: {
-            items: 2,
-            margin: 5,
-            center: false,
+        lazyLoadEager: 3,
+        responsive: {
+            // breakpoint from 0 up
+            0: {
+                items: 1,
+                margin: 30,
 
 
-        },
-        // breakpoint from 768 up
-        850: {
-            items: 3,
-            margin: 5,
+            },
+            // breakpoint from 576 up
+            576: {
+                items: 2,
+                margin: 5,
+                center: false,
 
-        },
 
-        992: {
-            items: 2,
-            margin: 15,
+            },
+            // breakpoint from 768 up
+            850: {
+                items: 3,
+                margin: 5,
 
-        },
+            },
 
-        1200: {
-            items: 3,
-            margin: 15,
+            992: {
+                items: 2,
+                margin: 15,
 
+            },
+
+            1200: {
+                items: 3,
+                margin: 15,
+
+            }
         }
-    }
-})
+    })
 }
 
 if ($("#slider-blog").length) {
-$(".slider_blog").owlCarousel({
-    //center: true,
-    margin: 25,
-    rtl: true,
-    loop: true,
-    // autoplay: true,
-    autoplaytimeout: 4000,
-    smartSpeed: 500,
-    // nav: true,
-    // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
-    slideBy:2,
-    dots: true,
-    lazyLoadEager: 3,
-    responsive: {
-        // breakpoint from 0 up
-        0: {
-            items: 1,
-        },
-        // breakpoint from 576 up
-        576: {
-            items: 2,
-        },
-        // breakpoint from 768 up
-        850: {
-            items: 2,
-        },
-        992: {
-            items: 3,
-            center: true,
-        },
+    $(".slider_blog").owlCarousel({
+        //center: true,
+        margin: 25,
+        rtl: true,
+        loop: true,
+        // autoplay: true,
+        autoplaytimeout: 4000,
+        smartSpeed: 500,
+        // nav: true,
+        // navText: ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"],
+        slideBy: 2,
+        dots: true,
+        lazyLoadEager: 3,
+        responsive: {
+            // breakpoint from 0 up
+            0: {
+                items: 1,
+            },
+            // breakpoint from 576 up
+            576: {
+                items: 2,
+            },
+            // breakpoint from 768 up
+            850: {
+                items: 2,
+            },
+            992: {
+                items: 3,
+                center: true,
+            },
 
-        1200: {
-            items: 3,
-               center: true,
+            1200: {
+                items: 3,
+                center: true,
+            }
         }
-    }
-})
+    })
 }
 /********************************** slidtoggle comment form**********************************/
 
@@ -790,45 +790,45 @@ $(document).ready(function () {
 /************************************ parallax image ************************************/
 
 console.clear()
-$(document).ready(function(){
-  $(window).scroll(
-    function(){
-      aniTrigger()
-    }
-  );
-  $(window).mousemove(function(evt){
-    $('.box-5').each(function(){
-      $(this).css("transform",'translate3d('+-evt.pageX/18+'px,'+-evt.pageY/18+'px,0px)')
+$(document).ready(function () {
+    $(window).scroll(
+        function () {
+            aniTrigger()
+        }
+    );
+    $(window).mousemove(function (evt) {
+        $('.box-5').each(function () {
+            $(this).css("transform", 'translate3d(' + -evt.pageX / 18 + 'px,' + -evt.pageY / 18 + 'px,0px)')
+        });
     });
-  });
 
 
-  $(window).mousemove(function(evt){
-    $('.box-4').each(function(){
-      $(this).css("transform",'translate3d('+-evt.pageX/25+'px,'+-evt.pageY/25+'px,0px)')
+    $(window).mousemove(function (evt) {
+        $('.box-4').each(function () {
+            $(this).css("transform", 'translate3d(' + -evt.pageX / 25 + 'px,' + -evt.pageY / 25 + 'px,0px)')
+        });
     });
-  });
 
-  $(window).mousemove(function(evt){
-    $('.box-3').each(function(){
-      $(this).css("transform",'translate3d('+-evt.pageX/18+'px,'+-evt.pageY/18+'px,0px)')
+    $(window).mousemove(function (evt) {
+        $('.box-3').each(function () {
+            $(this).css("transform", 'translate3d(' + -evt.pageX / 18 + 'px,' + -evt.pageY / 18 + 'px,0px)')
+        });
     });
-  });
 
 
-  $(window).mousemove(function(evt){
-    $('.box-2').each(function(){
-      $(this).css("transform",'translate3d('+-evt.pageX/25+'px,'+-evt.pageY/25+'px,0px)')
+    $(window).mousemove(function (evt) {
+        $('.box-2').each(function () {
+            $(this).css("transform", 'translate3d(' + -evt.pageX / 25 + 'px,' + -evt.pageY / 25 + 'px,0px)')
+        });
     });
-  });
 
 
 
-  $(window).mousemove(function(evt){
-    $('.box-1').each(function(){
-      $(this).css("transform",'translate3d('+-evt.pageX/35+'px,'+-evt.pageY/35+'px,0px)')
+    $(window).mousemove(function (evt) {
+        $('.box-1').each(function () {
+            $(this).css("transform", 'translate3d(' + -evt.pageX / 35 + 'px,' + -evt.pageY / 35 + 'px,0px)')
+        });
     });
-  });
 
 
 
@@ -837,25 +837,23 @@ $(document).ready(function(){
 
 
 function aniTrigger() {
-  var position = $('.container.top').offset().top;
-  var scroll = $(window).scrollTop();   
-  if(scroll>position*2.6){
-    $('.container.top').addClass('fadeOut')
-  }else{
-    $('.container.top').removeClass('fadeOut')
-  };
+    var position = $('.container.top').offset().top;
+    var scroll = $(window).scrollTop();
+    if (scroll > position * 2.6) {
+        $('.container.top').addClass('fadeOut')
+    } else {
+        $('.container.top').removeClass('fadeOut')
+    };
 }
 
-function close_box_plan()
-{
-    $('#bg-white').css('display','none');
+function close_box_plan() {
+    $('#bg-white').css('display', 'none');
 }
 
-function change_img_box_plan(obj)
-{
-    $('#btn-next-step').attr('href',obj.attr('data-href'));
-    $('#bg-white img').attr('src',obj.attr('data-img'));
-    $('#bg-white').css('display','block');
+function change_img_box_plan(obj) {
+    $('#btn-next-step').attr('href', obj.attr('data-href'));
+    $('#bg-white img').attr('src', obj.attr('data-img'));
+    $('#bg-white').css('display', 'block');
     $('.selected h3').removeClass('text-danger');
     $('.selected h3').addClass('text-black');
     $('.selected').removeClass('selected');
@@ -864,12 +862,10 @@ function change_img_box_plan(obj)
     $('.selected h3').removeClass('text-black');
 }
 
-function check_plan_selected(obj)
-{
-if(obj.attr('href')=='#')
-{
-alert("سایز انتخاب نشده !!");
-}
+function check_plan_selected(obj) {
+    if (obj.attr('href') == '#') {
+        alert("سایز انتخاب نشده !!");
+    }
 }
 
 
@@ -878,5 +874,5 @@ alert("سایز انتخاب نشده !!");
 
 
 
-    
+
 
