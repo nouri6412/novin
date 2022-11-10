@@ -857,7 +857,7 @@ function change_img_box_plan(obj)
     $('#bg-white img').attr('src',obj.attr('data-img'));
     $('#bg-white').css('display','block');
     $('.selected').removeClass('selected');
-    $(selected).addClass('selected');
+    obj.addClass('selected');
 }
 
 
