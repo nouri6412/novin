@@ -107,7 +107,7 @@ if (isset($_GET["plan_selected"])) {
                     $product = wc_get_product($item);
                 ?>
                     <div class="col-6 col-sm-6 col-md-3 col-box">
-                        <a href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-portfolio  card-yellow">
+                        <a onclick="change_img_box_plan($(this))" href="#" data-img="<?php echo $image; ?>"  data-href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-portfolio  card-yellow">
                             <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box-1.png" /></div>
                             <!-- <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>"> -->
                             <div class="card-body card-body-fix">

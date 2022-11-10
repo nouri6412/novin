@@ -851,6 +851,12 @@ function close_box_plan()
     $('#bg-white').css('display','none');
 }
 
+function change_img_box_plan(obj)
+{
+    $('#bg-white img').attr('src',obj.attr('data-img'));
+    $('#bg-white').css('display','block');
+}
+
 
 /************************************ ************************************/
 
