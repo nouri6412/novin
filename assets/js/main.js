@@ -856,8 +856,12 @@ function change_img_box_plan(obj)
     $('#btn-next-step').attr('hret',obj.attr('data-href'));
     $('#bg-white img').attr('src',obj.attr('data-img'));
     $('#bg-white').css('display','block');
+    $('.selected h3').removeClass('text-white');
+    $('.selected h3').addClass('text-black');
     $('.selected').removeClass('selected');
     obj.addClass('selected');
+    $('.selected h3').addClass('text-white');
+    $('.selected h3').removeClass('text-black');
 }
 
 
