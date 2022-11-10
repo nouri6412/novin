@@ -347,9 +347,18 @@ if (isset($_GET["plan_selected"])) {
         </div>
     <?php } ?>
     <div class="m-5">
-        <div class="float-start"><a id="btn-next-step" href="#" class="btn btn-primary">مرحله بعدی</a></div>
-        <?php if ($step > 0) { ?>
-         <div class="float-end"></div>   <a id="btn-prev-step" href="#" class="btn btn-primary">مرحله قبلی</a>
+        <?php if ($step > 1) {
+            $prev = "";
+            if ($step == 2) {
+                $prev = site_url();
+            } else if ($step == 3) {
+                $prev = site_url("?cat_selected=" . $cat_selected);
+            }
+
+
+        ?>
+            <div class="float-start"><a id="btn-next-step" href="#" class="btn btn-primary">مرحله بعدی</a></div>
+            <div class="float-end"></div> <a id="btn-prev-step" href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
         <?php } ?>
     </div>
 </main>
