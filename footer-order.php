@@ -151,8 +151,8 @@
         <img id="bg-white-box-plan-img" data-href="#" src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg" />
         <button onclick="close_box_plan()" class="btn btn-close"><i class="fa fa-window-close"></i></button>
         <div style="height:40px ;" class="btn-operate mt-2 mb-2">
-            <button onclick="change_img_box_plan_select()" class="float-start btn btn-outline-success btn-select">انتخاب</button>
-            <button onclick="close_box_plan()" class="float-start btn btn-outline-danger btn-cancel">انصراف</button>
+            <button onclick="change_img_box_plan_select()" class="float-start btn btn-outline-success btn-select"><?php echo 'انتخاب '; ?><i class="fa fa-check" aria-hidden="true"></i></button>
+            <button onclick="close_box_plan()" class="float-start btn btn-outline-danger btn-cancel"><?php echo 'انصراف '; ?><i class="fa fa-window-close" aria-hidden="true"></i></button>
         </div>
     </div>
 </div>
