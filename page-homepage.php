@@ -595,7 +595,7 @@ if (isset($_GET["category_size"])) {
                 <span class="visually-hidden">Loading...</span>
             </div>
             <div id="btn-next-step-cart" style="display: none;margin-right:10px;" class="float-start">
-                <a href="<?php echo wc_get_cart_url() ?>" class="btn btn-success"><?php echo 'سبد خرید و پرداخت' ?><i class="fa fa-window-close" aria-hidden="true"></i></a>
+                <a href="<?php echo wc_get_cart_url() ?>" class="btn btn-success"><?php echo 'سبد خرید و پرداخت' ?><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </div>
             <div class="float-start">
                 <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-warning">مرحله بعدی <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
