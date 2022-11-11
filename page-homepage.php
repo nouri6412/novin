@@ -598,10 +598,10 @@ if (isset($_GET["category_size"])) {
                 <a href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a>
             </div>
             <div class="float-start">
-                <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-warning">مرحله بعدی</a>
+                <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-warning">مرحله بعدی <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
             </div>
             <div class="float-end">
-                <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-warning">مرحله قبلی</a>
+                <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-warning"><i class="fa fa-arrow-right" aria-hidden="true"></i> <?php echo 'مرحله قبلی';  ?></a>
             </div>
         <?php } ?>
     </div>
