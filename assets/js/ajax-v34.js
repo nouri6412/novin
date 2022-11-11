@@ -104,12 +104,14 @@ function select_plan_from_gallery(obj) {
     $('#plan-uploaded-img').attr('data-media-id', obj.attr('data-media-id'));
     $('#plan-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
     $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href') + '&plan_selected=' + $('#plan-uploaded-img').attr('data-media-id') + '&plan_selected_type=0');
+    scroll_top_monitor();
 }
 
 function select_ghab_from_gallery(obj) {
     $('#ghab-uploaded-img').attr('data-state', 1);
     $('#ghab-uploaded-img-value').val(obj.attr('data-product-id'));
     $('#ghab-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
+    scroll_top_monitor();
 }
 
 function selected_plan_to_next(obj) {

@@ -910,7 +910,16 @@ function change_img_box_plan(obj) {
 function change_img_box_plan_select() {
     $('#btn-next-step').attr('href', $('#bg-white-box-plan-img').attr('data-href'));
     close_box_plan();
+    scroll_top_monitor();
 }
+
+function scroll_top_monitor()
+{
+    $("HTML, BODY").animate ({      // Animate method
+        scrollTop: $('#btn-next-step').offset().top-200    // Scroll top method.
+        }, 500);   
+}
+
 
 
 function check_plan_selected(obj) {
