@@ -117,8 +117,17 @@ if (isset($_GET["category_size"])) {
                     $item = $size["product"];
                     $image = "";
                     if ($category_size > 0) {
-                        $terms = get_the_terms( $item, 'product_cat' );
-                        var_dump($terms);
+                        $terms = get_the_terms($item, 'product_cat');
+                        $flag = false;
+                        foreach ($terms as $term) {
+                            if ($term->term_id == $category_size) {
+                                $flag = true;
+                                break;
+                            }
+                        }
+                        if ($flag == false) {
+                            continue;
+                        }
                     }
                     if (has_post_thumbnail($item)) {
                         $image = get_the_post_thumbnail_url($item, '');
