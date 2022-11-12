@@ -92,6 +92,7 @@ if (isset($_GET["plan_selected"])) {
                       
                         foreach ($cat_sizes as $cat_item) {
                             $category = get_category($cat_item);
+                            var_dump($category);
                         ?>
                             <a class="btn btn-default" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item) ?>"><?php echo $category->name ?></a>
                         <?php
