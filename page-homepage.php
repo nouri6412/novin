@@ -12,7 +12,7 @@
  */
 
 get_header('order');
-$Main_post_id=get_the_ID();
+$Main_post_id = get_the_ID();
 $cat_selected = "";
 $size_selected = 0;
 $plan_selected = 0;
@@ -224,21 +224,41 @@ if (isset($_GET["category_size"])) {
                                 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     انتخاب از طرح های آماده
                                 </button> -->
+                                <h4>موضوعات طرح</h4>
+                                <div class="m-2">
+                                    <a class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه طرح ها</a>
+
+                                    <?php
+                                    $cat_sizes = $cat["plan-subject"];
+
+                                    foreach ($cat_sizes as $cat_item) {
+                                    ?>
+                                        <div onclick="select_redy_plan($(this))" data-id="redy-plan-<?php echo $cat_item->term_id; ?>" class="btn btn-outline-primary"><?php echo $cat_item->name ?></div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
                                 <div class="row">
 
                                     <?php
                                     $plans = $cat["plans"];
                                     foreach ($plans as $plan) {
                                         $item = $plan['plan'];
-                                        get_post($item );
-                                        $image="";
+                                        get_post($item);
+                                        $image = "";
                                         if (has_post_thumbnail($item)) {
                                             $image = get_the_post_thumbnail_url($item, '');
                                         } else {
                                             $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
                                         }
+
+                                        $terms = get_the_terms($item, 'product_cat');
+                                        $class = "";
+                                        foreach ($terms as $term) {
+                                            $class .= " redy-plan-" . $term->term_id;
+                                        }
                                     ?>
-                                        <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                        <div class="redy-plan col-12 col-sm-6 col-md-4 mb-4 <?php echo $class; ?>">
                                             <a data-media-id="<?php echo $item; ?>" data-bs-dismiss="modal" onclick="select_plan_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
                                                 <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>">
                                                 <div class="card-body">
@@ -246,8 +266,8 @@ if (isset($_GET["category_size"])) {
                                                 </div>
                                             </a>
                                         </div>
-                                    <?php } 
-                                    get_post($Main_post_id ); 
+                                    <?php }
+                                    get_post($Main_post_id);
                                     ?>
 
                                 </div>

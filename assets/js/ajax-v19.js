@@ -28,14 +28,12 @@ jQuery(document).ready(function ($) {
                 console.log(data);
                 $('#plan-uploaded').val(data.file_id);
                 $('.spinner-border').css('display', 'none');
-                if($('#myform').attr('data-type')=="img")
-                {
+                if ($('#myform').attr('data-type') == "img") {
                     $('#plan-uploaded-img').attr('src', data.url);
                     $('#plan-uploaded-img').attr('data-state', 1);
-                    $('#plan-uploaded-img').attr('data-media-id',data.file_id);
+                    $('#plan-uploaded-img').attr('data-media-id', data.file_id);
                 }
-                else
-                {
+                else {
                     $('#file-voice').attr('href', data.url);
                     $('#file-voice').html("دانلود فایل آپلود شده");
                     $('#file-voice-value').val(data.file_id);
@@ -51,17 +49,17 @@ jQuery(document).ready(function ($) {
             }
         });
     });
-    
-    $('#myfilefield').change(function(e){
+
+    $('#myfilefield').change(function (e) {
         $('#myform').submit();
     });
 });
 
 function select_plan_from_gallery(obj) {
     $('#plan-uploaded-img').attr('data-state', 1);
-    $('#plan-uploaded-img').attr('data-media-id',obj.attr('data-media-id'));
+    $('#plan-uploaded-img').attr('data-media-id', obj.attr('data-media-id'));
     $('#plan-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
-    $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href')+'&plan_selected='+$('#plan-uploaded-img').attr('data-media-id'));
+    $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href') + '&plan_selected=' + $('#plan-uploaded-img').attr('data-media-id'));
 }
 
 function select_ghab_from_gallery(obj) {
@@ -72,35 +70,37 @@ function select_ghab_from_gallery(obj) {
 
 function selected_plan_to_next(obj) {
     if ($('#plan-uploaded-img').attr('data-state') == 1) {
-        window.location.href = obj.attr('data-href')+'&plan_selected='+$('#plan-uploaded-img').attr('data-media-id');
+        window.location.href = obj.attr('data-href') + '&plan_selected=' + $('#plan-uploaded-img').attr('data-media-id');
     }
     else {
         alert('طرح خود را باید انتخاب نمائید');
     }
 }
 
-function plan_select_option_personal()
-{
-    $('#div-plan-select-option').css('display','none');
-    $('#div-plan-select').css('display','block');
-    $('#div-plan-select-personal').css('display','block');
+function plan_select_option_personal() {
+    $('#div-plan-select-option').css('display', 'none');
+    $('#div-plan-select').css('display', 'block');
+    $('#div-plan-select-personal').css('display', 'block');
 }
 
-function plan_select_option_common()
-{
-    $('#div-plan-select-option').css('display','none');
-    $('#div-plan-select').css('display','block');
-    $('#div-plan-select-common').css('display','block');
+function plan_select_option_common() {
+    $('#div-plan-select-option').css('display', 'none');
+    $('#div-plan-select').css('display', 'block');
+    $('#div-plan-select-common').css('display', 'block');
 }
 
-function  negarenovi_order_finish()
-{
-    var plan_id=$('#f-plan-id').val();
-    var ghab_id=$('#ghab-uploaded-img-value').val();
-    var size_id=$('#f-size-id').val();
-    var voice_id=$('#id-voice-value').val();
-    var voice_file_id=$('#file-voice-value').val();
-    var site_url=$('#f-site-url').val();
+function select_redy_plan(obj) {
+    $('.redy-plan').css('display', 'none');
+    $('.' + obj.attr('data-id')).css('display', 'block');
+}
+
+function negarenovi_order_finish() {
+    var plan_id = $('#f-plan-id').val();
+    var ghab_id = $('#ghab-uploaded-img-value').val();
+    var size_id = $('#f-size-id').val();
+    var voice_id = $('#id-voice-value').val();
+    var voice_file_id = $('#file-voice-value').val();
+    var site_url = $('#f-site-url').val();
 
     //console.log(plan_id);
 
@@ -115,21 +115,20 @@ function  negarenovi_order_finish()
     myformData.append('plan_id', plan_id);
 
     myformData.append('voice_id', voice_id);
-    
+
     myformData.append('file_voice_id', voice_file_id);
 
-   // myformData.append('site_url', site_url);
+    // myformData.append('site_url', site_url);
 
-     $('.negarenovin-option').each(function(i, obj) {
-        if($(obj).attr('type')=='checkbox')
-        {
-            if($(obj).is(':checked')){
-                myformData.append('option-'+$(obj).attr('data-id'), $(obj).attr('data-id'));
+    $('.negarenovin-option').each(function (i, obj) {
+        if ($(obj).attr('type') == 'checkbox') {
+            if ($(obj).is(':checked')) {
+                myformData.append('option-' + $(obj).attr('data-id'), $(obj).attr('data-id'));
             }
         }
-        else{
-            myformData.append('option-'+$(obj).attr('data-id'), $(obj).attr('data-id'));
-            myformData.append('option-value-'+$(obj).attr('data-id'), $(obj).val());
+        else {
+            myformData.append('option-' + $(obj).attr('data-id'), $(obj).attr('data-id'));
+            myformData.append('option-value-' + $(obj).attr('data-id'), $(obj).val());
         }
 
     });
@@ -144,7 +143,7 @@ function  negarenovi_order_finish()
         contentType: false,
         enctype: 'multipart/form-data',
         success: function (data, textStatus, jqXHR) {
-            window.location.href=site_url;
+            window.location.href = site_url;
         },
         error: function (jqXHR, textStatus, errorThrown) {
             $('.spinner-border').css('display', 'none');

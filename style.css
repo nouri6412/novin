@@ -6237,6 +6237,10 @@ min-height: 100px;
 cursor: pointer;
     }
 
+    .redy-plan{
+        display: none;
+    }
+
     .plan-select-option .plan-select-option-item{
         border: 10px solid #000;
         height: 100px;
