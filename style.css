@@ -6237,15 +6237,17 @@ min-height: 100px;
     }
 
     .plan-select-option .plan-select-option-item{
-     
+        border: 10px solid #000;
             }
 
     .plan-select-option .plan-select-option-right{
 background-color: #ffff01;
+border-radius: 25px 0px 25px 0px;
     }
 
     .plan-select-option .plan-select-option-left{
-
+        margin-right: -10px;
+        border-radius: 25px;
     }
 
 
