@@ -38,14 +38,21 @@ if (isset($_GET["category_size"])) {
 
 ?>
 <main class="content <?php if ($step == 1) echo 'bg-ex'; ?>">
-    <div class="container">
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Library</li>
-            </ol>
-        </nav>
-    </div>
+    <?php if ($step > 1) { ?>
+        <div class="container mt-4">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">صفحه اصلی</a></li>
+                    <?php if ($step > 1) { ?>
+                        <li class="breadcrumb-item" aria-current="page">انتخاب سایز</li>
+                    <?php } ?>
+                    <?php if ($step > 2) { ?>
+                        <li class="breadcrumb-item" aria-current="page">انتخاب طرح</li>
+                    <?php } ?>
+                </ol>
+            </nav>
+        </div>
+    <?php } ?>
     <?php if ($step == 1) { ?>
         <div class="container mt-4">
             <div class="row">
