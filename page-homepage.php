@@ -37,13 +37,15 @@ if (isset($_GET["category_size"])) {
 }
 
 ?>
-<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Library</li>
-  </ol>
-</nav>
 <main class="content <?php if ($step == 1) echo 'bg-ex'; ?>">
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
+        </nav>
+    </div>
     <?php if ($step == 1) { ?>
         <div class="container mt-4">
             <div class="row">
@@ -98,7 +100,7 @@ if (isset($_GET["category_size"])) {
 
                     <h4>دسته بندی سایز ها</h4>
                     <div class="m-2">
-                    <a class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected ) ?>">همه سایز ها</a>
+                        <a class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه سایز ها</a>
 
                         <?php
                         $cat_sizes = $cat["size-cats"];
