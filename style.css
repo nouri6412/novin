@@ -6238,16 +6238,24 @@ min-height: 100px;
 
     .plan-select-option .plan-select-option-item{
         border: 10px solid #000;
+        height: 100px;
             }
 
     .plan-select-option .plan-select-option-right{
 background-color: #ffff01;
 border-radius: 25px 0px 25px 25px;
+
+    }
+    .plan-select-option .plan-select-option-right h4{
+        font-weight:bold ;
     }
 
     .plan-select-option .plan-select-option-left{
+        background-repeat: no-repeat;
         margin-right: -10px;
         border-radius: 25px;
+        background-size: cover;
+        background-position: 0;
     }
 
     .plan-select-option .plan-select-option-left img{
