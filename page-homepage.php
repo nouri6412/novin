@@ -226,7 +226,6 @@ if (isset($_GET["category_size"])) {
                                 </button> -->
                                 <h4>موضوعات طرح</h4>
                                 <div class="m-2">
-                                    <a class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه طرح ها</a>
 
                                     <?php
                                     $cat_sizes = $cat["plan-subject"];

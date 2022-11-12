@@ -90,6 +90,7 @@ function plan_select_option_common() {
 }
 
 function select_redy_plan(obj) {
+    console.log(obj.attr('data-id'));
     $('.redy-plan').css('display', 'none');
     $('.' + obj.attr('data-id')).css('display', 'block');
 }
