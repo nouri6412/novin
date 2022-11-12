@@ -197,14 +197,22 @@ if (isset($_GET["category_size"])) {
                         <div class="row">
                             <div class="col-12 mb-3">
                                 <div class="row plan-select-option">
-                                    <div class="col-8 col-sm-8 col-md-8 plan-select-option-item plan-select-option-right"></div>
-                                    <div class="col-4 col-sm-4 col-md-4 plan-select-option-item plan-select-option-left"></div>
+                                    <div class="col-8 col-sm-8 col-md-8 plan-select-option-item plan-select-option-right">
+                                        طرح شخصی
+                                    </div>
+                                    <div class="col-4 col-sm-4 col-md-4 plan-select-option-item plan-select-option-left">
+                                        <img src="<?php $cat["select-plan-personal"] ?>" />
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-12 mb-5">
                                 <div class="row plan-select-option">
-                                    <div class="col-8 col-sm-8 col-md-8 plan-select-option-item plan-select-option-right"></div>
-                                    <div class="col-4 col-sm-4 col-md-4 plan-select-option-item plan-select-option-left"></div>
+                                    <div class="col-8 col-sm-8 col-md-8 plan-select-option-item plan-select-option-right">
+                                        طرح عمومی
+                                    </div>
+                                    <div class="col-4 col-sm-4 col-md-4 plan-select-option-item plan-select-option-left">
+                                    <img src="<?php $cat["select-plan-common"] ?>" />
+                                    </div>
                                 </div>
                             </div>
                         </div>

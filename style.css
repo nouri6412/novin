@@ -6242,12 +6242,18 @@ min-height: 100px;
 
     .plan-select-option .plan-select-option-right{
 background-color: #ffff01;
-border-radius: 25px 0px 25px 0px;
+border-radius: 25px 0px 25px 25px;
     }
 
     .plan-select-option .plan-select-option-left{
         margin-right: -10px;
         border-radius: 25px;
+    }
+
+    .plan-select-option .plan-select-option-left img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
 
