@@ -84,6 +84,19 @@ if (isset($_GET["plan_selected"])) {
                         <h3><?php echo 'انتخاب شما' . ' ' . $cat["title"] . ' ' . 'است'; ?></h3>
                     </div>
                     <p class="text-center mb-1 text-logo"><?php echo 'خب سایز' . ' ' . $cat["title"] . ' ' . 'رو انتخاب کن!'; ?></p>
+
+                    <h4>دسته بندی سایز ها</h4>
+                    <div class="m-2">
+                        <?php
+                        $cat_sizes = $cat["cat_sizes"];
+                        foreach ($cat_sizes as $cat_item) {
+                            $category = get_category($cat_item);
+                        ?>
+                            <a class="btn" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item) ?>"><?php echo $category->name ?></a>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -357,7 +370,7 @@ if (isset($_GET["plan_selected"])) {
 
 
         ?>
-            <div  class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step" href="#" class="btn btn-primary">مرحله بعدی</a></div>
+            <div class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step" href="#" class="btn btn-primary">مرحله بعدی</a></div>
             <div class="float-end"></div> <a id="btn-prev-step" href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
         <?php } ?>
     </div>
