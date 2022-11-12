@@ -220,12 +220,6 @@ if (isset($_GET["category_size"])) {
                 <div id="div-plan-select" style="display: none;" class="row">
                     <div class="col-12 col-sm-12 col-md-12 mb-4">
                         <div class="row">
-                            <div id="div-plan-select-personal" style="display:none ;" class="col-6 col-sm-6 col-md-6 mb-4">
-                                <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
-                                <div  onclick="$('#myfilefield').click()" class="btn btn-primary mt-2">بارگذاری فایل </div>
-                                <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل</button> -->
-                                <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
-                            </div>
                             <div id="div-plan-select-common" style="display:none ;" class="col-12 col-sm-8 col-md-8 mb-4">
                                 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     انتخاب از طرح های آماده
@@ -270,7 +264,12 @@ if (isset($_GET["category_size"])) {
                             </div>
                             <div class="col-12 col-sm-4 col-md-4 mb-4">
                                 <!-- <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button> -->
-
+                                <div id="div-plan-select-personal" style="display:none ;" class="mb-4">
+                                    <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
+                                    <div onclick="$('#myfilefield').click()" class="btn btn-primary  col-12 mt-2">بارگذاری فایل </div>
+                                    <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل</button> -->
+                                    <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
+                                </div>
                                 <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
 
                                 <div class="spinner-border" style="display:none ;" role="status">
