@@ -237,7 +237,7 @@ if (isset($_GET["category_size"])) {
                                                 $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
                                             }
                                         ?>
-                                            <div onclick="select_redy_plan($(this))" data-id="redy-plan-<?php echo $cat_item->term_id; ?>" class="plan-subject col-12 col-sm-3 col-md-3 m-1">
+                                            <div onclick="select_redy_plan($(this))" data-id="redy-plan-<?php echo $cat_item->term_id; ?>" class="plan-subject col-12 col-sm-4 col-md-4 mb-4">
                                                 <div class="plan-subject-title"><?php echo $cat_item->name ?></div>
                                                 <div class="plan-subject-body"><img src="<?php echo $image ?>" /></div>
                                             </div>

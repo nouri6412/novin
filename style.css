@@ -6249,10 +6249,11 @@ background-color: #ffff01;
 text-align: center;
    }
    .plan-subject .plan-subject-body {
-    height: 150px;
+    height: 9rem;
 }
 .plan-subject .plan-subject-body img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
