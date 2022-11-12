@@ -198,7 +198,7 @@ if (isset($_GET["category_size"])) {
                             <div class="col-12 mb-3">
                                 <div class="row plan-select-option">
                                     <div class="col-8 col-sm-8 col-md-8 plan-select-option-item plan-select-option-right">
-                                        <h4>طرح شخصی</h4>
+                                        <h3>طرح شخصی</h3>
                                     </div>
                                     <div style="background-image:url(<?php echo $cat["select-plan-personal"] ?>)" class="col-4 col-sm-4 col-md-4 plan-select-option-item plan-select-option-left">
                                     </div>
@@ -207,7 +207,7 @@ if (isset($_GET["category_size"])) {
                             <div class="col-12 mb-5">
                                 <div class="row plan-select-option">
                                     <div class="col-8 col-sm-8 col-md-8 plan-select-option-item plan-select-option-right">
-                                    <h4>طرح عمومی</h4>
+                                    <h3>طرح عمومی</h3>
                                     </div>
                                     <div style="background-image:url(<?php echo $cat["select-plan-common"] ?>)" class="col-4 col-sm-4 col-md-4 plan-select-option-item plan-select-option-left">
                                     </div>
