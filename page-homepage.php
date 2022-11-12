@@ -90,7 +90,7 @@ if (isset($_GET["plan_selected"])) {
                         <?php
                         $cat_sizes = $cat["size-cats"];
                         foreach ($cat_sizes as $cat_item["cat"]) {
-                            $category = get_category($cat_item);
+                            $category = get_category($cat_item["cat"]);
                         ?>
                             <a class="btn" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item) ?>"><?php echo $category->name ?></a>
                         <?php
