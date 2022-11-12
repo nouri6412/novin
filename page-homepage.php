@@ -192,8 +192,8 @@ if (isset($_GET["category_size"])) {
             <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
             <div class="container">
                 <div class="row">
-                    <div class="col-4 col-sm-4 col-md-4"></div>
-                    <div class="col-4 col-sm-4 col-md-4">
+                    <div class="col-1 col-sm-3 col-md-3"></div>
+                    <div class="col-10 col-sm-6 col-md-6">
                         <div class="row">
                             <div class="col-12 mb-3">
                                 <div class="row plan-select-option">
@@ -209,7 +209,7 @@ if (isset($_GET["category_size"])) {
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 col-sm-4 col-md-4"></div>
+                    <div class="col-1 col-sm-3 col-md-3"></div>
                 </div>
                 <div style="display: none;" class="row">
                     <div class="col-12 col-sm-8 col-md-8 mb-4">
