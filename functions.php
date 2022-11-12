@@ -110,9 +110,17 @@ class cartPlugins
 
         if (isset($cart_item['meta_plan_id'])) {
             $meta_key = 'طرح';
+
+            $image="";
+            if (has_post_thumbnail($cart_item['meta_plan_id'])) {
+                $image = get_the_post_thumbnail_url($cart_item['meta_plan_id'], '');
+            } else {
+                $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+            }
+
             $item_data[] = array(
                 'key'       => $meta_key,
-                'value'     => '<a style="color:red" target="_blank" href="' . wp_get_attachment_url($cart_item['meta_plan_id']) . '">مشاهده</a>',
+                'value'     => '<a style="color:red" target="_blank" href="' . $image . '">'.get_the_title($cart_item['meta_plan_id']).'</a>',
             );
         } else if (isset($cart_item['meta_voice_file'])) {
             $meta_key = 'فرکانس صدا';
@@ -133,7 +141,15 @@ class cartPlugins
     {
         if (isset($values['meta_plan_id'])) {
             $meta_key = 'طرح';
-            $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . wp_get_attachment_url($values['meta_plan_id']) . '">مشاهده</a>');
+
+            $image="";
+            if (has_post_thumbnail($values['meta_plan_id'])) {
+                $image = get_the_post_thumbnail_url($values['meta_plan_id'], '');
+            } else {
+                $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+            }
+
+            $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">'.get_the_title($values['meta_plan_id']).'</a>');
         } else if (isset($values['meta_voice_file'])) {
             $meta_key = 'فرکانس صدا';
             $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . wp_get_attachment_url($values['meta_voice_file']) . '">دانلود</a>');

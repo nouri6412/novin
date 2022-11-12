@@ -230,13 +230,18 @@ if (isset($_GET["category_size"])) {
                                     $plans = $cat["plans"];
                                     foreach ($plans as $plan) {
                                         $item = $plan['plan'];
-
+                                        $image="";
+                                        if (has_post_thumbnail($item)) {
+                                            $image = get_the_post_thumbnail_url($item, '');
+                                        } else {
+                                            $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+                                        }
                                     ?>
                                         <div class="col-12 col-sm-6 col-md-4 mb-4">
                                             <a data-media-id="<?php echo $item; ?>" data-bs-dismiss="modal" onclick="select_plan_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
-                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo wp_get_attachment_url($item); ?>">
+                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>">
                                                 <div class="card-body">
-                                                    <h3 class="text-center"><?php echo ''; ?></h3>
+                                                    <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
                                                 </div>
                                             </a>
                                         </div>
