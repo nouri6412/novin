@@ -222,8 +222,8 @@ if (isset($_GET["category_size"])) {
                         <div class="row">
                             <div id="div-plan-select-personal" style="display:none ;" class="col-6 col-sm-6 col-md-6 mb-4">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
-                                <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب فایل</a>
-                                <button type="submit" class="btn btn-success">بارگذاری فایل</button>
+                                <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary mt-2">انتخاب فایل</a>
+                                <button type="submit" class="btn btn-success mt-2">بارگذاری فایل</button>
                                 <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                             </div>
                             <div id="div-plan-select-common" style="display:none ;" class="col-12 col-sm-8 col-md-8 mb-4">
