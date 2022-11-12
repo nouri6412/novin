@@ -6245,13 +6245,15 @@ cursor: pointer;
 
     }
    .plan-subject .plan-subject-title {
-
+background-color: #ffff01;
+text-align: center;
    }
    .plan-subject .plan-subject-body {
-    
+    height: 150px;
 }
 .plan-subject .plan-subject-body img {
-    
+    width: 100%;
+    object-fit: cover;
 }
 
 

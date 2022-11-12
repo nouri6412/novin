@@ -224,7 +224,7 @@ if (isset($_GET["category_size"])) {
                                 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     انتخاب از طرح های آماده
                                 </button> -->
-                                <h4>موضوعات طرح</h4>
+                                <h3 class="mb-2">موضوعات طرح</h3>
                                 <div class="m-2">
                                     <div class="row">
                                         <?php
