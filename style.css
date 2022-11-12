@@ -6233,13 +6233,19 @@ div#demonote {
     }
 
     .plan-select-option{
-
+min-height: 80px;
     }
+
+    .plan-select-option .plan-select-option-item{
+     
+            }
+
     .plan-select-option .plan-select-option-right{
-
+background-color: #ffff01;
     }
+
     .plan-select-option .plan-select-option-left{
-        
+
     }
 
 
