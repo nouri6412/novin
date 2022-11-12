@@ -117,7 +117,8 @@ if (isset($_GET["category_size"])) {
                     $item = $size["product"];
                     $image = "";
                     if ($category_size > 0) {
-                        var_dump(wp_get_post_categories($item));
+                        $terms = get_the_terms( $item, 'product_cat' );
+                        var_dump($terms);
                     }
                     if (has_post_thumbnail($item)) {
                         $image = get_the_post_thumbnail_url($item, '');
