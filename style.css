@@ -6232,6 +6232,16 @@ div#demonote {
         font-size: 20px;
     }
 
+    .plan-select-option{
+
+    }
+    .plan-select-option .plan-select-option-right{
+
+    }
+    .plan-select-option .plan-select-option-left{
+        
+    }
+
 
 @media only screen and (max-width: 600px) {
     .topbar-site-banner {

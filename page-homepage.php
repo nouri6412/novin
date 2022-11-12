@@ -194,13 +194,25 @@ if (isset($_GET["category_size"])) {
                 <div class="row">
                     <div class="col-12 col-sm-8 col-md-8 mb-4">
                         <div class="row">
-                            <div class="col-12 col-sm-6 col-md-6 mb-4">
+                            <div class="col-12 mb-5">
+                                <div class="row plan-select-option">
+                                    <div class="col-8 col-sm-8 col-md-8 plan-select-option-right"></div>
+                                    <div class="col-4 col-sm-4 col-md-4 plan-select-option-left"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-5">
+                                <div class="row plan-select-option">
+                                    <div class="col-8 col-sm-8 col-md-8 plan-select-option-right"></div>
+                                    <div class="col-4 col-sm-4 col-md-4 plan-select-option-left"></div>
+                                </div>
+                            </div>
+                            <div style="display: none;" class="col-12 col-sm-6 col-md-6 mb-4">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
                                 <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب طرح خودم</a>
                                 <button type="submit" class="btn btn-success">بارگذاری طرح</button>
                                 <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6 mb-4">
+                            <div style="display: none;" class="col-12 col-sm-6 col-md-6 mb-4">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     انتخاب از طرح های آماده
                                 </button>
