@@ -176,3 +176,46 @@ add_filter('woocommerce_admin_onboarding_themes', function ($themes) {
    }
    return $themes;
 }, 10, 2);
+
+
+
+function kaktos_post_type_plan()
+{
+
+    $supports = array(
+        'title', // post title
+        'thumbnail', // featured images
+		'editor',
+		'excerpt',
+        'custom-fields', // custom fields
+        'post-formats', // post formats
+		
+    );
+
+    $labels = array(
+        'name' => _x('طرح', 'plural'),
+        'singular_name' => _x('طرح', 'singular'),
+        'menu_name' => _x('طرح', 'admin menu'),
+        'name_admin_bar' => _x('طرح', 'admin bar'),
+        'add_new' => _x('ثبت طرح جدید', 'add new'),
+        'add_new_item' => "ثبت طرح جدید",
+        'new_item' => "طرح جدید",
+        'edit_item' => "ویرایش طرح",
+        'view_item' => "مشاهده طرح",
+        'all_items' => "همه طرح ها",
+        'search_items' => "جستجوی طرح",
+        'not_found' => "یافت نشد"
+    );
+
+    $args = array(
+        'supports' => $supports,
+        'labels' => $labels,
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'plan'),
+        'has_archive' => true,
+        'hierarchical' => false
+    );
+    register_post_type('plan', $args);
+}
+add_action('init', 'kaktos_post_type_plan');
