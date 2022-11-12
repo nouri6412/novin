@@ -230,6 +230,7 @@ if (isset($_GET["category_size"])) {
                                     $plans = $cat["plans"];
                                     foreach ($plans as $plan) {
                                         $item = $plan['plan'];
+                                        var_dump(get_post($item ));
                                         $image="";
                                         if (has_post_thumbnail($item)) {
                                             $image = get_the_post_thumbnail_url($item, '');
