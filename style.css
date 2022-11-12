@@ -14,6 +14,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font: inherit;
     vertical-align: baseline;
 }
+body{
+    background-image: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)),url(assets/img/bg-main.jpg);
+}
 
 /* HTML5 display-role reset for older browsers */
 
@@ -5910,7 +5913,7 @@ ul.menu-multi-level .mega-menu-col ul {
 }
 
 .bg-ex{
-   background-image: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)),url(assets/img/bg-ex.png);
+   /* background-image: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)),url(assets/img/bg-ex.png); */
    background-repeat: no-repeat;
    background-size: contain;
    background-position: left bottom;
