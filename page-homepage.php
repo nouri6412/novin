@@ -16,6 +16,7 @@ get_header('order');
 $cat_selected = "";
 $size_selected = 0;
 $plan_selected = 0;
+$category_size = 0;
 $step = 1;
 if (isset($_GET["cat_selected"])) {
     $cat_selected = $_GET["cat_selected"];
@@ -29,6 +30,10 @@ if (isset($_GET["size_selected"])) {
 if (isset($_GET["plan_selected"])) {
     $plan_selected = $_GET["plan_selected"];
     $step = 4;
+}
+
+if (isset($_GET["category_size"])) {
+    $category_size = $_GET["category_size"];
 }
 
 ?>
@@ -89,7 +94,7 @@ if (isset($_GET["plan_selected"])) {
                     <div class="m-2">
                         <?php
                         $cat_sizes = $cat["size-cats"];
-                      
+
                         foreach ($cat_sizes as $cat_item) {
                         ?>
                             <a class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>"><?php echo $cat_item->name ?></a>
@@ -111,7 +116,9 @@ if (isset($_GET["plan_selected"])) {
                 foreach ($sizes as $size) {
                     $item = $size["product"];
                     $image = "";
-
+                    if ($category_size > 0) {
+                        var_dump(get_the_category($item));
+                    }
                     if (has_post_thumbnail($item)) {
                         $image = get_the_post_thumbnail_url($item, '');
                     } else {
