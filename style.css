@@ -6258,7 +6258,7 @@ top: 3px;
     color: #000;
    }
    .plan-subject .plan-subject-body {
-    height: 7rem;
+    height: 150px;
     border: 3px solid #000;
     border-radius: 5px;
 }
@@ -6301,6 +6301,11 @@ border-radius: 25px 0px 25px 25px;
 
 
 @media only screen and (max-width: 600px) {
+
+    .plan-subject .plan-subject-body {
+        height: 82px;
+    }
+
     .topbar-site-banner {
       display: none;
     }
