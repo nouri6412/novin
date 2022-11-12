@@ -201,7 +201,7 @@ if (isset($_GET["category_size"])) {
                                         طرح شخصی
                                     </div>
                                     <div class="col-4 col-sm-4 col-md-4 plan-select-option-item plan-select-option-left">
-                                        <img src="<?php $cat["select-plan-personal"] ?>" />
+                                        <img src="<?php echo $cat["select-plan-personal"] ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@ if (isset($_GET["category_size"])) {
                                         طرح عمومی
                                     </div>
                                     <div class="col-4 col-sm-4 col-md-4 plan-select-option-item plan-select-option-left">
-                                    <img src="<?php $cat["select-plan-common"] ?>" />
+                                    <img src="<?php echo $cat["select-plan-common"] ?>" />
                                     </div>
                                 </div>
                             </div>
