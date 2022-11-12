@@ -191,12 +191,12 @@ if (isset($_GET["category_size"])) {
         <form data-target="file" data-type="img" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
             <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
             <div class="container">
-                <div class="row">
+                <div  id="div-plan-select-option" class="row">
                     <div class="col-1 col-sm-3 col-md-3"></div>
                     <div class="col-10 col-sm-6 col-md-6">
                         <div class="row">
                             <div class="col-12 mb-3">
-                                <div class="row plan-select-option">
+                                <div onclick="plan_select_option_personal()" class="row plan-select-option">
                                     <div class="col-8 col-sm-8 col-md-8 plan-select-option-item plan-select-option-right">
                                         <h3>طرح شخصی</h3>
                                     </div>
@@ -205,9 +205,9 @@ if (isset($_GET["category_size"])) {
                                 </div>
                             </div>
                             <div class="col-12 mb-5">
-                                <div class="row plan-select-option">
+                                <div onclick="plan_select_option_common()" class="row plan-select-option">
                                     <div class="col-8 col-sm-8 col-md-8 plan-select-option-item plan-select-option-right">
-                                    <h3>طرح عمومی</h3>
+                                        <h3>طرح عمومی</h3>
                                     </div>
                                     <div style="background-image:url(<?php echo $cat["select-plan-common"] ?>)" class="col-4 col-sm-4 col-md-4 plan-select-option-item plan-select-option-left">
                                     </div>
@@ -217,20 +217,38 @@ if (isset($_GET["category_size"])) {
                     </div>
                     <div class="col-1 col-sm-3 col-md-3"></div>
                 </div>
-                <div style="display: none;" class="row">
-                    <div class="col-12 col-sm-8 col-md-8 mb-4">
+                <div id="div-plan-select" style="display: none;" class="row">
+                    <div class="col-12 col-sm-12 col-md-12 mb-4">
                         <div class="row">
-                            <div class="col-12 col-sm-6 col-md-6 mb-4">
+                            <div id="div-plan-select-personal" style="display:none ;" class="col-6 col-sm-6 col-md-6 mb-4">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
                                 <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب طرح خودم</a>
                                 <button type="submit" class="btn btn-success">بارگذاری طرح</button>
                                 <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6 mb-4">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div id="div-plan-select-common" style="display:none ;" class="col-12 col-sm-8 col-md-8 mb-4">
+                                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     انتخاب از طرح های آماده
-                                </button>
+                                </button> -->
+                                <div class="row">
 
+                                    <?php
+                                    $plans = $cat["plans"];
+                                    foreach ($plans as $plan) {
+                                        $item = $plan['plan'];
+
+                                    ?>
+                                        <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                            <a data-media-id="<?php echo $item; ?>" data-bs-dismiss="modal" onclick="select_plan_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
+                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo wp_get_attachment_url($item); ?>">
+                                                <div class="card-body">
+                                                    <h3 class="text-center"><?php echo ''; ?></h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <?php } ?>
+
+                                </div>
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-fullscreen">
@@ -240,25 +258,7 @@ if (isset($_GET["category_size"])) {
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="row">
 
-                                                    <?php
-                                                    $plans = $cat["plans"];
-                                                    foreach ($plans as $plan) {
-                                                        $item = $plan['plan'];
-
-                                                    ?>
-                                                        <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                                            <a data-media-id="<?php echo $item; ?>" data-bs-dismiss="modal" onclick="select_plan_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
-                                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo wp_get_attachment_url($item); ?>">
-                                                                <div class="card-body">
-                                                                    <h3 class="text-center"><?php echo ''; ?></h3>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    <?php } ?>
-
-                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
@@ -272,9 +272,9 @@ if (isset($_GET["category_size"])) {
 
                     </div>
                     <div class="col-12 col-sm-4 col-md-4 mb-4">
-                        <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button>
+                        <!-- <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button> -->
 
-                        <img data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                        <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
 
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
@@ -422,12 +422,12 @@ if (isset($_GET["category_size"])) {
     <div class="m-5">
         <?php if ($step > 1) {
             $prev = "";
+
             if ($step == 2) {
                 $prev = site_url();
             } else if ($step == 3) {
                 $prev = site_url("?cat_selected=" . $cat_selected);
             }
-
 
         ?>
             <div class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step" href="#" class="btn btn-primary">مرحله بعدی</a></div>

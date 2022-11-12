@@ -57,6 +57,7 @@ function select_plan_from_gallery(obj) {
     $('#plan-uploaded-img').attr('data-state', 1);
     $('#plan-uploaded-img').attr('data-media-id',obj.attr('data-media-id'));
     $('#plan-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
+    $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href')+'&plan_selected='+$('#plan-uploaded-img').attr('data-media-id'));
 }
 
 function select_ghab_from_gallery(obj) {
@@ -72,6 +73,20 @@ function selected_plan_to_next(obj) {
     else {
         alert('طرح خود را باید انتخاب نمائید');
     }
+}
+
+function plan_select_option_personal()
+{
+    $('#div-plan-select-option').css('display','none');
+    $('#div-plan-select').css('display','block');
+    $('#div-plan-select-personal').css('display','block');
+}
+
+function plan_select_option_common()
+{
+    $('#div-plan-select-option').css('display','none');
+    $('#div-plan-select').css('display','block');
+    $('#div-plan-select-common').css('display','block');
 }
 
 function  negarenovi_order_finish()
