@@ -16,6 +16,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 body{
     background-image: url(assets/img/bg-main.jpg);
+    background-size: cover;
 }
 
 /* HTML5 display-role reset for older browsers */
