@@ -51,6 +51,10 @@ jQuery(document).ready(function ($) {
             }
         });
     });
+    
+    $('#myfilefield').change(function(e){
+        $('#myform').submit();
+    });
 });
 
 function select_plan_from_gallery(obj) {
