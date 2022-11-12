@@ -251,7 +251,7 @@ if (isset($_GET["category_size"])) {
                                             $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
                                         }
 
-                                        $terms = get_the_terms($item, 'product_cat');
+                                        $terms = get_the_terms($item, 'category');
                                         $class = "";
                                         foreach ($terms as $term) {
                                             $class .= " redy-plan-" . $term->term_id;
