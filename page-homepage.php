@@ -226,16 +226,25 @@ if (isset($_GET["category_size"])) {
                                 </button> -->
                                 <h4>موضوعات طرح</h4>
                                 <div class="m-2">
+                                    <div class="row">
+                                        <?php
+                                        $cat_sizes = $cat["plan-subject"];
 
-                                    <?php
-                                    $cat_sizes = $cat["plan-subject"];
-
-                                    foreach ($cat_sizes as $cat_item) {
-                                    ?>
-                                        <div onclick="select_redy_plan($(this))" data-id="redy-plan-<?php echo $cat_item->term_id; ?>" class="btn btn-outline-primary"><?php echo $cat_item->name ?></div>
-                                    <?php
-                                    }
-                                    ?>
+                                        foreach ($cat_sizes as $cat_item) {
+                                            $image = get_field('img', $cat_item);
+                                            if(strlen($image)==0)
+                                            {
+                                                $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+                                            }
+                                        ?>
+                                            <div onclick="select_redy_plan($(this))" data-id="redy-plan-<?php echo $cat_item->term_id; ?>" class="plan-subject col-12 col-sm-3 col-md-3 m-1">
+                                                <div class="plan-subject-title"><?php echo $cat_item->name ?></div>
+                                                <div class="plan-subject-body"><img src="<?php echo $image ?>" /></div>
+                                            </div>
+                                        <?php
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="row">
 
