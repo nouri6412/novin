@@ -184,7 +184,7 @@ if (isset($_GET["category_size"])) {
                     <div class="title_site mb-2">
                         <h2><?php echo 'انتخاب طرح'; ?></h2>
                     </div>
-                    <p class="text-center mb-5 text-logo"><?php echo ' طرح خود را بارگذاری و یا از طرح های آماده انتخاب کنید'; ?></p>
+                    <p id="paragraph-plan" class="text-center mb-5 text-logo"><?php echo ' طرح خود را بارگذاری و یا از طرح های آماده انتخاب کنید'; ?></p>
                 </div>
             </div>
         </div>

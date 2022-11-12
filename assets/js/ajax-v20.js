@@ -80,12 +80,15 @@ function selected_plan_to_next(obj) {
 function plan_select_option_personal() {
     $('#div-plan-select-option').css('display', 'none');
     $('#div-plan-select').css('display', 'block');
+    $('#paragraph-plan').css('display', 'none');
     $('#div-plan-select-personal').css('display', 'block');
 }
 
 function plan_select_option_common() {
     $('#div-plan-select-option').css('display', 'none');
     $('#div-plan-select').css('display', 'block');
+    $('#paragraph-plan').css('display', 'none');
+    
     $('#div-plan-select-common').css('display', 'block');
 }
 
