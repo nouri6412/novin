@@ -232,12 +232,11 @@ if (isset($_GET["category_size"])) {
 
                                         foreach ($cat_sizes as $cat_item) {
                                             $image = get_field('img', $cat_item);
-                                            if(strlen($image)==0)
-                                            {
+                                            if (strlen($image) == 0) {
                                                 $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
                                             }
                                         ?>
-                                            <div onclick="select_redy_plan($(this))" data-id="redy-plan-<?php echo $cat_item->term_id; ?>" class="plan-subject col-6 col-sm-4 col-md-4 mb-4">
+                                            <div onclick="select_redy_plan($(this))" data-id="redy-plan-<?php echo $cat_item->term_id; ?>" class="plan-subject col-6 col-sm-4 col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                 <div class="plan-subject-title"><?php echo $cat_item->name ?></div>
                                                 <div class="plan-subject-body"><img src="<?php echo $image ?>" /></div>
                                             </div>
@@ -245,39 +244,6 @@ if (isset($_GET["category_size"])) {
                                         }
                                         ?>
                                     </div>
-                                </div>
-                                <div class="row">
-
-                                    <?php
-                                    $plans = $cat["plans"];
-                                    foreach ($plans as $plan) {
-                                        $item = $plan['plan'];
-                                        get_post($item);
-                                        $image = "";
-                                        if (has_post_thumbnail($item)) {
-                                            $image = get_the_post_thumbnail_url($item, '');
-                                        } else {
-                                            $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
-                                        }
-
-                                        $terms = get_the_terms($item, 'category');
-                                        $class = "";
-                                        foreach ($terms as $term) {
-                                            $class .= " redy-plan-" . $term->term_id;
-                                        }
-                                    ?>
-                                        <div class="redy-plan col-12 col-sm-6 col-md-4 mb-4 <?php echo $class; ?>">
-                                            <a data-media-id="<?php echo $item; ?>" data-bs-dismiss="modal" onclick="select_plan_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
-                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>">
-                                                <div class="card-body">
-                                                    <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    <?php }
-                                    get_post($Main_post_id);
-                                    ?>
-
                                 </div>
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -288,7 +254,39 @@ if (isset($_GET["category_size"])) {
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
+                                                <div class="row">
 
+                                                    <?php
+                                                    $plans = $cat["plans"];
+                                                    foreach ($plans as $plan) {
+                                                        $item = $plan['plan'];
+                                                        get_post($item);
+                                                        $image = "";
+                                                        if (has_post_thumbnail($item)) {
+                                                            $image = get_the_post_thumbnail_url($item, '');
+                                                        } else {
+                                                            $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+                                                        }
+
+                                                        $terms = get_the_terms($item, 'category');
+                                                        $class = "";
+                                                        foreach ($terms as $term) {
+                                                            $class .= " redy-plan-" . $term->term_id;
+                                                        }
+                                                    ?>
+                                                        <div class="redy-plan col-12 col-sm-6 col-md-4 mb-4 <?php echo $class; ?>">
+                                                            <a data-media-id="<?php echo $item; ?>" data-bs-dismiss="modal" onclick="select_plan_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
+                                                                <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>">
+                                                                <div class="card-body">
+                                                                    <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    <?php }
+                                                    get_post($Main_post_id);
+                                                    ?>
+
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
