@@ -12,7 +12,7 @@
  */
 
 get_header('order');
-
+$Main_post_id=get_the_ID();
 $cat_selected = "";
 $size_selected = 0;
 $plan_selected = 0;
@@ -246,7 +246,9 @@ if (isset($_GET["category_size"])) {
                                                 </div>
                                             </a>
                                         </div>
-                                    <?php } ?>
+                                    <?php } 
+                                    get_post($Main_post_id ); 
+                                    ?>
 
                                 </div>
                                 <!-- Modal -->
