@@ -191,7 +191,7 @@ if (isset($_GET["category_size"])) {
         <form data-target="file" data-type="img" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
             <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
             <div class="container">
-                <div  id="div-plan-select-option" class="row">
+                <div id="div-plan-select-option" class="row">
                     <div class="col-1 col-sm-3 col-md-3"></div>
                     <div class="col-10 col-sm-6 col-md-6">
                         <div class="row">
@@ -222,8 +222,8 @@ if (isset($_GET["category_size"])) {
                         <div class="row">
                             <div id="div-plan-select-personal" style="display:none ;" class="col-6 col-sm-6 col-md-6 mb-4">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
-                                <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب طرح خودم</a>
-                                <button type="submit" class="btn btn-success">بارگذاری طرح</button>
+                                <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary">انتخاب فایل</a>
+                                <button type="submit" class="btn btn-success">بارگذاری فایل</button>
                                 <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                             </div>
                             <div id="div-plan-select-common" style="display:none ;" class="col-12 col-sm-8 col-md-8 mb-4">
@@ -268,18 +268,19 @@ if (isset($_GET["category_size"])) {
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-12 col-sm-4 col-md-4 mb-4">
+                                <!-- <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button> -->
+
+                                <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+
+                                <div class="spinner-border" style="display:none ;" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
-                    <div class="col-12 col-sm-4 col-md-4 mb-4">
-                        <!-- <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button> -->
 
-                        <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
-
-                        <div class="spinner-border" style="display:none ;" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </form>
