@@ -214,6 +214,7 @@ function kaktos_post_type_plan()
         'query_var' => true,
         'rewrite' => array('slug' => 'plan'),
         'has_archive' => true,
+        'taxonomies'         => array( 'category', 'post_tag' ),
         'hierarchical' => false
     );
     register_post_type('plan', $args);
