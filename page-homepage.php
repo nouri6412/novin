@@ -92,6 +92,8 @@ if (isset($_GET["category_size"])) {
 
                     <h4>دسته بندی سایز ها</h4>
                     <div class="m-2">
+                    <a class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected ) ?>">همه سایز ها</a>
+
                         <?php
                         $cat_sizes = $cat["size-cats"];
 
