@@ -362,7 +362,7 @@ if (isset($_GET["category_size"])) {
                         <div class="col-12 col-sm-6 col-md-6 mb-4">
                             <?php $product = wc_get_product($cat["ferecans_seda"]); ?>
                             <label><?php echo 'فرکانس صدا' . ' - ' . $product->get_price_html() ?></label>
-                            <select id="id-voice-value-select" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="div-ferekans-seda" data-price="<?php echo $product->get_price() ?>">
+                            <select id="id-voice-value-select" name="id-voice-value-select" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="div-ferekans-seda" data-price="<?php echo $product->get_price() ?>">
                                 <option value="0">نیاز نیست</option>
                                 <option value="1">نیاز است</option>
                             </select>
@@ -399,7 +399,7 @@ if (isset($_GET["category_size"])) {
                             <?php if ($item["is_checkbox"] == 1) { ?>
                                 <div class="col-6 col-sm-6 col-md-6 mb-4">
                                     <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
-                                    <select onchange="change_select_option_extra($(this))" data-type="select" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>">
+                                    <select class="negarenovin-option" onchange="change_select_option_extra($(this))" data-type="select" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>">
                                         <option value="0">نیاز نیست</option>
                                         <option value="1">نیاز است</option>
                                     </select>
@@ -409,13 +409,13 @@ if (isset($_GET["category_size"])) {
                             <?php  } else { ?>
                                 <div class="col-6 col-sm-6 col-md-6 mb-4">
                                     <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
-                                    <select onchange="change_select_option_extra($(this))" data-type="textarea" data-target="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>">
+                                    <select class="negarenovin-option" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>">
                                         <option value="0">نیاز نیست</option>
                                         <option value="1">نیاز است</option>
                                     </select>
                                 </div>
                                 <div class="col-12 mb-4">
-                                    <textarea style="display: none;width:100%" placeholder="متن خود را اینجا بنویسید" class="negarenovin-option" class="col-12" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"] . '-text'; ?>" id="f-option-<?php echo $item["product"] . '-text'; ?>"></textarea>
+                                    <textarea style="display: none;width:100%" placeholder="متن خود را اینجا بنویسید"  class="col-12" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"] . '-text'; ?>" id="f-option-<?php echo $item["product"] . '-text'; ?>"></textarea>
                                 </div>
                             <?php  } ?>
                         <?php } ?>

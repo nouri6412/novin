@@ -108,6 +108,11 @@ function negarenovi_order_finish() {
     var voice_file_id = $('#file-voice-value').val();
     var site_url = $('#f-site-url').val();
 
+    if($('#id-voice-value-select').val()==0)
+    {
+        voice_file_id=0;
+    }
+
     //console.log(plan_id);
 
     var myformData = new FormData();
@@ -128,14 +133,16 @@ function negarenovi_order_finish() {
     // myformData.append('site_url', site_url);
 
     $('.negarenovin-option').each(function (i, obj) {
-        if ($(obj).attr('type') == 'checkbox') {
-            if ($(obj).is(':checked')) {
+        if ($(obj).attr('data-type') == 'select') {
+            if ($(obj).val()==1) {
                 myformData.append('option-' + $(obj).attr('data-id'), $(obj).attr('data-id'));
             }
         }
         else {
-            myformData.append('option-' + $(obj).attr('data-id'), $(obj).attr('data-id'));
-            myformData.append('option-value-' + $(obj).attr('data-id'), $(obj).val());
+            if ($(obj).val()==1) {
+                myformData.append('option-' + $(obj).attr('data-id'), $(obj).attr('data-id'));
+                myformData.append('option-value-' + $(obj).attr('data-id'), $('#'+$(obj).attr('id')+'-text').val());
+            }
         }
 
     });
