@@ -273,6 +273,8 @@ function remove_company_name( $fields ) {
      $fields['billing']['billing_phone']['priority'] = 80;
      $fields['billing']['billing_email']['priority'] = 90;
 
+     $fields['billing']['billing_postcode']['required'] = false;
+     
      $fields['billing']['billing_address_1']['label'] = "آدرس";
      return $fields;
 
