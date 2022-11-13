@@ -350,7 +350,8 @@ if (isset($_GET["category_size"])) {
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-1 col-sm-4 col-md-4"></div>
+                <div class="col-10 col-sm-4 col-md-4">
                     <div class="row">
                         <?php
                         $options = $cat["options"];
@@ -379,6 +380,7 @@ if (isset($_GET["category_size"])) {
                         <?php } ?>
                     </div>
                 </div>
+                <div class="col-1 col-sm-4 col-md-4"></div>
 
                 <div class="col-12">
                     <form data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
