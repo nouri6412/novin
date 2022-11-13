@@ -263,7 +263,15 @@ function remove_company_name( $fields ) {
 
      unset($fields['billing']['billing_company']);
      unset($fields['billing']['billing_address_2']);
-     
+     $checkout_fields['billing']['billing_first_name']['priority'] = 10;
+     $checkout_fields['billing']['billing_last_name']['priority'] = 20;
+     $checkout_fields['billing']['billing_country']['priority'] = 30;
+     $checkout_fields['billing']['billing_state']['priority'] = 40;
+     $checkout_fields['billing']['billing_city']['priority'] = 50;
+     $checkout_fields['billing']['billing_address_1']['priority'] = 60;
+     $checkout_fields['billing']['billing_postcode']['priority'] = 70;
+     $checkout_fields['billing']['billing_phone']['priority'] = 80;
+     $checkout_fields['billing']['billing_email']['priority'] = 90;
      return $fields;
 
 }
