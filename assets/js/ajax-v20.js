@@ -32,6 +32,7 @@ jQuery(document).ready(function ($) {
                     $('#plan-uploaded-img').attr('src', data.url);
                     $('#plan-uploaded-img').attr('data-state', 1);
                     $('#plan-uploaded-img').attr('data-media-id', data.file_id);
+                    $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href') + '&plan_selected=' + $('#plan-uploaded-img').attr('data-media-id') + '&plan_selected_type=1');
                 }
                 else {
                     $('#file-voice').attr('href', data.url);
@@ -59,7 +60,7 @@ function select_plan_from_gallery(obj) {
     $('#plan-uploaded-img').attr('data-state', 1);
     $('#plan-uploaded-img').attr('data-media-id', obj.attr('data-media-id'));
     $('#plan-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
-    $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href') + '&plan_selected=' + $('#plan-uploaded-img').attr('data-media-id'));
+    $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href') + '&plan_selected=' + $('#plan-uploaded-img').attr('data-media-id') + '&plan_selected_type=0');
 }
 
 function select_ghab_from_gallery(obj) {
@@ -88,7 +89,7 @@ function plan_select_option_common() {
     $('#div-plan-select-option').css('display', 'none');
     $('#div-plan-select').css('display', 'block');
     $('#paragraph-plan').css('display', 'none');
-    
+
     $('#div-plan-select-common').css('display', 'block');
 }
 
@@ -100,6 +101,7 @@ function select_redy_plan(obj) {
 
 function negarenovi_order_finish() {
     var plan_id = $('#f-plan-id').val();
+    var plan_type = $('#f-plan-type').val();
     var ghab_id = $('#ghab-uploaded-img-value').val();
     var size_id = $('#f-size-id').val();
     var voice_id = $('#id-voice-value').val();
@@ -117,6 +119,7 @@ function negarenovi_order_finish() {
     myformData.append('ghab_id', ghab_id);
 
     myformData.append('plan_id', plan_id);
+    myformData.append('plan_type', plan_type);
 
     myformData.append('voice_id', voice_id);
 

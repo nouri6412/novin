@@ -70,7 +70,7 @@ function negarenovin_add_to_cart()
     WC()->cart->empty_cart();
     foreach ($_POST as $key => $post) {
         if ($key == "size_id") {
-            WC()->cart->add_to_cart($post, 1, 0, array(), array('meta_plan_id' => $_POST["plan_id"]));
+            WC()->cart->add_to_cart($post, 1, 0, array(), array('meta_plan_id' => $_POST["plan_id"], 'meta_plan_type' => $_POST["plan_type"]));
         } else if ($key == "ghab_id" && $post > 0) {
             WC()->cart->add_to_cart($post, 1);
         } else if ($key == "voice_id" && $post > 0) {
@@ -111,17 +111,26 @@ class cartPlugins
         if (isset($cart_item['meta_plan_id'])) {
             $meta_key = 'طرح';
 
-            $image="";
-            if (has_post_thumbnail($cart_item['meta_plan_id'])) {
-                $image = get_the_post_thumbnail_url($cart_item['meta_plan_id'], '');
-            } else {
-                $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
-            }
+            $image = "";
+            $plan_type = $cart_item['meta_plan_type'];
 
-            $item_data[] = array(
-                'key'       => $meta_key,
-                'value'     => '<a style="color:red" target="_blank" href="' . $image . '">'.get_the_title($cart_item['meta_plan_id']).'</a>',
-            );
+            if ($plan_type == 0) {
+                if (has_post_thumbnail($cart_item['meta_plan_id'])) {
+                    $image = get_the_post_thumbnail_url($cart_item['meta_plan_id'], '');
+                } else {
+                    $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+                }
+                $item_data[] = array(
+                    'key'       => $meta_key,
+                    'value'     => '<a style="color:red" target="_blank" href="' . $image . '">' . get_the_title($cart_item['meta_plan_id']) . '</a>',
+                );
+            } else {
+                $image = wp_get_attachment_url($cart_item['meta_plan_id']);
+                $item_data[] = array(
+                    'key'       => $meta_key,
+                    'value'     => '<a style="color:red" target="_blank" href="' . $image . '">مشاهده</a>',
+                );
+            }
         } else if (isset($cart_item['meta_voice_file'])) {
             $meta_key = 'فرکانس صدا';
             $item_data[] = array(
@@ -142,14 +151,26 @@ class cartPlugins
         if (isset($values['meta_plan_id'])) {
             $meta_key = 'طرح';
 
-            $image="";
+            $image = "";
+
+            $plan_type = $values['meta_plan_type'];
+
             if (has_post_thumbnail($values['meta_plan_id'])) {
                 $image = get_the_post_thumbnail_url($values['meta_plan_id'], '');
             } else {
                 $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
             }
-
-            $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">'.get_the_title($values['meta_plan_id']).'</a>');
+            if ($plan_type == 0) {
+                if (has_post_thumbnail($values['meta_plan_id'])) {
+                    $image = get_the_post_thumbnail_url($values['meta_plan_id'], '');
+                } else {
+                    $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+                }
+                $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">' . get_the_title($values['meta_plan_id']) . '</a>');
+            } else {
+                $image = wp_get_attachment_url($values['meta_plan_id']);
+                $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">مشاهده</a>');
+            }
         } else if (isset($values['meta_voice_file'])) {
             $meta_key = 'فرکانس صدا';
             $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . wp_get_attachment_url($values['meta_voice_file']) . '">دانلود</a>');
@@ -181,16 +202,15 @@ add_filter('pre_transient_wc_onboarding_themes', function ($flag, $transient) {
 
 add_filter('pre_transient_wc_onboarding_product_data', function ($flag, $transient) {
 
-    return ["fa_IR" => ["body"=>"{}"]];
+    return ["fa_IR" => ["body" => "{}"]];
 }, 10, 2);
 
 add_filter('woocommerce_admin_onboarding_themes', function ($themes) {
 
-   if(!is_array($themes))
-   {
-    $themes=[];
-   }
-   return $themes;
+    if (!is_array($themes)) {
+        $themes = [];
+    }
+    return $themes;
 }, 10, 2);
 
 
@@ -201,11 +221,11 @@ function kaktos_post_type_plan()
     $supports = array(
         'title', // post title
         'thumbnail', // featured images
-		'editor',
-		'excerpt',
+        'editor',
+        'excerpt',
         'custom-fields', // custom fields
         'post-formats', // post formats
-		
+
     );
 
     $labels = array(
@@ -230,7 +250,7 @@ function kaktos_post_type_plan()
         'query_var' => true,
         'rewrite' => array('slug' => 'plan'),
         'has_archive' => true,
-        'taxonomies'         => array( 'category', 'post_tag' ),
+        'taxonomies'         => array('category', 'post_tag'),
         'hierarchical' => false
     );
     register_post_type('plan', $args);

@@ -16,6 +16,7 @@ $Main_post_id = get_the_ID();
 $cat_selected = "";
 $size_selected = 0;
 $plan_selected = 0;
+$plan_selected_type = 0;
 $category_size = 0;
 $step = 1;
 if (isset($_GET["cat_selected"])) {
@@ -30,6 +31,10 @@ if (isset($_GET["size_selected"])) {
 if (isset($_GET["plan_selected"])) {
     $plan_selected = $_GET["plan_selected"];
     $step = 4;
+}
+
+if (isset($_GET["plan_selected_type"])) {
+    $plan_selected_type = $_GET["plan_selected_type"];
 }
 
 if (isset($_GET["category_size"])) {
@@ -304,7 +309,7 @@ if (isset($_GET["category_size"])) {
                                     <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل</button> -->
                                     <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                                 </div>
-                                <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                                <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0"  style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
 
                                 <div class="spinner-border" style="display:none ;" role="status">
                                     <span class="visually-hidden">Loading...</span>
@@ -441,6 +446,7 @@ if (isset($_GET["category_size"])) {
                 <div class="col-12">
                     <div class="col-12 col-sm-6 col-md-6 mb-5 mt-5">
                         <input id="f-plan-id" type="hidden" value="<?php echo $plan_selected ?>" />
+                        <input id="f-plan-type" type="hidden" value="<?php echo $plan_selected_type ?>" />
                         <input id="f-size-id" type="hidden" value="<?php echo $size_selected ?>" />
                         <input id="f-site-url" type="hidden" value="<?php echo wc_get_cart_url() ?>" />
                         <div class="spinner-border" style="display:none ;" role="status">
