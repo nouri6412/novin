@@ -429,12 +429,12 @@ if (isset($_GET["category_size"])) {
                     <div style="display: none;" id="select-ghab-panel" class="col-12 col-sm-6 col-md-6 mb-4 mt-5">
                         <div class="row">
                             <div class="col-6">
-                                <button style="width: 100%;" onclick="ghab_selected_panel(0)" type="button" class="btn btn-danger">
-                                    قاب می خواهم
+                                <button style="width: 100%;height:60px;" onclick="ghab_selected_panel(0)" type="button" class="btn btn-danger">
+                                    قاب نمی خواهم
                                 </button>
                             </div>
                             <div class="col-6">
-                                <button style="width: 100%;" onclick="ghab_selected_panel(1)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button style="width: 100%;height:60px;" onclick="ghab_selected_panel(1)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     قاب می خواهم
                                 </button>
                             </div>
