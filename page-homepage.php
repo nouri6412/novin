@@ -368,12 +368,13 @@ if (isset($_GET["category_size"])) {
                             </select>
                         </div>
                         <div class="col-12 mb-4">
-                            <form data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
+                            <form style="display: none;" data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
 
                                 <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary mt-2"><?php echo 'انتخاب فایل صدا' ?></a>
                                 <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل صدا</button> -->
+                                <a class="btn btn-outline-primary" href="<?php echo $cat["ferecans_seda_help"] ?>" target="_blank">فایل راهنما</a>
 
                                 <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
 
