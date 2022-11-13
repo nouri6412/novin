@@ -280,6 +280,7 @@ function remove_company_name( $fields ) {
      
      $fields['billing']['billing_first_name']['label'] = "نام و نام خانوادگی";
      $fields['billing']['billing_address_1']['label'] = "آدرس";
+     $fields['billing']['billing_phone']['label'] = "موبایل";
      $fields['billing']['billing_first_name']['class'][0]="form-row-wide";
      
      return $fields;
