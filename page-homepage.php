@@ -481,8 +481,13 @@ if (isset($_GET["category_size"])) {
                                                             </div>
                                                         </a>
                                                     </div>
-                                            <?php }
-                                            } ?>
+                                                <?php }
+                                            } else {
+                                                ?>
+                                                <h3 class="text-danger">قابی جهت انتخاب وجود ندارد</h3>
+                                            <?php
+                                            }
+                                            ?>
 
                                         </div>
                                     </div>
