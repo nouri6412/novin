@@ -1,4 +1,6 @@
 jQuery(document).ready(function ($) {
+
+    //ship-to-different-address-checkbox
     console.log('hi jquery');
     var myForm = $('#myform');
 
