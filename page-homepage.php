@@ -359,7 +359,7 @@ if (isset($_GET["category_size"])) {
                 <div class="col-12 col-sm-6 col-md-6">
                     <div class="row select-option-extra">
 
-                        <div class="col-12 col-sm-6 col-md-6 mb-4">
+                        <div class="col-12 col-sm-6 col-md-6">
                             <?php $product = wc_get_product($cat["ferecans_seda"]); ?>
                             <label><?php echo 'فرکانس صدا' . ' - ' . $product->get_price_html() ?></label>
                             <select id="id-voice-value-select" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="myform" data-price="<?php echo $product->get_price() ?>">
@@ -367,12 +367,12 @@ if (isset($_GET["category_size"])) {
                                 <option value="1">نیاز است</option>
                             </select>
                         </div>
-                        <div class="col-12 mb-4">
+                        <div class="col-12 col-sm-6 col-md-6">
                             <form style="display: none;" data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
 
-                                <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary mt-2"><?php echo 'انتخاب فایل صدا' ?></a>
+                                <a href="#" onclick="$('#myfilefield').click()" class="btn btn-primary"><?php echo 'انتخاب فایل صدا' ?></a>
                                 <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل صدا</button> -->
                                 <a class="btn btn-outline-primary" href="<?php echo $cat["ferecans_seda_help"] ?>" target="_blank">فایل راهنما</a>
 
