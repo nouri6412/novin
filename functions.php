@@ -263,6 +263,8 @@ function remove_company_name( $fields ) {
 
      unset($fields['billing']['billing_company']);
      unset($fields['billing']['billing_address_2']);
+     unset($fields['billing']['billing_last_name']);
+
      $fields['billing']['billing_first_name']['priority'] = 10;
      $fields['billing']['billing_last_name']['priority'] = 20;
      $fields['billing']['billing_country']['priority'] = 30;
@@ -276,6 +278,7 @@ function remove_company_name( $fields ) {
      $fields['billing']['billing_postcode']['required'] = false;
      $fields['billing']['billing_email']['required'] = false;
      
+     $fields['billing']['billing_first_name']['label'] = "نام و نام خانوادگی";
      $fields['billing']['billing_address_1']['label'] = "آدرس";
      return $fields;
 
