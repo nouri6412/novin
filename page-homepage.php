@@ -356,7 +356,7 @@ if (isset($_GET["category_size"])) {
                 <div class="col-0 col-sm-3 col-md-3"></div>
 
                 <div class="col-0 col-sm-3 col-md-3"></div>
-                <div class="col-12 col-sm-6 col-md-6">
+                <div id="select-ghab-panel-option" class="col-12 col-sm-6 col-md-6">
                     <div class="row select-option-extra">
 
                         <div class="col-12 col-sm-6 col-md-6 mb-4">

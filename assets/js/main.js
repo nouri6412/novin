@@ -851,8 +851,8 @@ function close_box_plan() {
 }
 
 function fun_prev_step(obj) {
-    if($('#order-home-step').val()==5) {
-        obj.attr('href', obj.attr('data-href'));
+    if ($('#order-home-step').val() == 5) {
+        //  obj.attr('href', obj.attr('data-href'));
 
         $('#order-home-step').val(4);
         $('#btn-next-step').html('مرحله بعدی');
@@ -860,9 +860,13 @@ function fun_prev_step(obj) {
         $('#btn-next-step').addClass('btn-primary');
         $('.breadcrumb-item-step5').css('display', 'none');
         $('#select-ghab-panel').css('display', 'none');
+        $('#select-ghab-panel-option').css('display', 'block');
         $('#head-option-title').html(' آپشن های طراحی ');
         $('#head-option-p').css('display', 'block');
-        
+
+    }
+    else if ($('#order-home-step').val() == 4) {
+        window.location.href = obj.attr('data-href');
     }
 }
 
@@ -904,9 +908,8 @@ function change_img_box_plan(obj) {
 
 
 function check_plan_selected(obj) {
-    
-    if($('#order-home-step').val()==4)
-    {
+
+    if ($('#order-home-step').val() == 4) {
         $('#order-home-step').val(5);
         $('#btn-prev-step').attr('href', '#');
         $('#btn-next-step').html('تکمیل سفارش');
@@ -916,11 +919,11 @@ function check_plan_selected(obj) {
         $('#btn-next-step').addClass('btn-success');
         $('.breadcrumb-item-step5').css('display', 'block');
         $('#select-ghab-panel').css('display', 'block');
+        $('#select-ghab-panel-option').css('display', 'none');
 
 
     }
-    else if($('#order-home-step').val()==5)
-    {
+    else if ($('#order-home-step').val() == 5) {
         negarenovi_order_finish();
     }
     else if (obj.attr('href') == '#') {
