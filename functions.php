@@ -262,7 +262,8 @@ add_filter( 'woocommerce_checkout_fields' , 'remove_company_name' );
 function remove_company_name( $fields ) {
 
      unset($fields['billing']['billing_company']);
-
+     unset($fields['billing']['billing_address_2']);
+     
      return $fields;
 
 }
