@@ -351,7 +351,10 @@ if (isset($_GET["category_size"])) {
         <div class="container">
 
             <div class="row">
-            <h3 data-price="0" id="sum-price-option" class="mb-3 col-12" style="color: green;font-size:18px;"></h3>
+            <div class="col-0 col-sm-3 col-md-3"></div>
+            <h3 data-price="0" id="sum-price-option" class="col-12 col-sm-6 col-md-6 mb-3" style="color: green;font-size:18px;"></h3>
+            <div class="col-0 col-sm-3 col-md-3"></div>
+
                 <div class="col-0 col-sm-3 col-md-3"></div>
                 <div class="col-12 col-sm-6 col-md-6">
                     <div class="row select-option-extra">
@@ -375,7 +378,7 @@ if (isset($_GET["category_size"])) {
                                 <div class="col-12 col-sm-12 col-md-12 mb-4">
                                     <div class="row">
                                         <label class="col-12"><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
-                                        <select class="col-12 col-sm-3 col-md-3 mb-2" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>">
+                                        <select class="col-6 col-sm-3 col-md-3 mb-2" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>">
                                             <option value="0">نیاز نیست</option>
                                             <option value="1">نیاز است</option>
                                         </select>
