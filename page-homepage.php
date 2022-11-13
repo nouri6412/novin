@@ -500,7 +500,7 @@ if (isset($_GET["category_size"])) {
             </div>
         </div>
     <?php } ?>
-    <div class="m-5">
+    <div style="min-height: 45px;" class="m-5">
         <?php if ($step > 1) {
             $prev = "";
             $next = "0";
