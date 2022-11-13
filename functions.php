@@ -273,7 +273,7 @@ function remove_company_name( $fields ) {
      $fields['billing']['billing_address_1']['priority'] = 60;
      $fields['billing']['billing_postcode']['priority'] = 70;
      $fields['billing']['billing_phone']['priority'] = 80;
-     $fields['billing']['billing_email']['priority'] = 90;
+     $fields['billing']['billing_email']['priority'] = 100;
 
      $fields['billing']['billing_postcode']['required'] = false;
      $fields['billing']['billing_email']['required'] = false;
@@ -282,6 +282,8 @@ function remove_company_name( $fields ) {
      $fields['billing']['billing_address_1']['label'] = "آدرس";
      $fields['billing']['billing_phone']['label'] = "موبایل";
      $fields['billing']['billing_first_name']['class'][0]="form-row-wide";
+
+     $fields['billing']['billing_tel_0']=["label"=>"شماره ثابت","priority"=>80,'required'=>false];
      
      return $fields;
 
