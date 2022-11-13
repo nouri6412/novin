@@ -426,7 +426,7 @@ if (isset($_GET["category_size"])) {
 
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
                     <div class="col-0 col-sm-3 col-md-3"></div>
-                    <div class="col-12 col-sm-6 col-md-6 mb-4 mt-5">
+                    <div style="display: none;" id="select-ghab-panel" class="col-12 col-sm-6 col-md-6 mb-4 mt-5">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             انتخاب قاب از گالری
                         </button>

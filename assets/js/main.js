@@ -859,6 +859,10 @@ function fun_prev_step(obj) {
         $('#btn-next-step').removeClass('btn-success');
         $('#btn-next-step').addClass('btn-primary');
         $('.breadcrumb-item-step5').css('display', 'none');
+        $('#select-ghab-panel').css('display', 'none');
+        $('#head-option-title').html(' آپشن های طراحی ');
+        $('#head-option-p').css('display', 'block');
+        
     }
 }
 
@@ -906,9 +910,14 @@ function check_plan_selected(obj) {
         $('#order-home-step').val(5);
         $('#btn-prev-step').attr('href', '#');
         $('#btn-next-step').html('تکمیل سفارش');
+        $('#head-option-title').html('انتخاب قاب ');
+        $('#head-option-p').css('display', 'none');
         $('#btn-next-step').removeClass('btn-primary');
         $('#btn-next-step').addClass('btn-success');
         $('.breadcrumb-item-step5').css('display', 'block');
+        $('#select-ghab-panel').css('display', 'block');
+
+
     }
     else if($('#order-home-step').val()==5)
     {
