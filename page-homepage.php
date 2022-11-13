@@ -43,17 +43,22 @@ if (isset($_GET["category_size"])) {
 
 ?>
 <main class="content <?php if ($step == 1) echo 'bg-ex'; ?>">
+<input id="order-home-step" name="order-home-step" value="<?php echo $step ?>" />
     <?php if ($step > 1) { ?>
         <div class="container mt-4">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">صفحه اصلی</a></li>
                     <?php if ($step > 1) { ?>
-                        <li class="breadcrumb-item" aria-current="page">انتخاب سایز</li>
+                        <li class="breadcrumb-item" <?php if ($step == 2) echo 'aria-current="page"' ?>>انتخاب سایز</li>
                     <?php } ?>
                     <?php if ($step > 2) { ?>
-                        <li class="breadcrumb-item" aria-current="page">انتخاب طرح</li>
+                        <li class="breadcrumb-item" <?php if ($step == 3) echo 'aria-current="page"' ?>>انتخاب طرح</li>
                     <?php } ?>
+                    <?php if ($step > 3) { ?>
+                        <li class="breadcrumb-item" <?php if ($step == 4) echo 'aria-current="page"' ?>>آپشن های طراحی</li>
+                    <?php } ?>
+                    <li style="display: none;" class="breadcrumb-item breadcrumb-item-step5">انتخاب قاب</li>
                 </ol>
             </nav>
         </div>
@@ -309,7 +314,7 @@ if (isset($_GET["category_size"])) {
                                     <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل</button> -->
                                     <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                                 </div>
-                                <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0"  style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                                <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
 
                                 <div class="spinner-border" style="display:none ;" role="status">
                                     <span class="visually-hidden">Loading...</span>
@@ -337,7 +342,7 @@ if (isset($_GET["category_size"])) {
                 <div class="col-12">
 
                     <div class="title_site mb-2">
-                        <h2><?php echo 'متعلقات و درخواست های بیشتر'; ?></h2>
+                        <h2><?php echo 'آپشن های طراحی'; ?></h2>
                     </div>
                     <p class="text-center mb-5 text-logo"><?php echo 'هر کدام از موارد زیر را با در نظر گرفتن هزینه اضافه به سفارشتان اضافه نمائید '; ?></p>
                 </div>
@@ -467,11 +472,14 @@ if (isset($_GET["category_size"])) {
                 $prev = site_url();
             } else if ($step == 3) {
                 $prev = site_url("?cat_selected=" . $cat_selected);
+            } else if ($step == 4) {
+                $prev = site_url("?cat_selected=" . $cat_selected . '&size_selected=' . $size_selected);
             }
+
 
         ?>
             <div class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step" href="#" class="btn btn-primary">مرحله بعدی</a></div>
-            <div class="float-end"></div> <a id="btn-prev-step" href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
+            <div class="float-end"></div> <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
         <?php } ?>
     </div>
 </main>

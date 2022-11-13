@@ -850,6 +850,15 @@ function close_box_plan() {
     $('#bg-white').css('display', 'none');
 }
 
+function fun_prev_step(obj)
+{
+  if(obj.attr('href')=="#")
+  {
+    obj.attr('href',obj.attr('data-href'));
+    $('.breadcrumb-item-step5').css('display','none');
+  }
+}
+
 function change_img_box_plan(obj) {
     $('#btn-next-step').attr('href', obj.attr('data-href'));
     $('#bg-white img').attr('src', obj.attr('data-img'));
