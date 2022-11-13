@@ -866,12 +866,12 @@ function change_select_option_extra(obj) {
             $('#' + obj.attr('data-target')).css('display', 'none');
         }
     }
-    var price = $('#sum-price-option').attr('data-price');
+    var price = parseInt($('#sum-price-option').attr('data-price'));
     if (obj.val() == 1) {
-        price = price + obj.attr('data-price');
+        price = price + parseInt(obj.attr('data-price'));
     }
     else {
-        price = price - obj.attr('data-price');
+        price = price - parseInt(obj.attr('data-price'));
     }
     if (price < 0) {
         price = 0;
