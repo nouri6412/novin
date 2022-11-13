@@ -489,7 +489,7 @@ if (isset($_GET["category_size"])) {
                         <input id="f-plan-id" type="hidden" value="<?php echo $plan_selected ?>" />
                         <input id="f-plan-type" type="hidden" value="<?php echo $plan_selected_type ?>" />
                         <input id="f-size-id" type="hidden" value="<?php echo $size_selected ?>" />
-                        <input id="f-site-url" type="hidden" value="<?php echo wc_get_cart_url() ?>" />
+                        <input id="f-site-url" type="hidden" value="<?php echo site_url() ?>" />
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
@@ -515,8 +515,8 @@ if (isset($_GET["category_size"])) {
 
 
         ?>
-            <div style="display: none;margin-right:10px;" class="float-start">
-                <a onclick="check_plan_selected($(this))" id="btn-next-step-cart" href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a>
+            <div id="btn-next-step-cart" style="display: none;margin-right:10px;" class="float-start">
+                <a   href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a>
             </div>
             <div class="float-start">
                 <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-primary">مرحله بعدی</a>
