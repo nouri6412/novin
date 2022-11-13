@@ -158,6 +158,7 @@ function negarenovi_order_finish() {
         enctype: 'multipart/form-data',
         success: function (data, textStatus, jqXHR) {
           //  window.location.href = site_url;
+          $('#btn-next-step').attr('href',site_url);
           $('#btn-next-step').html('ادامه خرید');
           $('#btn-next-step-cart').css('display','block');
           $('#btn-prev-step').css('display','none');

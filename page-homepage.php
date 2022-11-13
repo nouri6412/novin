@@ -415,7 +415,7 @@ if (isset($_GET["category_size"])) {
                                     </select>
                                 </div>
                                 <div class="col-12 mb-4">
-                                    <textarea style="display: none;width:100%" placeholder="متن خود را اینجا بنویسید"  class="col-12" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"] . '-text'; ?>" id="f-option-<?php echo $item["product"] . '-text'; ?>"></textarea>
+                                    <textarea style="display: none;width:100%" placeholder="متن خود را اینجا بنویسید" class="col-12" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"] . '-text'; ?>" id="f-option-<?php echo $item["product"] . '-text'; ?>"></textarea>
                                 </div>
                             <?php  } ?>
                         <?php } ?>
@@ -515,9 +515,15 @@ if (isset($_GET["category_size"])) {
 
 
         ?>
-            <div style="display: none;" class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step-cart" href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a></div>
-            <div class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-primary">مرحله بعدی</a></div>
-            <div class="float-end"></div> <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
+            <div style="display: none;margin-right:10px;" class="float-start">
+                <a onclick="check_plan_selected($(this))" id="btn-next-step-cart" href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a>
+            </div>
+            <div class="float-start">
+                <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-primary">مرحله بعدی</a>
+            </div>
+            <div class="float-end">
+                <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
+            </div>
         <?php } ?>
     </div>
 </main>

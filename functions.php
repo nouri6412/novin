@@ -6,7 +6,7 @@ function novin_theme_scripts()
 
     wp_enqueue_script(
         'novin_ajax_script',
-        get_template_directory_uri() . '/assets/js/ajax-v23.js',
+        get_template_directory_uri() . '/assets/js/ajax-v24.js',
         array('jquery'),
         1,
         false
@@ -67,7 +67,7 @@ function pn_upload_files()
 
 function negarenovin_add_to_cart()
 {
-    WC()->cart->empty_cart();
+   // WC()->cart->empty_cart();
     foreach ($_POST as $key => $post) {
         if ($key == "size_id") {
             WC()->cart->add_to_cart($post, 1, 0, array(), array('meta_plan_id' => $_POST["plan_id"], 'meta_plan_type' => $_POST["plan_type"]));
