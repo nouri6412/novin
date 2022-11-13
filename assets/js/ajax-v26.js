@@ -107,6 +107,7 @@ function negarenovi_order_finish() {
     var voice_id = $('#id-voice-value').val();
     var voice_file_id = $('#file-voice-value').val();
     var site_url = $('#f-site-url').val();
+    $('#btn-next-step').css('display', 'none');
 
     if($('#id-voice-value-select').val()==0)
     {
@@ -160,6 +161,7 @@ function negarenovi_order_finish() {
           //  window.location.href = site_url;
           $('#btn-next-step').attr('href',site_url);
           $('#btn-next-step').html('ادامه خرید');
+          $('#btn-next-step').css('display', 'block');
           $('#btn-next-step-cart').css('display','block');
           $('#btn-prev-step').css('display','none');
           $('#select-ghab-panel').css('display', 'none');
@@ -169,6 +171,7 @@ function negarenovi_order_finish() {
             alert('خطا دوباره امتحان فرمائید');
             console.log('fail upload');
             console.log(jqXHR);
+            $('#btn-next-step').css('display', 'block');
         }
     });
 }

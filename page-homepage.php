@@ -528,6 +528,9 @@ if (isset($_GET["category_size"])) {
 
 
         ?>
+            <div class="spinner-border float-start" style="display:none ;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
             <div id="btn-next-step-cart" style="display: none;margin-right:10px;" class="float-start">
                 <a href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a>
             </div>
