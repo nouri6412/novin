@@ -427,11 +427,24 @@ if (isset($_GET["category_size"])) {
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
 
                     <div style="display: none;" id="select-ghab-panel" class="col-12 col-sm-6 col-md-6 mb-4 mt-5">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            انتخاب قاب از گالری
-                        </button>
-                        <input id="ghab-uploaded-img-value" value="0" type="hidden" />
-                        <img style="max-height: 285px;" data-state="0" id="ghab-uploaded-img" class="card-img-top img-fluid mt-2" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                        <div class="row">
+                            <div class="col-6">
+                                <button style="width: 100%;" onclick="ghab_selected_panel(0)" type="button" class="btn btn-danger">
+                                    قاب می خواهم
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button style="width: 100%;" onclick="ghab_selected_panel(1)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    قاب می خواهم
+                                </button>
+                            </div>
+                            <div id="ghab-selected-panel" style="display: none;" class="col-12">
+                                <input id="ghab-uploaded-img-value" value="0" type="hidden" />
+                                <img style="max-height: 285px;" data-state="0" id="ghab-uploaded-img" class="card-img-top img-fluid mt-2" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                            </div>
+                        </div>
+
+
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-fullscreen">
@@ -516,7 +529,7 @@ if (isset($_GET["category_size"])) {
 
         ?>
             <div id="btn-next-step-cart" style="display: none;margin-right:10px;" class="float-start">
-                <a   href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a>
+                <a href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a>
             </div>
             <div class="float-start">
                 <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-primary">مرحله بعدی</a>

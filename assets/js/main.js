@@ -931,6 +931,17 @@ function check_plan_selected(obj) {
     }
 }
 
+function ghab_selected_panel(select) {
+    if (select == 0) {
+        $('#ghab-selected-panel').css('display', 'none');
+        $('#ghab-uploaded-img-value').val(0);
+    }
+    else
+    {
+        $('#ghab-selected-panel').css('display', 'block'); 
+    }
+}
+
 
 /************************************ ************************************/
 
