@@ -384,7 +384,7 @@ if (isset($_GET["category_size"])) {
                                 <div class="spinner-border" style="display:none ;" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <a data-media-id="0" style="color: red;" id="file-voice" class="file" href="#" target="_blank"></a>
+                                <a  data-media-id="0" style="color: red;display:block" id="file-voice" class="file" href="#" target="_blank"></a>
                                 <input id="file-voice-value" type="hidden" value="0" />
                                 <input id="id-voice-value" type="hidden" value="<?php echo $cat["ferecans_seda"]; ?>" />
                             </form>
