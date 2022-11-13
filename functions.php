@@ -256,3 +256,13 @@ function kaktos_post_type_plan()
     register_post_type('plan', $args);
 }
 add_action('init', 'kaktos_post_type_plan');
+
+add_filter( 'woocommerce_checkout_fields' , 'remove_company_name' );
+
+function remove_company_name( $fields ) {
+
+     unset($fields['billing']['billing_company']);
+
+     return $fields;
+
+}
