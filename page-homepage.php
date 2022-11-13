@@ -382,7 +382,7 @@ if (isset($_GET["category_size"])) {
                                         <option value="1">نیاز است</option>
                                     </select>
                                 </div>
-                                <div class="col-12 col-sm-6 col-md-6 mb-4">
+                                <div class="col-12 mb-4">
                                     <textarea style="display: none;width:100%" placeholder="متن خود را اینجا بنویسید" class="negarenovin-option" class="col-12" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>"></textarea>
 
                                 </div>
