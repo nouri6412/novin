@@ -43,7 +43,7 @@ if (isset($_GET["category_size"])) {
 
 ?>
 <main class="content <?php if ($step == 1) echo 'bg-ex'; ?>">
-    <input id="order-home-step" name="order-home-step" value="<?php echo $step ?>" />
+    <input type="hidden" id="order-home-step" name="order-home-step" value="<?php echo $step ?>" />
     <?php if ($step > 1) { ?>
         <div class="container mt-4">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -421,11 +421,11 @@ if (isset($_GET["category_size"])) {
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-0 col-sm-3 col-md-3"></div>
+               
 
 
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
-                    <div class="col-0 col-sm-3 col-md-3"></div>
+               
                     <div style="display: none;" id="select-ghab-panel" class="col-12 col-sm-6 col-md-6 mb-4 mt-5">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             انتخاب قاب از گالری
@@ -479,8 +479,9 @@ if (isset($_GET["category_size"])) {
                             </div>
                         </div>
                     </div>
-                    <div class="col-0 col-sm-3 col-md-3"></div>
+                  
                 <?php  } ?>
+                <div class="col-0 col-sm-3 col-md-3"></div>
                 <div class="col-12">
                     <div class="col-12 col-sm-6 col-md-6 mb-5 mt-5">
                         <input id="f-plan-id" type="hidden" value="<?php echo $plan_selected ?>" />
