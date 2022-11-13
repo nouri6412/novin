@@ -375,7 +375,7 @@ if (isset($_GET["category_size"])) {
 
                                 </div>
                             <?php  } else { ?>
-                                <div class="col-6 col-sm-6 col-md-6 mb-4">
+                                <div class="col-12 col-sm-6 col-md-6 mb-4">
                                     <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
                                     <select onchange="change_select_option_extra($(this))" data-type="textarea" data-target="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>">
                                         <option value="0">نیاز نیست</option>
