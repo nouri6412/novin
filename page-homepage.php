@@ -362,7 +362,7 @@ if (isset($_GET["category_size"])) {
                         <div class="col-12 mb-4">
                             <?php $product = wc_get_product($cat["ferecans_seda"]); ?>
                             <label><?php echo 'فرکانس صدا' . ' - ' . $product->get_price_html() ?></label>
-                            <select onchange="change_select_option_extra($(this))" data-type="textarea" data-target="myform" data-price="<?php echo $product->get_price() ?>">
+                            <select id="id-voice-value-select" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="myform" data-price="<?php echo $product->get_price() ?>">
                                 <option value="0">نیاز نیست</option>
                                 <option value="1">نیاز است</option>
                             </select>
