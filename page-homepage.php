@@ -359,20 +359,20 @@ if (isset($_GET["category_size"])) {
                 <div class="col-12 col-sm-6 col-md-6">
                     <div class="row select-option-extra">
 
-                        <div class="col-12 col-sm-6 col-md-6">
+                        <div class="col-12 col-sm-6 col-md-6 mb-4">
                             <?php $product = wc_get_product($cat["ferecans_seda"]); ?>
                             <label><?php echo 'فرکانس صدا' . ' - ' . $product->get_price_html() ?></label>
-                            <select id="id-voice-value-select" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="myform" data-price="<?php echo $product->get_price() ?>">
+                            <select id="id-voice-value-select" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="div-ferekans-seda" data-price="<?php echo $product->get_price() ?>">
                                 <option value="0">نیاز نیست</option>
                                 <option value="1">نیاز است</option>
                             </select>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-6">
-              
+                        <div style="display: none;" id="div-ferekans-seda" class="col-12 col-sm-6 col-md-6 mb-4">
 
-                            <form style="display: none;" data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
                             <label><?php echo ' انتخاب فایل'  ?></label>
-                            <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
+
+                            <form data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
+                                <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
 
                                 <a style="line-height: 1" href="#" onclick="$('#myfilefield').click()" class="btn btn-primary"><?php echo 'انتخاب فایل صدا' ?></a>
