@@ -285,14 +285,7 @@ function remove_company_name( $fields ) {
 
      $fields['billing']['billing_tel_0']=["label"=>"شماره ثابت","priority"=>80,'required'=>false];
      
-     return $fields;
-
-}
-
-add_filter( 'remove_company_name_shipping' , 'remove_company_name' );
-
-function remove_company_name_shipping( $fields ) {
-
+     
      unset($fields['shipping']['shipping_company']);
      unset($fields['shipping']['shipping_address_2']);
      unset($fields['shipping']['shipping_last_name']);
@@ -314,6 +307,8 @@ function remove_company_name_shipping( $fields ) {
 
      //$fields['shipping']['shipping_tel_0']=["label"=>"شماره ثابت","priority"=>80,'required'=>false];
      
+     
      return $fields;
 
 }
+
