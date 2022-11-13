@@ -860,7 +860,7 @@ function fun_prev_step(obj) {
         $('#btn-next-step').addClass('btn-primary');
         $('.breadcrumb-item-step5').css('display', 'none');
         $('#select-ghab-panel').css('display', 'none');
-        $('#select-ghab-panel-option').css('display', 'block');
+        $('.select-ghab-panel-option').css('display', 'block');
         $('#head-option-title').html(' آپشن های طراحی ');
         $('#head-option-p').css('display', 'block');
 
@@ -919,7 +919,7 @@ function check_plan_selected(obj) {
         $('#btn-next-step').addClass('btn-success');
         $('.breadcrumb-item-step5').css('display', 'block');
         $('#select-ghab-panel').css('display', 'block');
-        $('#select-ghab-panel-option').css('display', 'none');
+        $('.select-ghab-panel-option').css('display', 'none');
 
 
     }
