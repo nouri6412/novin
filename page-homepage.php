@@ -342,9 +342,9 @@ if (isset($_GET["category_size"])) {
                 <div class="col-12">
 
                     <div class="title_site mb-2">
-                        <h2><?php echo 'آپشن های طراحی'; ?></h2>
+                        <h2 id="head-option-title"><?php echo 'آپشن های طراحی'; ?></h2>
                     </div>
-                    <p class="text-center mb-5 text-logo"><?php echo 'هر کدام از موارد زیر را با در نظر گرفتن هزینه اضافه به سفارشتان اضافه نمائید '; ?></p>
+                    <p id="head-option-p" class="text-center mb-5 text-logo"><?php echo 'هر کدام از موارد زیر را با در نظر گرفتن هزینه اضافه به سفارشتان اضافه نمائید '; ?></p>
                 </div>
             </div>
         </div>
@@ -384,7 +384,7 @@ if (isset($_GET["category_size"])) {
                                 <div class="spinner-border" style="display:none ;" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <a  data-media-id="0" style="color: red;display:block" id="file-voice" class="file" href="#" target="_blank"></a>
+                                <a data-media-id="0" style="color: red;display:block" id="file-voice" class="file" href="#" target="_blank"></a>
                                 <input id="file-voice-value" type="hidden" value="0" />
                                 <input id="id-voice-value" type="hidden" value="<?php echo $cat["ferecans_seda"]; ?>" />
                             </form>
@@ -425,7 +425,8 @@ if (isset($_GET["category_size"])) {
 
 
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
-                    <div class="col-12 col-sm-6 col-md-4 mb-4 mt-5">
+                    <div class="col-0 col-sm-3 col-md-3"></div>
+                    <div class="col-12 col-sm-6 col-md-6 mb-4 mt-5">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             انتخاب قاب از گالری
                         </button>
@@ -478,6 +479,7 @@ if (isset($_GET["category_size"])) {
                             </div>
                         </div>
                     </div>
+                    <div class="col-0 col-sm-3 col-md-3"></div>
                 <?php  } ?>
                 <div class="col-12">
                     <div class="col-12 col-sm-6 col-md-6 mb-5 mt-5">
@@ -488,7 +490,7 @@ if (isset($_GET["category_size"])) {
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
-                        <button onclick="negarenovi_order_finish()" type="button" class="btn btn-success mb-1 w-100">تکمیل سفارش</button>
+                        <!-- <button onclick="negarenovi_order_finish()" type="button" class="btn btn-success mb-1 w-100">تکمیل سفارش</button> -->
                     </div>
                 </div>
 
@@ -510,6 +512,7 @@ if (isset($_GET["category_size"])) {
 
 
         ?>
+            <div style="display: none;" class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step-cart" href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a></div>
             <div class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-primary">مرحله بعدی</a></div>
             <div class="float-end"></div> <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
         <?php } ?>

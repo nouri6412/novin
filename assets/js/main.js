@@ -851,8 +851,13 @@ function close_box_plan() {
 }
 
 function fun_prev_step(obj) {
-    if (obj.attr('href') == "#") {
+    if($('#order-home-step').val()==5) {
         obj.attr('href', obj.attr('data-href'));
+
+        $('#order-home-step').val(4);
+        $('#btn-next-step').html('مرحله بعدی');
+        $('#btn-next-step').removeClass('btn-success');
+        $('#btn-next-step').addClass('btn-primary');
         $('.breadcrumb-item-step5').css('display', 'none');
     }
 }
@@ -895,7 +900,21 @@ function change_img_box_plan(obj) {
 
 
 function check_plan_selected(obj) {
-    if (obj.attr('href') == '#') {
+    
+    if($('#order-home-step').val()==4)
+    {
+        $('#order-home-step').val(5);
+        $('#btn-prev-step').attr('href', '#');
+        $('#btn-next-step').html('تکمیل سفارش');
+        $('#btn-next-step').removeClass('btn-primary');
+        $('#btn-next-step').addClass('btn-success');
+        $('.breadcrumb-item-step5').css('display', 'block');
+    }
+    else if($('#order-home-step').val()==5)
+    {
+        negarenovi_order_finish();
+    }
+    else if (obj.attr('href') == '#') {
         alert("گزینه ای انتخاب نشده است");
     }
 }
