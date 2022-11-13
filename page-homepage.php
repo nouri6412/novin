@@ -356,7 +356,7 @@ if (isset($_GET["category_size"])) {
                 <div class="col-0 col-sm-3 col-md-3 select-ghab-panel-option"></div>
 
                 <div class="col-0 col-sm-3 col-md-3"></div>
-                <div  class="col-12 col-sm-6 col-md-6 select-ghab-panel-option">
+                <div class="col-12 col-sm-6 col-md-6 select-ghab-panel-option">
                     <div class="row select-option-extra">
 
                         <div class="col-12 col-sm-6 col-md-6 mb-4">
@@ -421,11 +421,11 @@ if (isset($_GET["category_size"])) {
                         <?php } ?>
                     </div>
                 </div>
-               
+
 
 
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
-               
+
                     <div style="display: none;" id="select-ghab-panel" class="col-12 col-sm-6 col-md-6 mb-4 mt-5">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             انتخاب قاب از گالری
@@ -444,30 +444,32 @@ if (isset($_GET["category_size"])) {
                                         <div class="row">
 
                                             <?php
-                                            $ghabs =get_field("ghabs",$size_selected);
-                                            foreach ($ghabs as $ghab) {
-                                                $item = $ghab['ghab'];
-                                                $image = "";
+                                            $ghabs = get_field("ghabs", $size_selected);
+                                            if (is_array($ghabs)) {
+                                                foreach ($ghabs as $ghab) {
+                                                    $item = $ghab['ghab'];
+                                                    $image = "";
 
-                                                if (has_post_thumbnail($item)) {
-                                                    $image = get_the_post_thumbnail_url($item, '');
-                                                } else {
-                                                    $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
-                                                }
-                                                $product = wc_get_product($item);
+                                                    if (has_post_thumbnail($item)) {
+                                                        $image = get_the_post_thumbnail_url($item, '');
+                                                    } else {
+                                                        $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+                                                    }
+                                                    $product = wc_get_product($item);
                                             ?>
-                                                <div class="col-12 col-sm-6 col-md-4 mb-4">
-                                                    <a data-bs-dismiss="modal" data-product-id="<?php echo $item ?>" onclick="select_ghab_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
-                                                        <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>">
+                                                    <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                                        <a data-bs-dismiss="modal" data-product-id="<?php echo $item ?>" onclick="select_ghab_from_gallery($(this))" href="#" class="card card-style card-portfolio card-order card-yellow">
+                                                            <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>">
 
-                                                        <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
-                                                        <div class="card-body">
-                                                            <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
-                                                            <h3 class="text-center"><?php echo $product->get_price_html(); ?></h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            <?php } ?>
+                                                            <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
+                                                            <div class="card-body">
+                                                                <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
+                                                                <h3 class="text-center"><?php echo $product->get_price_html(); ?></h3>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            <?php }
+                                            } ?>
 
                                         </div>
                                     </div>
@@ -479,7 +481,7 @@ if (isset($_GET["category_size"])) {
                             </div>
                         </div>
                     </div>
-                  
+
                 <?php  } ?>
                 <div class="col-0 col-sm-3 col-md-3"></div>
                 <div class="col-12">
