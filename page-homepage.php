@@ -368,6 +368,8 @@ if (isset($_GET["category_size"])) {
                             </select>
                         </div>
                         <div class="col-12 col-sm-6 col-md-6">
+                        <label><?php echo ' انتخاب فایل'  ?></label>
+
                             <form style="display: none;" data-target="file" data-type="href" id="myform" class="form" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
