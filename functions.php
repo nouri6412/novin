@@ -272,6 +272,8 @@ function remove_company_name( $fields ) {
      $checkout_fields['billing']['billing_postcode']['priority'] = 70;
      $checkout_fields['billing']['billing_phone']['priority'] = 80;
      $checkout_fields['billing']['billing_email']['priority'] = 90;
+
+     $checkout_fields['billing']['billing_address_1']['label'] = "آدرس";
      return $fields;
 
 }
