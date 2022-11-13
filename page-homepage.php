@@ -43,7 +43,7 @@ if (isset($_GET["category_size"])) {
 
 ?>
 <main class="content <?php if ($step == 1) echo 'bg-ex'; ?>">
-<input id="order-home-step" name="order-home-step" value="<?php echo $step ?>" />
+    <input id="order-home-step" name="order-home-step" value="<?php echo $step ?>" />
     <?php if ($step > 1) { ?>
         <div class="container mt-4">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -359,15 +359,20 @@ if (isset($_GET["category_size"])) {
                             $product = wc_get_product($item["product"]);
                         ?>
                             <?php if ($item["is_checkbox"] == 1) { ?>
-                                <div class="col-12 col-sm-6 col-md-4 mb-4"><input class="negarenovin-option" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>" data-id="<?php echo $item["product"]; ?>" type="checkbox" />
+                                <div class="col-6 col-sm-6 col-md-6 mb-4">
                                     <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
+                                    <select data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>" class="form-control">
+                                        <option value="0">نیاز هست</option>
+                                        <option value="1">نیاز نیست</option>
+                                    </select>
+                                    <!-- <input class="negarenovin-option" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>" data-id="<?php echo $item["product"]; ?>" type="checkbox" /> -->
+
                                 </div>
                             <?php  } else { ?>
-                                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                <div class="col-6 col-sm-6 col-md-6 mb-4">
                                     <div class="row">
-
                                         <label class="col-12"><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
-                                        <textarea class="negarenovin-option" class="col-12" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>"></textarea>
+                                        <textarea placeholder="متن خود را اینجا بنویسید" class="negarenovin-option" class="col-12" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>"></textarea>
                                     </div>
                                 </div>
                             <?php  } ?>
@@ -467,18 +472,19 @@ if (isset($_GET["category_size"])) {
     <div class="m-5">
         <?php if ($step > 1) {
             $prev = "";
-
+            $next = "0";
             if ($step == 2) {
                 $prev = site_url();
             } else if ($step == 3) {
                 $prev = site_url("?cat_selected=" . $cat_selected);
             } else if ($step == 4) {
                 $prev = site_url("?cat_selected=" . $cat_selected . '&size_selected=' . $size_selected);
+                $next = 1;
             }
 
 
         ?>
-            <div class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step" href="#" class="btn btn-primary">مرحله بعدی</a></div>
+            <div class="float-start"><a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-primary">مرحله بعدی</a></div>
             <div class="float-end"></div> <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
         <?php } ?>
     </div>
