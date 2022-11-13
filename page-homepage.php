@@ -375,7 +375,7 @@ if (isset($_GET["category_size"])) {
                                 <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
 
-                                <a style="line-height: 1" href="#" onclick="$('#myfilefield').click()" class="btn btn-primary"><?php echo 'انتخاب فایل صدا' ?></a>
+                                <label style="line-height: 1" href="#" onclick="$('#myfilefield').click()" class="btn btn-primary"><?php echo 'انتخاب فایل صدا' ?></label>
                                 <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل صدا</button> -->
                                 <a style="line-height: 1" class="btn btn-outline-primary" href="<?php echo $cat["ferecans_seda_help"] ?>" target="_blank">فایل راهنما</a>
 
