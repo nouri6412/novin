@@ -108,6 +108,8 @@ function negarenovi_order_finish() {
     var voice_file_id = $('#file-voice-value').val();
     var site_url = $('#f-site-url').val();
     $('#btn-next-step').css('display', 'none');
+    $('#btn-prev-step').css('display', 'none');
+    
 
     if($('#id-voice-value-select').val()==0)
     {
@@ -172,6 +174,7 @@ function negarenovi_order_finish() {
             console.log('fail upload');
             console.log(jqXHR);
             $('#btn-next-step').css('display', 'block');
+            $('#btn-prev-step').css('display', 'block');
         }
     });
 }
