@@ -444,7 +444,7 @@ if (isset($_GET["category_size"])) {
                                         <div class="row">
 
                                             <?php
-                                            $ghabs = $cat["ghabs"];
+                                            $ghabs =get_field("ghabs",$size_selected);
                                             foreach ($ghabs as $ghab) {
                                                 $item = $ghab['ghab'];
                                                 $image = "";
