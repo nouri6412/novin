@@ -359,7 +359,7 @@ if (isset($_GET["category_size"])) {
                 <div class="col-12 col-sm-6 col-md-6">
                     <div class="row select-option-extra">
 
-                        <div class="col-12 mb-4">
+                        <div class="col-12 col-sm-6 col-md-6 mb-4">
                             <?php $product = wc_get_product($cat["ferecans_seda"]); ?>
                             <label><?php echo 'فرکانس صدا' . ' - ' . $product->get_price_html() ?></label>
                             <select id="id-voice-value-select" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="myform" data-price="<?php echo $product->get_price() ?>">
