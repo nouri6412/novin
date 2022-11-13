@@ -162,6 +162,7 @@ function negarenovi_order_finish() {
           $('#btn-next-step').html('ادامه خرید');
           $('#btn-next-step-cart').css('display','block');
           $('#btn-prev-step').css('display','none');
+          $('#select-ghab-panel').css('display', 'none');
         },
         error: function (jqXHR, textStatus, errorThrown) {
             $('.spinner-border').css('display', 'none');
