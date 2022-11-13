@@ -288,3 +288,32 @@ function remove_company_name( $fields ) {
      return $fields;
 
 }
+
+add_filter( 'remove_company_name_shipping' , 'remove_company_name' );
+
+function remove_company_name_shipping( $fields ) {
+
+     unset($fields['shipping']['shipping_company']);
+     unset($fields['shipping']['shipping_address_2']);
+     unset($fields['shipping']['shipping_last_name']);
+
+     $fields['shipping']['shipping_first_name']['priority'] = 10;
+    //  $fields['billing']['billing_last_name']['priority'] = 20;
+     $fields['shipping']['shipping_country']['priority'] = 30;
+     $fields['shipping']['shipping_state']['priority'] = 40;
+     $fields['shipping']['shipping_city']['priority'] = 50;
+     $fields['shipping']['shipping_address_1']['priority'] = 60;
+     $fields['shipping']['shipping_postcode']['priority'] = 70;
+
+     $fields['shipping']['shipping_postcode']['required'] = false;
+     
+     $fields['shipping']['shipping_first_name']['label'] = "نام و نام خانوادگی";
+     $fields['shipping']['shipping_address_1']['label'] = "آدرس";
+    // $fields['shipping']['shipping_phone']['label'] = "موبایل";
+     $fields['shipping']['shipping_first_name']['class'][0]="form-row-wide";
+
+     //$fields['shipping']['shipping_tel_0']=["label"=>"شماره ثابت","priority"=>80,'required'=>false];
+     
+     return $fields;
+
+}
