@@ -156,7 +156,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/popper.min.js" ></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js" ></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/carousel/owl.carousel.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=64"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=65"></script>
 </body>
 
 </html>

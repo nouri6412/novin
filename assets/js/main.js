@@ -850,13 +850,35 @@ function close_box_plan() {
     $('#bg-white').css('display', 'none');
 }
 
-function fun_prev_step(obj)
-{
-  if(obj.attr('href')=="#")
-  {
-    obj.attr('href',obj.attr('data-href'));
-    $('.breadcrumb-item-step5').css('display','none');
-  }
+function fun_prev_step(obj) {
+    if (obj.attr('href') == "#") {
+        obj.attr('href', obj.attr('data-href'));
+        $('.breadcrumb-item-step5').css('display', 'none');
+    }
+}
+
+function change_select_option_extra(obj) {
+    if (obj.attr('data-type') == 'textarea') {
+        if (obj.val() == 1) {
+            $('#' + obj.attr('data-target')).css('display', 'block');
+        }
+        else {
+            $('#' + obj.attr('data-target')).css('display', 'none');
+        }
+    }
+    var price = $('#sum-price-option').attr('data-price');
+    if (obj.val() == 1) {
+        price = price + obj.attr('data-price');
+    }
+    else {
+        price = price - obj.attr('data-price');
+    }
+    if (price < 0) {
+        price = 0;
+    }
+
+    $('#sum-price-option').attr('data-price', price);
+    $('#sum-price-option').html(price + ' ' + 'ریال');
 }
 
 function change_img_box_plan(obj) {
