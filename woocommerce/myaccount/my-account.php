@@ -1,4 +1,5 @@
 <?php
+
 /**
  * My Account page
  *
@@ -15,22 +16,26 @@
  * @version 3.5.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 /**
  * My Account navigation.
  *
  * @since 2.6.0 
  */
-do_action( 'woocommerce_account_navigation' ); ?>
-
-<div class="woocommerce-MyAccount-content col-12 col-sm-8 col-md-8">
+?>
+<div class="row">
 	<?php
+	do_action('woocommerce_account_navigation'); ?>
+
+	<div class="woocommerce-MyAccount-content col-12 col-sm-8 col-md-8">
+		<?php
 		/**
 		 * My Account content.
 		 *
 		 * @since 2.6.0
 		 */
-		do_action( 'woocommerce_account_content' );
-	?>
+		do_action('woocommerce_account_content');
+		?>
+	</div>
 </div>
