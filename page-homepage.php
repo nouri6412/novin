@@ -118,7 +118,7 @@ if (isset($_GET["category_size"])) {
                     <h4>دسته بندی سایز ها</h4>
                     <div class="m-2 row">
                     <div class="col-6 col-sm-2 col-md-2 mt-2">
-                    <a class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه سایز ها</a>
+                    <a style="width: 100%;" class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه سایز ها</a>
                     </div>
 
                         <?php
@@ -127,7 +127,7 @@ if (isset($_GET["category_size"])) {
                         foreach ($cat_sizes as $cat_item) {
                         ?>
                         <div class="col-6 col-sm-2 col-md-2 mt-2">
-                        <a class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>"><?php echo $cat_item->name ?></a>
+                        <a style="width: 100%;" class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>"><?php echo $cat_item->name ?></a>
                         </div>
                         <?php
                         }
