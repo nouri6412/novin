@@ -1,7 +1,17 @@
 jQuery(document).ready(function ($) {
 
-    //ship-to-different-address-checkbox
-    console.log('hi jquery');
+    //ship-to-different-address-checkbox shipping_address_form
+    $('#ship-to-different-address-checkbox').change(function() {
+
+        if($(this).is(":checked")) {
+          $('#shipping_address_form').css('display','block');
+        }
+        else
+        {
+            $('#shipping_address_form').css('display','none');
+        }       
+    });
+    
     var myForm = $('#myform');
 
     $(myForm).submit(function (e) {
