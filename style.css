@@ -6337,7 +6337,7 @@ font-size: 13px;
 display: flex;
 }
 .custom-item-cart .item-cart-img{
-
+margin-left: 5px;
 }
 .custom-item-cart .item-cart-body{
 
@@ -6345,7 +6345,7 @@ display: flex;
 
 @media only screen and (max-width: 768px) {
     .custom-item-cart{
-
+        display: flex !important;
     }
 .custom-item-cart .item-cart-img{
 
