@@ -122,7 +122,7 @@
             <div class="row justify-content-between  pb-5 align-items-center">
                 <div class="col-12 col-lg-4 mt-4 mt-lg-0  order-2 order-lg-1">
                     <div class="copyright">
-                    <?php echo $data["right"] ?>
+                        <?php echo $data["right"] ?>
                     </div>
                 </div>
             </div>
@@ -133,6 +133,39 @@
     <div class="box-plan">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg" />
         <button onclick="close_box_plan()" class="btn"><i class="fa fa-window-close"></i></button>
+    </div>
+</div>
+<div id="social-share">
+    <ul class="social-itens hidden">
+        <li>
+            <button class="btn-share social-item-4">
+                <i class="material-icons">location_on</i>
+                <span class="btn-share-text">Location</span>
+            </button>
+        </li>
+        <li>
+            <button class="btn-share social-item-3">
+                <i class="material-icons">shopping_cart</i>
+                <span class="btn-share-text">Cart</span>
+            </button>
+
+        </li>
+        <li>
+            <button class="btn-share social-item-2">
+                <i class="material-icons">phone</i>
+                <span class="btn-share-text">Phone</span>
+            </button>
+
+        </li>
+        <li>
+            <button class="btn-share social-item-1">
+                <i class="material-icons">thumb_up</i>
+                <span class="btn-share-text">Facebook</span>
+            </button>
+        </li>
+    </ul>
+    <div class="social-open-menu">
+        <button class="btn-share"><i class="material-icons">share</i></button>
     </div>
 </div>
 
