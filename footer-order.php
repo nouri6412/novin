@@ -135,7 +135,7 @@
         <button onclick="close_box_plan()" class="btn"><i class="fa fa-window-close"></i></button>
     </div>
 </div>
-<!-- <div id="social-share">
+<div id="social-share">
     <ul class="social-itens hidden">
         <li>
             <button class="btn-share social-item-4">
@@ -167,7 +167,7 @@
     <div class="social-open-menu">
         <button class="btn-share"><i class="material-icons">share</i></button>
     </div>
-</div> -->
+</div>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.5.0.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/popper.min.js"></script>
