@@ -1,5 +1,10 @@
 jQuery(document).ready(function ($) {
 
+    $(".social-open-menu").click(function() {
+        $(".social-itens").toggleClass("open");
+        $(".social-itens").toggleClass("hidden");
+      });
+
     //ship-to-different-address-checkbox shipping_address_form
     $('#ship-to-different-address-checkbox').change(function() {
 
