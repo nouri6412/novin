@@ -112,7 +112,7 @@
                         foreach ($data["icons"] as $col) {
                             $group = $col["link"];
                         ?>
-                            <a href="<?php echo $group["link"] ?>" class="icon <?php echo $group["icon"] ?>"><span class="tooltip-site"><?php echo $group["title"] ?></span></a>
+                            <a href="<?php echo $group["link"] ?>" class="fa fa-<?php echo $group["icon"] ?>"><span class="tooltip-site"><?php echo $group["title"] ?></span></a>
                         <?php
                         }
                         ?>
