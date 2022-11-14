@@ -944,6 +944,11 @@ function ghab_selected_panel(select) {
     }
 }
 
+function btn_share(obj)
+{
+window.location.href=obj.attr('data-href');
+}
+
 
 /************************************ ************************************/
 

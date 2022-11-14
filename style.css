@@ -6536,7 +6536,7 @@ display: none;
     background-color: #f44336;
   }
   #social-share div.social-open-menu .btn-share i {
-    text-shadow: 0px 0px #f32c1e, 1px 1px #f32c1e, 2px 2px #f32c1e, 3px 3px #f32c1e, 4px 4px #f32c1e, 5px 5px #f32c1e;
+    /* text-shadow: 0px 0px #f32c1e, 1px 1px #f32c1e, 2px 2px #f32c1e, 3px 3px #f32c1e, 4px 4px #f32c1e, 5px 5px #f32c1e; */
   }
   #social-share .social-itens.open .social-item-1,
   #social-share .social-itens.open .social-item-1 .btn-share-text {

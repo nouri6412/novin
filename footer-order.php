@@ -137,35 +137,27 @@
 </div>
 <div id="social-share">
     <ul class="social-itens hidden">
-        <li>
-            <button class="btn-share social-item-4">
-                <i class="material-icons">location_on</i>
-                <span class="btn-share-text">Location</span>
-            </button>
-        </li>
-        <li>
-            <button class="btn-share social-item-3">
-                <i class="material-icons">shopping_cart</i>
-                <span class="btn-share-text">Cart</span>
-            </button>
+        <?php
+        $index = 0;
+        foreach ($data["icons"] as $col) {
+            $index++;
+            if ($index > 4) {
+                $index = 1;
+            }
+            $group = $col["link"];
+        ?>
+            <li>
+                <button onclick="btn_share($(this))" data-href="<?php echo $group["link"] ?>" class="btn-share social-item-<?php echo $index ?>">
+                    <i class="fa fa-<?php echo $group["icon"] ?>"></i>
+                    <span class="btn-share-text">fa fa-<?php echo $group["title"] ?></span>
+                </button>
+            </li>
+        <?php
+        } ?>
 
-        </li>
-        <li>
-            <button class="btn-share social-item-2">
-                <i class="material-icons">phone</i>
-                <span class="btn-share-text">Phone</span>
-            </button>
-
-        </li>
-        <li>
-            <button class="btn-share social-item-1">
-                <i class="material-icons">thumb_up</i>
-                <span class="btn-share-text">Facebook</span>
-            </button>
-        </li>
     </ul>
     <div class="social-open-menu">
-        <button class="btn-share"><i class="material-icons">share</i></button>
+        <button class="btn-share"><i class="fa fa-phone"></i></button>
     </div>
 </div>
 
@@ -174,7 +166,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/carousel/owl.carousel.min.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/all-js.js"></script> -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=73"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=74"></script>
 </body>
 
 </html>
