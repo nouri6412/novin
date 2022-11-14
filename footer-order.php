@@ -31,7 +31,7 @@
                             <ul>
                                 <?php
                                 foreach ($data["col2"] as $col) {
-                                    $group = $col["link"];
+                                    $group = $col;
                                 ?>
                                     <li><span><?php echo $group["link"] ?></span>
                                     <?php
