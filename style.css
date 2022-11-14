@@ -6333,14 +6333,27 @@ font-size: 13px;
     margin-bottom: 4px;
 }
 
-.item-cart-img{
+.custom-item-cart{
+display: flex;
+}
+.custom-item-cart .item-cart-img{
+
+}
+.custom-item-cart .item-cart-body{
 
 }
 
 @media only screen and (max-width: 768px) {
-.item-cart-img{
-    
+    .custom-item-cart{
+
+    }
+.custom-item-cart .item-cart-img{
+
 }
+.custom-item-cart .item-cart-body{
+
+}
+
     .plan-subject .plan-subject-body {
         height: 82px;
     }
