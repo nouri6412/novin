@@ -2,19 +2,24 @@
     <div class="area_footer_top">
         <div class="container">
             <div class="row">
+                <?php
+                $data = get_field("sec1", 'option');
+                ?>
                 <div class=" col-sm-6 col-lg-4">
                     <div class="widget_footer">
                         <div class="title_widget_footer">
-                            دسته بندی محصولات
+                            <?php echo  $data["col-1-title"]; ?>
                         </div>
                         <div class="contenet_widget_footer">
                             <ul>
-                                <li><a href="#">تابلو فرش </a></li>
-                                <li><a href="#">سوپرایز باکس</a></li>
-                                <li><a href="#">دار قالی</a></li>
-                                <li><a href="#">تابلو فرش</a></li>
-                                <li><a href="#"> سوپرایز باکس</a></li>
-                                <li><a href="#">دار قالی</a></li>
+                                <?php
+                                foreach ($data["col1"] as $col) {
+                                    $group = $col["link"];
+                                ?>
+                                    <li><a href="<?php echo $group["link"] ?>"><?php echo $group["title"] ?></a></li>
+                                <?php
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -147,14 +152,14 @@
 </footer>
 <div id="bg-white">
     <div class="box-plan">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg"/>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg" />
         <button onclick="close_box_plan()" class="btn"><i class="fa fa-window-close"></i></button>
     </div>
 </div>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.5.0.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/popper.min.js" ></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js" ></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/popper.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/carousel/owl.carousel.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=73"></script>
 </body>
