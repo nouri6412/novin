@@ -26,24 +26,17 @@
                 </div>
                 <div class="col-sm-6 col-lg-4  mt-4 mt-sm-0">
                     <div class="widget_footer">
-                        <div class="title_widget_footer">تماس با ما</div>
+                        <div class="title_widget_footer"> <?php echo  $data["col-2-title"]; ?></div>
                         <div class="contenet_widget_footer">
                             <ul>
-                                <li>
-                                    <span> آدرس: آدرس: ۴۴۵ کوه عدن جاده، کوه بهشت، اوکلند.</span>
-                                </li>
-                                <li>
-                                    <span> شماره تماس: 2121212121</span>
-                                </li>
-                                <li>
-                                    <span> ایمیل: info@exmple.com</span>
-                                </li>
-                                <li>
-                                    <span> فکس: 212121212121</span>
-                                </li>
-                                <li>
-                                    <span> زمان کاری: شنبه تا پنچ شنبه ساعت ۸ صبح تا ۱۲ ظهر</span>
-                                </li>
+                                <?php
+                                foreach ($data["col2"] as $col) {
+                                    $group = $col["link"];
+                                ?>
+                                    <li><span><?php echo $group["link"] ?></span>
+                                    <?php
+                                }
+                                    ?>
                             </ul>
                         </div>
                     </div>
@@ -69,81 +62,67 @@
     <div class="area_footer_bottom">
         <div class="container">
             <div class="row area_element-multi">
-                <div class="col-6 col-md-4 col-xl-3 element-multi">
-                    <div class="content-element-multi d-flex align-items-center  mb-3 ">
-                        <div class="icon-element">
-                            <i class="fal fa-truck"></i>
-                        </div>
-                        <div class="detail-element">
-                            <h3>تحویل سریع و رایگان</h3>
-                            <div class="text-multi-element">حمل و نقل رایگان در همه منظور</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-xl-3 element-multi">
-                    <div class="content-element-multi d-flex align-items-center  mb-3 ">
-                        <div class="icon-element">
-                            <i class="fal fa-user-headset"></i>
-                        </div>
-                        <div class="detail-element">
-                            <h3>پشتیبانی آنلاین ۲۴/۷</h3>
-                            <div class="text-multi-element">پشتیبانی آنلاین ۲۴ ساعت در روز</div>
+                <?php
+                $data = get_field("sec2", 'option');
+                ?>
+                <?php
+                foreach ($data as $col) {
+                    $group = $col["group"];
+                ?>
+                    <div class="col-6 col-md-4 col-xl-3 element-multi">
+                        <div class="content-element-multi d-flex align-items-center  mb-3 ">
+                            <div class="icon-element">
+                                <i class="<?php echo $group["icon"] ?>"></i>
+                            </div>
+                            <div class="detail-element">
+                                <h3><?php echo $group["title"] ?></h3>
+                                <div class="text-multi-element"><?php echo $group["desc"] ?></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-xl-3 element-multi mt-4 mt-md-0">
-                    <div class="content-element-multi d-flex align-items-center  mb-3 ">
-                        <div class="icon-element">
-                            <i class="fas fa-undo"></i>
-                        </div>
-                        <div class="detail-element">
-                            <h3>بازگشت پول</h3>
-                            <div class="text-multi-element">تضمین بازگشت به کمتر از ۷ روز</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-xl-3 element-multi mt-4 mt-xl-0">
-                    <div class="content-element-multi d-flex align-items-center  mb-3 ">
-                        <div class="icon-element">
-                            <i class="fal fa-lock-alt"></i>
-                        </div>
-                        <div class="detail-element ">
-                            <h3>پرداخت امن</h3>
-                            <div class="text-multi-element">امنیت کامل در پرداخت</div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
             <hr class="hr_footer_bottom ">
             <div class="row pt-4 pb-4 pb-lg-5 align-items-center">
                 <div class=" col-12 col-lg-8 col-xl-9">
                     <div class="area_menu_footer d-flex  align-items-md-center flex-column flex-md-row ">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-main.png" class="img-logoFooter ms-2 mb-2 d-none d-md-block" />
+                        <img src="<?php echo get_field("logo", 'option'); ?>" class="img-logoFooter ms-2 mb-2 d-none d-md-block" />
+                        <?php
+                        $data = get_field("sec3", 'option');
+                        ?>
                         <div class="menu_footer mt-2 mt-md-0">
                             <ul>
-                                <li><a href="#">قوانین سایت</a></li>
-                                <li><a href="#">حساب شما</a></li>
-                                <li><a href="#">نرخ باربری</a></li>
-                                <li><a href="#">بازپرداختی</a></li>
-                                <li><a href="#"> پیگیری سفارش</a></li>
+                                <?php
+                                foreach ($data["links"] as $col) {
+                                    $group = $col["link"];
+                                ?>
+                                    <li><a href="<?php echo $group["link"] ?>"><?php echo $group["title"] ?></a></li>
+                                <?php
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4 col-xl-3 mt-4 mt-lg-0">
                     <div class="area-socialIcon d-flex justify-content-start justify-content-lg-end">
-                        <a href="#" class="icon telegram"><span class="tooltip-site">Telegram</span></a>
-                        <a href="#" class="icon instegram"><span class="tooltip-site">instegram</span></a>
-                        <a href="#" class="icon linkedin"><span class="tooltip-site">linkedin</span></a>
-                        <a href="#" class="icon twitter"><span class="tooltip-site">Twitter</span></a>
-
+                        <?php
+                        foreach ($data["icons"] as $col) {
+                            $group = $col["link"];
+                        ?>
+                            <a href="<?php echo $group["link"] ?>" class="icon <?php echo $group["icon"] ?>"><span class="tooltip-site"><?php echo $group["title"] ?></span></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-between  pb-5 align-items-center">
                 <div class="col-12 col-lg-4 mt-4 mt-lg-0  order-2 order-lg-1">
                     <div class="copyright">
-                        تمامی حقوق سایت محفوظ است
+                    <?php echo $data["right"] ?>
                     </div>
                 </div>
             </div>
