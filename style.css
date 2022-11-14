@@ -108,12 +108,12 @@ a:hover {
 }
 
 /*create font for write*/
-@font-face {
+/* @font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
     src: url('assets/css/fonts/webfonts/font-material.woff2') format('woff2');
-  }
+  } */
   
 @font-face {
     font-family: IRANSans;
