@@ -6333,7 +6333,9 @@ font-size: 13px;
     margin-bottom: 4px;
 }
 
-@media only screen and (max-width: 600px) {
+
+
+@media only screen and (max-width: 768px) {
 
     .plan-subject .plan-subject-body {
         height: 82px;
@@ -6385,6 +6387,11 @@ font-size: 13px;
         
     #bg-white .box-plan button{
         left: 15px;
+    }
+
+    .woocommerce #content table.cart .product-thumbnail, .woocommerce table.cart .product-thumbnail, .woocommerce-page #content table.cart .product-thumbnail, .woocommerce-page table.cart .product-thumbnail {
+        display: block !important;
+        width: 120px;
     }
   }
 
