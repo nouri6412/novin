@@ -6346,7 +6346,7 @@ margin-left: 5px;
 
 @media only screen and (max-width: 768px) {
 
-    .woocommerce table.shop_table_responsive tr td::before, .woocommerce-page table.shop_table_responsive tr td::before.custom-item-cart {
+    .woocommerce table.shop_table_responsive tr td.custom-item-cart::before {
 display: none;
     }
     .custom-item-cart{
