@@ -34,3 +34,4 @@ woocommerce_login_form(
 		'hidden'   => true,
 	)
 );
+
