@@ -6340,10 +6340,15 @@ display: flex;
 margin-left: 5px;
 }
 .custom-item-cart .item-cart-body{
-
+    display: block;
+    text-align: right;
 }
 
 @media only screen and (max-width: 768px) {
+
+    .woocommerce table.shop_table_responsive tr td::before, .woocommerce-page table.shop_table_responsive tr td::before.custom-item-cart {
+display: none;
+    }
     .custom-item-cart{
         display: flex !important;
     }
