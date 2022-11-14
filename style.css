@@ -6333,10 +6333,14 @@ font-size: 13px;
     margin-bottom: 4px;
 }
 
+.item-cart-img{
 
+}
 
 @media only screen and (max-width: 768px) {
-
+.item-cart-img{
+    
+}
     .plan-subject .plan-subject-body {
         height: 82px;
     }
