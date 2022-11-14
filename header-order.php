@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=91">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owlcarousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/all.min.css">
     <?php wp_head(); ?>
 </head>
 
