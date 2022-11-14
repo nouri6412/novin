@@ -6309,6 +6309,18 @@ font-size: 13px;
 .woocommerce-MyAccount-navigation ul{
 
 }
+.woocommerce-MyAccount-content{
+    background: #fff;
+    padding: 5px;
+    color: #0d6efd;
+    border-color: #0d6efd;
+    border: 1px solid transparent;
+    border-color: #0d6efd;
+    /* padding: 0.375rem 0.75rem; */
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 4px;
+}
 .woocommerce-MyAccount-navigation ul li{
     padding: 5px;
     color: #0d6efd;
