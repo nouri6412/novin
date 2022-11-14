@@ -6306,6 +6306,13 @@ width: 100%;
 font-size: 13px;
 }
 
+.woocommerce-MyAccount-navigation ul{
+
+}
+.woocommerce-MyAccount-navigation ul li{
+    
+}
+
 @media only screen and (max-width: 600px) {
 
     .plan-subject .plan-subject-body {
