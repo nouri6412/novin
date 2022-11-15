@@ -44,7 +44,7 @@ get_header()
                                         <div class="col-12 mb-4 pb-2">
                                             <article class="card card-post d-flex flex-column flex-sm-row">
                                                 <div class="hover01 column">
-                                                    <figure><a href="<?php echo get_permalink(); ?>" class="card-img d-block"><img src="<?php the_post_thumbnail_url(); ?>" class="<?php echo get_the_title(); ?>" /></a>
+                                                    <figure style="height: 100%;"><a href="<?php echo get_permalink(); ?>" class="card-img d-block"><img src="<?php the_post_thumbnail_url(); ?>" class="<?php echo get_the_title(); ?>" /></a>
                                                     </figure>
                                                 </div>
                                                 <!-- <div class="hover01"> <figure> <a href="#" class="card-img d-block"><img src="images/img-post1.jpg" class="img-fluid h-100" ></a></figure> </div> -->
@@ -64,7 +64,6 @@ get_header()
                                                     <h2 class="title-post mb-2 mb-md-4"> <a href="#"></a><?php echo get_the_title(); ?></h2>
                                                     <div class="porofile_author porofile_author-listPost  mb-4">
                                                         <a href="#" class="d-flex align-items-center">
-                                                            <img class="imgAuthor" src="images/castomer9787.jpg" />
                                                             <div class="porofileName">
                                                                 <span>نویسنده:</span>
                                                                 <span><?php get_the_author('first_name') ?></span>
