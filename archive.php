@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying archive pages
  *
@@ -6,8 +7,9 @@
  *
  * @package WordPress
  * @subpackage Negarenovin
- *  * Template Name: آخرین مطالب
+ *  * Template Name: وبلاگ
  */
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 get_header()
 ?>
 <div class="content blog sidebar left-sidebar list">
@@ -27,67 +29,81 @@ get_header()
                         </div>
                         <div class="area-all-post mb-0 mb-md-3">
                             <div class="row">
-                                <div class="col-12 mb-4 pb-2">
-                                    <article class="card card-post d-flex flex-column flex-sm-row">
-                                        <div class="hover01 column">
-                                            <figure><a href="#" class="card-img d-block"><img src="images/img-post1.jpg" class="img-fluid h-100" /></a>
-                                            </figure>
-                                        </div>
-                                        <!-- <div class="hover01"> <figure> <a href="#" class="card-img d-block"><img src="images/img-post1.jpg" class="img-fluid h-100" ></a></figure> </div> -->
-                                        <div class="card-body">
-                                            <ul class="post-categories mb-3 mb-md-4">
-                                                <li><a href="#" rel="category tag">آموزش اhtml-css</a></li>
-                                                <li><a href="#" rel="category tag">آموزش طراحی سایت</a></li>
-                                                <li><a href="#" rel="category tag">آموزش طراحی سایت</a></li>
-                                            </ul>
-                                            <h2 class="title-post mb-2 mb-md-4"> <a href="#">لورم ایپسوم متن ساختگی
-                                                    با تولید
-                                                    سادگی</a></h2>
-                                            <div class="porofile_author porofile_author-listPost  mb-4">
-                                                <a href="#" class="d-flex align-items-center">
-                                                    <img class="imgAuthor" src="images/castomer9787.jpg" />
-                                                    <div class="porofileName">
-                                                        <span>نویسنده:</span>
-                                                        <span>فاطمه حمزه عوفی</span>
+                                <?php if ($the_query->have_posts()) { ?>
+                                    <?php
+                                    // Start the Loop.
+                                    while ($the_query->have_posts()) :
+                                        $the_query->the_post();
+                                    ?>
+                                        <div class="col-12 mb-4 pb-2">
+                                            <article class="card card-post d-flex flex-column flex-sm-row">
+                                                <div class="hover01 column">
+                                                    <figure style="height: 100%;"><a href="<?php echo get_permalink(); ?>" class="card-img d-block"><img src="<?php the_post_thumbnail_url(); ?>" class="<?php echo get_the_title(); ?>" /></a>
+                                                    </figure>
+                                                </div>
+                                                <!-- <div class="hover01"> <figure> <a href="#" class="card-img d-block"><img src="images/img-post1.jpg" class="img-fluid h-100" ></a></figure> </div> -->
+                                                <div class="card-body">
+                                                    <ul class="post-categories mb-3 mb-md-4">
+                                                        <?php
+                                                        $posttags = get_the_tags();
+                                                        if ($posttags) {
+                                                            foreach ($posttags as $tag) {
+                                                        ?>
+                                                                <li><a href="<?php echo esc_attr(get_tag_link($tag->term_id)) ?>"><?php echo $tag->name ?> </a></li>
+                                                        <?php
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </ul>
+                                                    <h2 class="title-post mb-2 mb-md-4"> <a href="#"></a><?php echo get_the_title(); ?></h2>
+                                                    <div class="porofile_author porofile_author-listPost  mb-4">
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="porofileName">
+                                                                <span>نویسنده:</span>
+                                                                <span><?php get_the_author('first_name') ?></span>
+                                                            </div>
+                                                        </a>
                                                     </div>
-                                                </a>
-                                            </div>
-                                            <div class="area-infoPost d-flex justify-content-end align-items-center">
-                                                <a class="message-link " href="#" title="">
-                                                    <span>6</span>
-                                                </a>
-                                                <div class="border-divider"></div>
-                                                <a href="#" title="۸ اسفند, ۱۳۹۸" class="data-link">
-                                                    21 شهریور 1399
-                                                </a>
-                                            </div>
+                                                    <div class="area-infoPost d-flex justify-content-end align-items-center">
+                                                        <div class="border-divider"></div>
+                                                        <a href="#" title="<?php echo get_the_date(); ?>" class="data-link">
+                                                            <?php echo custom_get_the_date(get_the_ID()); ?>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </article>
                                         </div>
-                                    </article>
-                                </div>
+                                    <?php
+                                    // End the loop.
+                                    endwhile;
+                                    ?>
+
                             </div>
                         </div>
                         <div class="area-pageination-shop  d-flex  flex-column flex-md-row justify-content-between align-items-center mb-0 mb-md-3">
-                            <ul class="pagination pagination-lg d-flex justify-content-center order-2 order-md-1">
-                                <li class="page-item ms-2"><a class="page-link" href="#" aria-label="Previous"><i class="fas fa-chevron-right"></i></a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link " href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item ">...</li>
-                                <li class="page-item"><a class="page-link" href="#">10</a></li>
-                                <li class="page-item me-2"><a class="page-link" href="#" aria-label="Next"><i class="fas fa-chevron-left"></i></a></li>
-                            </ul>
-                            <div class="box-select-NumberProduct-the-page d-flex align-items-center justify-content-center justify-content-md-end mb-4 mb-md-0 pb-2 pb-md-0  order-1 order-md-2">
-                                <label class="lable-select-NumberProduct-the-page" for="select-NumberProduct-the-page">نمایش </label>
-                                <select class="form-select custom-select mx-3" id="select-NumberProduct-the-page" aria-label="Default select example">
-                                    <option selected>12</option>
-                                    <option value="1">24</option>
-                                    <option value="2">36</option>
-                                    <option value="3">48</option>
-                                </select>
-                                <span>محصول در صفحه</span>
+                            <div class="pagination wt-pagination">
+                                <?php
+                                    echo paginate_links(array(
+                                        'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+                                        'total'        => $the_query->max_num_pages,
+                                        'current'      => max(1, get_query_var('paged')),
+                                        'format'       => '?paged=%#%',
+                                        'show_all'     => false,
+                                        'type'         => 'plain',
+                                        'end_size'     => 2,
+                                        'mid_size'     => 1,
+                                        'prev_next'    => true,
+                                        'prev_text'    => sprintf('<i></i> %1$s', __('بعدی', 'text-domain')),
+                                        'next_text'    => sprintf('%1$s <i></i>', __('قبلی', 'text-domain')),
+                                        'add_args'     => false,
+                                        'add_fragment' => '',
+                                    ));
+                                ?>
                             </div>
                         </div>
+
+                    <?php wp_reset_query();
+                                } ?>
                     </div>
                 </div>
 
@@ -95,4 +111,4 @@ get_header()
         </div>
     </section>
 </div>
-<?php get_footer() ?>
+<?php get_footer(); ?>
