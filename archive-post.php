@@ -61,7 +61,7 @@ get_header()
                                                         }
                                                         ?>
                                                     </ul>
-                                                    <h2 class="title-post mb-2 mb-md-4"> <a href="<?php echo get_permalink(); ?>"></a><?php echo get_the_title(); ?></h2>
+                                                    <h2 class="title-post mb-2 mb-md-4"> <a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
                                                     <div class="porofile_author porofile_author-listPost  mb-4">
                                                         <a href="#" class="d-flex align-items-center">
                                                             <div class="porofileName">
