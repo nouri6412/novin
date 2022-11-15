@@ -118,7 +118,7 @@ if (isset($_GET["category_size"])) {
                     <h4>دسته بندی سایز ها</h4>
                     <div class="m-2 row">
                     <div class="col-6 col-sm-2 col-md-2 mt-2">
-                    <a style="width: 100%;" class="btn btn-outline-warning" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه سایز ها</a>
+                    <a style="width: 100%;" class="btn btn-warning" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه سایز ها</a>
                     </div>
 
                         <?php
@@ -127,7 +127,7 @@ if (isset($_GET["category_size"])) {
                         foreach ($cat_sizes as $cat_item) {
                         ?>
                         <div class="col-6 col-sm-2 col-md-2 mt-2">
-                        <a style="width: 100%;" class="btn btn-outline-warning" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>"><?php echo $cat_item->name ?></a>
+                        <a style="width: 100%;" class="btn btn-warning" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>"><?php echo $cat_item->name ?></a>
                         </div>
                         <?php
                         }
@@ -381,7 +381,7 @@ if (isset($_GET["category_size"])) {
 
                                 <a style="line-height: 1" href="#" onclick="$('#myfilefield').click()" class="btn btn-warning"><?php echo 'انتخاب فایل صدا' ?></a>
                                 <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل صدا</button> -->
-                                <a style="line-height: 1" class="btn btn-outline-warning" href="<?php echo $cat["ferecans_seda_help"] ?>" target="_blank">فایل راهنما</a>
+                                <a style="line-height: 1" class="btn btn-warning" href="<?php echo $cat["ferecans_seda_help"] ?>" target="_blank">فایل راهنما</a>
 
                                 <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
 
