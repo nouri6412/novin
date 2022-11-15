@@ -20,6 +20,11 @@ function novin_theme_scripts()
 
 add_action('wp_enqueue_scripts', 'novin_theme_scripts');
 
+function custom_get_the_date($post)
+{
+    return human_time_diff(get_the_time('U',$post), current_time('timestamp')) . ' ' . 'پیش';
+}
+
 function pn_upload_files()
 {
     $result = ["upload_file" => 'true'];
