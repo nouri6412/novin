@@ -118,7 +118,7 @@ if (isset($_GET["category_size"])) {
                     <h4>دسته بندی سایز ها</h4>
                     <div class="m-2 row">
                     <div class="col-6 col-sm-2 col-md-2 mt-2">
-                    <a style="width: 100%;" class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه سایز ها</a>
+                    <a style="width: 100%;" class="btn btn-outline-warning" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه سایز ها</a>
                     </div>
 
                         <?php
@@ -127,7 +127,7 @@ if (isset($_GET["category_size"])) {
                         foreach ($cat_sizes as $cat_item) {
                         ?>
                         <div class="col-6 col-sm-2 col-md-2 mt-2">
-                        <a style="width: 100%;" class="btn btn-outline-primary" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>"><?php echo $cat_item->name ?></a>
+                        <a style="width: 100%;" class="btn btn-outline-warning" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>"><?php echo $cat_item->name ?></a>
                         </div>
                         <?php
                         }
@@ -235,7 +235,7 @@ if (isset($_GET["category_size"])) {
                     <div class="col-12 col-sm-12 col-md-12 mb-4">
                         <div class="row">
                             <div id="div-plan-select-common" style="display:none ;" class="col-12 col-sm-8 col-md-8 mb-4">
-                                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     انتخاب از طرح های آماده
                                 </button> -->
                                 <h3 style="text-align: center;font-size: 24px;" class="mb-2">موضوعات طرح</h3>
@@ -304,7 +304,7 @@ if (isset($_GET["category_size"])) {
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
-                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">بستن</button>
+                                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">بستن</button>
                                             </div>
                                         </div>
                                     </div>
@@ -314,7 +314,7 @@ if (isset($_GET["category_size"])) {
                                 <!-- <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button> -->
                                 <div id="div-plan-select-personal" style="display:none ;" class="mb-4">
                                     <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
-                                    <div onclick="$('#myfilefield').click()" class="btn btn-primary  col-12 mt-2">بارگذاری فایل </div>
+                                    <div onclick="$('#myfilefield').click()" class="btn btn-warning  col-12 mt-2">بارگذاری فایل </div>
                                     <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل</button> -->
                                     <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                                 </div>
@@ -379,9 +379,9 @@ if (isset($_GET["category_size"])) {
                                 <input type="hidden" id="plan-uploaded" name="plan-uploaded" value="0">
                                 <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
 
-                                <a style="line-height: 1" href="#" onclick="$('#myfilefield').click()" class="btn btn-primary"><?php echo 'انتخاب فایل صدا' ?></a>
+                                <a style="line-height: 1" href="#" onclick="$('#myfilefield').click()" class="btn btn-warning"><?php echo 'انتخاب فایل صدا' ?></a>
                                 <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل صدا</button> -->
-                                <a style="line-height: 1" class="btn btn-outline-primary" href="<?php echo $cat["ferecans_seda_help"] ?>" target="_blank">فایل راهنما</a>
+                                <a style="line-height: 1" class="btn btn-outline-warning" href="<?php echo $cat["ferecans_seda_help"] ?>" target="_blank">فایل راهنما</a>
 
                                 <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
 
@@ -497,7 +497,7 @@ if (isset($_GET["category_size"])) {
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
-                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">بستن</button>
+                                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">بستن</button>
                                     </div>
                                 </div>
                             </div>
@@ -544,10 +544,10 @@ if (isset($_GET["category_size"])) {
                 <a href="<?php echo wc_get_cart_url() ?>" class="btn btn-success">سبد خرید و پرداخت</a>
             </div>
             <div class="float-start">
-                <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-primary">مرحله بعدی</a>
+                <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-warning">مرحله بعدی</a>
             </div>
             <div class="float-end">
-                <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-primary">مرحله قبلی</a>
+                <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-warning">مرحله قبلی</a>
             </div>
         <?php } ?>
     </div>
