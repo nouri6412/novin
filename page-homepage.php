@@ -310,7 +310,7 @@ if (isset($_GET["category_size"])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-4 col-md-4 mb-4">
+                            <div style="    border: 4px solid #c5c0c0;padding: 5px;border-radius: 10px;height: fit-content;" class="col-12 col-sm-4 col-md-4 mb-4 mt-5">
                                 <!-- <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button> -->
                                 <div id="div-plan-select-personal" style="display:none ;" class="mb-4">
                                     <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
