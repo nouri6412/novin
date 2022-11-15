@@ -57,6 +57,23 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div style="display: flex;" class="nemads">
+                        <?php
+                        $data = get_field("sec4", 'option');
+                        ?>
+                        <?php
+                        foreach ($data as $col) {
+                            $group = $col["group"];
+                        ?>
+                            <a title="<?php echo $group["title"] ?>" href="<?php echo $group["link"] ?>"><img style="width: 75px;margin:5px;" src="<?php echo $group["img"] ?>" /></a>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="area_footer_bottom">
