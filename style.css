@@ -6245,6 +6245,10 @@ cursor: pointer;
 
     .redy-plan{
         display: none;
+        border: 5px solid #c3bcbc;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 25px;
     }
 
     .plan-subject{
