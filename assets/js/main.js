@@ -943,7 +943,7 @@ function close_upload_image_remove(obj) {
         $('#' + obj.attr('data-target')).attr('src', $('#' + obj.attr('data-target')).attr('data-src'));
     }
     else {
-        $('#' + obj.attr('data-target')).remove();
+        $(this).parent().remove();
     }
 }
 

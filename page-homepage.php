@@ -365,7 +365,7 @@ if (isset($_GET["category_size"])) {
                                 </div>
                                 <?php if (isset($_GET["upload"])) {  ?>
                                     <div class="upload-image-file">
-                                    <div onclick="close_upload_image_remove($(this))" class="btn-close" data-target="plan-uploaded-img-1"></div>
+                                    <div onclick="close_upload_image_remove($(this))" class="btn-close"></div>
                                         <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img-1" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                                     </div>
                                 <?php } ?>
