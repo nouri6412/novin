@@ -351,7 +351,7 @@ if (isset($_GET["category_size"])) {
                                     </div>
                                 </div>
                             </div>
-                            <div style="    border: 4px solid #c5c0c0;padding: 5px;border-radius: 10px;height: fit-content;" class="col-12 col-sm-4 col-md-4 mb-4 mt-5 upload-image-box">
+                            <div id="box-upload-image-file" style="border: 4px solid #c5c0c0;padding: 5px;border-radius: 10px;height: fit-content;" class="col-12 col-sm-4 col-md-4 mb-4 mt-5 upload-image-box">
                                 <!-- <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button> -->
                                 <div id="div-plan-select-personal" style="display:none ;" class="mb-4">
                                     <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
@@ -359,7 +359,7 @@ if (isset($_GET["category_size"])) {
                                     <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل</button> -->
                                     <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                                 </div>
-                                <div class="upload-image-file">
+                                <div  class="upload-image-file">
                                     <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>" data-src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                                 </div>
                                 <?php if (isset($_GET["upload"])) {  ?>

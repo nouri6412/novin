@@ -934,6 +934,7 @@ function check_plan_selected(obj) {
         negarenovi_order_finish();
     }
     else if (obj.attr('href') == '#') {
+        console.log($('#box-upload-image-file img').length);
         alert("گزینه ای انتخاب نشده است");
     }
 }
