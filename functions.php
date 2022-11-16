@@ -141,7 +141,7 @@ class cartPlugins
                     }
                 } else {
                     $image_id = wp_get_attachment_url($cart_item['meta_plan_id']);
-                    $image = '<a style="color:red" target="_blank" href="' . $image_id . '">دانلود طرح</a>';
+                    $image = '<a style="color:red;margin-left: 20px;" target="_blank" href="' . $image_id . '">دانلود طرح</a>';
                 }
 
 
@@ -194,7 +194,7 @@ class cartPlugins
                     foreach ($ex as $it) {
                         $index_row++;
                         $image_id = wp_get_attachment_url($it);
-                        $image.='<a style="color:red" target="_blank" href="' . $image_id . '">'.'دانلود طرح'.' '.$index_row.'</a>';
+                        $image.='<a style="color:red;margin-left: 20px;" target="_blank" href="' . $image_id . '">'.'دانلود طرح'.' '.$index_row.'</a>';
                     }
                 } else {
                     $image_id = wp_get_attachment_url($values['meta_plan_id']);
