@@ -359,9 +359,9 @@ if (isset($_GET["category_size"])) {
                                     <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل</button> -->
                                     <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                                 </div>
-                                <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file upload-image-file m-2" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                                <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img" class="card-img-top img-fluid file upload-image-file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                                 <?php if(isset($_GET["upload"])){  ?>
-                                <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img-1" class="card-img-top img-fluid file upload-image-file m-2" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
+                                <img data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" data-media-id="0" style="max-height: 285px;" data-state="0" id="plan-uploaded-img-1" class="card-img-top img-fluid file upload-image-file" src="<?php echo get_template_directory_uri() . "/assets/img/NoImage.jpg"; ?>">
                                 <?php } ?>
                                 <div class="spinner-border" style="display:none ;" role="status">
                                     <span class="visually-hidden">Loading...</span>
