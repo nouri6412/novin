@@ -943,9 +943,10 @@ function close_upload_image_remove(obj) {
         $('#' + obj.attr('data-target')).attr('src', $('#' + obj.attr('data-target')).attr('data-src'));
     }
     else {
-        $(this).parent().remove();
+        obj.parent().remove();
     }
 }
+
 
 function ghab_selected_panel(select) {
     if (select == 0) {
