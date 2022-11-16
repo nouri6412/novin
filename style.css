@@ -6431,7 +6431,21 @@ display: none;
         }
         
     #bg-white .box-plan .btn-close{
-        left: 15px;
+        left: 24px;
+    }
+
+    #bg-white .box-plan .btn-operate{
+        position: absolute;
+        width: 100%;
+        bottom: 34px;
+        left: 57px;
+    }
+
+    #bg-white .box-plan .btn-operate .btn-select{
+     margin-right: 5px;   
+    }
+    #bg-white .box-plan .btn-operate .btn-cancel{
+        
     }
 
 
