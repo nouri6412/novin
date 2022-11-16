@@ -895,8 +895,9 @@ function change_select_option_extra(obj) {
 }
 
 function change_img_box_plan(obj) {
-    $('#btn-next-step').attr('href', obj.attr('data-href'));
-    $('#bg-white img').attr('src', obj.attr('data-img'));
+    
+    $('#bg-white-box-plan-img').attr('src', obj.attr('data-img'));
+    $('#bg-white-box-plan-img').attr('data-href', obj.attr('data-href'));
     $('#bg-white').css('display', 'block');
     $('.selected h3').removeClass('text-danger');
     $('.selected h3').addClass('text-black');
@@ -904,6 +905,11 @@ function change_img_box_plan(obj) {
     obj.addClass('selected');
     $('.selected h3').addClass('text-danger');
     $('.selected h3').removeClass('text-black');
+}
+
+function change_img_box_plan_select()
+{
+    $('#btn-next-step').attr('href', $('#bg-white-box-plan-img').attr('data-href')); 
 }
 
 
