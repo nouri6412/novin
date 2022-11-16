@@ -940,6 +940,7 @@ function check_plan_selected(obj) {
 
 function close_upload_image_remove(obj) {
     if ($('#' + obj.attr('data-target')).attr('id') == 'plan-uploaded-img') {
+        $('#plan-uploaded-img').attr('data-state', 0);
         $('#' + obj.attr('data-target')).attr('src', $('#' + obj.attr('data-target')).attr('data-src'));
     }
     else {

@@ -1,22 +1,21 @@
 jQuery(document).ready(function ($) {
 
-    $(".social-open-menu").click(function() {
+    $(".social-open-menu").click(function () {
         $(".social-itens").toggleClass("open");
         $(".social-itens").toggleClass("hidden");
-      });
+    });
 
     //ship-to-different-address-checkbox shipping_address_form
-    $('#ship-to-different-address-checkbox').change(function() {
+    $('#ship-to-different-address-checkbox').change(function () {
 
-        if($(this).is(":checked")) {
-          $('#shipping_address_form').css('display','block');
+        if ($(this).is(":checked")) {
+            $('#shipping_address_form').css('display', 'block');
         }
-        else
-        {
-            $('#shipping_address_form').css('display','none');
-        }       
+        else {
+            $('#shipping_address_form').css('display', 'none');
+        }
     });
-    
+
     var myForm = $('#myform');
 
     $(myForm).submit(function (e) {
@@ -46,10 +45,25 @@ jQuery(document).ready(function ($) {
                 $('#plan-uploaded').val(data.file_id);
                 $('.spinner-border').css('display', 'none');
                 if ($('#myform').attr('data-type') == "img") {
-                    $('#plan-uploaded-img').attr('src', data.url);
-                    $('#plan-uploaded-img').attr('data-state', 1);
-                    $('#plan-uploaded-img').attr('data-media-id', data.file_id);
-                    $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href') + '&plan_selected=' + $('#plan-uploaded-img').attr('data-media-id') + '&plan_selected_type=1');
+                    if ($('#plan-uploaded-img').attr('data-state') == 0) {
+                        $('#plan-uploaded-img').attr('src', data.url);
+                        $('#plan-uploaded-img').attr('data-state', 1);
+                        $('#plan-uploaded-img').attr('data-media-id', data.file_id);
+                        if ($('#box-upload-image-file img').length == 1) {
+                            $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href') + '&plan_selected=' + $('#plan-uploaded-img').attr('data-media-id') + '&plan_selected_type=1');
+                        }
+                        else {
+                            $('#btn-next-step').attr('href', '#');
+                            var node = '<div class="upload-image-file upload-image-file-extra">';
+                            node += '<div onclick="close_upload_image_remove($(this))" class="btn-close"></div>';
+                            node += '<img data-href="' + $('#plan-uploaded-img').attr('data-href') + '" data-media-id="' + data.file_id + '" style="max-height: 285px;" data-state="0" id="plan-uploaded-img-' + $('#box-upload-image-file img').length + '" class="card-img-top img-fluid file" src="' + data.url + '">'
+                            node += '</div>';
+                            $('#box-upload-image-file').append(node);
+                        }
+                    }
+                    else {
+                        $('#btn-next-step').attr('href', '#');
+                    }
                 }
                 else {
                     $('#file-voice').attr('href', data.url);
@@ -74,7 +88,6 @@ jQuery(document).ready(function ($) {
 });
 
 function select_plan_from_gallery(obj) {
-    $('.upload-image-file-extra').remove();
     $('#plan-uploaded-img').attr('data-state', 1);
     $('#plan-uploaded-img').attr('data-media-id', obj.attr('data-media-id'));
     $('#plan-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
@@ -127,11 +140,10 @@ function negarenovi_order_finish() {
     var site_url = $('#f-site-url').val();
     $('#btn-next-step').css('display', 'none');
     $('#btn-prev-step').css('display', 'none');
-    
 
-    if($('#id-voice-value-select').val()==0)
-    {
-        voice_file_id=0;
+
+    if ($('#id-voice-value-select').val() == 0) {
+        voice_file_id = 0;
     }
 
     //console.log(plan_id);
@@ -155,14 +167,14 @@ function negarenovi_order_finish() {
 
     $('.negarenovin-option').each(function (i, obj) {
         if ($(obj).attr('data-type') == 'select') {
-            if ($(obj).val()==1) {
+            if ($(obj).val() == 1) {
                 myformData.append('option-' + $(obj).attr('data-id'), $(obj).attr('data-id'));
             }
         }
         else {
-            if ($(obj).val()==1) {
+            if ($(obj).val() == 1) {
                 myformData.append('option-' + $(obj).attr('data-id'), $(obj).attr('data-id'));
-                myformData.append('option-value-' + $(obj).attr('data-id'), $('#'+$(obj).attr('id')+'-text').val());
+                myformData.append('option-value-' + $(obj).attr('data-id'), $('#' + $(obj).attr('id') + '-text').val());
             }
         }
 
@@ -178,14 +190,14 @@ function negarenovi_order_finish() {
         contentType: false,
         enctype: 'multipart/form-data',
         success: function (data, textStatus, jqXHR) {
-          //  window.location.href = site_url;
-          $('#btn-next-step').attr('href',site_url);
-          $('#btn-next-step').html('ادامه خرید');
-          $('#btn-next-step').css('display', 'block');
-          $('#btn-next-step-cart').css('display','block');
-          $('#btn-prev-step').css('display','none');
-          $('#select-ghab-panel').css('display', 'none');
-          $('#head-option-title').html('تکمیل سفارش');
+            //  window.location.href = site_url;
+            $('#btn-next-step').attr('href', site_url);
+            $('#btn-next-step').html('ادامه خرید');
+            $('#btn-next-step').css('display', 'block');
+            $('#btn-next-step-cart').css('display', 'block');
+            $('#btn-prev-step').css('display', 'none');
+            $('#select-ghab-panel').css('display', 'none');
+            $('#head-option-title').html('تکمیل سفارش');
         },
         error: function (jqXHR, textStatus, errorThrown) {
             $('.spinner-border').css('display', 'none');
