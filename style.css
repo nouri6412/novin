@@ -6259,10 +6259,20 @@ div#demonote {
     border: 1px solid #b1a8a8;
     margin: 12px;
     border-radius: 8px;
+    position: relative;
     }
     .upload-image-box .upload-image-file img
     {
         border-radius: 8px; 
+    }
+
+    .upload-image-box .upload-image-file .btn-close
+    {
+        left: 28px;
+        position: absolute;
+        top: 3px;
+        color: #fff;
+        font-size: 20px; 
     }
 
     .plan-select-option{

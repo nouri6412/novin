@@ -895,7 +895,7 @@ function change_select_option_extra(obj) {
 }
 
 function change_img_box_plan(obj) {
-    
+
     $('#bg-white-box-plan-img').attr('src', obj.attr('data-img'));
     $('#bg-white-box-plan-img').attr('data-href', obj.attr('data-href'));
     $('#bg-white').css('display', 'block');
@@ -907,9 +907,8 @@ function change_img_box_plan(obj) {
     $('.selected h3').removeClass('text-black');
 }
 
-function change_img_box_plan_select()
-{
-    $('#btn-next-step').attr('href', $('#bg-white-box-plan-img').attr('data-href')); 
+function change_img_box_plan_select() {
+    $('#btn-next-step').attr('href', $('#bg-white-box-plan-img').attr('data-href'));
     close_box_plan();
 }
 
@@ -939,22 +938,29 @@ function check_plan_selected(obj) {
     }
 }
 
+function close_upload_image_remove(obj) {
+    if ($('#' + obj.attr('data-target')).attr('id') == 'plan-uploaded-img') {
+        $('#' + obj.attr('data-target')).attr('src', $('#' + obj.attr('data-target')).attr('data-src'));
+    }
+    else {
+        $('#' + obj.attr('data-target')).remove();
+    }
+}
+
 function ghab_selected_panel(select) {
     if (select == 0) {
         $('#ghab-selected-panel').css('display', 'none');
         $('#ghab-uploaded-img-value').val(0);
         $('#select-ghab-panel').css('display', 'none');
-       
+
     }
-    else
-    {
-        $('#ghab-selected-panel').css('display', 'block'); 
+    else {
+        $('#ghab-selected-panel').css('display', 'block');
     }
 }
 
-function btn_share(obj)
-{
-window.location.href=obj.attr('data-href');
+function btn_share(obj) {
+    window.location.href = obj.attr('data-href');
 }
 
 
