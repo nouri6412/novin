@@ -355,7 +355,7 @@ if (isset($_GET["category_size"])) {
                                 <!-- <button onclick="selected_plan_to_next($(this))" data-href="<?php echo site_url("?size_selected=" . $size_selected . '&cat_selected=' . $cat_selected) ?>" type="button" class="btn btn-success mb-1 w-100">برو به مرحله بعدی </button> -->
                                 <div id="div-plan-select-personal" style="display:none ;" class="mb-4">
                                     <input style="display: none;" type="file" name="myfilefield" id="myfilefield" class="form-control" value="">
-                                    <div onclick="$('#myfilefield').click()" class="btn btn-warning  col-12 mt-2">بارگذاری فایل </div>
+                                    <div id="btn-click-for-upload-img" onclick="$('#myfilefield').click()" class="btn btn-warning  col-12 mt-2">بارگذاری فایل </div>
                                     <!-- <button type="submit" class="btn btn-success mt-2">بارگذاری فایل</button> -->
                                     <?php wp_nonce_field('myuploadnonce', 'mynonce'); ?>
                                 </div>

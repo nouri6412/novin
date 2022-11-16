@@ -46,6 +46,7 @@ jQuery(document).ready(function ($) {
                 $('.spinner-border').css('display', 'none');
                 if ($('#myform').attr('data-type') == "img") {
                     if ($('#plan-uploaded-img').attr('data-state') == 0) {
+                        $('#btn-click-for-upload-img').html('بارگذاری موارد بیشتر');
                         $('#plan-uploaded-img').attr('src', data.url);
                         $('#plan-uploaded-img').attr('data-state', 1);
                         $('#plan-uploaded-img').attr('data-media-id', data.file_id);
