@@ -171,7 +171,7 @@ if (isset($_GET["category_size"])) {
                 foreach ($sizes as $size) {
                     $item = $size["product"];
                     $image = "";
-
+                    $main_category_size = $category_size;
                     if ($category_size == 0) {
                         $category_size = $default_cat;
                     }
@@ -215,7 +215,11 @@ if (isset($_GET["category_size"])) {
                 <?php
                 }
                 ?>
-                <h2 class="m-1" style="color: #fff;"><a href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">بازگشت به منوی سایزها</a></h2>
+                <?php
+                if ($main_category_size > 0) {
+                ?>
+                    <h3 class="m-2" style="color: #fff;text-align:center;"><a style="color:#fff ;" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">بازگشت به منوی سایزها</a></h3>
+                <?php } ?>
             </div>
         </div>
     <?php  } else if ($step == 3) {
