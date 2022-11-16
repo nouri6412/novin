@@ -115,20 +115,23 @@ if (isset($_GET["category_size"])) {
                     </div>
                     <p class="text-center mb-1 text-logo"><?php echo 'خب سایز' . ' ' . $cat["title"] . ' ' . 'رو انتخاب کن!'; ?></p>
 
-                    <h4>دسته بندی سایز ها</h4>
+                    <!-- <h4>دسته بندی سایز ها</h4> -->
                     <div class="m-2 row">
-                    <div class="col-6 col-sm-2 col-md-2 mt-2">
-                    <a style="width: 100%;" class="btn btn-warning" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">همه سایز ها</a>
-                    </div>
+                        <!-- <div class="col-6 col-sm-2 col-md-2 mt-2">
+                        </div> -->
 
                         <?php
                         $cat_sizes = $cat["size-cats"];
-
+                        $default_cat = 0;
                         foreach ($cat_sizes as $cat_item) {
+                            $ej = get_field('cat-size-default', $cat_item);
+                            if ($ej == "بلی") {
+                                $default_cat = $cat_item->term_id;
+                            }
                         ?>
-                        <div class="col-6 col-sm-2 col-md-2 mt-2">
-                        <a style="width: 100%;" class="btn btn-warning" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>"><?php echo $cat_item->name ?></a>
-                        </div>
+                            <!-- <div class="col-6 col-sm-2 col-md-2 mt-2">
+                                <a style="width: 100%;" class="btn btn-warning" href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>"><?php echo $cat_item->name ?></a>
+                            </div> -->
                         <?php
                         }
                         ?>
@@ -141,7 +144,25 @@ if (isset($_GET["category_size"])) {
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tag.png" />
             </div>
             <div class="row box-black">
+                <?php
+                if ($category_size == 0) {
+                    foreach ($cat_sizes as $cat_item) {
+                ?>
+                        <div class="col-6 col-sm-6 col-md-3 col-box">
+                            <a href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>">
+                                <div class="card card-portfolio  card-yellow">
+                                    <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box-1.png" /></div>
+                                    <div class="card-body card-body-fix">
+                                        <h3 class="text-center text-black box-h-4"><?php echo $cat_item->name ?></h3>
 
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
                 <?php
                 $sizes = $cat["sizes"];
                 foreach ($sizes as $size) {
