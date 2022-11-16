@@ -6251,6 +6251,13 @@ div#demonote {
         
     }
 
+    .upload-image-box{
+
+    }
+    .upload-image-box .upload-image-file{
+        
+    }
+
     .plan-select-option{
 min-height: 100px;
 cursor: pointer;
