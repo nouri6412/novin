@@ -187,7 +187,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/carousel/owl.carousel.min.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/all-js.js"></script> -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=1.0.9"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=1.0.10"></script>
 </body>
 
 </html>

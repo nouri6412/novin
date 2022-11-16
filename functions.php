@@ -6,7 +6,7 @@ function novin_theme_scripts()
 
     wp_enqueue_script(
         'novin_ajax_script',
-        get_template_directory_uri() . '/assets/js/ajax-v30.js',
+        get_template_directory_uri() . '/assets/js/ajax-v31.js',
         array('jquery'),
         1,
         false
@@ -22,7 +22,7 @@ add_action('wp_enqueue_scripts', 'novin_theme_scripts');
 
 function custom_get_the_date($post)
 {
-    return human_time_diff(get_the_time('U',$post), current_time('timestamp')) . ' ' . 'پیش';
+    return human_time_diff(get_the_time('U', $post), current_time('timestamp')) . ' ' . 'پیش';
 }
 
 function pn_upload_files()
@@ -72,7 +72,7 @@ function pn_upload_files()
 
 function negarenovin_add_to_cart()
 {
-   // WC()->cart->empty_cart();
+    // WC()->cart->empty_cart();
     foreach ($_POST as $key => $post) {
         if ($key == "size_id") {
             WC()->cart->add_to_cart($post, 1, 0, array(), array('meta_plan_id' => $_POST["plan_id"], 'meta_plan_type' => $_POST["plan_type"]));
@@ -130,10 +130,24 @@ class cartPlugins
                     'value'     => '<a style="color:red" target="_blank" href="' . $image . '">' . get_the_title($cart_item['meta_plan_id']) . '</a>',
                 );
             } else {
-                $image = wp_get_attachment_url($cart_item['meta_plan_id']);
+                $ex = explode(',', $cart_item['meta_plan_id']);
+                $image = "";
+                if (count($ex) > 1) {
+                    $index_row=0;
+                    foreach ($ex as $it) {
+                        $index_row++;
+                        $image_id = wp_get_attachment_url($it);
+                        $image.='<a style="color:red" target="_blank" href="' . $image_id . '">'.'دانلود طرح'.' '.$index_row.'</a>';
+                    }
+                } else {
+                    $image_id = wp_get_attachment_url($cart_item['meta_plan_id']);
+                    $image = '<a style="color:red" target="_blank" href="' . $image_id . '">دانلود طرح</a>';
+                }
+
+
                 $item_data[] = array(
                     'key'       => $meta_key,
-                    'value'     => '<a style="color:red" target="_blank" href="' . $image . '">مشاهده</a>',
+                    'value'     => $image,
                 );
             }
         } else if (isset($cart_item['meta_voice_file'])) {
@@ -173,7 +187,19 @@ class cartPlugins
                 }
                 $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">' . get_the_title($values['meta_plan_id']) . '</a>');
             } else {
-                $image = wp_get_attachment_url($values['meta_plan_id']);
+                $ex = explode(',', $values['meta_plan_id']);
+                $image = "";
+                if (count($ex) > 1) {
+                    $index_row=0;
+                    foreach ($ex as $it) {
+                        $index_row++;
+                        $image_id = wp_get_attachment_url($it);
+                        $image.='<a style="color:red" target="_blank" href="' . $image_id . '">'.'دانلود طرح'.' '.$index_row.'</a>';
+                    }
+                } else {
+                    $image_id = wp_get_attachment_url($values['meta_plan_id']);
+                    $image = '<a style="color:red" target="_blank" href="' . $image_id . '">دانلود طرح</a>';
+                }
                 $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">مشاهده</a>');
             }
         } else if (isset($values['meta_voice_file'])) {
@@ -262,59 +288,59 @@ function kaktos_post_type_plan()
 }
 add_action('init', 'kaktos_post_type_plan');
 
-add_filter( 'woocommerce_checkout_fields' , 'remove_company_name' );
+add_filter('woocommerce_checkout_fields', 'remove_company_name');
 
-function remove_company_name( $fields ) {
+function remove_company_name($fields)
+{
 
-     unset($fields['billing']['billing_company']);
-     unset($fields['billing']['billing_address_2']);
-     unset($fields['billing']['billing_last_name']);
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_last_name']);
 
-     $fields['billing']['billing_first_name']['priority'] = 10;
+    $fields['billing']['billing_first_name']['priority'] = 10;
     //  $fields['billing']['billing_last_name']['priority'] = 20;
-     $fields['billing']['billing_country']['priority'] = 30;
-     $fields['billing']['billing_state']['priority'] = 40;
-     $fields['billing']['billing_city']['priority'] = 50;
-     $fields['billing']['billing_address_1']['priority'] = 60;
-     $fields['billing']['billing_postcode']['priority'] = 70;
-     $fields['billing']['billing_phone']['priority'] = 80;
-     $fields['billing']['billing_email']['priority'] = 100;
+    $fields['billing']['billing_country']['priority'] = 30;
+    $fields['billing']['billing_state']['priority'] = 40;
+    $fields['billing']['billing_city']['priority'] = 50;
+    $fields['billing']['billing_address_1']['priority'] = 60;
+    $fields['billing']['billing_postcode']['priority'] = 70;
+    $fields['billing']['billing_phone']['priority'] = 80;
+    $fields['billing']['billing_email']['priority'] = 100;
 
-     $fields['billing']['billing_postcode']['required'] = false;
-     $fields['billing']['billing_email']['required'] = false;
-     
-     $fields['billing']['billing_first_name']['label'] = "نام و نام خانوادگی";
-     $fields['billing']['billing_address_1']['label'] = "آدرس";
-     $fields['billing']['billing_phone']['label'] = "موبایل";
-     $fields['billing']['billing_first_name']['class'][0]="form-row-wide";
+    $fields['billing']['billing_postcode']['required'] = false;
+    $fields['billing']['billing_email']['required'] = false;
 
-     $fields['billing']['billing_tel_0']=["label"=>"شماره ثابت","priority"=>80,'required'=>false];
-     
-     
-     unset($fields['shipping']['shipping_company']);
-     unset($fields['shipping']['shipping_address_2']);
-     unset($fields['shipping']['shipping_last_name']);
+    $fields['billing']['billing_first_name']['label'] = "نام و نام خانوادگی";
+    $fields['billing']['billing_address_1']['label'] = "آدرس";
+    $fields['billing']['billing_phone']['label'] = "موبایل";
+    $fields['billing']['billing_first_name']['class'][0] = "form-row-wide";
 
-     $fields['shipping']['shipping_first_name']['priority'] = 10;
+    $fields['billing']['billing_tel_0'] = ["label" => "شماره ثابت", "priority" => 80, 'required' => false];
+
+
+    unset($fields['shipping']['shipping_company']);
+    unset($fields['shipping']['shipping_address_2']);
+    unset($fields['shipping']['shipping_last_name']);
+
+    $fields['shipping']['shipping_first_name']['priority'] = 10;
     //  $fields['billing']['billing_last_name']['priority'] = 20;
-     $fields['shipping']['shipping_country']['priority'] = 30;
-     $fields['shipping']['shipping_state']['priority'] = 40;
-     $fields['shipping']['shipping_city']['priority'] = 50;
-     $fields['shipping']['shipping_address_1']['priority'] = 60;
-     $fields['shipping']['shipping_postcode']['priority'] = 70;
+    $fields['shipping']['shipping_country']['priority'] = 30;
+    $fields['shipping']['shipping_state']['priority'] = 40;
+    $fields['shipping']['shipping_city']['priority'] = 50;
+    $fields['shipping']['shipping_address_1']['priority'] = 60;
+    $fields['shipping']['shipping_postcode']['priority'] = 70;
 
-     $fields['shipping']['shipping_postcode']['required'] = false;
-     
-     $fields['shipping']['shipping_first_name']['label'] = "نام و نام خانوادگی";
-     $fields['shipping']['shipping_address_1']['label'] = "آدرس";
+    $fields['shipping']['shipping_postcode']['required'] = false;
+
+    $fields['shipping']['shipping_first_name']['label'] = "نام و نام خانوادگی";
+    $fields['shipping']['shipping_address_1']['label'] = "آدرس";
     // $fields['shipping']['shipping_phone']['label'] = "موبایل";
-     $fields['shipping']['shipping_first_name']['class'][0]="form-row-wide";
+    $fields['shipping']['shipping_first_name']['class'][0] = "form-row-wide";
 
-     //$fields['shipping']['shipping_tel_0']=["label"=>"شماره ثابت","priority"=>80,'required'=>false];
-     
-     
-     return $fields;
+    //$fields['shipping']['shipping_tel_0']=["label"=>"شماره ثابت","priority"=>80,'required'=>false];
 
+
+    return $fields;
 }
 
 if (function_exists('acf_add_options_page')) {
@@ -333,6 +359,4 @@ if (function_exists('acf_add_options_page')) {
         'menu_slug'     => 'theme-general-settings-footer',
         'parent_slug'    => 'theme-general-settings',
     ));
-
 }
-

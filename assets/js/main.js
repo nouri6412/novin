@@ -932,8 +932,17 @@ function check_plan_selected(obj) {
     else if ($('#order-home-step').val() == 5) {
         negarenovi_order_finish();
     }
+    else if ($('#order-home-step').val() == 3 && $('#box-upload-image-file img').length > 1) {
+        var plan_selected = $('#plan-uploaded-img').attr('data-media-id');
+        $('#box-upload-image-file img').each(function (i, obj) {
+            if ($(obj).attr('id') != "plan-uploaded-img") {
+                plan_selected+=","+$(obj).attr('data-media-id');
+            }
+        });
+
+        $('#btn-next-step').attr('href', $('#plan-uploaded-img').attr('data-href') + '&plan_selected=' + plan_selected + '&plan_selected_type=1');
+    }
     else if (obj.attr('href') == '#') {
-        console.log($('#box-upload-image-file img').length);
         alert("گزینه ای انتخاب نشده است");
     }
 }
