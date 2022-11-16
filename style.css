@@ -6417,8 +6417,18 @@ display: none;
             margin-right: 58px;
         }
         
-    #bg-white .box-plan button{
+    #bg-white .box-plan .btn-close{
         left: 15px;
+    }
+    #bg-white .box-plan .btn-operate{
+
+    }
+
+    #bg-white .box-plan .btn-operate .btn-select{
+        
+    }
+    #bg-white .box-plan .btn-operate .btn-cancel{
+        
     }
 
     .woocommerce #content table.cart .product-thumbnail, .woocommerce table.cart .product-thumbnail, .woocommerce-page #content table.cart .product-thumbnail, .woocommerce-page table.cart .product-thumbnail {
