@@ -151,8 +151,8 @@
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg" />
         <button onclick="close_box_plan()" class="btn btn-close"><i class="fa fa-window-close"></i></button>
         <div style="height:40px ;" class="btn-operate mt-2 mb-2">
-            <button class="float-start btn btn-outline-warning btn-select">انتخاب</button>
-            <button class="float-start btn btn-outline-warning btn-cancel">انصراف</button>
+            <button class="float-start btn btn-outline-success btn-select">انتخاب</button>
+            <button class="float-start btn btn-outline-danger btn-cancel">انصراف</button>
         </div>
     </div>
 </div>

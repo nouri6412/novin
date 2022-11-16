@@ -6238,11 +6238,14 @@ div#demonote {
         font-size: 20px;
     }
     #bg-white .box-plan .btn-operate{
-
+        position: absolute;
+        width: 100%;
+        bottom: 34px;
+        left: 57px;
     }
 
     #bg-white .box-plan .btn-operate .btn-select{
-        
+     margin-right: 5px;   
     }
     #bg-white .box-plan .btn-operate .btn-cancel{
         
