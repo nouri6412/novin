@@ -165,13 +165,13 @@ if (isset($_GET["category_size"])) {
                 ?>
                 <?php
                 $sizes = $cat["sizes"];
+                $index = 0;
                 foreach ($sizes as $size) {
                     $item = $size["product"];
                     $image = "";
 
-                    if($category_size==0)
-                    {
-                        $category_size=$default_cat;
+                    if ($category_size == 0) {
+                        $category_size = $default_cat;
                     }
 
                     if ($category_size > 0) {
@@ -180,6 +180,7 @@ if (isset($_GET["category_size"])) {
                         foreach ($terms as $term) {
                             if ($term->term_id == $category_size) {
                                 $flag = true;
+                                $index++;
                                 break;
                             }
                         }
@@ -205,7 +206,13 @@ if (isset($_GET["category_size"])) {
                             </div>
                         </div>
                     </div>
-                <?php } ?>
+                <?php }
+                if ($index == 0) {
+                ?>
+                    <h2 class="m-5" style="color: #fff;">هیچ موردی یافت نشد</h2>
+                <?php
+                }
+                ?>
             </div>
         </div>
     <?php  } else if ($step == 3) {
