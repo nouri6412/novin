@@ -910,6 +910,7 @@ function change_img_box_plan(obj) {
 function change_img_box_plan_select()
 {
     $('#btn-next-step').attr('href', $('#bg-white-box-plan-img').attr('data-href')); 
+    close_box_plan();
 }
 
 
