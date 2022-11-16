@@ -168,6 +168,12 @@ if (isset($_GET["category_size"])) {
                 foreach ($sizes as $size) {
                     $item = $size["product"];
                     $image = "";
+
+                    if($category_size==0)
+                    {
+                        $category_size=$default_cat;
+                    }
+
                     if ($category_size > 0) {
                         $terms = get_the_terms($item, 'product_cat');
                         $flag = false;
