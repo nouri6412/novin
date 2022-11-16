@@ -145,8 +145,10 @@ if (isset($_GET["category_size"])) {
             </div>
             <div class="row box-black">
                 <?php
+                   $index = 0;
                 if ($category_size == 0) {
                     foreach ($cat_sizes as $cat_item) {
+                        $index++;
                 ?>
                         <div class="col-6 col-sm-6 col-md-3 col-box">
                             <a href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>">
@@ -165,7 +167,7 @@ if (isset($_GET["category_size"])) {
                 ?>
                 <?php
                 $sizes = $cat["sizes"];
-                $index = 0;
+             
                 foreach ($sizes as $size) {
                     $item = $size["product"];
                     $image = "";
