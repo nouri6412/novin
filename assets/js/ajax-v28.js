@@ -74,6 +74,7 @@ jQuery(document).ready(function ($) {
 });
 
 function select_plan_from_gallery(obj) {
+    $('.upload-image-file-extra').remove();
     $('#plan-uploaded-img').attr('data-state', 1);
     $('#plan-uploaded-img').attr('data-media-id', obj.attr('data-media-id'));
     $('#plan-uploaded-img').attr('src', obj.children('img').eq(0).attr('src'));
