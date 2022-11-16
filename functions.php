@@ -137,12 +137,12 @@ class cartPlugins
                     foreach ($ex as $it) {
                        
                         $image_id = wp_get_attachment_url($it);
-                        $img='<img style="width:60px" src="'.$image_id.'" />';
+                        $img='<img style="width:40px" src="'.$image_id.'" />';
                         $image.='<a style="color:red" target="_blank" href="' . $image_id . '">'.$img.'</a>';
                     }
                 } else {
                     $image_id = wp_get_attachment_url($cart_item['meta_plan_id']);
-                    $img='<img style="width:60px" src="'.$image_id.'" />';
+                    $img='<img style="width:40px" src="'.$image_id.'" />';
                     $image = '<a style="color:red;margin-left: 20px;" target="_blank" href="' . $img . '"></a>';
                 }
 
@@ -196,12 +196,12 @@ class cartPlugins
                     foreach ($ex as $it) {
                   
                         $image_id = wp_get_attachment_url($it);
-                        $img='<img style="width:60px" src="'.$image_id.'" />';
+                        $img='<img style="width:40px" src="'.$image_id.'" />';
                         $image.='<a style="color:red;margin-left: 20px;" target="_blank" href="' . $image_id . '">'.$img.'</a>';
                     }
                 } else {
                     $image_id = wp_get_attachment_url($values['meta_plan_id']);
-                    $img='<img style="width:60px" src="'.$image_id.'" />';
+                    $img='<img style="width:40px" src="'.$image_id.'" />';
                     $image = '<a style="color:red" target="_blank" href="' . $image_id . '">'.$img.'</a>';
                 }
                 $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">مشاهده</a>');
