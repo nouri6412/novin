@@ -6231,7 +6231,7 @@ div#demonote {
     }
 
     #bg-white .box-plan .btn-close{
-        left: 22px;
+        left: 28px;
         position: absolute;
         top: 3px;
         color: #fff;
@@ -6240,8 +6240,8 @@ div#demonote {
     #bg-white .box-plan .btn-operate{
         position: absolute;
         width: 100%;
-        bottom: 34px;
-        left: 57px;
+        bottom: 61px;
+        left: 75px;
     }
 
     #bg-white .box-plan .btn-operate .btn-select{
