@@ -145,7 +145,7 @@ if (isset($_GET["category_size"])) {
             </div>
             <div class="row box-black">
                 <?php
-                   $index = 0;
+                $index = 0;
                 if ($category_size == 0) {
                     foreach ($cat_sizes as $cat_item) {
                         $index++;
@@ -167,7 +167,7 @@ if (isset($_GET["category_size"])) {
                 ?>
                 <?php
                 $sizes = $cat["sizes"];
-             
+
                 foreach ($sizes as $size) {
                     $item = $size["product"];
                     $image = "";
@@ -215,6 +215,7 @@ if (isset($_GET["category_size"])) {
                 <?php
                 }
                 ?>
+                <h2 class="m-1" style="color: #fff;"><a href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">بازگشت به منوی سایزها</a></h2>
             </div>
         </div>
     <?php  } else if ($step == 3) {
