@@ -6230,7 +6230,7 @@ div#demonote {
         margin-right: 64px;
     }
 
-    #bg-white .box-plan button{
+    #bg-white .box-plan .btn-close{
         left: 22px;
         position: absolute;
         top: 3px;
