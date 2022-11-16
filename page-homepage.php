@@ -167,11 +167,11 @@ if (isset($_GET["category_size"])) {
                 ?>
                 <?php
                 $sizes = $cat["sizes"];
-
+                $main_category_size = $category_size;
                 foreach ($sizes as $size) {
                     $item = $size["product"];
                     $image = "";
-                    $main_category_size = $category_size;
+                 
                     if ($category_size == 0) {
                         $category_size = $default_cat;
                     }
