@@ -6255,7 +6255,14 @@ div#demonote {
 
     }
     .upload-image-box .upload-image-file{
-        
+        padding: 6px;
+    border: 1px solid #b1a8a8;
+    margin: 12px;
+    border-radius: 8px;
+    }
+    .upload-image-box .upload-image-file img
+    {
+        border-radius: 8px; 
     }
 
     .plan-select-option{
