@@ -133,15 +133,17 @@ class cartPlugins
                 $ex = explode(',', $cart_item['meta_plan_id']);
                 $image = "";
                 if (count($ex) > 1) {
-                    $index_row=0;
+               
                     foreach ($ex as $it) {
-                        $index_row++;
+                       
                         $image_id = wp_get_attachment_url($it);
-                        $image.='<a style="color:red" target="_blank" href="' . $image_id . '">'.'دانلود طرح'.' '.$index_row.'</a>';
+                        $img='<img style="width:60px" src="'.$image_id.'" />';
+                        $image.='<a style="color:red" target="_blank" href="' . $image_id . '">'.$img.'</a>';
                     }
                 } else {
                     $image_id = wp_get_attachment_url($cart_item['meta_plan_id']);
-                    $image = '<a style="color:red;margin-left: 20px;" target="_blank" href="' . $image_id . '">دانلود طرح</a>';
+                    $img='<img style="width:60px" src="'.$image_id.'" />';
+                    $image = '<a style="color:red;margin-left: 20px;" target="_blank" href="' . $img . '"></a>';
                 }
 
 
@@ -192,13 +194,15 @@ class cartPlugins
                 if (count($ex) > 1) {
                     $index_row=0;
                     foreach ($ex as $it) {
-                        $index_row++;
+                  
                         $image_id = wp_get_attachment_url($it);
-                        $image.='<a style="color:red;margin-left: 20px;" target="_blank" href="' . $image_id . '">'.'دانلود طرح'.' '.$index_row.'</a>';
+                        $img='<img style="width:60px" src="'.$image_id.'" />';
+                        $image.='<a style="color:red;margin-left: 20px;" target="_blank" href="' . $image_id . '">'.$img.'</a>';
                     }
                 } else {
                     $image_id = wp_get_attachment_url($values['meta_plan_id']);
-                    $image = '<a style="color:red" target="_blank" href="' . $image_id . '">دانلود طرح</a>';
+                    $img='<img style="width:60px" src="'.$image_id.'" />';
+                    $image = '<a style="color:red" target="_blank" href="' . $image_id . '">'.$img.'</a>';
                 }
                 $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">مشاهده</a>');
             }
