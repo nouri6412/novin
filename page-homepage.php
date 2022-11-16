@@ -478,6 +478,7 @@ if (isset($_GET["category_size"])) {
 
 
                 <?php if (isset($cat["has_ghab"]) && $cat["has_ghab"] == 1) { ?>
+                    <input id="has-ghab-option" type="hidden" value="1" />
 
                     <div style="display: none;" id="select-ghab-panel" class="col-12 col-sm-6 col-md-6 mb-4 mt-5">
                         <div class="row">
@@ -553,7 +554,11 @@ if (isset($_GET["category_size"])) {
                         </div>
                     </div>
 
-                <?php  } ?>
+                <?php  } else {
+                ?>
+                    <input id="has-ghab-option" type="hidden" value="0" />
+                <?php
+                } ?>
                 <div class="col-0 col-sm-3 col-md-3"></div>
                 <div class="col-12">
                     <div class="col-12 col-sm-6 col-md-6 mb-5 mt-5">

@@ -1,5 +1,16 @@
 jQuery(document).ready(function ($) {
 
+
+    
+
+    if($('#order-home-step').val()==5)
+    {
+         if($('#has-ghab-option').val()==0)
+         {
+            ghab_selected_panel(0);
+         }
+    }
+
     $(".social-open-menu").click(function () {
         $(".social-itens").toggleClass("open");
         $(".social-itens").toggleClass("hidden");
