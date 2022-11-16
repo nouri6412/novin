@@ -54,15 +54,15 @@ jQuery(document).ready(function ($) {
                         }
                         else {
                             $('#btn-next-step').attr('href', '#');
-                            var node = '<div class="upload-image-file upload-image-file-extra">';
-                            node += '<div onclick="close_upload_image_remove($(this))" class="btn-close"></div>';
-                            node += '<img data-href="' + $('#plan-uploaded-img').attr('data-href') + '" data-media-id="' + data.file_id + '" style="max-height: 285px;" data-state="0" id="plan-uploaded-img-' + $('#box-upload-image-file img').length + '" class="card-img-top img-fluid file" src="' + data.url + '">'
-                            node += '</div>';
-                            $('#box-upload-image-file').append(node);
                         }
                     }
                     else {
                         $('#btn-next-step').attr('href', '#');
+                        var node = '<div class="upload-image-file upload-image-file-extra">';
+                        node += '<div onclick="close_upload_image_remove($(this))" class="btn-close"></div>';
+                        node += '<img data-href="' + $('#plan-uploaded-img').attr('data-href') + '" data-media-id="' + data.file_id + '" style="max-height: 285px;" data-state="0" id="plan-uploaded-img-' + $('#box-upload-image-file img').length + '" class="card-img-top img-fluid file" src="' + data.url + '">'
+                        node += '</div>';
+                        $('#box-upload-image-file').append(node);
                     }
                 }
                 else {
