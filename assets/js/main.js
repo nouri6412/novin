@@ -891,7 +891,7 @@ function change_select_option_extra(obj) {
     }
 
     $('#sum-price-option').attr('data-price', price);
-    $('#sum-price-option').html(price + ' ' + 'ریال');
+    $('#sum-price-option').html('جمع'+' '+price + ' ' + $('#get_woocommerce_currency_symbol').val());
 }
 
 function change_img_box_plan(obj) {

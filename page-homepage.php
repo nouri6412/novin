@@ -406,6 +406,7 @@ if (isset($_GET["category_size"])) {
             <div class="row">
                 <div class="col-0 col-sm-3 col-md-3 select-ghab-panel-option"></div>
                 <h3 data-price="0" id="sum-price-option" class="col-12 col-sm-6 col-md-6 mb-3 select-ghab-panel-option" style="color: green;font-size:18px;"></h3>
+              <input id="get_woocommerce_currency_symbol" name="get_woocommerce_currency_symbol" value="<?php echo get_woocommerce_currency_symbol() ?>" type="hidden"/>
                 <div class="col-0 col-sm-3 col-md-3 select-ghab-panel-option"></div>
 
                 <div class="col-0 col-sm-3 col-md-3"></div>
