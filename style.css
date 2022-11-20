@@ -6590,6 +6590,7 @@ display: none;
   #social-share div.social-open-menu .btn-share {
     width: 65px;
     height: 65px;
+    font-size: 12px;
     background-color: #0dcf3c;
   }
   #social-share div.social-open-menu .btn-share i {
