@@ -462,7 +462,7 @@ if (isset($_GET["category_size"])) {
                             <?php  } else { ?>
                                 <div class="col-6 col-sm-6 col-md-6 mb-4">
                                     <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
-                                    <select class="negarenovin-option" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>">
+                                    <select class="negarenovin-option" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="f-option-<?php echo $item["product"]. '-text'; ?>" data-price="<?php echo $product->get_price() ?>" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>">
                                         <option value="0">نیاز نیست</option>
                                         <option value="1">نیاز است</option>
                                     </select>
