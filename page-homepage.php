@@ -489,7 +489,7 @@ if (isset($_GET["category_size"])) {
                                 </button>
                             </div>
                             <div class="col-6">
-                                <button style="width: 100%;height:60px;" onclick="ghab_selected_panel(1)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button style="width: 100%;height:60px;" onclick="ghab_selected_panel(1)" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     قاب می خواهم
                                 </button>
                             </div>
@@ -592,18 +592,21 @@ if (isset($_GET["category_size"])) {
 
 
         ?>
-            <div class="spinner-border float-start" style="display:none ;" role="status">
+            <div class="spinner-border float-start mt-2" style="display:none ;" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            <div id="btn-next-step-cart" style="display: none;margin-right:10px;" class="float-start">
+            <div id="btn-next-step-cart" style="display: none;margin-right:10px;" class="float-start mt-2">
                 <a href="<?php echo wc_get_cart_url() ?>" class="btn btn-success"><?php echo 'سبد خرید و پرداخت'.' ' ?><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </div>
-            <div class="float-start">
+            <div class="float-start mt-2">
                 <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-warning">مرحله بعدی <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
             </div>
-            <div class="float-end">
+            <div class="float-end mt-2">
                 <a onclick="fun_prev_step($(this))" id="btn-prev-step" href="<?php echo $prev; ?>" data-href="<?php echo $prev; ?>" class="btn btn-warning"><i class="fa fa-arrow-right" aria-hidden="true"></i> <?php echo 'مرحله قبلی';  ?></a>
             </div>
+            <input type="hidden" id="text-option-other-order" name="text-option-other-order" value="<?php echo get_field("option-other-order", 'option') ?>" />
+            <input type="hidden" id="text-option-finish-order" name="text-option-finish-order" value="<?php echo get_field("option-finish-order", 'option') ?>" />
+
         <?php } ?>
     </div>
 </main>

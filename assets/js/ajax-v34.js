@@ -206,12 +206,12 @@ function negarenovi_order_finish() {
         success: function (data, textStatus, jqXHR) {
             //  window.location.href = site_url;
             $('#btn-next-step').attr('href', site_url);
-            $('#btn-next-step').html('ادامه خرید');
+            $('#btn-next-step').html($('#text-option-other-order').val());
             $('#btn-next-step').css('display', 'block');
             $('#btn-next-step-cart').css('display', 'block');
             $('#btn-prev-step').css('display', 'none');
             $('#select-ghab-panel').css('display', 'none');
-            $('#head-option-title').html('تکمیل سفارش');
+            $('#head-option-title').html($('#text-option-finish-order').val());
         },
         error: function (jqXHR, textStatus, errorThrown) {
             $('.spinner-border').css('display', 'none');
