@@ -6584,9 +6584,11 @@ display: none;
     opacity: 0;
     /* transition: all 500ms ease-in-out  0.5s; */
   }
+
   #social-share ul.social-itens li:hover .btn-share-text {
     opacity: 1;
   }
+  
   #social-share div.social-open-menu .btn-share {
     width: 65px;
     height: 65px;
