@@ -16,6 +16,10 @@
                 <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="<?php echo site_url() ?>"><i class="fa fa-home"></i><?php echo ' '.'خانه'; ?></a>
+                        <a class="nav-link "  href="<?php echo site_url('cart') ?>"><i class="fa fa-cart"></i><?php echo ' '.'سبد خرید'; ?></a>
+                        <a class="nav-link "  href="<?php echo site_url('about-us') ?>"><i class="fa fa-about"></i><?php echo ' '.' در باره ما'; ?></a>
+
+                   
                     </div>
                 </div>
             </div>
