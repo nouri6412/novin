@@ -413,7 +413,7 @@ if (isset($_GET["category_size"])) {
 
             <div class="row">
                 <div class="col-0 col-sm-3 col-md-3 select-ghab-panel-option"></div>
-                <h3 data-price="0" id="sum-price-option" class="col-12 col-sm-6 col-md-6 mb-3 select-ghab-panel-option" style="color: green;font-size:18px;"></h3>
+                <h3 data-price="<?php $product_size = wc_get_product($size_selected); echo $product_size->get_price() ?>" id="sum-price-option" class="col-12 col-sm-6 col-md-6 mb-3 select-ghab-panel-option" style="color: green;font-size:18px;"></h3>
                 <input id="get_woocommerce_currency_symbol" name="get_woocommerce_currency_symbol" value="<?php echo get_woocommerce_currency_symbol() ?>" type="hidden" />
                 <div class="col-0 col-sm-3 col-md-3 select-ghab-panel-option"></div>
 
@@ -604,7 +604,6 @@ if (isset($_GET["category_size"])) {
                         <input id="f-plan-id" type="hidden" value="<?php echo $plan_selected ?>" />
                         <input id="f-plan-type" type="hidden" value="<?php echo $plan_selected_type ?>" />
                         <input id="f-size-id" type="hidden" value="<?php echo $size_selected ?>" />
-                        <input id="f-size-price" type="hidden" value="<?php  $product_size = wc_get_product($size_selected); echo $product_size->get_price();?>" />
                         <input id="f-site-url" type="hidden" value="<?php echo site_url() ?>" />
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>

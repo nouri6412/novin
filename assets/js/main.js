@@ -905,8 +905,6 @@ function change_select_option_extra(obj) {
     if (price < 0) {
         price = 0;
     }
-    var size_price = parseInt($('#f-size-price').val());
-    price=price+size_price;
 
     $('#sum-price-option').attr('data-price', price);
     $('#sum-price-option').html('جمع' + ' ' + price + ' ' + $('#get_woocommerce_currency_symbol').val());
