@@ -6595,8 +6595,11 @@ display: none;
     height: 65px;
     font-size: 12px;
     /* background-color: #0dcf3c85; */
-    box-shadow: 0 1px 3px #fff;
+    box-shadow: 0 0px 0px #fff;
     background-image: url(assets/img/contact.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
   }
 
   .btn-shake{
