@@ -139,10 +139,10 @@ do_action('woocommerce_before_cart'); ?>
 								);
 							}
 							?>
-							<span class="minus">-</span><?php
-														echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
-														?>
-							<span class="plus">+</span>
+							<span class="input-minus">-</span><?php
+																echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
+																?>
+							<span class="input-plus">+</span>
 						</td>
 
 						<td class="product-subtotal" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
