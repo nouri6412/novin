@@ -151,24 +151,22 @@ if (isset($_GET["category_size"])) {
                 if ($category_size == 0) {
                     $category_size = $default_cat;
                 }
-                foreach ($sizes as $size) {
+                $args = [
+                    'post_type' => 'product',
+                    'tax_query' => [
+                        [
+                            'taxonomy' => 'my_custom_taxonomy',
+                            'terms' => $category_size,
+                            'include_children' => false // Remove if you need posts from term 7 child terms
+                        ],
+                    ],
+                    // Rest of your arguments
+                ];
+                $my_query = new WP_Query($args);
+                if ($my_query->have_posts()) {
 
-                    $item = $size["product"];
+                    $item = get_the_ID();
                     $image = "";
-                    if ($category_size > 0) {
-                        $terms = get_the_terms($item, 'product_cat');
-                        $flag = false;
-                        foreach ($terms as $term) {
-                            if ($term->term_id == $category_size) {
-                                $flag = true;
-                                $index++;
-                                break;
-                            }
-                        }
-                        if ($flag == false) {
-                            continue;
-                        }
-                    }
                     if (has_post_thumbnail($item)) {
                         $image = get_the_post_thumbnail_url($item, '');
                     } else {
@@ -188,6 +186,7 @@ if (isset($_GET["category_size"])) {
                         </div>
                     </div>
                 <?php }
+                wp_reset_query();
                 ?>
 
                 <?php
