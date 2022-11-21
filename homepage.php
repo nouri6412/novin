@@ -460,7 +460,18 @@ if (isset($_GET["category_size"])) {
                         ?>
                             <?php if ($item["is_checkbox"] == 1) { ?>
                                 <div class="col-6 col-sm-6 col-md-6 mb-4">
-                                    <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
+                                    <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?>
+                                        <div class="tooltip">
+                                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                            <div class="tooltiptext"><?php
+                                                                        $tooltip = $item["help"];
+                                                                        if (strlen($tooltip) == 0) {
+                                                                            $tooltip = $item["title"];
+                                                                        }
+                                                                        echo $tooltip;
+                                                                        ?></div>
+                                        </div>
+                                    </label>
                                     <select class="negarenovin-option" onchange="change_select_option_extra($(this))" data-type="select" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>" data-price="<?php echo $product->get_price() ?>">
                                         <option value="0">نیاز نیست</option>
                                         <option value="1">نیاز است</option>
