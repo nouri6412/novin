@@ -15,7 +15,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 body{
-    background-image: url(assets/img/bg-main.jpg);
+    
     background-size: cover;
 }
 
@@ -6585,7 +6585,7 @@ display: none;
     /* transition: all 500ms ease-in-out  0.5s; */
   }
 
-  
+
   #social-share ul.social-itens li:hover .btn-share-text {
     opacity: 1;
   }

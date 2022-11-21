@@ -10,13 +10,13 @@
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/respansive.css">
     <link href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css" rel="stylesheet" >
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=1.0.6">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=1.0.7">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owlcarousel/owl.theme.default.min.css">
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body style="background-image: url(<?php echo get_field("option-header-bg", 'option'); ?>);">
     <?php
     wp_body_open();
     ?>
