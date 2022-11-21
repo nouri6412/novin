@@ -71,7 +71,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 									}
 								}
 							
-								echo '<a style="margin-right:5px;" href="'.site_url('my-acount/send_file?order_id=').$order->get_id().'" class="button btn btn-outline-primary">' . 'ارسال فایل' . '</a>';
+								echo '<a style="margin-right:5px;" href="'.site_url('my-account/send-file/?order_id=').$order->get_id().'" class="button btn btn-outline-primary">' . 'ارسال فایل' . '</a>';
 
 								?>
 							<?php endif; ?>
