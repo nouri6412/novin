@@ -7,7 +7,7 @@
     foreach ($data as $col) {
         $group = $col["group"];
     ?>
-        <div style="border: 3px solid #cfcfcf;" class="col-4 col-sm-2 col-md-2 mb-4">
+        <div style="border: 3px solid #cfcfcf;margin:2px" class="col-3 col-sm-2 col-md-2 mb-4">
             <a title="<?php echo $group["title"] ?>" href="<?php echo $group["link"] ?>"><img style="width: 100%;margin:5px;" src="<?php echo $group["img"] ?>" /></a>
         </div>
     <?php
