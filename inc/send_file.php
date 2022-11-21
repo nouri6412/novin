@@ -44,10 +44,10 @@ function silva_my_account_endpoint_content()
         $order = new WC_Order($order_id);
      
         $sender_id = $order->get_user_id( );
-var_dump($sender_id);
-        if ($designer == $user) {
+
+        if ($designer == $user->ID) {
             echo 'send to me';
-        } else if($sender_id==$user) {
+        } else if($sender_id==$user->ID) {
             echo 'my order';
         }
     } else {
