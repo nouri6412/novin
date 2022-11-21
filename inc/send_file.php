@@ -38,15 +38,18 @@ function silva_my_account_endpoint_content()
 
     if (isset($_GET["order_id"])) {
 
-        $order_id= $_GET["order_id"];
-      $designer=  get_post_meta($order_id, 'send-to-designer', true) ;
-      if($designer==$user)
-      {
-        echo 'send to me';
-      }
-    }
-    else
-    {
+        $order_id = $_GET["order_id"];
+        $designer =  get_post_meta($order_id, 'send-to-designer', true);
+
+        $order = new WC_Order($order_id);
+        $sender_id = $order->get_user_id( );
+
+        if ($designer == $user) {
+            echo 'send to me';
+        } else if($sender_id==$user) {
+            echo 'my order';
+        }
+    } else {
         foreach ($roles as $role) {
             if ($role == "designer") {
                 echo 'is designer';
@@ -55,5 +58,4 @@ function silva_my_account_endpoint_content()
             }
         }
     }
-
 }
