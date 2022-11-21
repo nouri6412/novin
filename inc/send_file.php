@@ -37,13 +37,23 @@ function silva_my_account_endpoint_content()
     $roles = (array) $user->roles; // obtaining the role 
 
     if (isset($_GET["order_id"])) {
-        echo $_GET["order_id"];
+
+        $order_id= $_GET["order_id"];
+      $designer=  get_post_meta($order_id, 'send-to-designer', true) ;
+      if($designer==$user)
+      {
+        echo 'send to me';
+      }
     }
-    foreach ($roles as $role) {
-        if ($role == "designer") {
-            echo 'is designer';
-        } else {
-            echo 'is not designer';
+    else
+    {
+        foreach ($roles as $role) {
+            if ($role == "designer") {
+                echo 'is designer';
+            } else {
+                echo 'is not designer';
+            }
         }
     }
+
 }
