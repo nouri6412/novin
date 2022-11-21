@@ -22,7 +22,7 @@ function novin_theme_scripts()
 
 function negarehnovin_setup()
 {
-    add_theme_support( 'title-tag' );
+    add_theme_support('title-tag');
 
     /**
      * Add post-formats support.
@@ -43,7 +43,7 @@ function negarehnovin_setup()
     );
 }
 
-add_action( 'after_setup_theme', 'negarehnovin_setup' );
+add_action('after_setup_theme', 'negarehnovin_setup');
 
 add_action('wp_enqueue_scripts', 'novin_theme_scripts');
 
@@ -160,16 +160,16 @@ class cartPlugins
                 $ex = explode(',', $cart_item['meta_plan_id']);
                 $image = "";
                 if (count($ex) > 1) {
-               
+
                     foreach ($ex as $it) {
-                       
+
                         $image_id = wp_get_attachment_url($it);
-                        $img='<img style="width:40px" src="'.$image_id.'" />';
-                        $image.='<a style="color:red" target="_blank" href="' . $image_id . '">'.$img.'</a>';
+                        $img = '<img style="width:40px" src="' . $image_id . '" />';
+                        $image .= '<a style="color:red" target="_blank" href="' . $image_id . '">' . $img . '</a>';
                     }
                 } else {
                     $image_id = wp_get_attachment_url($cart_item['meta_plan_id']);
-                    $img='<img style="width:40px" src="'.$image_id.'" />';
+                    $img = '<img style="width:40px" src="' . $image_id . '" />';
                     $image = '<a style="color:red;margin-left: 20px;" target="_blank" href="' . $img . '"></a>';
                 }
 
@@ -219,17 +219,17 @@ class cartPlugins
                 $ex = explode(',', $values['meta_plan_id']);
                 $image = "";
                 if (count($ex) > 1) {
-                    $index_row=0;
+                    $index_row = 0;
                     foreach ($ex as $it) {
-                  
+
                         $image_id = wp_get_attachment_url($it);
-                        $img='<img style="width:40px" src="'.$image_id.'" />';
-                        $image.='<a style="color:red;margin-left: 20px;" target="_blank" href="' . $image_id . '">'.$img.'</a>';
+                        $img = '<img style="width:40px" src="' . $image_id . '" />';
+                        $image .= '<a style="color:red;margin-left: 20px;" target="_blank" href="' . $image_id . '">' . $img . '</a>';
                     }
                 } else {
                     $image_id = wp_get_attachment_url($values['meta_plan_id']);
-                    $img='<img style="width:40px" src="'.$image_id.'" />';
-                    $image = '<a style="color:red" target="_blank" href="' . $image_id . '">'.$img.'</a>';
+                    $img = '<img style="width:40px" src="' . $image_id . '" />';
+                    $image = '<a style="color:red" target="_blank" href="' . $image_id . '">' . $img . '</a>';
                 }
                 $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">مشاهده</a>');
             }
@@ -390,4 +390,35 @@ if (function_exists('acf_add_options_page')) {
         'menu_slug'     => 'theme-general-settings-footer',
         'parent_slug'    => 'theme-general-settings',
     ));
+}
+
+add_filter('woocommerce_account_menu_items', 'silva_send_file_link', 40);
+function silva_send_file_link($menu_links)
+{
+
+    $menu_links = array_slice($menu_links, 0, 2, true)
+        + array('send-file' => 'ارسال فایل')
+        + array_slice($menu_links, 2, NULL, true);
+
+    return $menu_links;
+}
+/*
+ * Part 2. Register Permalink Endpoint
+ */
+add_action('init', 'silva_add_endpoint');
+function silva_add_endpoint()
+{
+
+    // WP_Rewrite is my Achilles' heel, so please do not ask me for detailed explanation
+    add_rewrite_endpoint('send-file', EP_PAGES);
+}
+/*
+ * Part 3. Content for the new page in My Account, woocommerce_account_{ENDPOINT NAME}_endpoint
+ */
+add_action('woocommerce_account_send-file_endpoint', 'silva_my_account_endpoint_content');
+function silva_my_account_endpoint_content()
+{
+
+    // Of course, you can print dynamic content here, one of the most useful functions here is get_current_user_id()
+    echo 'Last time you logged in: yesterday from Safari.';
 }
