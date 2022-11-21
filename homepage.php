@@ -604,6 +604,7 @@ if (isset($_GET["category_size"])) {
                         <input id="f-plan-id" type="hidden" value="<?php echo $plan_selected ?>" />
                         <input id="f-plan-type" type="hidden" value="<?php echo $plan_selected_type ?>" />
                         <input id="f-size-id" type="hidden" value="<?php echo $size_selected ?>" />
+                        <input id="f-size-price" type="hidden" value="<?php  $product_size = wc_get_product($size_selected); echo $product_size->get_price();?>" />
                         <input id="f-site-url" type="hidden" value="<?php echo site_url() ?>" />
                         <div class="spinner-border" style="display:none ;" role="status">
                             <span class="visually-hidden">Loading...</span>
