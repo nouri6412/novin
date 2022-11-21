@@ -6598,7 +6598,7 @@ display: none;
   }
 
   .btn-shake{
-    animation: shake 0.5s;
+    animation: shake 1s;
     animation-iteration-count: infinite;
   }
 
