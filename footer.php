@@ -182,7 +182,7 @@
 
     </ul>
     <div class="social-open-menu">
-        <button class="btn-share"><i class="fa fa-phone"></i></button>
+        <button style="font-size: 10px;" class="btn-share">تماس با ما</button>
     </div>
 </div>
 
