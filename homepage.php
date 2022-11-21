@@ -461,7 +461,7 @@ if (isset($_GET["category_size"])) {
                             <?php if ($item["is_checkbox"] == 1) { ?>
                                 <div class="col-6 col-sm-6 col-md-6 mb-4">
                                     <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?>
-                                        <div class="tooltip">
+                                        <div class="my-tooltip">
                                             <i class="fa fa-question-circle" aria-hidden="true"></i>
                                             <div class="tooltiptext"><?php
                                                                         $tooltip = $item["help"];
