@@ -15,7 +15,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">خانه <i class="fa fa-home"></i></a>
+                        <a class="nav-link active" aria-current="page" href="<?php echo site_url() ?>"><i class="fa fa-home"></i><?php echo ' '.'خانه'; ?></a>
                     </div>
                 </div>
             </div>
