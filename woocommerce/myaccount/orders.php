@@ -70,7 +70,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 										echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
 									}
 								}
-								var_dump($order);
+								var_dump($order->order_id);
 								echo '<a style="margin-right:5px;" href="#" class="button btn btn-outline-primary">' . 'ارسال فایل' . '</a>';
 
 								?>
