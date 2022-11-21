@@ -41,18 +41,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-lg-4 d-sm-flex d-md-flex flex-lg-column flex-row align-items-md-center align-items-lg-start">
-                    <div class="widget_footer widget_footer_news pl-sm-3 pl-md-3 mt-4   mt-md-3 mt-lg-0 w-100">
-                        <div class="title_widget_footer">عضویت در خبرنامه</div>
+                <div class=" col-sm-6 col-lg-4">
+                    <div class="widget_footer">
+                        <div class="title_widget_footer">
+                            <?php echo  $data["col-3-title"]; ?>
+                        </div>
                         <div class="contenet_widget_footer">
-                            <form action="" method="post" class="form_news_footer">
-                                <div class="input-group">
-                                    <span><i class="far fa-envelope"></i></span>
-
-                                    <button type="submit">ارسال</button>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="ایمیل شما">
-                                </div>
-                            </form>
+                            <ul>
+                                <?php
+                                foreach ($data["col3"] as $col) {
+                                    $group = $col["link"];
+                                ?>
+                                    <li><a href="<?php echo $group["link"] ?>"><?php echo $group["title"] ?></a></li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
