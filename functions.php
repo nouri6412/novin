@@ -18,6 +18,33 @@ function novin_theme_scripts()
     ));
 }
 
+
+
+function negarehnovin_setup()
+{
+    add_theme_support( 'title-tag' );
+
+    /**
+     * Add post-formats support.
+     */
+    add_theme_support(
+        'post-formats',
+        array(
+            'link',
+            'aside',
+            'gallery',
+            'image',
+            'quote',
+            'status',
+            'video',
+            'audio',
+            'chat',
+        )
+    );
+}
+
+add_action( 'after_setup_theme', 'negarehnovin_setup' );
+
 add_action('wp_enqueue_scripts', 'novin_theme_scripts');
 
 function custom_get_the_date($post)
