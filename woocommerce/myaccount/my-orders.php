@@ -80,6 +80,7 @@ if ( $customer_orders ) : ?>
 								$actions = wc_get_account_orders_actions( $order );
 
 								if ( ! empty( $actions ) ) {
+									var_dump($order);
 									foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 										echo '<a href="' . esc_url( $action['url'] ) . '" class="button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
 									}
