@@ -70,6 +70,8 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 										echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
 									}
 								}
+								echo '<a href="#" class="button btn btn-outline-primary">' . 'ارسال فایل' . '</a>';
+
 								?>
 							<?php endif; ?>
 						</td>
@@ -97,7 +99,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 <?php else : ?>
 	<div class="woocommerce-message woocommerce-message--info woocommerce-Message woocommerce-Message--info woocommerce-info">
-		<a class="woocommerce-Button button" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>"><?php esc_html_e( 'Browse products', 'woocommerce' ); ?></a>
+		<a class="woocommerce-Button button" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', site_url() ) ); ?>"><?php esc_html_e( 'Browse products', 'woocommerce' ); ?></a>
 		<?php esc_html_e( 'No order has been made yet.', 'woocommerce' ); ?>
 	</div>
 <?php endif; ?>

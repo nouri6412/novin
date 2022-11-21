@@ -86,7 +86,6 @@ if ( $customer_orders ) : ?>
 									}
 
 								}
-								echo '<a href="#" class="button btn btn-outline-primary">' . 'ارسال فایل' . '</a>';
 
 								?>
 							<?php endif; ?>
