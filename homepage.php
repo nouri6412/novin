@@ -164,28 +164,30 @@ if (isset($_GET["category_size"])) {
                 ];
                 $my_query = new WP_Query($args);
                 if ($my_query->have_posts()) {
-
-                    $item = get_the_ID();
-                    $image = "";
-                    if (has_post_thumbnail($item)) {
-                        $image = get_the_post_thumbnail_url($item, '');
-                    } else {
-                        $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
-                    }
-                    $product = wc_get_product($item);
+                    while ($my_query->have_posts()) : $my_query->the_post();
+                        $item = get_the_ID();
+                        $image = "";
+                        if (has_post_thumbnail($item)) {
+                            $image = get_the_post_thumbnail_url($item, '');
+                        } else {
+                            $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
+                        }
+                        $product = wc_get_product($item);
                 ?>
-                    <div class="col-6 col-sm-6 col-md-3 col-box">
-                        <div onclick="change_img_box_plan($(this))" data-img="<?php echo $image; ?>" data-href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-portfolio  card-yellow">
-                            <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box-1.png" /></div>
-                            <!-- <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>"> -->
-                            <div class="card-body card-body-fix">
-                                <h3 class="text-center text-black box-h-4"><?php echo get_the_title($item); ?></h3>
-                                <h3 class="text-center text-black box-h-3"><?php echo  $product->get_price_html(); ?></h3>
+                        <div class="col-6 col-sm-6 col-md-3 col-box">
+                            <div onclick="change_img_box_plan($(this))" data-img="<?php echo $image; ?>" data-href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-portfolio  card-yellow">
+                                <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box-1.png" /></div>
+                                <!-- <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>"> -->
+                                <div class="card-body card-body-fix">
+                                    <h3 class="text-center text-black box-h-4"><?php echo get_the_title($item); ?></h3>
+                                    <h3 class="text-center text-black box-h-3"><?php echo  $product->get_price_html(); ?></h3>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php }
+                <?php
+                    endwhile;
+                }
                 wp_reset_query();
                 ?>
 
