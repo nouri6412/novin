@@ -6408,9 +6408,11 @@ margin-left: 5px;
 .my-tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+
   }
-  
+  .my-tooltip .fa{
+    font-size: 18px;
+  }
   .my-tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
