@@ -28,7 +28,12 @@ do_action('woocommerce_before_account_navigation');
 		<?php
 		$user_id = get_current_user_id();
 		$user_info = get_field('is-designer', 'user_' . $user_id);
-		foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
+		foreach (wc_get_account_menu_items() as $endpoint => $label) : 
+		if ($endpoint=='downloads') 
+		{
+			continue;
+		}
+		?>
 			<li class="<?php echo wc_get_account_menu_item_classes($endpoint); ?>">
 				<a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>"><?php echo esc_html($label); ?></a>
 			</li>
