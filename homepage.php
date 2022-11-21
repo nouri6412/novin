@@ -155,7 +155,7 @@ if (isset($_GET["category_size"])) {
                     'post_type' => 'product',
                     'tax_query' => [
                         [
-                            'taxonomy' => 'my_custom_taxonomy',
+                            'taxonomy' => 'product_cat',
                             'terms' => $category_size,
                             'include_children' => false // Remove if you need posts from term 7 child terms
                         ],
