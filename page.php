@@ -10,7 +10,7 @@
  * @since Negharenovin 1.0
  */
 
-get_header('order');
+get_header();
 ?>
 <!-- Content -->
 
@@ -27,4 +27,4 @@ get_header('order');
 
 <!-- Content END-->
 <?php
-get_footer('order');
+get_footer();

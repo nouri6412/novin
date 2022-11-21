@@ -57,6 +57,23 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div style="display: flex;margin-top: 15px;" class="nemads">
+                        <?php
+                        $data = get_field("sec4", 'option');
+                        ?>
+                        <?php
+                        foreach ($data as $col) {
+                            $group = $col["group"];
+                        ?>
+                            <a title="<?php echo $group["title"] ?>" href="<?php echo $group["link"] ?>"><img style="width: 75px;margin:5px;" src="<?php echo $group["img"] ?>" /></a>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="area_footer_bottom">
@@ -131,8 +148,12 @@
 </footer>
 <div id="bg-white">
     <div class="box-plan">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg" />
-        <button onclick="close_box_plan()" class="btn"><i class="fa fa-window-close"></i></button>
+        <img id="bg-white-box-plan-img" data-href="#" src="<?php echo get_template_directory_uri(); ?>/assets/img/1.jpg" />
+        <button onclick="close_box_plan()" class="btn btn-close"><i class="fa fa-window-close"></i></button>
+        <div style="height:40px ;" class="btn-operate mt-2 mb-2">
+            <button onclick="change_img_box_plan_select()" class="float-start btn btn-outline-success btn-select"><?php echo 'انتخاب '; ?><i class="fa fa-check" aria-hidden="true"></i></button>
+            <button onclick="close_box_plan()" class="float-start btn btn-outline-danger btn-cancel"><?php echo 'انصراف '; ?><i class="fa fa-window-close" aria-hidden="true"></i></button>
+        </div>
     </div>
 </div>
 <div id="social-share">
@@ -166,7 +187,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/carousel/owl.carousel.min.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/all-js.js"></script> -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=74"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=1.0.12"></script>
 </body>
 
 </html>
