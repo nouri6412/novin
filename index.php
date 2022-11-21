@@ -1,5 +1,5 @@
 <?php
-get_header()
+get_header('order')
 ?>
 <div class="container mt-4">
   <section>
@@ -27,4 +27,4 @@ get_header()
   </section>
 </div>
 
-<?php get_footer() ?>
+<?php get_footer('order') ?>

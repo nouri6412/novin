@@ -7,7 +7,7 @@
  *
  * @package WordPress
  * @subpackage Negharenovin
- * @since 1.0.0
+ * @since Negharenovin 1.0
  * Template Name: صفحه فرود
  */
 
@@ -146,36 +146,15 @@ if (isset($_GET["category_size"])) {
             <div class="row box-black">
                 <?php
                 $index = 0;
-                if ($category_size == 0) {
-                    foreach ($cat_sizes as $cat_item) {
-                        $index++;
-                ?>
-                        <div class="col-6 col-sm-6 col-md-3 col-box">
-                            <a href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>">
-                                <div class="card card-portfolio  card-yellow">
-                                    <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box-1.png" /></div>
-                                    <div class="card-body card-body-fix">
-                                        <h3 class="text-center text-black box-h-4"><?php echo $cat_item->name ?></h3>
-
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                <?php
-                    }
-                }
-                ?>
-                <?php
                 $sizes = $cat["sizes"];
                 $main_category_size = $category_size;
+                if ($category_size == 0) {
+                    $category_size = $default_cat;
+                }
                 foreach ($sizes as $size) {
+
                     $item = $size["product"];
                     $image = "";
-                 
-                    if ($category_size == 0) {
-                        $category_size = $default_cat;
-                    }
-
                     if ($category_size > 0) {
                         $terms = get_the_terms($item, 'product_cat');
                         $flag = false;
@@ -209,6 +188,34 @@ if (isset($_GET["category_size"])) {
                         </div>
                     </div>
                 <?php }
+                ?>
+
+                <?php
+
+                if ($main_category_size == 0) {
+                    foreach ($cat_sizes as $cat_item) {
+                        if ($default_cat == $cat_item->term_id) {
+                            continue;
+                        }
+                        $index++;
+                ?>
+                        <div class="col-6 col-sm-6 col-md-3 col-box">
+                            <a href="<?php echo site_url("?cat_selected=" . $cat_selected . "&category_size=" . $cat_item->term_id) ?>">
+                                <div class="card card-portfolio  card-yellow">
+                                    <div class="bg-yellow-fix"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/box-1.png" /></div>
+                                    <div class="card-body card-body-fix">
+                                        <h3 class="text-center text-black box-h-4"><?php echo $cat_item->name ?></h3>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+
+                <?php
                 if ($index == 0) {
                 ?>
                     <h2 class="m-5" style="color: #fff;">هیچ موردی یافت نشد</h2>
@@ -406,7 +413,7 @@ if (isset($_GET["category_size"])) {
             <div class="row">
                 <div class="col-0 col-sm-3 col-md-3 select-ghab-panel-option"></div>
                 <h3 data-price="0" id="sum-price-option" class="col-12 col-sm-6 col-md-6 mb-3 select-ghab-panel-option" style="color: green;font-size:18px;"></h3>
-              <input id="get_woocommerce_currency_symbol" name="get_woocommerce_currency_symbol" value="<?php echo get_woocommerce_currency_symbol() ?>" type="hidden"/>
+                <input id="get_woocommerce_currency_symbol" name="get_woocommerce_currency_symbol" value="<?php echo get_woocommerce_currency_symbol() ?>" type="hidden" />
                 <div class="col-0 col-sm-3 col-md-3 select-ghab-panel-option"></div>
 
                 <div class="col-0 col-sm-3 col-md-3"></div>
@@ -463,7 +470,7 @@ if (isset($_GET["category_size"])) {
                             <?php  } else { ?>
                                 <div class="col-6 col-sm-6 col-md-6 mb-4">
                                     <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?></label>
-                                    <select class="negarenovin-option" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="f-option-<?php echo $item["product"]. '-text'; ?>" data-price="<?php echo $product->get_price() ?>" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>">
+                                    <select class="negarenovin-option" onchange="change_select_option_extra($(this))" data-type="textarea" data-target="f-option-<?php echo $item["product"] . '-text'; ?>" data-price="<?php echo $product->get_price() ?>" data-id="<?php echo $item["product"]; ?>" name="f-option-<?php echo $item["product"]; ?>" id="f-option-<?php echo $item["product"]; ?>">
                                         <option value="0">نیاز نیست</option>
                                         <option value="1">نیاز است</option>
                                     </select>
@@ -596,7 +603,7 @@ if (isset($_GET["category_size"])) {
                 <span class="visually-hidden">Loading...</span>
             </div>
             <div id="btn-next-step-cart" style="display: none;margin-right:10px;" class="float-start mt-2">
-                <a href="<?php echo wc_get_cart_url() ?>" class="btn btn-success"><?php echo 'سبد خرید و پرداخت'.' ' ?><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <a href="<?php echo wc_get_cart_url() ?>" class="btn btn-success"><?php echo 'سبد خرید و پرداخت' . ' ' ?><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </div>
             <div class="float-start mt-2">
                 <a onclick="check_plan_selected($(this))" id="btn-next-step" data-type="<?php echo $next ?>" href="#" class="btn btn-warning">مرحله بعدی <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
