@@ -2,10 +2,17 @@
 add_filter('woocommerce_account_menu_items', 'silva_send_file_link', 40);
 function silva_send_file_link($menu_links)
 {
+    $user = wp_get_current_user(); // getting & setting the current user 
+    $roles = (array) $user->roles; // obtaining the role 
 
-    $menu_links = array_slice($menu_links, 0, 2, true)
-        + array('send-file' => 'ارسال فایل')
-        + array_slice($menu_links, 2, NULL, true);
+    foreach ($roles as $role) {
+        if ($role == "designer") {
+            $menu_links = array_slice($menu_links, 0, 2, true)
+                + array('send-file' => 'ارسال فایل')
+                + array_slice($menu_links, 2, NULL, true);
+        }
+    }
+
 
     return $menu_links;
 }
@@ -31,11 +38,9 @@ function silva_my_account_endpoint_content()
 
     foreach ($roles as $role) {
         if ($role == "designer") {
-          echo 'is designer';
+            echo 'is designer';
+        } else {
+            echo 'is not designer';
         }
-        else
-        {
-            echo 'is not designer';  
-        }  
     }
 }
