@@ -420,5 +420,5 @@ function silva_my_account_endpoint_content()
 {
 
     // Of course, you can print dynamic content here, one of the most useful functions here is get_current_user_id()
-    echo 'Last time you logged in: yesterday from Safari.';
+    echo '';
 }
