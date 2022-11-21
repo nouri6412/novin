@@ -191,7 +191,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/carousel/owl.carousel.min.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/all-js.js"></script> -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=1.0.12"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?ver=1.0.13"></script>
 </body>
 
 </html>

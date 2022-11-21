@@ -1,5 +1,21 @@
 /***************************** show password in login js*****************************/
 
+$(document).ready(function () {
+    $('.input-minus').click(function () {
+        var $input = $(this).parent().find('input');
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        return false;
+    });
+    $('.input-plus').click(function () {
+        var $input = $(this).parent().find('input');
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        return false;
+    });
+});
 function showPassword() {
     var key_attr = $('.inputpassword').attr('type');
     if (key_attr != 'text') {
@@ -891,7 +907,7 @@ function change_select_option_extra(obj) {
     }
 
     $('#sum-price-option').attr('data-price', price);
-    $('#sum-price-option').html('جمع'+' '+price + ' ' + $('#get_woocommerce_currency_symbol').val());
+    $('#sum-price-option').html('جمع' + ' ' + price + ' ' + $('#get_woocommerce_currency_symbol').val());
 }
 
 function change_img_box_plan(obj) {
@@ -913,11 +929,10 @@ function change_img_box_plan_select() {
     scroll_top_monitor();
 }
 
-function scroll_top_monitor()
-{
-    $("HTML, BODY").animate ({      // Animate method
-        scrollTop: $('#btn-next-step').offset().top-200    // Scroll top method.
-        }, 500);   
+function scroll_top_monitor() {
+    $("HTML, BODY").animate({      // Animate method
+        scrollTop: $('#btn-next-step').offset().top - 200    // Scroll top method.
+    }, 500);
 }
 
 
@@ -945,7 +960,7 @@ function check_plan_selected(obj) {
         var plan_selected = $('#plan-uploaded-img').attr('data-media-id');
         $('#box-upload-image-file img').each(function (i, obj) {
             if ($(obj).attr('id') != "plan-uploaded-img") {
-                plan_selected+=","+$(obj).attr('data-media-id');
+                plan_selected += "," + $(obj).attr('data-media-id');
             }
         });
 

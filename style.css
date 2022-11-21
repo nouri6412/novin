@@ -6391,7 +6391,17 @@ margin-left: 5px;
     display: block;
     text-align: right;
 }
-
+.input-minus, .input-plus{
+    width:20px;
+    height:20px;
+    background:#f2f2f2;
+    border-radius:4px;
+    padding:8px 5px 8px 5px;
+    border:1px solid #ddd;
+display: inline-block;
+vertical-align: middle;
+text-align: center;
+}
 @media only screen and (max-width: 768px) {
     .navbar-nav{
         display: block;
