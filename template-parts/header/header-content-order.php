@@ -17,7 +17,7 @@
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="<?php echo site_url() ?>"><i class="fa fa-home"></i><?php echo ' '.'خانه'; ?></a>
                         <a class="nav-link "  href="<?php echo site_url('cart') ?>"><i class="fa fa-shopping-cart"></i><?php echo ' '.'سبد خرید'; ?></a>
-                        <a class="nav-link "  href="<?php echo site_url('about-us') ?>"><i class="fa fa-info-circle"></i><?php echo ' '.' در باره ما'; ?></a>
+                        <a class="nav-link "  href="<?php echo site_url('about-us') ?>"><i class="fa fa-info-circle"></i><?php echo ' '.' درباره ما'; ?></a>
 
                    
                     </div>
