@@ -26,6 +26,16 @@ add_action('woocommerce_account_send-file_endpoint', 'silva_my_account_endpoint_
 function silva_my_account_endpoint_content()
 {
 
-    // Of course, you can print dynamic content here, one of the most useful functions here is get_current_user_id()
-    echo '';
+    $user = wp_get_current_user(); // getting & setting the current user 
+    $roles = (array) $user->roles; // obtaining the role 
+
+    foreach ($roles as $role) {
+        if ($role == "designer") {
+          echo 'is designer';
+        }
+        else
+        {
+            echo 'is not designer';  
+        }  
+    }
 }
