@@ -182,7 +182,7 @@
 
     </ul>
     <div class="social-open-menu">
-        <button style="font-size: 10px;" class="btn-share">تماس با ما</button>
+        <button style="font-size: 10px;" class="btn-share btn-shake">تماس با ما</button>
     </div>
 </div>
 
