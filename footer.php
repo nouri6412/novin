@@ -1,17 +1,19 @@
 <div class="row m-5">
-        <div class="col-3 col-sm-1 col-md-1 mb-4">
-            <?php
-            $data = get_field("sec4", 'option');
-            ?>
-            <?php
-            foreach ($data as $col) {
-                $group = $col["group"];
-            ?>
-                <a title="<?php echo $group["title"] ?>" href="<?php echo $group["link"] ?>"><img style="width: 100%;margin:5px;" src="<?php echo $group["img"] ?>" /></a>
-            <?php
-            }
-            ?>
+
+    <?php
+    $data = get_field("sec4", 'option');
+    ?>
+    <?php
+    foreach ($data as $col) {
+        $group = $col["group"];
+    ?>
+        <div class="col-4 col-sm-2 col-md-2 mb-4">
+            <a title="<?php echo $group["title"] ?>" href="<?php echo $group["link"] ?>"><img style="width: 100%;margin:5px;" src="<?php echo $group["img"] ?>" /></a>
         </div>
+    <?php
+    }
+    ?>
+
 </div>
 <footer>
     <div class="area_footer_top">
