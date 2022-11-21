@@ -84,9 +84,10 @@ if ( $customer_orders ) : ?>
 									foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 										echo '<a href="' . esc_url( $action['url'] ) . '" class="button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
 									}
-									echo '<a href="#" class="button btn btn-outline-primary">' . 'ارسال فایل' . '</a>';
 
 								}
+								echo '<a href="#" class="button btn btn-outline-primary">' . 'ارسال فایل' . '</a>';
+
 								?>
 							<?php endif; ?>
 						</td>
