@@ -1,6 +1,5 @@
 <div class="row m-5">
-    <div class="col-12">
-        <div style="display: flex;margin-top: 15px;" class="nemads">
+        <div class="col-3 col-sm-1 col-md-1 mb-4">
             <?php
             $data = get_field("sec4", 'option');
             ?>
@@ -8,12 +7,11 @@
             foreach ($data as $col) {
                 $group = $col["group"];
             ?>
-                <a title="<?php echo $group["title"] ?>" href="<?php echo $group["link"] ?>"><img style="width: 75px;margin:5px;" src="<?php echo $group["img"] ?>" /></a>
+                <a title="<?php echo $group["title"] ?>" href="<?php echo $group["link"] ?>"><img style="width: 100%;margin:5px;" src="<?php echo $group["img"] ?>" /></a>
             <?php
             }
             ?>
         </div>
-    </div>
 </div>
 <footer>
     <div class="area_footer_top">
