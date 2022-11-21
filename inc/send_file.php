@@ -36,6 +36,9 @@ function silva_my_account_endpoint_content()
     $user = wp_get_current_user(); // getting & setting the current user 
     $roles = (array) $user->roles; // obtaining the role 
 
+    if (isset($_GET["order_id"])) {
+        echo $_GET["order_id"];
+    }
     foreach ($roles as $role) {
         if ($role == "designer") {
             echo 'is designer';
