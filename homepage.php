@@ -11,7 +11,7 @@
  * Template Name: صفحه فرود
  */
 
-get_header('order');
+get_header();
 $Main_post_id = get_the_ID();
 $cat_selected = "";
 $size_selected = 0;
@@ -618,4 +618,4 @@ if (isset($_GET["category_size"])) {
     </div>
 </main>
 
-<?php get_footer('order') ?>
+<?php get_footer() ?>
