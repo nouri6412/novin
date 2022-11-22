@@ -80,8 +80,7 @@ function silva_my_account_endpoint_content()
 
                 $args = array(
                     'post_type' => 'shop_order',
-                    'meta_key' => 'send-to-designer',
-                    'meta_value' => $user->ID
+                    "order" => "DESC"
                 );
 
                 $the_query = new WP_Query($args);
