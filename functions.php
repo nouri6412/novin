@@ -149,7 +149,8 @@ function gregorian_to_jalali($in_date)
         $jm = 7 + (int)(($days - 186) / 30);
         $jd = 1 + (($days - 186) % 30);
     }
-    return ($mod === '') ? array($jy, $jm, $jd) : $jy . $mod . $jm . $mod . $jd;
+
+    return $jy.'/'.$jm.'/'.$jd;
 }
 
 function negarenovin_add_to_cart()
