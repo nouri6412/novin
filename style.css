@@ -6488,6 +6488,16 @@ float: right;
     width: 32%;
 }
 
+.chat-order table{
+
+}
+
+.chat-order table th,.chat-order table td{
+    
+}
+
+
+
 @media only screen and (max-width: 768px) {
     .navbar-nav{
         display: block;
