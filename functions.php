@@ -90,7 +90,7 @@ function pn_upload_files()
                         $chats = json_decode(get_post_meta($_POST["chat_id"], 'chats-file', true), true);
                         $chats[] = $chat;
 
-                        $json = json_encode($chats);
+                        $json = json_encode($chats,JSON_UNESCAPED_UNICODE);
 
                         update_post_meta($_POST["chat_id"], "chats-file", $json);
                     }
