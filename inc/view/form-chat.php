@@ -24,6 +24,7 @@
 </div>
 <div class="chat-box m-2">
     <?php
+    echo $me_type;
     foreach ($chats as $chat) {
         $class = "";
 

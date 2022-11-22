@@ -62,7 +62,7 @@ function silva_my_account_endpoint_content()
         $sender_id = $order->get_user_id();
         $user_id = $user->ID;
 
-        echo '<div>'.'des:'.$designer_id.'</div>'.'<div>'.' user:'.$user->ID.'</div>';
+       // echo '<div>'.'des:'.$designer_id.'</div>'.'<div>'.' user:'.$user->ID.'</div>';
      
         if ($designer_id == $user->ID) {
             $me_type = 1;
