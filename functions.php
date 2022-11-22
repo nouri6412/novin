@@ -489,7 +489,7 @@ function custom_orders_list_column_content($column, $post_id)
             }
             else
             {
-                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id=$post_id') . '" style="color:red;">' . $text . '</a>';
+                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id='.$post_id) . '" style="color:red;">' . $text . '</a>';
 
             }
 
