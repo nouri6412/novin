@@ -40,10 +40,14 @@ function silva_my_account_endpoint_content()
 
         $order_id = $_GET["order_id"];
 
+        $chats = json_decode(get_post_meta($order_id, 'chats-file', true), true);
+
         if (isset($_POST["chat-message-body"])) {
             if (strlen(trim($_POST["chat-message-body"])) > 0) {
                 $chat = ["type" => "text", "user_id" => $user->ID, "date" => date('Y-m-d H:i:s'), "body" => $_POST["chat-message-body"]];
-                $json = json_encode($chat,JSON_UNESCAPED_UNICODE);
+                $chats[]=$chat;
+                $json = json_encode($chats,JSON_UNESCAPED_UNICODE);
+              
                 update_post_meta($order_id, "chats-file", $json);
             }
         }
@@ -54,7 +58,7 @@ function silva_my_account_endpoint_content()
 
         $sender_id = $order->get_user_id();
         $user_id = $user->ID;
-        $chats = json_decode(get_post_meta($order_id, 'chats-file', true), true);
+
         var_dump($chats);
         if ($designer_id == $user->ID) {
             $me_type = 1;
