@@ -24,7 +24,7 @@
 </div>
 <div class="chat-box m-2">
     <?php
-    echo $me_type;
+
     foreach ($chats as $chat) {
         $class = "";
 
@@ -52,9 +52,7 @@
         } else if ($designer_id != $chat["user_id"] && $me_type = 1) {
             $user_name = "سفارش دهنده";
             $class = "left";
-        }
-
-        if ($sender_id == $chat["user_id"] && $me_type = 2) {
+        }else if ($sender_id == $chat["user_id"] && $me_type = 2) {
             $user_name = "من";
             $class = "right";
         } else if ($sender_id != $chat["user_id"] && $me_type = 2) {
