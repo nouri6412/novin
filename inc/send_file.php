@@ -80,8 +80,8 @@ function silva_my_account_endpoint_content()
 
                 $args = array(
                     'post_type' => 'shop_order',
-                    // 'meta_key' => 'send-to-designer',
-                    // 'meta_value' => $user->ID,
+                     'meta_key' => 'send-to-designer',
+                     'meta_value' => $user->ID,
                     "post_status"    => 'any',
                     "order" => "DESC"
                 );
