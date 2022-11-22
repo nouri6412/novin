@@ -61,6 +61,7 @@ function silva_my_account_endpoint_content()
 
         $sender_id = $order->get_user_id();
         $user_id = $user->ID;
+        var_dump($order->get_items());
 
         // echo '<div>'.'des:'.$designer_id.'</div>'.'<div>'.' user:'.$user->ID.'</div>';
 
