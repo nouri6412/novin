@@ -43,7 +43,7 @@ function silva_my_account_endpoint_content()
         if (isset($_POST["chat-message-body"])) {
             if (strlen(trim($_POST["chat-message-body"])) > 0) {
                 $chat = ["type" => "text", "user_id" => $user->ID, "date" => date('Y-m-d H:i:s'), "body" => $_POST["chat-message-body"]];
-                $json = json_encode($chat);
+                $json = json_encode($chat,JSON_UNESCAPED_UNICODE);
                 update_post_meta($order_id, "chats-file", $json);
             }
         }
