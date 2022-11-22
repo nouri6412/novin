@@ -55,6 +55,7 @@
             $class = "left";
         }
 
+        echo $me_type;
 
 
         if ($chat["type"] == "text") {
