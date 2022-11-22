@@ -456,3 +456,21 @@ function is_site_admin_v1()
 {
     return in_array('administrator',  wp_get_current_user()->roles);
 }
+
+
+add_filter('manage_order_posts_columns', function ($columns) {
+    return array_merge($columns, ['chat_files' => __('طراح و فایل ها', 'textdomain')]);
+});
+
+add_action('manage_order_posts_custom_column', function ($column_key, $post_id) {
+    if ($column_key == 'chat_files') {
+        $designer_id =  get_post_meta($post_id, 'send-to-designer', true);
+        $text="طراح ندارد";
+        if(strlen($designer_id)>0)
+        {
+            $designer = get_user_by('id', $designer_id);
+            $text=$designer->display_name;
+        }
+        echo '<a target="_blank" href="'.site_url('my-account/send-file?order_id=$post_id').'" style="color:green;">'.$text.'</a>';
+    }
+}, 10, 2);
