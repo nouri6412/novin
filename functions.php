@@ -484,8 +484,14 @@ function custom_orders_list_column_content($column, $post_id)
             if (strlen($designer_id) > 0) {
                 $designer = get_user_by('id', $designer_id);
                 $text = $designer->display_name;
+                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id=$post_id') . '" style="color:green;">' . $text . '</a>';
+
             }
-            echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id=$post_id') . '" style="color:green;">' . $text . '</a>';
+            else
+            {
+                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id=$post_id') . '" style="color:red;">' . $text . '</a>';
+
+            }
 
             break;
 
