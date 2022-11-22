@@ -57,7 +57,7 @@ function silva_my_account_endpoint_content()
 
 
 
-        $order = new WC_Order($order_id);
+        $order =  wc_get_order($order_id);
 
         $sender_id = $order->get_user_id();
         $user_id = $user->ID;
