@@ -80,16 +80,21 @@ function silva_my_account_endpoint_content()
 
                 $args = array(
                     'post_type' => 'shop_order',
-                     'meta_key' => 'send-to-designer',
-                     'meta_value' => $user->ID,
+                    'meta_key' => 'send-to-designer',
+                    'meta_value' => $user->ID,
                     "post_status"    => 'any',
                     "order" => "DESC"
                 );
 
                 $the_query = new WP_Query($args);
                 $count = $the_query->post_count;
-                echo $count;
-                include "view/list-file.php";
+                if ($count == 0) {
+                    echo '<h2>' . 'چیزی برای نمایش وجود ندارد' . '</h2>';
+                }
+                else
+                {
+                    include "view/list-file.php";
+                }
 
             } else {
                 //  echo 'is not designer';
