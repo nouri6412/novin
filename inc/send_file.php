@@ -77,9 +77,17 @@ function silva_my_account_endpoint_content()
     } else {
         foreach ($roles as $role) {
             if ($role == "designer") {
-                echo 'is designer';
+                $args = array(
+                    'post_type' => 'order',
+                    'meta_key' => 'send-to-designer',
+                    'meta_value' => $user->ID
+                );
+                $the_query = new WP_Query($args);
+                $count = $the_query->post_count;
+echo $count;
+                include "view/list-file.php";            
             } else {
-                echo 'is not designer';
+              //  echo 'is not designer';
             }
         }
     }
