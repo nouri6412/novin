@@ -29,6 +29,16 @@
 
         $user_name = "";
 
+        if ($me_type = 3) {
+            if ($designer_id == $chat["user_id"]) {
+                $user_name = "طراح";
+            } else if ($sender_id == $chat["user_id"]) {
+                $user_name = "سفارش دهنده";
+            }
+
+            $class = "left";
+        }
+
         if ($designer_id == $chat["user_id"] && $me_type = 1) {
             $user_name = "من";
             $class = "right";
@@ -45,20 +55,12 @@
             $class = "left";
         }
 
-        if ($me_type = 3) {
-            if ($designer_id == $chat["user_id"]) {
-                $user_name = "طراح";
-            } else if ($sender_id == $chat["user_id"]) {
-                $user_name = "سفارش دهنده";
-            }
 
-            $class = "left";
-        }
 
         if ($chat["type"] == "text") {
     ?>
             <div class="chat-text chat-message <?php echo $class; ?> m-2">
-                <div class="chat-text-date"><?php echo gregorian_to_jalali($chat["date"]) ; ?></div>
+                <div class="chat-text-date"><?php echo gregorian_to_jalali($chat["date"]); ?></div>
                 <div class="chat-text-user"><?php echo $user_name; ?></div>
                 <div class="chat-text-body"><?php echo $chat["body"]; ?></div>
             </div>
