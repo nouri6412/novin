@@ -6493,7 +6493,8 @@ float: right;
 }
 
 .chat-order table th,.chat-order table td{
-    
+    padding: 2px 6px 2px 6px;
+    border: 1px solid #bfbaba;
 }
 
 

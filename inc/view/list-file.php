@@ -15,7 +15,7 @@
                 <tr>
                     <td><?php echo get_the_ID() ?></td>
                     <td>
-                        <a class="btn btn-outline-primary" href="<?php echo site_url('my-account/send-file?order_id=' . get_the_ID()) ?>" style="color:green;">انتخاب</a>
+                        <a class="btn btn-outline-primary" href="<?php echo site_url('my-account/send-file?order_id=' . get_the_ID()) ?>">انتخاب</a>
                     </td>
                 </tr>
             <?php
