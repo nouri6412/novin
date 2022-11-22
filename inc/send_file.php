@@ -64,7 +64,7 @@ function silva_my_account_endpoint_content()
         $items = $order->get_items();
 
         foreach ($items as $item_id=>$cart_item) {
-          echo '<div>item_id'.$item_id.' : '."plan_id : ". wc_get_order_item_meta($item_id,'_order_meta_plan_id',true).'</div>';
+          echo '<div>item_id'.$item_id.' : '."plan_id : ". wc_get_order_item_meta($item_id,'_order_طرح',true).'</div>';
             if (isset($cart_item['meta_plan_id'])) {
                 $meta_key = 'طرح';
 
