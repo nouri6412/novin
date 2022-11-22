@@ -64,7 +64,7 @@ function silva_my_account_endpoint_content()
         $items = $order->get_items();
 
         foreach ($items as $cart_item) {
-            //var_dump($cart_item);
+           echo  wc_get_order_item_meta($cart_item,'meta_plan_id');
             if (isset($cart_item['meta_plan_id'])) {
                 $meta_key = 'طرح';
 
