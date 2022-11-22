@@ -59,7 +59,7 @@ function silva_my_account_endpoint_content()
         $sender_id = $order->get_user_id();
         $user_id = $user->ID;
 
-        var_dump($chats);
+     
         if ($designer_id == $user->ID) {
             $me_type = 1;
             include "view/form-chat.php";
