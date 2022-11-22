@@ -57,13 +57,13 @@ function silva_my_account_endpoint_content()
         $chats = json_decode(get_post_meta($order_id, 'chats-file', true), true);
         if ($designer_id == $user->ID) {
             $me_type = 1;
-            echo include "form-send-file.php";
+           //  include "form-send-file.php";
         } else if ($sender_id == $user->ID) {
             $me_type = 2;
-            echo include "form-send-file.php";
+           //  include "form-send-file.php";
         } else if (is_site_admin_v1()) {
             $me_type = 3;
-            echo include "form-send-file.php";
+           //  include "form-send-file.php";
         }
     } else {
         foreach ($roles as $role) {
