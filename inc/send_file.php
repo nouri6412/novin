@@ -37,6 +37,7 @@ function silva_my_account_endpoint_content()
     $roles = (array) $user->roles; // obtaining the role 
 
     if (isset($_GET["order_id"])) {
+     
 
         $order_id = $_GET["order_id"];
 

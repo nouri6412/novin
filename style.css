@@ -6443,7 +6443,20 @@ margin-left: 5px;
   }
 
   .chat-box .chat-message{
-    
+    border: 1px solid #a9a6a6;
+    border-radius: 5px;
+    padding: 10px;
+    width: 60%;
+}
+
+.chat-box .left
+{
+    float: left;
+}
+
+.chat-box .right
+{
+float: right;
 }
 
   .chat-box .chat-text{
