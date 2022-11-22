@@ -70,7 +70,7 @@
             <div class="chat-img chat-message <?php echo $class; ?> m-2">
                 <div class="chat-text-date"><?php echo gregorian_to_jalali($chat["date"]); ?></div>
                 <div class="chat-text-user"><?php echo $user_name; ?></div>
-                <div class="chat-text-img"><img src="<?php echo wp_get_attachment_url($chat["img"]); ?>" /></div>
+                <div class="chat-text-img"><a target="_blank" href="<?php echo wp_get_attachment_url($chat["img"]); ?>"><img src="<?php echo wp_get_attachment_url($chat["img"]); ?>" /></a></div>
             </div>
     <?php
         }
