@@ -1,8 +1,5 @@
 jQuery(document).ready(function ($) {
 
-
-    
-
     if($('#order-home-step').val()==5)
     {
          if($('#has-ghab-option').val()==0)
@@ -40,6 +37,11 @@ jQuery(document).ready(function ($) {
         //action is where we will be hooking our php function
         myformData.append('action', 'pn_wp_frontend_ajax_upload');
 
+        if ($('#myform').attr('data-type') == "chat")
+        {
+            myformData.append('chat_id', $('#myform').attr('data-order-id'));
+        }
+
         //Prepare and send the call
         $.ajax({
             type: "POST",
@@ -53,9 +55,9 @@ jQuery(document).ready(function ($) {
             success: function (data, textStatus, jqXHR) {
                 console.log('success upload');
                 console.log(data);
-                $('#plan-uploaded').val(data.file_id);
                 $('.spinner-border').css('display', 'none');
                 if ($('#myform').attr('data-type') == "img") {
+                    $('#plan-uploaded').val(data.file_id);
                     if ($('#plan-uploaded-img').attr('data-state') == 0) {
                         $('#btn-click-for-upload-img').html('بارگذاری موارد بیشتر');
                         $('#plan-uploaded-img').attr('src', data.url);
@@ -77,6 +79,10 @@ jQuery(document).ready(function ($) {
                         $('#box-upload-image-file').append(node);
                     }
                 }
+                else if ($('#myform').attr('data-type') == "chat")
+                {
+                   window.location.href=$('#myform').attr('data-href');
+                }
                 else {
                     $('#file-voice').attr('href', data.url);
                     $('#file-voice').html("دانلود فایل آپلود شده");
@@ -97,7 +103,13 @@ jQuery(document).ready(function ($) {
     $('#myfilefield').change(function (e) {
         $('#myform').submit();
     });
+    
 });
+
+function send_chat_message_body()
+{
+
+}
 
 function select_plan_from_gallery(obj) {
     $('#plan-uploaded-img').attr('data-state', 1);

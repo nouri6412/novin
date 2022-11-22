@@ -6431,6 +6431,33 @@ margin-left: 5px;
     visibility: visible;
   }
 
+  .chat-box-send{
+
+  }
+  .chat-box-send textarea{
+
+  }
+
+  .chat-box{
+
+  }
+
+  .chat-box .chat-text{
+    
+}
+
+.chat-box .chat-text .chat-text-date{
+    
+}
+
+.chat-box .chat-text .chat-text-user{
+    
+}
+
+.chat-box .chat-text .chat-text-body{
+    
+}
+
 @media only screen and (max-width: 768px) {
     .navbar-nav{
         display: block;

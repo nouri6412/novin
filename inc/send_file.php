@@ -39,16 +39,31 @@ function silva_my_account_endpoint_content()
     if (isset($_GET["order_id"])) {
 
         $order_id = $_GET["order_id"];
-        $designer =  get_post_meta($order_id, 'send-to-designer', true);
+
+        if (isset($_POST["chat-message-body"])) {
+            if (strlen(trim($_POST["chat-message-body"])) > 0) {
+                $chat = ["type" => "text", "user_id" => $user->ID, "date" => date('Y-m-d H:i:s'), "body" => $_POST["chat-message-body"]];
+                $json = json_encode($chat);
+                update_post_meta($order_id, "chats-file", $json);
+            }
+        }
+
+        $designer_id =  get_post_meta($order_id, 'send-to-designer', true);
 
         $order = new WC_Order($order_id);
-     
-        $sender_id = $order->get_user_id( );
 
-        if ($designer == $user->ID) {
-            echo 'send to me';
-        } else if($sender_id==$user->ID) {
-            echo 'my order';
+        $sender_id = $order->get_user_id();
+        $user_id = $user->ID;
+        $chats = json_decode(get_post_meta($order_id, 'chats-file', true), true);
+        if ($designer_id == $user->ID) {
+            $me_type = 1;
+            echo include "form-send-file.php";
+        } else if ($sender_id == $user->ID) {
+            $me_type = 2;
+            echo include "form-send-file.php";
+        } else if (is_site_admin_v1()) {
+            $me_type = 3;
+            echo include "form-send-file.php";
         }
     } else {
         foreach ($roles as $role) {

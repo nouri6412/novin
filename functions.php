@@ -82,6 +82,14 @@ function pn_upload_files()
                 if (!is_wp_error($file_id)) {
                     $result["file_id"] = $file_id;
                     $result["url"] = wp_get_attachment_url($file_id);
+
+                    if(isset($_POST["chat_id"]))
+                    {
+                        $user = wp_get_current_user();
+                        $chat = ["type" => "img", "user_id" => $user->ID, "date" => date('Y-m-d H:i:s'), "img" => $file_id];
+                        $json = json_encode($chat);
+                        update_post_meta($_POST["chat_id"], "chats-file", $json);
+                    }
                     /*
                      * File uploaded successfully and you have the attachment id
                      * Do your stuff with the attachment id here
@@ -394,4 +402,8 @@ if (function_exists('acf_add_options_page')) {
 
 foreach (glob(get_template_directory() . "/inc/*.php") as $filename) {
     require $filename;
+}
+
+function is_site_admin_v1(){
+    return in_array('administrator',  wp_get_current_user()->roles);
 }
