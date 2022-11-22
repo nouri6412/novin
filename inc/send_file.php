@@ -37,7 +37,7 @@ function silva_my_account_endpoint_content()
     $roles = (array) $user->roles; // obtaining the role 
 
     if (isset($_GET["order_id"])) {
-     
+
 
         $order_id = $_GET["order_id"];
 
@@ -46,24 +46,24 @@ function silva_my_account_endpoint_content()
         if (isset($_POST["chat-message-body"])) {
             if (strlen(trim($_POST["chat-message-body"])) > 0) {
                 $chat = ["type" => "text", "user_id" => $user->ID, "date" => date('Y-m-d H:i:s'), "body" => $_POST["chat-message-body"]];
-                $chats[]=$chat;
-                $json = json_encode($chats,JSON_UNESCAPED_UNICODE);
-              
+                $chats[] = $chat;
+                $json = json_encode($chats, JSON_UNESCAPED_UNICODE);
+
                 update_post_meta($order_id, "chats-file", $json);
             }
         }
 
         $designer_id =  get_post_meta($order_id, 'send-to-designer', true);
 
-       
+
 
         $order = new WC_Order($order_id);
 
         $sender_id = $order->get_user_id();
         $user_id = $user->ID;
 
-       // echo '<div>'.'des:'.$designer_id.'</div>'.'<div>'.' user:'.$user->ID.'</div>';
-    
+        // echo '<div>'.'des:'.$designer_id.'</div>'.'<div>'.' user:'.$user->ID.'</div>';
+
         if ($designer_id == $user->ID) {
             $me_type = 1;
             include "view/form-chat.php";
@@ -77,17 +77,20 @@ function silva_my_account_endpoint_content()
     } else {
         foreach ($roles as $role) {
             if ($role == "designer") {
+
                 $args = array(
-                    'post_type' => 'order',
+                    'post_type' => 'shop_order',
                     'meta_key' => 'send-to-designer',
                     'meta_value' => $user->ID
                 );
+
                 $the_query = new WP_Query($args);
                 $count = $the_query->post_count;
-echo $count;
-                include "view/list-file.php";            
+                echo $count;
+                include "view/list-file.php";
+
             } else {
-              //  echo 'is not designer';
+                //  echo 'is not designer';
             }
         }
     }
