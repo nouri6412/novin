@@ -90,7 +90,7 @@ function pn_upload_files()
                         $chats = json_decode(get_post_meta($_POST["chat_id"], 'chats-file', true), true);
                         $chats[] = $chat;
 
-                        $json = json_encode($chats,JSON_UNESCAPED_UNICODE);
+                        $json = json_encode($chats, JSON_UNESCAPED_UNICODE);
 
                         update_post_meta($_POST["chat_id"], "chats-file", $json);
                     }
@@ -111,18 +111,18 @@ function pn_upload_files()
 
 function gregorian_to_jalali_tr_num($str, $mod = 'en', $mf = '٫')
 {
-	$num_a = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.');
-	$key_a = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', $mf);
-	return ($mod == 'fa') ? str_replace($num_a, $key_a, $str) : str_replace($key_a, $num_a, $str);
+    $num_a = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.');
+    $key_a = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', $mf);
+    return ($mod == 'fa') ? str_replace($num_a, $key_a, $str) : str_replace($key_a, $num_a, $str);
 }
 
 function gregorian_to_jalali($in_date)
 {
-    $ddd=strtotime($in_date);
+    $ddd = strtotime($in_date);
     $mod = '';
-    $gy=date("Y",$ddd);
-    $gm=date("m",$ddd);
-    $gd=date("d",$ddd);
+    $gy = date("Y", $ddd);
+    $gm = date("m", $ddd);
+    $gd = date("d", $ddd);
 
 
     list($gy, $gm, $gd) = explode('_', gregorian_to_jalali_tr_num($gy . '_' . $gm . '_' . $gd));/* <= Extra :اين سطر ، جزء تابع اصلي نيست */
@@ -150,7 +150,7 @@ function gregorian_to_jalali($in_date)
         $jd = 1 + (($days - 186) % 30);
     }
 
-    return $jy.'/'.$jm.'/'.$jd;
+    return $jy . '/' . $jm . '/' . $jd;
 }
 
 function negarenovin_add_to_cart()
@@ -457,20 +457,40 @@ function is_site_admin_v1()
     return in_array('administrator',  wp_get_current_user()->roles);
 }
 
+add_filter('manage_edit-shop_order_columns', 'custom_shop_order_column', 20);
+function custom_shop_order_column($columns)
+{
+    $reordered_columns = array();
 
-add_filter('manage_order_posts_columns', function ($columns) {
-    return array_merge($columns, ['chat_files' => __('طراح و فایل ها', 'textdomain')]);
-});
-
-add_action('manage_order_posts_custom_column', function ($column_key, $post_id) {
-    if ($column_key == 'chat_files') {
-        $designer_id =  get_post_meta($post_id, 'send-to-designer', true);
-        $text="طراح ندارد";
-        if(strlen($designer_id)>0)
-        {
-            $designer = get_user_by('id', $designer_id);
-            $text=$designer->display_name;
+    // Inserting columns to a specific location
+    foreach ($columns as $key => $column) {
+        $reordered_columns[$key] = $column;
+        if ($key ==  'order_status') {
+            // Inserting after "Status" column
+            $reordered_columns['chat_files'] = 'طراح و فایل ها';
         }
-        echo '<a target="_blank" href="'.site_url('my-account/send-file?order_id=$post_id').'" style="color:green;">'.$text.'</a>';
     }
-}, 10, 2);
+    return $reordered_columns;
+}
+
+// Adding custom fields meta data for each new column (example)
+add_action('manage_shop_order_posts_custom_column', 'custom_orders_list_column_content', 20, 2);
+function custom_orders_list_column_content($column, $post_id)
+{
+    switch ($column) {
+        case 'chat_files':
+            $designer_id =  get_post_meta($post_id, 'send-to-designer', true);
+            $text = "طراح ندارد";
+            if (strlen($designer_id) > 0) {
+                $designer = get_user_by('id', $designer_id);
+                $text = $designer->display_name;
+            }
+            echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id=$post_id') . '" style="color:green;">' . $text . '</a>';
+
+            break;
+
+        case 'my-column2222':
+            $text = "";
+            break;
+    }
+}
