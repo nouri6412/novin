@@ -31,7 +31,7 @@
                 <div class="chat-text-date"></div>
                 <div class="chat-text-user">طرح اولیه</div>
             </div>
-            <div class="chat-text-img"><?php echo $item; ?></div>
+            <div class="chat-text-img"><?php echo $item["title"].' : '. $item["text"]; ?></div>
         </div>
         <?php
     }

@@ -68,7 +68,7 @@ function silva_my_account_endpoint_content()
         foreach ($items as $item_id => $cart_item) {
             $str = wc_get_order_item_meta($item_id, 'طرح', true);
             if (strlen($str) > 0) {
-                $items_meta[] = $str;
+                $items_meta[] =["text"=>$str,"title"=>get_the_title($cart_item['product_id'])] ;
             }
         }
 
