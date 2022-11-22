@@ -87,7 +87,10 @@ function pn_upload_files()
                     {
                         $user = wp_get_current_user();
                         $chat = ["type" => "img", "user_id" => $user->ID, "date" => date('Y-m-d H:i:s'), "img" => $file_id];
-                        $json = json_encode($chat);
+                        $chats[]=$chat;
+                        $chats = json_decode(get_post_meta($order_id, 'chats-file', true), true);
+                        $json = json_encode($chats);
+
                         update_post_meta($_POST["chat_id"], "chats-file", $json);
                     }
                     /*
