@@ -55,13 +55,14 @@ function silva_my_account_endpoint_content()
 
         $designer_id =  get_post_meta($order_id, 'send-to-designer', true);
 
-        echo $designer_id;
+       
 
         $order = new WC_Order($order_id);
 
         $sender_id = $order->get_user_id();
         $user_id = $user->ID;
 
+        echo $designer_id.' '.$user->ID;
      
         if ($designer_id == $user->ID) {
             $me_type = 1;
