@@ -14,8 +14,8 @@
         </div>
         <div class="col-6">
             <form action="<?php echo site_url('my-account/send-file?order_id=' . $order_id) ?>" method="post">
-                <div class="row">
-                    <textarea id="chat-message-body" name="chat-message-body" class="col-12 m-2"></textarea>
+                <div class="row p-2">
+                    <textarea id="chat-message-body" name="chat-message-body" class="col-12"></textarea>
                 </div>
                 <button onclick="send_chat_message_body()" class="btn btn-outline-primary m-2">ارسال متن</button>
             </form>
