@@ -6446,15 +6446,23 @@ margin-left: 5px;
     
 }
 
-.chat-box .chat-text .chat-text-date{
+.chat-box .chat-img{
     
 }
 
-.chat-box .chat-text .chat-text-user{
+.chat-box  .chat-text-date{
     
 }
 
-.chat-box .chat-text .chat-text-body{
+.chat-box  .chat-text-user{
+    
+}
+
+.chat-box  .chat-text-body{
+    
+}
+
+.chat-box  .chat-text-img{
     
 }
 

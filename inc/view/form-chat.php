@@ -65,10 +65,10 @@
         <?php
         } else {
         ?>
-            <div class="chat-text <?php echo $class; ?>">
+            <div class="chat-img <?php echo $class; ?>">
                 <div class="chat-text-date"><?php echo $chat["date"]; ?></div>
                 <div class="chat-text-user"><?php echo $user_name; ?></div>
-                <div class="chat-text-body"><?php echo wp_get_attachment_url($chat["img"]); ?></div>
+                <div class="chat-text-img"><img src="<?php echo wp_get_attachment_url($chat["img"]); ?>" /></div>
             </div>
     <?php
         }
