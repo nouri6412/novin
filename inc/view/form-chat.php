@@ -30,7 +30,7 @@
 
         $user_name = "";
 
-        if ($me_type = 3) {
+        if ($me_type == 3) {
             $class = "left";
             if ($designer_id == $chat["user_id"]) {
                 $user_name = "طراح";
