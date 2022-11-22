@@ -6464,7 +6464,7 @@ float: right;
 }
 
 .chat-box .chat-img{
-    width: 50%;
+  
 }
 .chat-box .chat-info
 {
@@ -6485,7 +6485,7 @@ float: right;
 }
 
 .chat-box  .chat-text-img{
-    
+    width: 32%;
 }
 
 @media only screen and (max-width: 768px) {
