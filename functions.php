@@ -482,9 +482,15 @@ function custom_orders_list_column_content($column, $post_id)
             $designer_id =  get_post_meta($post_id, 'send-to-designer', true);
             $text = "طراح ندارد";
             if (strlen($designer_id) > 0) {
+
                 $designer = get_user_by('id', $designer_id);
-                $text = $designer->display_name;
-                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id=$post_id') . '" style="color:green;">' . $text . '</a>';
+                $user_meta = get_user_meta($designer_id);
+
+                $name=isset($user_meta['first_name']) ? $user_meta['first_name'][0] : '';
+                $last_name=isset($user_meta['last_name']) ? $user_meta['last_name'][0] : '';
+
+                $text = $designer->display_name.' - '.$name.' '.$last_name;
+                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id='.$post_id) . '" style="color:green;">' . $text . '</a>';
 
             }
             else
