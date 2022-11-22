@@ -46,16 +46,18 @@
          
         }
 
-        if ($designer_id == $chat["user_id"] && $me_type = 1) {
+        if ($user_id == $chat["user_id"] && $me_type = 1) {
             $user_name = "من";
             $class = "right";
-        } else if ($designer_id != $chat["user_id"] && $me_type = 1) {
+        } else if ($user_id != $chat["user_id"] && $me_type = 1) {
             $user_name = "سفارش دهنده";
             $class = "left";
-        }else if ($sender_id == $chat["user_id"] && $me_type = 2) {
+        }
+
+        if ($user_id == $chat["user_id"] && $me_type = 2) {
             $user_name = "من";
             $class = "right";
-        } else if ($sender_id != $chat["user_id"] && $me_type = 2) {
+        } else if ($user_id != $chat["user_id"] && $me_type = 2) {
             $user_name = "طراح";
             $class = "left";
         }
