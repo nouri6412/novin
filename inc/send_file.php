@@ -63,38 +63,12 @@ function silva_my_account_endpoint_content()
         $user_id = $user->ID;
         $items = $order->get_items();
 
-        foreach ($items as $item_id=>$cart_item) {
-          echo '<div>item_id'.$item_id.' : '."plan_id : ". wc_get_order_item_meta($item_id,'طرح',true).'</div>';
-            if (isset($cart_item['meta_plan_id'])) {
-                $meta_key = 'طرح';
+        $items_meta = [];
 
-                $image = "";
-                $plan_type = $cart_item['meta_plan_type'];
-
-                if ($plan_type == 0) {
-                    if (has_post_thumbnail($cart_item['meta_plan_id'])) {
-                        $image = get_the_post_thumbnail_url($cart_item['meta_plan_id'], '');
-                    } else {
-                        $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
-                    }
-                } else {
-                    $ex = explode(',', $cart_item['meta_plan_id']);
-                    $image = "";
-                    if (count($ex) > 1) {
-
-                        foreach ($ex as $it) {
-
-                            $image_id = wp_get_attachment_url($it);
-                            $img = '<img style="width:40px" src="' . $image_id . '" />';
-                            $image .= '<a style="color:red" target="_blank" href="' . $image_id . '">' . $img . '</a>';
-                        }
-                    } else {
-                        $image_id = wp_get_attachment_url($cart_item['meta_plan_id']);
-                        $img = '<img style="width:40px" src="' . $image_id . '" />';
-                        $image = '<a style="color:red;margin-left: 20px;" target="_blank" href="' . $img . '"></a>';
-                    }
-                }
-                echo $image;
+        foreach ($items as $item_id => $cart_item) {
+            $str = wc_get_order_item_meta($item_id, 'طرح', true);
+            if (strlen($str) > 0) {
+                $items_meta[] = $str;
             }
         }
 

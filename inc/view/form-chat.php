@@ -24,7 +24,17 @@
 </div>
 <div class="chat-box m-2">
     <?php
-
+    foreach ($items_meta as $item) {
+    ?>
+        <div class="chat-img chat-message left m-2">
+            <div class="chat-info">
+                <div class="chat-text-date"></div>
+                <div class="chat-text-user">طرح اولیه</div>
+            </div>
+            <div class="chat-text-img"><?php echo $item; ?></div>
+        </div>
+        <?php
+    }
     foreach ($chats as $chat) {
         $class = "";
 
@@ -36,14 +46,10 @@
                 $user_name = "طراح";
             } else if ($sender_id == $chat["user_id"]) {
                 $user_name = "سفارش دهنده";
-            }
-            else
-            {
-                $user_name = "من"; 
+            } else {
+                $user_name = "من";
                 $class = "right";
             }
-
-         
         }
 
         if ($user_id == $chat["user_id"] && $me_type == 1) {
@@ -62,11 +68,11 @@
             $class = "left";
         }
 
-    
+
 
 
         if ($chat["type"] == "text") {
-    ?>
+        ?>
             <div class="chat-text chat-message <?php echo $class; ?> m-2">
                 <div class="chat-info">
                     <div class="chat-text-date"><?php echo gregorian_to_jalali($chat["date"]); ?></div>
