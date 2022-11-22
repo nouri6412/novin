@@ -30,13 +30,19 @@
         $user_name = "";
 
         if ($me_type = 3) {
+            $class = "left";
             if ($designer_id == $chat["user_id"]) {
                 $user_name = "طراح";
             } else if ($sender_id == $chat["user_id"]) {
                 $user_name = "سفارش دهنده";
             }
+            else
+            {
+                $user_name = "من"; 
+                $class = "right";
+            }
 
-            $class = "left";
+         
         }
 
         if ($designer_id == $chat["user_id"] && $me_type = 1) {
@@ -55,7 +61,7 @@
             $class = "left";
         }
 
-        echo $me_type;
+    
 
 
         if ($chat["type"] == "text") {
