@@ -24,147 +24,94 @@
                 </div>
                 <!-- Modal -->
                 <div class="area_add-t-cart">
-                    <div class="header_add-t-cart">
+                    <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
+                        <div class="header_add-t-cart">
 
-                        <!-- <button type="button" class="close close_addtocart " data-dismiss="area_add-t-cart"
+                            <!-- <button type="button" class="close close_addtocart " data-dismiss="area_add-t-cart"
                                         aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
-                        <button type="button" class="btn-close close_addtocart" aria-label="Close"></button>
+                            <button type="button" class="btn-close close_addtocart" aria-label="Close"></button>
 
-                        <h4 class="title_add-t-cart text-center" id="myModalLabel"><a href="#">مشاهده سبد
-                                خرید</a></h4>
-                    </div>
-                    <div class="body_add-t-cart p-4">
-                        <div class="row mb-4">
-                            <div class="col-3 order-1">
-                                <div class="img_product_addtocart h-100 d-flex align-items-center">
-                                    <a href="#"><img class="img-fluid mt-3" src="images/saat.jpg" /></a>
-                                </div>
-                            </div>
-                            <div class="col-7 order-2">
-                                <div class="details_product_addtocart">
-                                    <div class="title_product_addtocart mb-1"><a href="#">ساعت مچی</a>
-                                    </div>
-                                    <div class="details_price_addtocart d-flex align-items-center">
-                                        <input name="input" type="number" value="1" class="ms-2">
-                                        <div class="price_product_addtocart d-flex">
-                                            <span class="order-2"> 20000 تومان</span>
-                                            <span class="order-1 ms-2">x</span>
+                            <h4 class="title_add-t-cart text-center" id="myModalLabel"><a href="#"> سبد
+                                    خرید</a></h4>
+                        </div>
+                        <div class="body_add-t-cart p-4">
+                            <?php
+                            foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
+                                $_product   = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
+                                $product_id = apply_filters('woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key);
+
+                                if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
+                                    $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
+                            ?>
+                                    <div class="row mb-4">
+                                        <div class="col-3 order-1">
+                                            <div class="img_product_addtocart h-100 d-flex align-items-center">
+                                                <?php
+                                                $thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image('cart-thumb'), $cart_item, $cart_item_key);
+                                                ?>
+                                                <a href="#"><img class="img-fluid mt-3" src="<?php echo $thumbnail ?>" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-7 order-2">
+                                            <div class="details_product_addtocart">
+                                                <div class="title_product_addtocart mb-1"><a href="#"><?php echo $_product->get_name() ?></a>
+                                                </div>
+                                                <div class="details_price_addtocart d-flex align-items-center">
+                                                    <?php
+                                                    $product_quantity = woocommerce_quantity_input(
+                                                        array(
+                                                            'input_name'   => "cart[{$cart_item_key}][qty]",
+                                                            'input_type'   => "number",
+                                                            'input_value'  => $cart_item['quantity'],
+                                                            'max_value'    => $_product->get_max_purchase_quantity(),
+                                                            'min_value'    => '0',
+                                                            'product_name' => $_product->get_name(),
+                                                        ),
+                                                        $_product,
+                                                        false
+                                                    );
+                                                    echo $product_quantity;
+                                                    ?>
+                                                    <div class="price_product_addtocart d-flex">
+                                                        <span class="order-2"><?php echo WC()->cart->get_product_price($_product) ?></span>
+                                                        <span class="order-1 ms-2">x</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-2  d-flex align-items-center justify-content-center order-3">
+                                            <div class="close_product_addtocart">
+                                                <?php
+                                                echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                                                    'woocommerce_cart_item_remove_link',
+                                                    sprintf(
+                                                        '<a href="%s" class="d-flex p-1" aria-label="%s" data-product_id="%s" data-product_sku="%s"><i class="fa fa-times-circle"></i><span class="tooltip-site">حذف</span></a>',
+                                                        esc_url(wc_get_cart_remove_url($cart_item_key)),
+                                                        esc_html__('Remove this item', 'woocommerce'),
+                                                        esc_attr($product_id),
+                                                        esc_attr($_product->get_sku())
+                                                    ),
+                                                    $cart_item_key
+                                                );
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                        <div class="footer_addtocart  p-4">
+                            <div class="area_total_modal_addtocart mb-4  d-flex justify-content-between">
+                                <span>مجموع :</span>
+                                <span> <?php wc_cart_totals_order_total_html(); ?></span>
                             </div>
+                            <button type="submit" class="btn btn-custom  btn-block btn_add-t-cart" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>">تسویه حساب</button>
 
-                            <div class="col-2  d-flex align-items-center justify-content-center order-3">
-                                <div class="close_product_addtocart"> <a href="#" class="d-flex p-1"><i class="far fa-times-circle"></i><span class="tooltip-site">حذف</span></a></div>
-                            </div>
                         </div>
-                        <div class="row  mb-4">
-                            <div class="col-3 order-1">
-                                <div class="img_product_addtocart h-100"><a href="#"><img class="img-fluid mt-3" src="images/shoes21.jpg" /></a>
-                                </div>
-                            </div>
-                            <div class="col-7 order-2">
-                                <div class="details_product_addtocart">
-                                    <div class="title_product_addtocart mb-1"><a href="#">کفش
-                                            اسپرت</a>
-                                    </div>
-                                    <div class="details_price_addtocart d-flex align-items-center">
-                                        <input name="input" type="number" value="1" class="ms-2">
-                                        <div class="price_product_addtocart d-flex">
-                                            <span class="order-2"> 20000 تومان</span>
-                                            <span class="order-1 ms-2">x</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-2 d-flex align-items-center justify-content-center order-3">
-                                <div class="close_product_addtocart"> <a href="#" class="d-flex p-1"><i class="far fa-times-circle"></i><span class="tooltip-site">حذف</span></a></div>
-                            </div>
-                        </div>
-                        <div class="row  mb-4">
-                            <div class="col-3 order-1">
-                                <div class="img_product_addtocart h-100"><a href="#"><img class="img-fluid mt-3" src="images/hedfon32.jpg" /></a>
-                                </div>
-                            </div>
-                            <div class="col-7 order-2">
-                                <div class="details_product_addtocart">
-                                    <div class="title_product_addtocart mb-1"><a href="#">هدفون
-                                            سونی</a>
-                                    </div>
-                                    <div class="details_price_addtocart d-flex align-items-center">
-                                        <input name="input" type="number" value="1" class="ms-2">
-                                        <div class="price_product_addtocart d-flex">
-                                            <span class="order-2"> 20000 تومان</span>
-                                            <span class="order-1 ms-2">x</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-2 d-flex align-items-center justify-content-center order-3">
-                                <div class="close_product_addtocart"> <a href="#" class="d-flex p-1"><i class="far fa-times-circle"></i><span class="tooltip-site">حذف</span></a></div>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-3 order-1">
-                                <div class="img_product_addtocart h-100 d-flex align-items-center">
-                                    <a href="#"><img class="img-fluid mt-3" src="images/saat.jpg" /></a>
-                                </div>
-                            </div>
-                            <div class="col-7 order-2">
-                                <div class="details_product_addtocart">
-                                    <div class="title_product_addtocart mb-1"><a href="#">ساعت
-                                            مچی</a>
-                                    </div>
-                                    <div class="details_price_addtocart d-flex align-items-center">
-                                        <input name="input" type="number" value="1" class="ms-2">
-                                        <div class="price_product_addtocart d-flex">
-                                            <span class="order-2"> 20000 تومان</span>
-                                            <span class="order-1 ms-2">x</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-2  d-flex align-items-center justify-content-center order-3">
-                                <div class="close_product_addtocart"> <a href="#" class="d-flex p-1"><i class="far fa-times-circle"></i><span class="tooltip-site">حذف</span></a></div>
-                            </div>
-                        </div>
-                        <div class="row  mb-4">
-                            <div class="col-3 order-1">
-                                <div class="img_product_addtocart h-100"><a href="#"><img class="img-fluid mt-3" src="images/shoes21.jpg" /></a>
-                                </div>
-                            </div>
-                            <div class="col-7 order-2">
-                                <div class="details_product_addtocart">
-                                    <div class="title_product_addtocart mb-1"><a href="#">کفش
-                                            اسپرت</a>
-                                    </div>
-                                    <div class="details_price_addtocart d-flex align-items-center">
-                                        <input name="input" type="number" value="1" class="ms-2">
-                                        <div class="price_product_addtocart d-flex">
-                                            <span class="order-2"> 20000 تومان</span>
-                                            <span class="order-1 ms-2">x</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2 d-flex align-items-center justify-content-center order-3">
-                                <div class="close_product_addtocart"> <a href="#" class="d-flex p-1"><i class="far fa-times-circle"></i><span class="tooltip-site">حذف</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer_addtocart  p-4">
-                        <div class="area_total_modal_addtocart mb-4  d-flex justify-content-between">
-                            <span>مجموع :</span>
-                            <span> تومان3250000</span>
-                        </div>
-                        <a href="#" class="btn btn-custom  btn-block btn_add-t-cart"> تسویه
-                            حساب <i class="fal fa-credit-card me-1"></i>
-                        </a>
-
-                    </div>
+                    </form>
                 </div>
             </div>
         </nav>
