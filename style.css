@@ -6613,7 +6613,7 @@ display: none;
 
   #social-share {
     position: fixed;
-    bottom: 15px;
+    bottom: -25px;
     left: 15px;
     z-index: 20;
     /*transitions with relative delay*/
