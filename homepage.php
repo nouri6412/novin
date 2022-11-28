@@ -180,7 +180,7 @@ if (isset($_GET["category_size"])) {
                                 <!-- <img class="card-img-top img-fluid card-img-top-bradius" src="<?php echo $image; ?>" alt="<?php echo get_the_title($item); ?>"> -->
                                 <div class="card-body card-body-fix">
                                     <h3 class="text-center text-black box-h-4"><?php echo get_the_title($item); ?></h3>
-                                    <h3 class="text-center text-black box-h-3"><?php echo  $product->get_price_html(); ?></h3>
+                                    <h3 class="text-center text-black box-h-3"><?php echo  custom_get_price_html($product); ?></h3>
 
                                 </div>
                             </div>
@@ -423,7 +423,7 @@ if (isset($_GET["category_size"])) {
 
                         <div class="col-12 col-sm-6 col-md-6 mb-4">
                             <?php $product = wc_get_product($cat["ferecans_seda"]); ?>
-                            <label><?php echo 'فرکانس صدا' . ' - ' . $product->get_price_html() ?>
+                            <label><?php echo 'فرکانس صدا' . ' - ' . custom_get_price_html($product) ?>
                             <div class="my-tooltip">
                                             <i class="fa fa-question-circle" aria-hidden="true"></i>
                                             <div class="tooltiptext"><?php
@@ -468,7 +468,7 @@ if (isset($_GET["category_size"])) {
                         ?>
                             <?php if ($item["is_checkbox"] == 1) { ?>
                                 <div class="col-6 col-sm-6 col-md-6 mb-4">
-                                    <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?>
+                                    <label><?php echo $item["title"] . ' - ' . custom_get_price_html($product) ?>
                                         <div class="my-tooltip">
                                             <i class="fa fa-question-circle" aria-hidden="true"></i>
                                             <div class="tooltiptext"><?php
@@ -489,7 +489,7 @@ if (isset($_GET["category_size"])) {
                                 </div>
                             <?php  } else { ?>
                                 <div class="col-6 col-sm-6 col-md-6 mb-4">
-                                    <label><?php echo $item["title"] . ' - ' . $product->get_price_html() ?>
+                                    <label><?php echo $item["title"] . ' - ' . custom_get_price_html($product) ?>
                                         <div class="my-tooltip">
                                             <i class="fa fa-question-circle" aria-hidden="true"></i>
                                             <div class="tooltiptext"><?php
@@ -570,7 +570,7 @@ if (isset($_GET["category_size"])) {
                                                             <div class="bg-yellow"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-black-2.png" /></div>
                                                             <div class="card-body">
                                                                 <h3 class="text-center"><?php echo get_the_title($item); ?></h3>
-                                                                <h3 class="text-center"><?php echo $product->get_price_html(); ?></h3>
+                                                                <h3 class="text-center"><?php echo custom_get_price_html($product); ?></h3>
                                                             </div>
                                                         </a>
                                                     </div>
