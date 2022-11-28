@@ -182,7 +182,7 @@
 
     </ul>
     <div class="social-open-menu">
-        <button style="font-size: 10px;color: #000;" class="btn-share"><i class="fa fa-shopping-cart"></i></button>
+        <button style="font-size: 10px;color: #000;"><i class="fa fa-shopping-cart"></i></button>
     </div>
     <div class="social-open-menu">
         <button style="font-size: 10px;color: #000;" class="btn-share btn-shake"></button>
