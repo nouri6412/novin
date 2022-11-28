@@ -66,6 +66,7 @@
                                                             'max_value'    => $_product->get_max_purchase_quantity(),
                                                             'min_value'    => '0',
                                                             'product_name' => $_product->get_name(),
+                                                            'style'=> 'margin-left:5px;width:50px'
                                                         ),
                                                         $_product,
                                                         false
