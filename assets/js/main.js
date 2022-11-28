@@ -211,11 +211,11 @@ if ($("#slider-single-product").length) {
 
 $(".shooping-cat").click(function () {
     $(".area_add-t-cart").css({ "left": "0" });
-    $(".bg-close").css({ "display": "block" });
+   // $(".bg-close").css({ "display": "block" });
 });
 $(".close_addtocart").click(function () {
     $(".area_add-t-cart").css({ "left": "-100%" });
-    $(".bg-close").css({ "display": "none" });
+   // $(".bg-close").css({ "display": "none" });
 });
 
 $(".bg-close").click(function () {
