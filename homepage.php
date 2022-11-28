@@ -220,14 +220,14 @@ if (isset($_GET["category_size"])) {
                 <?php
                 if ($index == 0) {
                 ?>
-                    <h2 class="m-5" style="color: #fff;">هیچ موردی یافت نشد</h2>
+                    <h2 class="m-1" style="color: #fff;">هیچ موردی یافت نشد</h2>
                 <?php
                 }
                 ?>
                 <?php
                 if ($main_category_size > 0) {
                 ?>
-                    <h3 class="m-2" style="color: #fff;text-align:center;"><a class="btn btn-outline-warning" style="color:#fff ;" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">بازگشت به منوی سایزها</a></h3>
+                    <h3 class="" style="color: #fff;text-align:center;"><a style="font-size: 12px;" class="btn btn-outline-warning" style="color:#fff ;" href="<?php echo site_url("?cat_selected=" . $cat_selected) ?>">بازگشت به منوی سایزها</a></h3>
                 <?php } ?>
             </div>
         </div>
