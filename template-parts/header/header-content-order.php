@@ -58,20 +58,20 @@
                                                 </div>
                                                 <div class="details_price_addtocart d-flex align-items-center">
                                                     <?php
-                                                    $product_quantity = woocommerce_quantity_input(
-                                                        array(
-                                                            'input_name'   => "cart[{$cart_item_key}][qty]",
-                                                            'input_type'   => "number",
-                                                            'input_value'  => $cart_item['quantity'],
-                                                            'max_value'    => $_product->get_max_purchase_quantity(),
-                                                            'min_value'    => '0',
-                                                            'product_name' => $_product->get_name(),
-                                                            'style'=> 'margin-left:5px;width:50px'
-                                                        ),
-                                                        $_product,
-                                                        false
-                                                    );
-                                                    echo $product_quantity;
+                                                    // $product_quantity = woocommerce_quantity_input(
+                                                    //     array(
+                                                    //         'input_name'   => "cart[{$cart_item_key}][qty]",
+                                                    //         'input_type'   => "number",
+                                                    //         'input_value'  => $cart_item['quantity'],
+                                                    //         'max_value'    => $_product->get_max_purchase_quantity(),
+                                                    //         'min_value'    => '0',
+                                                    //         'product_name' => $_product->get_name()
+                                                    //     ),
+                                                    //     $_product,
+                                                    //     false
+                                                    // );
+                                                    // echo $product_quantity;
+                                                    echo '<input type="number" id="'.uniqid( 'quantity_' ).'" class="input-text qty text" step="1" min="1" max="" name="cart['.$cart_item_key.'][qty]" value="'.$cart_item['quantity'].'" title="تعداد" size="4" placeholder="" inputmode="numeric" autocomplete="off" style="width: 50px;margin-left: 5px;">';
                                                     ?>
                                                     <div class="price_product_addtocart d-flex">
                                                         <span class="order-2"><?php echo WC()->cart->get_product_price($_product) ?></span>
