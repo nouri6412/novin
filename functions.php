@@ -226,7 +226,7 @@ class cartPlugins
                 } else {
                     $image_id = wp_get_attachment_url($cart_item['meta_plan_id']);
                     $img = '<img style="width:40px" src="' . $image_id . '" />';
-                    $image = '<a style="color:red;margin-left: 20px;" target="_blank" href="' . $img . '"></a>';
+                    $image = '<a style="color:red;margin-left: 20px;" target="_blank" href="' . $image_id . '">' . $img . '</a>';
                 }
 
 
@@ -287,7 +287,7 @@ class cartPlugins
                     $img = '<img style="width:40px" src="' . $image_id . '" />';
                     $image = '<a style="color:red" target="_blank" href="' . $image_id . '">' . $img . '</a>';
                 }
-                $item->update_meta_data($meta_key, '<a style="color:red" target="_blank" href="' . $image . '">مشاهده</a>');
+                $item->update_meta_data($meta_key, $image);
             }
         } else if (isset($values['meta_voice_file'])) {
             $meta_key = 'فرکانس صدا';
@@ -506,7 +506,6 @@ function custom_orders_list_column_content($column, $post_id)
             break;
     }
 }
-
 function custom_get_price_html($product) {
     $price=''; 
     if ( '' === $product->get_price() ) {
