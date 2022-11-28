@@ -184,7 +184,7 @@
     <div style="text-align: center;border: 4px solid #51c85d; width: 60px;border-radius: 80px 80px 80px 80px;" class="shooping-cat">
         <a style="font-size: 30px;color: #51c85d;">
         <i class="fa fa-shopping-cart"></i>
-        <span style="color: #fff;position: absolute;top: -8px; right: -6px;font-size: 14px;background-color: red;padding: 1px 7px 1px 7px;border-radius: 12px;"><?php if(count(WC()->cart->get_cart())>0) echo count(WC()->cart->get_cart()) ?></span>
+        <?php if(count(WC()->cart->get_cart())>0){ ?><span style="color: #fff;position: absolute;top: -8px; right: -6px;font-size: 14px;background-color: red;padding: 1px 7px 1px 7px;border-radius: 12px;"><?php  echo count(WC()->cart->get_cart()) ?></span><?php } ?>
     </a>
     </div>
     <div class="social-open-menu">
