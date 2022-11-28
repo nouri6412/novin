@@ -49,7 +49,7 @@
                                                 <?php
                                                 $thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image('cart-thumb'), $cart_item, $cart_item_key);
                                                 ?>
-                                                <a href="#"><img class="img-fluid mt-3" src="<?php echo $thumbnail ?>" /></a>
+                                                <a href="#"><?php echo $thumbnail ?></a>
                                             </div>
                                         </div>
                                         <div class="col-7 order-2">
