@@ -181,7 +181,7 @@
         } ?>
 
     </ul>
-    <div style="text-align: center;border: 4px solid #51c85d; width: 68px;border-radius: 80px 80px 80px 80px;" class="social-open-menu shooping-cat">
+    <div style="text-align: center;border: 4px solid #51c85d; width: 68px;border-radius: 80px 80px 80px 80px;" class="shooping-cat">
         <a style="font-size: 30px;color: #51c85d;"><i class="fa fa-shopping-cart"></i></a>
     </div>
     <div class="social-open-menu">
