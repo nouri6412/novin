@@ -512,12 +512,12 @@ function custom_get_price_html($product) {
     if ( '' === $product->get_price() ) {
         $price = apply_filters( 'woocommerce_empty_price_html', '', $product );
     } elseif ( $product->is_on_sale() ) {
-        $price='<del aria-hidden="true" style="font-size: 14px;"><span class="woocommerce-Price-amount amount"><bdi>'.number_format($product->get_regular_price()).'<span class="woocommerce-Price-currencySymbol">'.get_woocommerce_currency_symbol().'</span></bdi></span></del>';
-        $price.='<div><span class="woocommerce-Price-amount amount"><span>'.number_format($product->get_price()).'<span class="woocommerce-Price-currencySymbol">'.get_woocommerce_currency_symbol().'</span></span></span></div>';
+        $price='<del aria-hidden="true" style="font-size: 14px;"><span class="woocommerce-Price-amount amount"><bdi>'.number_format($product->get_regular_price()).'<span style="margin-right: 5px;" class="woocommerce-Price-currencySymbol">'.get_woocommerce_currency_symbol().'</span></bdi></span></del>';
+        $price.='<div><span class="woocommerce-Price-amount amount"><span>'.number_format($product->get_price()).'<span style="margin-right: 5px;" class="woocommerce-Price-currencySymbol">'.get_woocommerce_currency_symbol().'</span></span></span></div>';
 
       //  $price = wc_format_sale_price( wc_get_price_to_display( $product, array( 'price' => $product->get_regular_price() ) ), wc_get_price_to_display( $product ) ) . $product->get_price_suffix();
     } else {
-        $price='<div><span class="woocommerce-Price-amount amount"><span>'.number_format($product->get_price()).'<span class="woocommerce-Price-currencySymbol">'.get_woocommerce_currency_symbol().'</span></span></span></div>';
+        $price='<div><span class="woocommerce-Price-amount amount"><span>'.number_format($product->get_price()).'<span style="margin-right: 5px;" class="woocommerce-Price-currencySymbol">'.get_woocommerce_currency_symbol().'</span></span></span></div>';
     }
 
    return $price;
