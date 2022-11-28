@@ -173,6 +173,7 @@ if (isset($_GET["category_size"])) {
                             $image = get_template_directory_uri() . "/assets/img/bg-black-2.png";
                         }
                         $product = wc_get_product($item);
+                        $index++;
                 ?>
                         <div class="col-6 col-sm-6 col-md-3 col-box">
                             <div onclick="change_img_box_plan($(this))" data-img="<?php echo $image; ?>" data-href="<?php echo site_url("?size_selected=" . $item . '&cat_selected=' . $cat_selected) ?>" class="card card-portfolio  card-yellow">
