@@ -527,7 +527,7 @@ function wt_pklist_add_custom_css_in_invoice_html($html, $template_type)
 
     if ($template_type == 'invoice') {
 
-        $html .= '<style>.test{}</style>';
+        $html .= '<link rel="stylesheet" href="'.  get_template_directory_uri().'/style-pdf.css?ver=1.1.1">';
     }
 
     return $html;
