@@ -486,17 +486,13 @@ function custom_orders_list_column_content($column, $post_id)
                 $designer = get_user_by('id', $designer_id);
                 $user_meta = get_user_meta($designer_id);
 
-                $name=isset($user_meta['first_name']) ? $user_meta['first_name'][0] : '';
-                $last_name=isset($user_meta['last_name']) ? $user_meta['last_name'][0] : '';
+                $name = isset($user_meta['first_name']) ? $user_meta['first_name'][0] : '';
+                $last_name = isset($user_meta['last_name']) ? $user_meta['last_name'][0] : '';
 
-                $text = $designer->display_name.' - '.$name.' '.$last_name;
-                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id='.$post_id) . '" style="color:green;">' . $text . '</a>';
-
-            }
-            else
-            {
-                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id='.$post_id) . '" style="color:red;">' . $text . '</a>';
-
+                $text = $designer->display_name . ' - ' . $name . ' ' . $last_name;
+                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id=' . $post_id) . '" style="color:green;">' . $text . '</a>';
+            } else {
+                echo '<a target="_blank" href="' . site_url('my-account/send-file?order_id=' . $post_id) . '" style="color:red;">' . $text . '</a>';
             }
 
             break;
@@ -506,18 +502,33 @@ function custom_orders_list_column_content($column, $post_id)
             break;
     }
 }
-function custom_get_price_html($product) {
-    $price=''; 
-    if ( '' === $product->get_price() ) {
-        $price = apply_filters( 'woocommerce_empty_price_html', '', $product );
-    } elseif ( $product->is_on_sale() ) {
-        $price='<del aria-hidden="true" style="font-size: 14px;"><span class="woocommerce-Price-amount amount"><bdi>'.number_format($product->get_regular_price()).'<span style="margin-right: 5px;" class="woocommerce-Price-currencySymbol">'.get_woocommerce_currency_symbol().'</span></bdi></span></del>';
-        $price.='<div><span class="woocommerce-Price-amount amount"><span>'.number_format($product->get_price()).'<span style="margin-right: 5px;" class="woocommerce-Price-currencySymbol">'.get_woocommerce_currency_symbol().'</span></span></span></div>';
+function custom_get_price_html($product)
+{
+    $price = '';
+    if ('' === $product->get_price()) {
+        $price = apply_filters('woocommerce_empty_price_html', '', $product);
+    } elseif ($product->is_on_sale()) {
+        $price = '<del aria-hidden="true" style="font-size: 14px;"><span class="woocommerce-Price-amount amount"><bdi>' . number_format($product->get_regular_price()) . '<span style="margin-right: 5px;" class="woocommerce-Price-currencySymbol">' . get_woocommerce_currency_symbol() . '</span></bdi></span></del>';
+        $price .= '<div><span class="woocommerce-Price-amount amount"><span>' . number_format($product->get_price()) . '<span style="margin-right: 5px;" class="woocommerce-Price-currencySymbol">' . get_woocommerce_currency_symbol() . '</span></span></span></div>';
 
-      //  $price = wc_format_sale_price( wc_get_price_to_display( $product, array( 'price' => $product->get_regular_price() ) ), wc_get_price_to_display( $product ) ) . $product->get_price_suffix();
+        //  $price = wc_format_sale_price( wc_get_price_to_display( $product, array( 'price' => $product->get_regular_price() ) ), wc_get_price_to_display( $product ) ) . $product->get_price_suffix();
     } else {
-        $price='<div><span class="woocommerce-Price-amount amount"><span>'.number_format($product->get_price()).'<span style="margin-right: 5px;" class="woocommerce-Price-currencySymbol">'.get_woocommerce_currency_symbol().'</span></span></span></div>';
+        $price = '<div><span class="woocommerce-Price-amount amount"><span>' . number_format($product->get_price()) . '<span style="margin-right: 5px;" class="woocommerce-Price-currencySymbol">' . get_woocommerce_currency_symbol() . '</span></span></span></div>';
     }
 
-   return $price;
+    return $price;
+}
+
+add_filter('wf_pklist_alter_template_html', 'wt_pklist_add_custom_css_in_invoice_html', 10, 2);
+function wt_pklist_add_custom_css_in_invoice_html($html, $template_type)
+{
+
+    /* add cutsom css in invoice */
+
+    if ($template_type == 'invoice') {
+
+        $html .= '<style>.test{}</style>';
+    }
+
+    return $html;
 }
