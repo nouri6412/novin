@@ -27,6 +27,15 @@ defined('ABSPATH') || exit;
 
 	<table cellspacing="0" class="shop_table shop_table_responsive">
 
+		<?php if (wc_coupons_enabled()) { ?>
+			<tr class="cart-subtotal">
+				<th><label for="coupon_code"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label></th>
+				<td>
+					<form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post"><input style="max-width: 120px;" type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" /> <button type="submit" class="btn btn-warning" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_attr_e('Apply coupon', 'woocommerce'); ?></button> <?php do_action('woocommerce_cart_coupon'); ?>
+					</form>
+				</td>
+			</tr>
+		<?php } ?>
 		<tr class="cart-subtotal">
 			<th><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
 			<td data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
