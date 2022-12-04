@@ -128,7 +128,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-4 col-xl-3 mt-4 mt-lg-0">
-                    <div class="area-socialIcon d-flex justify-content-start justify-content-lg-end">
+                    <div style="direction: ltr;" class="area-socialIcon d-flex justify-content-start justify-content-lg-end">
                         <?php
                         foreach ($data["icons"] as $col) {
                             $group = $col["link"];
