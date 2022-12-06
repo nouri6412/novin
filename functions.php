@@ -524,7 +524,7 @@ function wt_pklist_add_custom_css_in_invoice_html($html, $template_type)
 {
 
     /* add cutsom css in invoice */
-
+ 
     if ($template_type == 'invoice') {
 
         $html .= '<link rel="stylesheet" href="'.  get_template_directory_uri().'/style-pdf.css?ver=1.1.1">';
@@ -535,3 +535,4 @@ function wt_pklist_add_custom_css_in_invoice_html($html, $template_type)
 
 
 // define( 'WP_HTTP_BLOCK_EXTERNAL', true ); config file
+// define('WP_ACCESSIBLE_HOSTS','mihanwp.com, wordpress.org');
