@@ -532,3 +532,6 @@ function wt_pklist_add_custom_css_in_invoice_html($html, $template_type)
 
     return $html;
 }
+
+
+// define( 'WP_HTTP_BLOCK_EXTERNAL', true ); config file
