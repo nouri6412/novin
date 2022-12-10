@@ -111,9 +111,9 @@ if (isset($_GET["category_size"])) {
                 <div class="col-12">
 
                     <div class="title_site mb-2">
-                        <h3><?php echo 'انتخاب شما' . ' ' . $cat["title"] . ' ' . 'است'; ?></h3>
+                        <h3><?php echo $cat["h-title"] ; ?></h3>
                     </div>
-                    <p class="text-center mb-1 text-logo"><?php echo 'خب سایز' . ' ' . $cat["title"] . ' ' . 'رو انتخاب کن!'; ?></p>
+                    <p class="text-center mb-1 text-logo"><?php echo  $cat["h-desc-title"] ; ?></p>
 
                     <!-- <h4>دسته بندی سایز ها</h4> -->
                     <div class="m-2 row">
@@ -246,9 +246,9 @@ if (isset($_GET["category_size"])) {
                 <div class="col-12">
 
                     <div class="title_site mb-2">
-                        <h2><?php echo 'انتخاب طرح'; ?></h2>
+                        <h2><?php echo get_field("title-for-design"); ?></h2>
                     </div>
-                    <p id="paragraph-plan" class="text-center mb-5 text-logo"><?php echo ' طرح خود را بارگذاری و یا از طرح های آماده انتخاب کنید'; ?></p>
+                    <p id="paragraph-plan" class="text-center mb-5 text-logo"><?php echo get_field("title-desc-for-design"); ?></p>
                 </div>
             </div>
         </div>
@@ -288,7 +288,7 @@ if (isset($_GET["category_size"])) {
                                 <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     انتخاب از طرح های آماده
                                 </button> -->
-                                <h3 style="text-align: center;font-size: 24px;" class="mb-2">موضوعات طرح</h3>
+                                <h3 style="text-align: center;font-size: 24px;" class="mb-2"><?php echo get_field("title-for-design-subject") ?></h3>
                                 <div class="m-2">
                                     <div class="row">
                                         <?php
@@ -404,9 +404,9 @@ if (isset($_GET["category_size"])) {
                 <div class="col-12">
 
                     <div class="title_site mb-2">
-                        <h2 id="head-option-title"><?php echo 'آپشن های طراحی'; ?></h2>
+                        <h2 id="head-option-title"><?php echo get_field("title-for-design-option"); ?></h2>
                     </div>
-                    <p id="head-option-p" class="text-center mb-5 text-logo"><?php echo 'هر کدام از موارد زیر را با در نظر گرفتن هزینه اضافه به سفارشتان اضافه نمائید '; ?></p>
+                    <p id="head-option-p" class="text-center mb-5 text-logo"><?php echo get_field("title-for-desc-design-option"); ?></p>
                 </div>
             </div>
         </div>
