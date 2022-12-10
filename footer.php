@@ -3,10 +3,14 @@
     <?php
     $data = get_field("sec4", 'option');
     ?>
+    <div style="border: 3px solid #cfcfcf;margin:2px" class="col-3 col-sm-2 col-md-2 mb-4">
+        <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=307560&amp;Code=uSBf9Z0l7Jl9nT94yYtW"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=307560&amp;Code=uSBf9Z0l7Jl9nT94yYtW" alt="" style="cursor:pointer" id="uSBf9Z0l7Jl9nT94yYtW"></a>
+    </div>
     <?php
     foreach ($data as $col) {
         $group = $col["group"];
     ?>
+
         <div style="border: 3px solid #cfcfcf;margin:2px" class="col-3 col-sm-2 col-md-2 mb-4">
             <a title="<?php echo $group["title"] ?>" href="<?php echo $group["link"] ?>"><img style="width: 100%;margin:5px;" src="<?php echo $group["img"] ?>" /></a>
         </div>
@@ -183,9 +187,9 @@
     </ul>
     <div style="text-align: center;border: 4px solid #51c85d; width: 60px;border-radius: 80px 80px 80px 80px;" class="shooping-cat">
         <a style="font-size: 30px;color: #51c85d;">
-        <i class="fa fa-shopping-cart"></i>
-        <?php if(count(WC()->cart->get_cart())>0){ ?><span style="color: #fff;position: absolute;top: -8px; right: -6px;font-size: 14px;background-color: red;padding: 1px 7px 1px 7px;border-radius: 12px;"><?php  echo count(WC()->cart->get_cart()) ?></span><?php } ?>
-    </a>
+            <i class="fa fa-shopping-cart"></i>
+            <?php if (count(WC()->cart->get_cart()) > 0) { ?><span style="color: #fff;position: absolute;top: -8px; right: -6px;font-size: 14px;background-color: red;padding: 1px 7px 1px 7px;border-radius: 12px;"><?php echo count(WC()->cart->get_cart()) ?></span><?php } ?>
+        </a>
     </div>
     <div class="social-open-menu">
         <button style="font-size: 10px;color: #000;" class="btn-share btn-shake"></button>
