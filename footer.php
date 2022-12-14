@@ -4,7 +4,7 @@
     $data = get_field("sec4", 'option');
     ?>
     <div style="border: 3px solid #cfcfcf;margin:2px" class="col-3 col-sm-2 col-md-2 mb-4">
-        <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=307560&amp;Code=uSBf9Z0l7Jl9nT94yYtW"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=307560&amp;Code=uSBf9Z0l7Jl9nT94yYtW" alt="" style="cursor:pointer" id="uSBf9Z0l7Jl9nT94yYtW"></a>
+        <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=307560&amp;Code=uSBf9Z0l7Jl9nT94yYtW"><img style="width: 100%;" referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=307560&amp;Code=uSBf9Z0l7Jl9nT94yYtW" alt="" style="cursor:pointer" id="uSBf9Z0l7Jl9nT94yYtW"></a>
     </div>
     <?php
     foreach ($data as $col) {
